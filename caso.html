@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projeto · Evelyn Luane</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html">Evelyn Luane</a>
+    <nav class="nav">
+      <a href="index.html">Projetos</a>
+      <a href="como-trabalho.html">Serviços</a>
+      <a href="https://lyluane.github.io">Sobre mim</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap caso" id="caso">
+  <p class="vazio">Carregando...</p>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <a href="index.html">Voltar aos projetos</a>
+    <a href="https://lyluane.github.io">Portfólio pessoal: lyluane.github.io</a>
+  </div>
+</footer>
+
+<script src="cases.js"></script>
+<script>
+(function () {
+  var el = document.getElementById("caso");
+  var slug = new URLSearchParams(location.search).get("slug");
+  var c = window.CASES.filter(function (x) { return x.slug === slug; })[0];
+  function esc(s) { return String(s || "").replace(/[&<>"]/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]; }); }
+
+  if (!c) {
+    el.innerHTML = '<h1>Projeto não encontrado</h1><p class="sub"><a href="index.html">Ver todos os projetos</a></p>';
+    return;
+  }
+  document.title = c.titulo + " · Evelyn Luane";
+
+  if (c.status !== "pronto") {
+    el.innerHTML = '<span class="selo">Projeto demonstrativo · em breve</span><h1>' + esc(c.titulo) + '</h1>' +
+      '<p class="sub">' + esc(c.resumo) + '</p><p class="sub">Este projeto ainda está sendo preparado.</p>' +
+      '<div class="acoes"><a class="botao" href="index.html">Voltar aos projetos</a></div>';
+    return;
+  }
+
+  var fluxo = (c.fluxo || []).map(function (passo, i) {
+    return '<li>' + (i ? '<span class="seta" aria-hidden="true"></span>' : '') + '<span class="caixa">' + esc(passo) + '</span></li>';
+  }).join("");
+
+  var telas = (c.telas || []).map(function (t) {
+    return '<figure><img src="' + esc(t) + '" alt="Tela do projeto ' + esc(c.titulo) + '"></figure>';
+  }).join("");
+  if (c.video) telas += '<video src="' + esc(c.video) + '" controls preload="metadata"></video>';
+
+  var entrega = (c.entrega || window.ENTREGA_PADRAO).map(function (e) {
+    return '<li><span><strong>' + esc(e[0]) + '.</strong> ' + esc(e[1]) + '</span></li>';
+  }).join("");
+
+  var acoes = '';
+  if (c.link_demo) acoes += '<a class="botao cheio" href="' + esc(c.link_demo) + '" target="_blank" rel="noopener">Ver demo ao vivo</a>';
+  if (c.link_pdf) acoes += '<a class="botao" href="' + esc(c.link_pdf) + '" target="_blank" rel="noopener">Baixar PDF</a>';
+
+  el.innerHTML =
+    '<div class="cabecalho-pdf"><span>Evelyn Luane · desenvolvedora full stack</span><span>lyluane.github.io</span></div>' +
+    '<a class="voltar" href="index.html">← Todos os projetos</a><br><br>' +
+    '<span class="selo">Projeto demonstrativo</span>' +
+    '<h1>' + esc(c.titulo) + '</h1>' +
+    '<p class="sub">' + esc(c.resumo) + '</p>' +
+    '<div class="acoes">' + acoes + '</div>' +
+    (c.link_demo ? '<span class="so-impressao link-demo-pdf">Demo ao vivo: ' + esc(c.link_demo) + '</span>' : '') +
+
+    '<section class="secao" style="margin-top:40px"><h2>Contexto</h2><div class="duas">' +
+      '<div><h3>Problema do cliente-tipo</h3><p>' + esc(c.problema) + '</p></div>' +
+      '<div><h3>Solução</h3><p>' + esc(c.solucao) + '</p></div>' +
+    '</div></section>' +
+
+    (fluxo ? '<section class="secao"><h2>Fluxo</h2><ol class="fluxo">' + fluxo + '</ol></section>' : '') +
+    (telas ? '<section class="secao telas"><h2>Telas</h2><div>' + telas + '</div></section>' : '') +
+    '<section class="secao"><h2>Ferramentas</h2><ul class="etiquetas">' +
+      (c.ferramentas || []).map(function (f) { return '<li>' + esc(f) + '</li>'; }).join("") +
+    '</ul></section>' +
+    '<section class="secao"><h2>Como seria a entrega</h2><div><ol class="etapas">' + entrega + '</ol>' +
+      '<p class="nota-final">Projeto demonstrativo com dados fictícios, feito para mostrar processo e acabamento. Numa versão real, as regras e os dados seriam os do seu negócio.</p></div></section>';
+})();
+</script>
+</body>
+</html>

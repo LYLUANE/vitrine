@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evelyn Luane · Projetos</title>
+<meta name="description" content="Vitrine de projetos demonstrativos de Evelyn Luane, desenvolvedora full stack freelancer: sites, sistemas, automação com IA, design gráfico e vídeo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html">Evelyn Luane</a>
+    <nav class="nav">
+      <a href="index.html" aria-current="page">Projetos</a>
+      <a href="como-trabalho.html">Serviços</a>
+      <a href="https://lyluane.github.io">Sobre mim</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="sobrelinha">Desenvolvedora full stack · designer · editora de vídeo</p>
+    <h1>Evelyn Luane</h1>
+    <p class="lead">Sites, design gráfico, edição de vídeo e automações com IA para pequenos negócios. Do briefing à entrega, com prévias para você aprovar no caminho.</p>
+    <p class="servicos-faixa"><a href="como-trabalho.html#sites">Sites e lojas</a><a href="como-trabalho.html#design">Design gráfico</a><a href="como-trabalho.html#video">Edição de vídeo</a><a href="como-trabalho.html#ia">IA e automações</a><a href="como-trabalho.html#sistemas">Sistemas</a></p>
+    <p class="aviso">Projetos demonstrativos, criados para mostrar processo e qualidade de entrega.</p>
+  </section>
+
+  <div class="filtros" id="filtros" role="group" aria-label="Filtrar por categoria"></div>
+  <section class="grade" id="grade" aria-live="polite"></section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <span>Evelyn Luane · desenvolvedora full stack</span>
+    <a href="https://lyluane.github.io">Portfólio pessoal: lyluane.github.io</a>
+  </div>
+</footer>
+
+<script src="cases.js"></script>
+<script>
+(function () {
+  var filtros = document.getElementById("filtros");
+  var grade = document.getElementById("grade");
+  var cats = ["Todos"].concat(window.CATEGORIAS);
+  var atual = new URLSearchParams(location.search).get("cat") || "Todos";
+  if (cats.indexOf(atual) < 0) atual = "Todos";
+
+  function esc(s) { return String(s || "").replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  function cartao(c) {
+    var pronto = c.status === "pronto";
+    var capa = c.capa
+      ? '<img src="' + esc(c.capa) + '" alt="Tela do projeto ' + esc(c.titulo) + '" loading="lazy">'
+      : '<div class="capa-vazia"><span>' + esc(c.categoria) + '</span></div>';
+    var tag = pronto ? "a" : "article";
+    var href = pronto ? ' href="caso.html?slug=' + encodeURIComponent(c.slug) + '"' : "";
+    return '<' + tag + ' class="cartao' + (pronto ? "" : " breve") + '"' + href + '>' +
+      '<div class="capa">' + capa + '</div>' +
+      '<div class="meta"><span>' + esc(c.categoria) + '</span>' + (pronto ? "<span>Ver projeto</span>" : '<span class="selo-breve">Em breve</span>') + '</div>' +
+      '<h3>' + esc(c.titulo) + '</h3>' +
+      '<p>' + esc(c.resumo) + '</p>' +
+      '<div class="ferr">' + esc((c.ferramentas || []).join(" · ")) + '</div>' +
+      '</' + tag + '>';
+  }
+
+  function desenhar() {
+    filtros.innerHTML = cats.map(function (c) {
+      return '<button type="button" data-cat="' + esc(c) + '" aria-pressed="' + (c === atual) + '">' + esc(c) + '</button>';
+    }).join("");
+    var lista = window.CASES.filter(function (c) { return atual === "Todos" || c.categoria === atual; });
+    // prontos primeiro, mantendo a ordem do arquivo
+    lista.sort(function (a, b) { return (a.status === "pronto" ? 0 : 1) - (b.status === "pronto" ? 0 : 1); });
+    grade.innerHTML = lista.length ? lista.map(cartao).join("") : '<p class="vazio">Nenhum projeto nesta categoria ainda.</p>';
+  }
+
+  filtros.addEventListener("click", function (e) {
+    var b = e.target.closest("button");
+    if (!b) return;
+    atual = b.getAttribute("data-cat");
+    var url = atual === "Todos" ? location.pathname : location.pathname + "?cat=" + encodeURIComponent(atual);
+    history.replaceState(null, "", url);
+    desenhar();
+  });
+  desenhar();
+})();
+</script>
+</body>
+</html>
