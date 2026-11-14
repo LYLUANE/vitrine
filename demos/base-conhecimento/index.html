@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Central de Ajuda Caderneta</title>
+<meta name="description" content="Central de ajuda e base de conhecimento com busca tolerante a erros, filtros, exportação CSV e painel de edição em Markdown. Projeto demonstrativo com marca fictícia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<script>
+  try { var u = (location.search.match(/tema=(dark|light)/) || [])[1]; if (u) localStorage.setItem("cad_kb_tema", JSON.stringify(u)); var t = localStorage.getItem("cad_kb_tema"); t = t ? JSON.parse(t) : (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+</script>
+</head>
+<body>
+<a class="pular" href="#app">Pular para o conteúdo</a>
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="#/" aria-label="Central de Ajuda Caderneta, início">
+      <svg class="marca-ic" viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="3" width="22" height="26" rx="3" class="m-capa"/><path d="M10 3v26" class="m-lombada"/><path d="M14 11h9M14 15.5h9M14 20h6" class="m-linhas"/></svg>
+      <span class="marca-txt"><strong>Caderneta</strong><span>Central de Ajuda</span></span>
+    </a>
+    <div class="cab-busca" hidden></div>
+    <nav class="nav-principal" aria-label="Principal">
+      <a href="#/busca" data-rota="busca">Artigos</a>
+      <a href="#/editor/novo" data-rota="editor">Painel<span class="so-largo"> de edição</span></a>
+    </nav>
+    <button type="button" id="btn-tema" class="btn-tema" aria-label="Alternar tema"></button>
+  </div>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<footer class="rodape">
+  <div class="rodape-in">
+    <p><strong>Caderneta</strong> é uma marca fictícia. Projeto demonstrativo de central de ajuda: artigos, busca e painel funcionam no navegador, sem servidor.</p>
+    <p class="rodape-tec">Busca com índice invertido próprio, normalização de acentos e distância de edição · Markdown com prévia · dados do painel no localStorage</p>
+  </div>
+</footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="js/dados.js"></script>
+<script src="js/motor.js"></script>
+<script src="js/ilustracoes.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

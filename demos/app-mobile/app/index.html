@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rota Junto · caronas entre cidades (demonstração)</title>
+<meta name="description" content="App de caronas intermunicipais em PWA: busca, reserva com pagamento simulado, oferta de carona, chat e verificação. Projeto demonstrativo, marca fictícia.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0E5E4E" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C1311" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Rota Junto">
+<script>/* aplica o tema antes de desenhar, sem piscar */
+try{var q=new URLSearchParams(location.search),t=q.get('tema')||(q.get('v')?'claro':((JSON.parse(localStorage.getItem('rotajunto.v1'))||{}).tema));if(t&&t!=='sistema')document.documentElement.setAttribute('data-tema',t)}catch(e){}</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="app" aria-live="polite">
+  <div id="telas"></div>
+  <nav id="abas" class="oculta" aria-label="Navegação principal"></nav>
+  <div id="avisos"></div>
+</div>
+<p class="fora">Rota Junto é uma marca fictícia. Projeto demonstrativo de Evelyn Luane. No celular, abra este endereço e use “Adicionar à tela inicial” para instalar. <a href="../">Ver vitrine do app</a></p>
+<noscript><p style="padding:20px">Este app precisa de JavaScript.</p></noscript>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Coleção Cósmica · jogo HTML5</title>
+<meta name="description" content="Jogo casual em pixel art: pilote a nave, colete figurinhas de planetas e complete o álbum. Funciona no navegador e no celular, até offline.">
+<meta name="theme-color" content="#0d0b1f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="side side-l" aria-label="Como jogar">
+  <p class="eyebrow">Como jogar</p>
+  <h2>Pilote, desvie, colecione.</h2>
+  <ul class="keys">
+    <li><span class="k">←</span><span class="k">→</span><span class="k">↑</span><span class="k">↓</span> ou <span class="k">WASD</span> movem a nave</li>
+    <li><span class="k k-w">arrastar</span> no celular: o dedo guia a nave</li>
+    <li><span class="k">P</span> pausa · <span class="k">M</span> som</li>
+  </ul>
+  <p class="small">A nave atira sozinha. Pegue as figurinhas que caem, fuja das rochas e dos drones e complete as 24 do álbum.</p>
+</aside>
+
+<main id="stage" aria-label="Coleção Cósmica">
+  <canvas id="cv" width="216" height="384" aria-label="Tela do jogo"></canvas>
+
+  <div id="hudBtns" hidden>
+    <button id="bPause" class="ib" aria-label="Pausar"><svg viewBox="0 0 8 8"><rect x="1" y="1" width="2" height="6"/><rect x="5" y="1" width="2" height="6"/></svg></button>
+  </div>
+  <button id="bMute" class="ib" aria-label="Som ligado"><svg viewBox="0 0 10 8"><path d="M0 3h2l3-3v8L2 5H0z"/><path class="w1" d="M6.5 2.5v3M8 1.5v5" stroke-width="1" stroke="currentColor" fill="none"/><path class="x" d="M6.5 2l3 4M9.5 2l-3 4" stroke-width="1" stroke="currentColor" fill="none"/></svg></button>
+
+  <section id="sTitle" class="ov ov-title">
+    <div class="menu">
+      <button class="btn btn-main" data-act="play">Jogar</button>
+      <div class="row">
+        <button class="btn" data-act="album">Álbum <span class="pill" id="tAlbum">0/24</span></button>
+        <button class="btn" data-act="trade">Trocas</button>
+      </div>
+      <p class="best">Recorde <b id="tBest">0</b></p>
+      <button class="install" id="bInstall" hidden>Instalar no aparelho</button>
+    </div>
+    <p class="foot">Jogo original · projeto demonstrativo</p>
+  </section>
+
+  <section id="sPause" class="ov ov-dim" hidden>
+    <div class="panel">
+      <h2>Pausa</h2>
+      <button class="btn btn-main" data-act="resume">Continuar</button>
+      <button class="btn" data-act="album">Ver álbum</button>
+      <button class="btn btn-ghost" data-act="menu">Sair para o menu</button>
+    </div>
+  </section>
+
+  <section id="sClear" class="ov ov-dim" hidden>
+    <div class="panel">
+      <p class="eyebrow">Setor limpo</p>
+      <h2 id="cTitle">Fase 1 concluída</h2>
+      <div class="got" id="cGot"></div>
+      <p class="sub" id="cSub"></p>
+      <button class="btn btn-main" data-act="next">Seguir viagem</button>
+    </div>
+  </section>
+
+  <section id="sOver" class="ov ov-dim" hidden>
+    <div class="panel">
+      <p class="eyebrow">Fim da viagem</p>
+      <h2>Nave abatida</h2>
+      <p class="score"><span id="oScore">0</span> pts</p>
+      <p class="rec" id="oRec"></p>
+      <div class="got" id="oGot"></div>
+      <button class="btn btn-main" data-act="play">Jogar de novo</button>
+      <div class="row">
+        <button class="btn" data-act="album">Álbum</button>
+        <button class="btn btn-ghost" data-act="menu">Menu</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="sAlbum" class="ov ov-page" hidden>
+    <header class="ph">
+      <button class="ib back" data-act="back" aria-label="Voltar"><svg viewBox="0 0 8 8"><path d="M5 0L1 4l4 4V6L3 4l2-2z"/></svg></button>
+      <div>
+        <h2>Álbum Cósmico</h2>
+        <p class="sub"><b id="aCount">0</b>/24 figurinhas · <span id="aRep">0</span> repetidas</p>
+      </div>
+      <button class="btn btn-sm" data-act="trade">Trocas</button>
+    </header>
+    <div class="bar"><i id="aBar"></i></div>
+    <div class="grid" id="aGrid"></div>
+    <p class="legend"><span class="r0">Comum</span><span class="r1">Rara</span><span class="r2">Lendária</span></p>
+  </section>
+
+  <section id="sTrade" class="ov ov-page" hidden>
+    <header class="ph">
+      <button class="ib back" data-act="back" aria-label="Voltar"><svg viewBox="0 0 8 8"><path d="M5 0L1 4l4 4V6L3 4l2-2z"/></svg></button>
+      <div>
+        <h2>Mesa de trocas</h2>
+        <p class="sub">Troca simulada com colecionadores fictícios</p>
+      </div>
+    </header>
+    <p class="note">Você tem <b id="tRep">0</b> figurinhas repetidas. Cada colecionador pede repetidas suas e dá uma que falta no seu álbum.</p>
+    <div id="tList" class="trades"></div>
+    <p class="note small">Nada sai do aparelho: as trocas acontecem no próprio jogo, sem internet.</p>
+  </section>
+
+  <div id="detail" class="modal" hidden>
+    <div class="dcard" id="dCard">
+      <canvas id="dCv" width="72" height="72"></canvas>
+      <p class="num" id="dNum"></p>
+      <h3 id="dName"></h3>
+      <p class="rar" id="dRar"></p>
+      <p class="fact" id="dFact"></p>
+      <p class="qty" id="dQty"></p>
+      <button class="btn btn-sm" data-act="closeDetail">Fechar</button>
+    </div>
+  </div>
+  <div id="toast" class="toast" hidden></div>
+</main>
+
+<aside class="side side-r" aria-label="Sobre o projeto">
+  <p class="eyebrow">Sobre</p>
+  <h2>Feito em HTML5 Canvas, sem biblioteca.</h2>
+  <ul class="feat">
+    <li>Pixel art e planetas gerados por código</li>
+    <li>Som sintetizado no navegador, com botão de mudo</li>
+    <li>Álbum salvo no aparelho, com raras e repetidas</li>
+    <li>Instala como app e roda offline (PWA)</li>
+  </ul>
+  <p class="small">Projeto demonstrativo · personagens e planetas fictícios.</p>
+</aside>
+
+<script src="art.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rota Junto · app de caronas em PWA (demonstração)</title>
+<meta name="description" content="Vitrine do app Rota Junto: caronas entre cidades com busca, reserva, pagamento simulado, oferta de carona, chat, verificação e modo offline. Projeto demonstrativo, marca fictícia.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0E5E4E">
+<link rel="icon" href="app/icons/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vitrine.css">
+</head>
+<body>
+<header class="cab">
+  <div class="marca"><img src="app/icons/icon.svg" alt="" width="40" height="40"><div><b>Rota Junto</b><small>marca fictícia · projeto demonstrativo</small></div></div>
+  <a class="bt cheio" href="app/">Abrir o app</a>
+</header>
+
+<section class="abre">
+  <div class="txt">
+    <p class="olho">Aplicativo para celular · PWA</p>
+    <h1>Carona entre cidades, do jeito que o passageiro espera de um app.</h1>
+    <p>Busca por origem, destino e data, reserva com pagamento simulado, motorista publicando o trajeto com preço sugerido pela distância, chat, verificação de documento e regras de segurança. Instala na tela inicial e abre sem internet.</p>
+    <div class="acoes"><a class="bt cheio" href="app/">Abrir o app</a><a class="bt" href="#instalar">Como instalar</a></div>
+    <ul class="pills"><li>Tema claro e escuro</li><li>Funciona offline</li><li>Gestos e transições</li><li>Notificações simuladas</li></ul>
+  </div>
+  <div class="trio">
+    <div class="fone f-a" style="--s:.62"><div class="tela-fone"><iframe src="app/?v=resultados" title="Resultados da busca" loading="lazy"></iframe></div></div>
+    <div class="fone f-b" style="--s:.70"><div class="tela-fone"><iframe src="app/?v=detalhe" title="Detalhe da carona com mapa" loading="lazy"></iframe></div></div>
+    <div class="fone f-c escuro" style="--s:.62"><div class="tela-fone"><iframe src="app/?v=chat&tema=escuro" title="Chat em tema escuro" loading="lazy"></iframe></div></div>
+  </div>
+</section>
+
+<p class="dica-toque">Os celulares abaixo rodam o app de verdade: toque, role e navegue dentro deles.</p>
+
+<section class="grupo">
+  <h2><span>1</span> Encontrar e reservar</h2>
+  <div class="fila">
+    <figure><div class="fone"><div class="tela-fone"><iframe src="app/?v=onboarding&i=0" title="Onboarding" loading="lazy"></iframe></div></div><figcaption>Onboarding em 3 telas, com arrastar para o lado</figcaption></figure>
+    <figure><div class="fone"><div class="tela-fone"><iframe src="app/?v=inicio" title="Busca" loading="lazy"></iframe></div></div><figcaption>Busca por origem, destino, data e passageiros</figcaption></figure>
+    <figure><div class="fone"><div class="tela-fone"><iframe src="app/?v=reserva" title="Reserva" loading="lazy"></iframe></div></div><figcaption>Reserva com lugares e forma de pagamento</figcaption></figure>
+    <figure><div class="fone"><div class="tela-fone"><iframe src="app/?v=confirmado" title="Confirmação" loading="lazy"></iframe></div></div><figcaption>Confirmação com código de embarque</figcaption></figure>
+  </div>
+</section>
+
+<section class="grupo">
+  <h2><span>2</span> Oferecer e combinar</h2>
+  <div class="fila">
+    <figure><div class="fone"><div class="tela-fone"><iframe src="app/?v=oferecer" title="Oferecer carona" loading="lazy"></iframe></div></div><figcaption>Motorista publica trajeto, horário, vagas e preço sugerido</figcaption></figure>
+    <figure><div class="fone"><div class="tela-fone"><iframe src="app/?v=minha-oferta" title="Pedidos de passageiros" loading="lazy"></iframe></div></div><figcaption>Pedidos de passageiros para aceitar ou recusar</figcaption></figure>
+    <figure><div class="fone"><div class="tela-fone"><iframe src="app/?v=viagens" title="Minhas viagens" loading="lazy"></iframe></div></div><figcaption>Minhas viagens como passageiro e motorista</figcaption></figure>
+    <figure><div class="fone"><div class="tela-fone"><iframe src="app/?v=chat" title="Chat" loading="lazy"></iframe></div></div><figcaption>Chat com respostas rápidas</figcaption></figure>
+  </div>
+</section>
+
+<section class="grupo">
+  <h2><span>3</span> Perfil, segurança e avisos</h2>
+  <div class="fila">
+    <figure><div class="fone"><div class="tela-fone"><iframe src="app/?v=perfil" title="Perfil" loading="lazy"></iframe></div></div><figcaption>Perfil com verificação e tema</figcaption></figure>
+    <figure><div class="fone"><div class="tela-fone"><iframe src="app/?v=verificacao&passo=1" title="Verificação de documento" loading="lazy"></iframe></div></div><figcaption>Envio de documento (simulado)</figcaption></figure>
+    <figure><div class="fone"><div class="tela-fone"><iframe src="app/?v=seguranca" title="Regras de segurança" loading="lazy"></iframe></div></div><figcaption>Regras de segurança e botão de ajuda</figcaption></figure>
+    <figure><div class="fone"><div class="tela-fone"><iframe src="app/?v=notif" title="Notificação" loading="lazy"></iframe></div></div><figcaption>Notificação local de lembrete</figcaption></figure>
+  </div>
+</section>
+
+<section class="grupo">
+  <h2><span>4</span> Tema escuro</h2>
+  <div class="fila">
+    <figure><div class="fone escuro"><div class="tela-fone"><iframe src="app/?v=inicio&tema=escuro" title="Busca no tema escuro" loading="lazy"></iframe></div></div><figcaption>Segue o tema do celular ou a escolha da pessoa</figcaption></figure>
+    <figure><div class="fone escuro"><div class="tela-fone"><iframe src="app/?v=detalhe&tema=escuro" title="Detalhe no tema escuro" loading="lazy"></iframe></div></div><figcaption>Mapa e cores ajustados para a noite</figcaption></figure>
+    <figure><div class="fone escuro"><div class="tela-fone"><iframe src="app/?v=pix&tema=escuro" title="Pix simulado" loading="lazy"></iframe></div></div><figcaption>Pix simulado, sem cobrança real</figcaption></figure>
+    <figure><div class="fone escuro"><div class="tela-fone"><iframe src="app/?v=notificacoes&tema=escuro" title="Notificações" loading="lazy"></iframe></div></div><figcaption>Central de notificações</figcaption></figure>
+  </div>
+</section>
+
+<section class="info" id="instalar">
+  <div>
+    <h2>Como instalar no celular</h2>
+    <p><b>Android (Chrome):</b> abra o app, toque no menu ⋮ e escolha <b>Instalar app</b>.</p>
+    <p><b>iPhone (Safari):</b> abra o app, toque em compartilhar e depois em <b>Adicionar à Tela de Início</b>.</p>
+    <p>Instalado, ele abre em tela cheia, com ícone próprio, e continua abrindo sem internet.</p>
+  </div>
+  <div>
+    <h2>O que é demonstração</h2>
+    <p>Pagamento, verificação de documento, chat e notificações são simulados. Pessoas, notas, placas e caronas são fictícias. Nenhum dado sai do aparelho.</p>
+    <p>A versão para um cliente teria back-end (Firebase ou Supabase), mapas e pagamento reais e publicação na Play Store e na App Store.</p>
+  </div>
+</section>
+
+<footer class="pe">Rota Junto é uma marca fictícia · projeto demonstrativo de Evelyn Luane</footer>
+</body>
+</html>
