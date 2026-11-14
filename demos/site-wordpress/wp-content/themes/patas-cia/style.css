@@ -1,0 +1,188 @@
+/*
+Theme Name: Patas & Cia
+Template: hello-elementor
+Description: Tema filho do Hello Elementor para a Clínica Veterinária Patas & Cia (marca fictícia, projeto demonstrativo). Cabeçalho, rodapé, SEO básico, 404 e estilos da marca.
+Author: Evelyn Luane
+Version: 1.0.0
+Text Domain: patas-cia
+*/
+
+:root{
+  --pt-papel:#F6F1E7; --pt-papel-2:#EFE7D6; --pt-areia:#E2D5BC; --pt-tinta:#1F2A24;
+  --pt-tinta-2:#4A564F; --pt-musgo:#2F4A3A; --pt-musgo-2:#3E5F4B; --pt-terra:#B9592F; --pt-terra-2:#9E4A25;
+  --pt-fio:rgba(31,42,36,.16);
+  --pt-serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --pt-sans:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--pt-papel);color:var(--pt-tinta);font-family:var(--pt-sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--pt-musgo)}
+::selection{background:var(--pt-terra);color:#fff}
+
+/* ---------- Cabeçalho ---------- */
+.pt-header{position:sticky;top:0;z-index:50;background:rgba(246,241,231,.92);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--pt-fio)}
+.pt-header__in{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:28px}
+.pt-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--pt-tinta)}
+.pt-logo svg{width:38px;height:38px;flex:none}
+.pt-logo b{font-family:var(--pt-serif);font-weight:600;font-size:22px;letter-spacing:-.01em;line-height:1}
+.pt-logo small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--pt-tinta-2);margin-top:3px}
+.pt-nav{margin-left:auto}
+.pt-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px}
+.pt-nav a{display:block;padding:8px 14px;border-radius:999px;color:var(--pt-tinta);text-decoration:none;font-size:15px;font-weight:500}
+.pt-nav a:hover,.pt-nav .current-menu-item>a{background:var(--pt-papel-2)}
+.pt-nav .current-menu-item>a{color:var(--pt-musgo)}
+.pt-header__cta{display:inline-flex;align-items:center;gap:8px;background:var(--pt-musgo);color:#fff!important;text-decoration:none;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;white-space:nowrap}
+.pt-header__cta:hover{background:var(--pt-tinta)}
+.pt-burger{display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--pt-fio);border-radius:12px;background:transparent;cursor:pointer;position:relative}
+.pt-burger span,.pt-burger span:before,.pt-burger span:after{position:absolute;left:12px;width:18px;height:2px;background:var(--pt-tinta);content:"";transition:.25s}
+.pt-burger span{top:21px}.pt-burger span:before{top:-6px;left:0}.pt-burger span:after{top:6px;left:0}
+.pt-header.is-open .pt-burger span{background:transparent}
+.pt-header.is-open .pt-burger span:before{top:0;transform:rotate(45deg)}
+.pt-header.is-open .pt-burger span:after{top:0;transform:rotate(-45deg)}
+@media (max-width:900px){
+  .pt-burger{display:block}
+  .pt-header__cta{display:none}
+  .pt-nav{position:absolute;left:0;right:0;top:100%;background:var(--pt-papel);border-bottom:1px solid var(--pt-fio);display:none;margin:0}
+  .pt-header.is-open .pt-nav{display:block}
+  .pt-nav ul{flex-direction:column;padding:8px 16px 18px}
+  .pt-nav a{padding:14px 10px;border-radius:10px;font-size:18px;border-bottom:1px solid var(--pt-fio)}
+}
+
+/* ---------- Tipografia base das páginas Elementor ---------- */
+.elementor-widget-heading .elementor-heading-title{font-family:var(--pt-serif);font-weight:500;letter-spacing:-.015em;color:var(--pt-tinta);line-height:1.08}
+.elementor-widget-heading .elementor-heading-title em{font-style:italic;color:var(--pt-terra)}
+.elementor-widget-text-editor{color:var(--pt-tinta-2)}
+.elementor-widget-text-editor p:last-child{margin-bottom:0}
+.pt-kicker .elementor-heading-title{font-family:var(--pt-sans)!important;font-size:12px!important;font-weight:600!important;letter-spacing:.18em!important;text-transform:uppercase;color:var(--pt-terra)!important;display:flex;align-items:center;gap:12px}
+.pt-kicker .elementor-heading-title:before{content:"";width:28px;height:1px;background:currentColor}
+.pt-center .elementor-heading-title{justify-content:center}
+.pt-h1 .elementor-heading-title{font-size:clamp(40px,6vw,72px)}
+.pt-h2 .elementor-heading-title{font-size:clamp(32px,4.2vw,50px)}
+.pt-h3 .elementor-heading-title{font-size:24px;line-height:1.2}
+.pt-lead{font-size:19px}
+
+/* Botões */
+.pt-btn .elementor-button{background:var(--pt-terra);color:#fff;border-radius:999px;padding:16px 26px;font-family:var(--pt-sans);font-weight:600;font-size:16px;transition:.2s}
+.pt-btn .elementor-button:hover{background:var(--pt-terra-2);transform:translateY(-1px)}
+.pt-btn-ghost .elementor-button{background:transparent;color:var(--pt-tinta);border:1px solid var(--pt-tinta);border-radius:999px;padding:15px 24px;font-weight:600;font-size:16px}
+.pt-btn-ghost .elementor-button:hover{background:var(--pt-tinta);color:var(--pt-papel)}
+.pt-btn-light .elementor-button{background:var(--pt-papel);color:var(--pt-musgo);border-radius:999px;padding:16px 26px;font-weight:600}
+
+/* Hero */
+.pt-hero-img img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:220px 220px 18px 18px;box-shadow:0 30px 60px -30px rgba(31,42,36,.45)}
+.pt-hero-figure{position:relative}
+.pt-selo{position:absolute;left:-28px;bottom:36px;background:var(--pt-papel);border:1px solid var(--pt-fio);border-radius:16px;padding:14px 18px;box-shadow:0 18px 40px -20px rgba(31,42,36,.35);font-size:14px;line-height:1.35;max-width:220px}
+.pt-selo b{display:block;font-family:var(--pt-serif);font-size:22px;font-weight:500;color:var(--pt-musgo)}
+.pt-horarios{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--pt-fio);border-bottom:1px solid var(--pt-fio);margin-top:8px}
+.pt-horarios div{flex:1 1 180px;padding:14px 18px 14px 0;font-size:14px;color:var(--pt-tinta-2)}
+.pt-horarios div+div{border-left:1px solid var(--pt-fio);padding-left:18px}
+.pt-horarios b{display:block;color:var(--pt-tinta);font-size:15px}
+
+/* Cartões de serviço */
+.pt-card{background:#FBF8F2;border:1px solid var(--pt-fio);border-radius:18px;transition:.25s}
+.pt-card:hover{transform:translateY(-3px);box-shadow:0 20px 40px -28px rgba(31,42,36,.5);border-color:rgba(31,42,36,.28)}
+.pt-num .elementor-heading-title{font-family:var(--pt-serif)!important;font-style:italic;font-size:15px!important;color:var(--pt-terra)!important;border-bottom:1px solid var(--pt-fio);padding-bottom:14px}
+
+/* Sobre */
+.pt-arco img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px 18px 200px 18px}
+.pt-lista .elementor-icon-list-item{padding:12px 0!important;border-bottom:1px solid var(--pt-fio);font-size:16px}
+.pt-lista .elementor-icon-list-icon i,.pt-lista .elementor-icon-list-icon svg{color:var(--pt-terra);fill:var(--pt-terra)}
+.pt-lista .elementor-icon-list-text{color:var(--pt-tinta)}
+
+/* Faixa verde */
+.pt-verde{color:var(--pt-papel)}
+.pt-verde .elementor-heading-title{color:var(--pt-papel)!important}
+.pt-verde .elementor-widget-text-editor{color:rgba(246,241,231,.78)}
+.pt-passo{border-top:1px solid rgba(246,241,231,.25);padding-top:18px}
+.pt-passo .pt-num .elementor-heading-title{color:#E7A57F!important;border:0;padding:0}
+
+/* Depoimento modelo */
+.pt-modelo{border:1.5px dashed rgba(31,42,36,.35);border-radius:18px;background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(226,213,188,.25) 14px 15px)}
+.pt-tag{display:inline-block;background:var(--pt-tinta);color:var(--pt-papel);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:6px;font-weight:600}
+.pt-quote{font-family:var(--pt-serif);font-size:22px;line-height:1.4;color:var(--pt-tinta);font-style:italic;margin:16px 0 10px}
+
+/* Posts (shortcode) */
+.pt-posts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.pt-post{text-decoration:none;color:var(--pt-tinta);display:flex;flex-direction:column;gap:14px}
+.pt-post__img{overflow:hidden;border-radius:16px;aspect-ratio:4/3;background:var(--pt-areia)}
+.pt-post__img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pt-post:hover .pt-post__img img{transform:scale(1.04)}
+.pt-post__meta{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pt-terra);font-weight:600}
+.pt-post__title{font-family:var(--pt-serif);font-size:23px;line-height:1.2;font-weight:500;margin:0}
+.pt-post__ex{font-size:15px;color:var(--pt-tinta-2);margin:0}
+@media (max-width:900px){.pt-posts{grid-template-columns:1fr}}
+
+/* Formulário */
+.pt-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pt-form label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--pt-tinta)}
+.pt-form .full{grid-column:1/-1}
+.pt-form input,.pt-form select,.pt-form textarea{font:inherit;font-weight:400;font-size:16px;padding:13px 14px;border:1px solid rgba(31,42,36,.25);border-radius:12px;background:#FBF8F2;color:var(--pt-tinta)}
+.pt-form input:focus,.pt-form select:focus,.pt-form textarea:focus{outline:2px solid var(--pt-musgo);outline-offset:1px;border-color:transparent}
+.pt-form button{grid-column:1/-1;justify-self:start;background:var(--pt-terra);color:#fff;border:0;border-radius:999px;padding:16px 28px;font-weight:600;font-size:16px;cursor:pointer}
+.pt-form button:hover{background:var(--pt-terra-2)}
+.pt-form .pt-aviso{grid-column:1/-1;font-size:13px;color:var(--pt-tinta-2);margin:0}
+.pt-form .pt-ok{grid-column:1/-1;background:var(--pt-musgo);color:#fff;padding:14px 16px;border-radius:12px;display:none}
+.pt-form.enviado .pt-ok{display:block}
+@media (max-width:600px){.pt-form{grid-template-columns:1fr}}
+.pt-info{font-size:15px}
+.pt-info dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--pt-terra);font-weight:600;margin-top:18px}
+.pt-info dd{margin:4px 0 0;color:var(--pt-tinta)}
+.pt-mapa{aspect-ratio:16/10;border-radius:18px;border:1px solid var(--pt-fio);background:
+ linear-gradient(90deg,transparent 48%,#fff 48% 52%,transparent 52%) ,linear-gradient(0deg,transparent 58%,#fff 58% 62%,transparent 62%),
+ linear-gradient(35deg,transparent 70%,rgba(255,255,255,.8) 70% 72%,transparent 72%),var(--pt-papel-2);position:relative;overflow:hidden}
+.pt-mapa:after{content:"";position:absolute;left:calc(50% - 14px);top:calc(40% - 34px);width:28px;height:28px;border-radius:50% 50% 50% 0;background:var(--pt-terra);transform:rotate(-45deg);box-shadow:0 6px 12px rgba(0,0,0,.2)}
+.pt-mapa span{position:absolute;left:14px;bottom:12px;font-size:12px;color:var(--pt-tinta-2);background:var(--pt-papel);padding:4px 8px;border-radius:6px}
+
+/* Blog / posts single e arquivo */
+.pt-wrap{max-width:760px;margin:0 auto;padding:72px 24px 96px}
+.pt-wrap h1{font-family:var(--pt-serif);font-weight:500;font-size:clamp(34px,5vw,54px);line-height:1.08;letter-spacing:-.015em;margin:14px 0 18px}
+.pt-wrap .pt-post__meta{display:block}
+.pt-wrap .pt-capa{margin:34px 0;border-radius:18px;overflow:hidden}
+.pt-wrap .pt-capa img{width:100%;height:auto;display:block}
+.pt-conteudo{font-size:18px;line-height:1.75;color:var(--pt-tinta)}
+.pt-conteudo h2{font-family:var(--pt-serif);font-weight:500;font-size:30px;margin:44px 0 12px;line-height:1.15}
+.pt-conteudo ul,.pt-conteudo ol{padding-left:22px}
+.pt-conteudo li{margin:6px 0}
+.pt-conteudo blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:3px solid var(--pt-terra);font-family:var(--pt-serif);font-style:italic;font-size:21px}
+.pt-nota{margin-top:40px;padding:18px 20px;background:var(--pt-papel-2);border-radius:14px;font-size:15px;color:var(--pt-tinta-2)}
+.pt-arquivo{max-width:1180px;margin:0 auto;padding:72px 24px 96px}
+.pt-arquivo h1{font-family:var(--pt-serif);font-weight:500;font-size:clamp(40px,6vw,64px);margin:12px 0 40px;letter-spacing:-.015em}
+.pt-voltar{display:inline-block;margin-top:34px;font-weight:600;text-decoration:none}
+
+/* Rodapé */
+.pt-footer{background:var(--pt-tinta);color:rgba(246,241,231,.75);font-size:15px}
+.pt-footer__in{max-width:1180px;margin:0 auto;padding:64px 24px 28px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.pt-footer .pt-logo{color:var(--pt-papel)}
+.pt-footer .pt-logo small{color:rgba(246,241,231,.6)}
+.pt-footer h4{font-family:var(--pt-sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#E7A57F;margin:0 0 14px;font-weight:600}
+.pt-footer ul{list-style:none;margin:0;padding:0}
+.pt-footer li{margin:7px 0}
+.pt-footer a{color:var(--pt-papel);text-decoration:none}
+.pt-footer a:hover{text-decoration:underline}
+.pt-footer__base{max-width:1180px;margin:0 auto;padding:18px 24px 28px;border-top:1px solid rgba(246,241,231,.15);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(246,241,231,.55)}
+@media (max-width:900px){.pt-footer__in{grid-template-columns:1fr 1fr}.pt-footer__in>div:first-child{grid-column:1/-1}}
+
+/* WhatsApp flutuante */
+.pt-whats{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:10px;background:#1f7a4d;color:#fff!important;text-decoration:none;border-radius:999px;padding:12px 18px 12px 14px;font-weight:600;font-size:15px;box-shadow:0 14px 30px -12px rgba(0,0,0,.45)}
+.pt-whats svg{width:24px;height:24px}
+@media (max-width:600px){.pt-whats span{display:none}.pt-whats{padding:14px}}
+
+/* 404 */
+.pt-404-num .elementor-heading-title{font-size:clamp(110px,18vw,220px)!important;line-height:.9!important;color:var(--pt-areia)!important;font-style:italic}
+
+/* Ajustes do Hello */
+.site-main{max-width:none!important;padding:0!important}
+.page-header{display:none}
+
+/* Acabamento: Elementor zera raios e alinhamentos, então reforço aqui */
+.e-con.pt-card{border-radius:18px!important;overflow:hidden}
+.pt-hero-img img{border-radius:240px 240px 18px 18px!important}
+.pt-arco img{border-radius:18px 18px 200px 18px!important}
+.e-con.pt-modelo{border-radius:18px!important}
+.pt-center .elementor-heading-title,.pt-center{text-align:center}
+.elementor-button{white-space:nowrap}
+.pt-verde .pt-kicker .elementor-heading-title{color:#E7A57F!important}
+.pt-verde .e-grid{row-gap:36px!important}
+html{background:#1F2A24}
+@media (max-width:767px){.pt-selo{left:12px;bottom:16px}.pt-hero-img img{border-radius:180px 180px 18px 18px!important}.pt-horarios div{flex:1 1 33%;padding-right:8px}.pt-horarios div+div{padding-left:10px}}
+.pt-burger:hover,.pt-burger:focus,.pt-burger:active{background:var(--pt-papel-2)!important;border-color:var(--pt-fio)!important;outline:none}.pt-burger:focus-visible{outline:2px solid var(--pt-musgo)!important}
