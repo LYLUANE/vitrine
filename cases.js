@@ -25,7 +25,8 @@ window.CASES = [
     problema: "A clínica-tipo recebe pedidos de horário por telefone e mensagem, e a recepção perde tempo confirmando o que já está ocupado.",
     solucao: "Um site de uma página com serviços, equipe e uma agenda que mostra só os horários livres. O agendamento cai direto no painel da recepção.",
     fluxo: ["Paciente abre o site", "Escolhe serviço e horário livre", "Confirma os dados", "Agendamento aparece no painel"],
-    telas: ["img/site.png"]
+    telas: ["img/site.png"],
+    processo: [{"titulo": "Briefing da clínica", "faz": "Levanto serviços, profissionais, horário de cada um, duração de cada procedimento e as regras da agenda, como intervalo entre pacientes e antecedência mínima para marcar.", "recebe": "Lista de serviços e regras da agenda confirmadas por você", "tempo": "1 dia"}, {"titulo": "Textos e layout", "faz": "Escrevo os textos da página e desenho a versão de celular e de computador com as cores e o tom da clínica, deixando o botão de agendar sempre à vista.", "recebe": "Prévia visual da página para aprovar ou pedir ajuste", "tempo": "2 dias"}, {"titulo": "Construção do site", "faz": "Monto o site em HTML, CSS e JavaScript leves, com a agenda que mostra só horários livres e impede dois pacientes no mesmo horário.", "recebe": "Link de teste para navegar e marcar horários fictícios", "tempo": "2 a 3 dias"}, {"titulo": "Ligação com a recepção", "faz": "Conecto o agendamento ao painel da recepção ou à agenda que a clínica já usa e configuro a mensagem de confirmação para o paciente.", "recebe": "Agendamento de teste chegando no painel da recepção", "tempo": "1 a 2 dias"}, {"titulo": "Testes e revisão", "faz": "Testo em Android, iPhone e computador, confiro velocidade, textos e o caminho completo de marcar e cancelar. Faço os ajustes que você pedir.", "recebe": "Versão final aprovada, com 1 rodada de ajustes incluída", "tempo": "1 dia"}, {"titulo": "Publicação", "faz": "Coloco o site no domínio da clínica, cadastro no Google e explico como mudar horários e serviços.", "recebe": "Site no ar e guia curto de uso", "tempo": "meio dia"}]
   },
   {
     slug: "chatbot-whatsapp",
@@ -41,7 +42,8 @@ window.CASES = [
     problema: "Mensagens chegam fora do horário e ficam sem resposta; orçamentos enviados não recebem retorno.",
     solucao: "Um atendente que segue as regras da clínica, agenda direto na agenda real, envia lembrete e follow-up de orçamento e transfere para a recepção em casos sensíveis. A demo mostra também os bastidores de cada decisão.",
     fluxo: ["Mensagem do paciente", "Regras da clínica", "IA entende a intenção", "Agenda ou responde", "Humano quando precisa"],
-    telas: ["img/chatbot.png"]
+    telas: ["img/chatbot.png"],
+    processo: [{"titulo": "Regras do atendimento", "faz": "Leio conversas reais da recepção (com sua autorização), listo as perguntas mais comuns, preços e regras, e defino o que o atendente nunca responde, como orientação de saúde, e quando passa para uma pessoa.", "recebe": "Documento com as regras do atendente para aprovar", "tempo": "1 a 2 dias"}, {"titulo": "Contas e conexões", "faz": "Ajudo a configurar o WhatsApp Business API, o n8n e a conta da IA, todos no nome da clínica, e ligo tudo à agenda real.", "recebe": "Número de teste conectado e contas sob seu controle", "tempo": "1 a 2 dias"}, {"titulo": "Montagem do atendente", "faz": "Construo no n8n o caminho de cada mensagem: entender o pedido, consultar horários livres, agendar, lembrar 24h antes, retomar orçamento e transferir para a recepção.", "recebe": "Atendente funcionando no número de teste", "tempo": "3 a 4 dias"}, {"titulo": "Testes com casos difíceis", "faz": "Simulo conversas complicadas: áudio, pergunta fora do assunto, paciente irritado, pedido de desconto, horário já ocupado. Ajusto as regras até o atendente se comportar como combinado.", "recebe": "Relatório com as conversas de teste e como ele respondeu", "tempo": "2 dias"}, {"titulo": "Piloto com a equipe", "faz": "Ativo no número da clínica com acompanhamento de perto. A recepção vê todas as conversas e pode assumir a qualquer momento, e eu corrijo o que aparecer.", "recebe": "Ajustes finos feitos com base nas conversas reais", "tempo": "2 a 3 dias"}, {"titulo": "Entrega e treinamento", "faz": "Mostro como mudar preços e respostas, como assumir uma conversa e como pausar o atendente.", "recebe": "Guia de uso e treinamento gravado", "tempo": "1 dia"}]
   },
   {
     slug: "painel-gestao",
@@ -57,7 +59,8 @@ window.CASES = [
     problema: "A agenda fica no caderno, os orçamentos em conversas soltas e ninguém sabe quantos estão parados.",
     solucao: "Um painel simples para a recepção: confirmar, marcar falta, acompanhar orçamentos por etapa e ver os números da semana. Recebe os agendamentos do site e do WhatsApp.",
     fluxo: ["Agendamentos do site e WhatsApp", "Agenda do dia", "Confirmação ou falta", "Funil de orçamentos", "Indicadores"],
-    telas: ["img/gestao.png"]
+    telas: ["img/gestao.png"],
+    processo: [{"titulo": "Entendimento da rotina", "faz": "Acompanho como a recepção trabalha hoje, entre caderno, planilha e WhatsApp, e listo as telas necessárias e o que cada pessoa pode ver ou mudar.", "recebe": "Lista de funcionalidades com prazo e valor fechados", "tempo": "2 a 3 dias"}, {"titulo": "Telas para aprovar", "faz": "Desenho a agenda do dia e por profissional, o funil de orçamentos, a ficha do paciente e os indicadores num protótipo clicável, antes de programar qualquer coisa.", "recebe": "Protótipo navegável para aprovar ou pedir mudança", "tempo": "3 a 4 dias"}, {"titulo": "Base de dados e acessos", "faz": "Organizo no Supabase pacientes, agendamentos e orçamentos, com login individual, permissões por função e cópia de segurança automática.", "recebe": "Acesso de teste com dados fictícios", "tempo": "3 dias"}, {"titulo": "Desenvolvimento por partes", "faz": "Construo em Next.js começando pela agenda, depois orçamentos e indicadores, e ligo os agendamentos que vêm do site e do WhatsApp.", "recebe": "Uma prévia nova por semana para testar", "tempo": "2 semanas"}, {"titulo": "Migração e testes", "faz": "Importo os dados atuais das planilhas e testo com a recepção situações reais: remarcação, falta, dois profissionais no mesmo horário, orçamento parado.", "recebe": "Sistema com os seus dados para validar", "tempo": "3 a 4 dias"}, {"titulo": "Implantação e treinamento", "faz": "Publico o sistema, treino a equipe e acompanho a primeira semana de uso corrigindo o que surgir.", "recebe": "Sistema no ar, guia de uso e suporte na primeira semana", "tempo": "2 dias"}]
   },
   {
     slug: "ia-crm",
@@ -73,7 +76,8 @@ window.CASES = [
     problema: "Os dados existem, mas a equipe não tem tempo de cruzar planilhas para saber quem precisa de retorno.",
     solucao: "Um assistente que lê o CRM, monta as prioridades do dia e responde perguntas como \"quem não volta há 90 dias?\", já sugerindo a mensagem.",
     fluxo: ["Dados do CRM", "Regras de prioridade", "IA resume e responde", "Mensagem sugerida", "Equipe revisa e envia"],
-    telas: ["img/crm.png"]
+    telas: ["img/crm.png"],
+    processo: [{"titulo": "Leitura dos dados", "faz": "Vejo onde os dados estão (CRM, planilha ou banco), quais campos existem e o que está incompleto ou duplicado. Combino com você o mínimo que a IA precisa ver, com cuidado de LGPD.", "recebe": "Mapa dos dados e do que a IA vai acessar", "tempo": "1 a 2 dias"}, {"titulo": "Regras de prioridade", "faz": "Defino com a equipe quem entra na lista do dia: orçamento parado há alguns dias, retorno vencido, paciente que não volta há meses, e o peso de cada motivo.", "recebe": "Regras escritas para aprovar", "tempo": "1 a 2 dias"}, {"titulo": "Montagem do assistente", "faz": "Construo a lista do dia e a caixa de perguntas em português. A IA busca os números direto nos dados, mostra de onde tirou cada nome e sugere a mensagem no tom da clínica.", "recebe": "Versão de teste para fazer perguntas", "tempo": "3 a 4 dias"}, {"titulo": "Conferência das respostas", "faz": "Comparo as respostas da IA com consultas feitas à mão e garanto que nenhuma mensagem sai sem alguém da equipe revisar e enviar.", "recebe": "Lista de perguntas testadas com o resultado de cada uma", "tempo": "2 dias"}, {"titulo": "Uso assistido", "faz": "A equipe usa no dia a dia e eu ajusto regras, tom das mensagens e perguntas que ficaram confusas.", "recebe": "Ajustes feitos com base no uso real", "tempo": "2 a 3 dias"}, {"titulo": "Entrega", "faz": "Explico como mudar as regras de prioridade e passo uma estimativa do custo mensal da IA pelo volume de uso.", "recebe": "Guia de uso e estimativa de custo mensal", "tempo": "1 dia"}]
   },
   {
     slug: "controle-estoque",
@@ -89,7 +93,8 @@ window.CASES = [
     problema: "O material acaba no meio da semana porque ninguém registra o que cada procedimento consome.",
     solucao: "Cada atendimento dá baixa automática nos materiais. Quando um item chega ao mínimo, o sistema avisa e monta o pedido de compra.",
     fluxo: ["Atendimento concluído", "Baixa automática", "Confere estoque mínimo", "Alerta", "Pedido de compra"],
-    telas: ["img/estoque.png"]
+    telas: ["img/estoque.png"],
+    processo: [{"titulo": "Materiais e consumo", "faz": "Levanto a lista de materiais, a unidade de cada um (caixa, unidade, ml), quanto cada procedimento consome, os fornecedores e o estoque mínimo de cada item.", "recebe": "Planilha base de materiais e consumo por procedimento para conferir", "tempo": "2 a 3 dias"}, {"titulo": "Telas para aprovar", "faz": "Desenho as telas de baixa, alerta, pedido de compra e entradas e saídas, pensando em quem vai usar entre um atendimento e outro.", "recebe": "Protótipo clicável para aprovar", "tempo": "2 dias"}, {"titulo": "Construção do sistema", "faz": "Programo com Supabase a baixa automática ao concluir o atendimento, o alerta de mínimo, o pedido de compra por fornecedor e o ajuste manual com motivo, como perda ou validade vencida.", "recebe": "Prévias semanais para testar", "tempo": "8 a 10 dias"}, {"titulo": "Contagem inicial", "faz": "Importo a planilha e faço com a equipe a contagem física das prateleiras, para o sistema começar com o saldo certo.", "recebe": "Estoque inicial conferido no sistema", "tempo": "2 dias"}, {"titulo": "Teste na rotina", "faz": "Simulo uma semana de clínica: procedimentos, chegada de nota, item vencido. Comparo o saldo do sistema com a prateleira e corrijo as diferenças.", "recebe": "Relatório das diferenças encontradas e corrigidas", "tempo": "3 dias"}, {"titulo": "Treinamento e entrega", "faz": "Treino a equipe para dar entrada, ajustar saldo e gerar o pedido de compra, e deixo um guia curto.", "recebe": "Sistema no ar e guia de uso", "tempo": "1 a 2 dias"}]
   },
   {
     slug: "automacao-formulario",
@@ -105,7 +110,8 @@ window.CASES = [
     problema: "Contatos do site ficam parados na caixa de e-mail e a equipe repassa tudo à mão.",
     solucao: "Um fluxo que registra o contato na planilha, avisa a equipe, responde o interessado no WhatsApp e envia um resumo toda segunda-feira.",
     fluxo: ["Formulário do site", "Planilha", "E-mail para a equipe", "WhatsApp para o contato", "Relatório semanal"],
-    telas: ["img/automacao.png"]
+    telas: ["img/automacao.png"],
+    processo: [{"titulo": "Caminho do contato", "faz": "Vejo o formulário atual, os campos, quem da equipe precisa ser avisado, o que responder ao interessado e o que deve ter no relatório de segunda.", "recebe": "Desenho do fluxo para aprovar", "tempo": "1 dia"}, {"titulo": "Conexões", "faz": "Conecto o n8n ao Google Sheets, ao Gmail e ao WhatsApp com as contas da empresa, dando só o acesso necessário.", "recebe": "Conexões funcionando em modo de teste", "tempo": "1 dia"}, {"titulo": "Montagem do fluxo", "faz": "Monto o registro na planilha com data e origem, o e-mail para a equipe, a mensagem de WhatsApp para o contato, o bloqueio de contato repetido e o resumo semanal.", "recebe": "Fluxo rodando com contatos de teste", "tempo": "2 a 3 dias"}, {"titulo": "Testes de falha", "faz": "Testo telefone errado, e-mail inválido, formulário enviado duas vezes e WhatsApp fora do ar. Quando algo falha, a equipe recebe um aviso.", "recebe": "Lista dos testes feitos e resultados", "tempo": "1 a 2 dias"}, {"titulo": "Ativação acompanhada", "faz": "Ligo no formulário real do site e acompanho os primeiros contatos para conferir que cada um chegou nos três lugares.", "recebe": "Automação no ar com os primeiros contatos conferidos", "tempo": "2 dias"}, {"titulo": "Entrega", "faz": "Mostro como mudar o texto da mensagem, quem recebe o e-mail e o dia do relatório.", "recebe": "Guia curto de uso", "tempo": "meio dia"}]
   },
   {
     slug: "assistente-documentos",
@@ -121,7 +127,8 @@ window.CASES = [
     problema: "A equipe perde tempo procurando políticas, preparos e valores em PDFs e mensagens antigas.",
     solucao: "Um assistente que busca nos documentos oficiais, responde citando o trecho de onde tirou a informação e admite quando não encontrou.",
     fluxo: ["Pergunta da equipe", "Busca nos documentos", "Trechos encontrados", "Resposta com fonte", "\"Não sei\" se não houver"],
-    telas: ["img/documentos.png"]
+    telas: ["img/documentos.png"],
+    processo: [{"titulo": "Reunião dos documentos", "faz": "Junto PDFs, políticas, preparos e tabela de valores, separo versões antigas e duplicadas e aponto onde um documento contradiz outro.", "recebe": "Lista dos documentos oficiais para aprovar", "tempo": "1 a 2 dias"}, {"titulo": "Preparação da base", "faz": "Transformo os arquivos em texto pesquisável, divido em trechos com título e página e marco a data de atualização de cada um.", "recebe": "Base organizada e prévia da busca", "tempo": "2 dias"}, {"titulo": "Montagem do assistente", "faz": "Ligo a busca ao Claude com uma instrução firme: responder só com o que está nos trechos, mostrar a fonte e dizer que não sabe quando não encontrar.", "recebe": "Versão de teste para fazer perguntas", "tempo": "3 dias"}, {"titulo": "Bateria de perguntas", "faz": "Faço de 40 a 60 perguntas reais da equipe, incluindo algumas sem resposta nos documentos, e confiro cada fonte citada.", "recebe": "Planilha com perguntas, respostas e fontes conferidas", "tempo": "2 dias"}, {"titulo": "Uso pela equipe", "faz": "A equipe usa no dia a dia e eu ajusto a busca nos pontos em que o assistente não achou o trecho certo.", "recebe": "Ajustes feitos com base no uso real", "tempo": "2 a 3 dias"}, {"titulo": "Entrega e atualização", "faz": "Mostro como incluir um documento novo e retirar um antigo, para as respostas acompanharem as mudanças da clínica.", "recebe": "Guia de atualização e de uso", "tempo": "1 dia"}]
   },
   {
     slug: "workflows-n8n",
@@ -137,39 +144,166 @@ window.CASES = [
     problema: "Uma demo no navegador mostra a ideia, mas o cliente quer saber como fica rodando de verdade.",
     solucao: "Os mesmos fluxos das demos em arquivos do n8n, com notas do que configurar. Foram importados no n8n 2.45.7; a execução completa depende das contas do cliente (WhatsApp Business, Anthropic, Supabase e Google).",
     fluxo: ["Gatilho (mensagem, horário ou formulário)", "Regras", "IA quando precisa", "Envio", "Registro"],
-    telas: ["img/n8n.png"]
+    telas: ["img/n8n.png"],
+    processo: [{"titulo": "Escolha dos fluxos", "faz": "Vemos juntos quais dos três fluxos fazem sentido (atendente de WhatsApp, lembretes e follow-up, leads e relatório) e listo as contas que cada um exige.", "recebe": "Lista de contas necessárias e custo mensal estimado de cada serviço", "tempo": "1 dia"}, {"titulo": "Instalação do n8n", "faz": "Instalo o n8n na nuvem do n8n ou num servidor no seu nome, com senha forte, conexão segura e cópia de segurança.", "recebe": "Acesso ao n8n em seu nome", "tempo": "1 dia"}, {"titulo": "Importação e ajustes", "faz": "Importo os arquivos, conecto WhatsApp Business, Anthropic, Supabase e Google e troco textos, horários e regras pelos do seu negócio.", "recebe": "Fluxos conectados às suas contas", "tempo": "1 a 2 dias"}, {"titulo": "Testes ponta a ponta", "faz": "Disparo cada gatilho com dados de teste (mensagem, horário de lembrete, formulário) e confiro envio, registro e o aviso quando algo falha.", "recebe": "Execução de teste de cada fluxo registrada no n8n", "tempo": "2 a 3 dias"}, {"titulo": "Ativação monitorada", "faz": "Ligo os fluxos para valer e acompanho as primeiras execuções reais, corrigindo o que aparecer.", "recebe": "Fluxos no ar com as primeiras execuções conferidas", "tempo": "2 dias"}, {"titulo": "Documentação", "faz": "Deixo nota em cada etapa do fluxo explicando o que ela faz e escrevo como pausar, mudar textos e ver o histórico.", "recebe": "Fluxos comentados e guia de uso", "tempo": "1 dia"}]
   },
 
   /* ---- em breve ---- */
   {
-    slug: "kit-identidade-visual",
-    titulo: "Kit de identidade visual",
+    slug: "sites-nicho",
+    titulo: "Sites para contabilidade e advocacia",
+    categoria: "Sites",
+    subtema: "Contabilidade e advocacia",
+    resumo: "Dois sites institucionais de uma página, com SEO e identidade própria: um escritório contábil e um de advocacia.",
+    ferramentas: ["HTML", "CSS", "JavaScript", "Schema.org", "Open Graph", "SVG"],
+    capa: "img/sites-nicho.png",
+    link_demo: "demos/sites-nicho/",
+    status: "pronto",
+    problema: "Escritórios de contabilidade e de advocacia dependem de indicação e quase sempre têm um site genérico, ou nenhum. Quem procura no Google não entende o que eles fazem nem como dar o primeiro passo.",
+    solucao: "Um site de uma página para cada nicho, com linguagem e visual do público: moderno e direto ao WhatsApp para a contabilidade, sóbrio e informativo para a advocacia, dentro das regras de publicidade da OAB. Os dois têm SEO básico, dados estruturados schema.org e carregam rápido no celular.",
+    fluxo: ["Entender público e serviços de cada escritório", "Definir identidade: cores, tipografia e tom de voz", "Escrever os textos com foco na dúvida do cliente", "Montar o site em HTML e CSS leves, celular primeiro", "SEO: title, description, Open Graph e schema.org", "Testar em celular e desktop e ajustar"],
+    telas: ["img/sites-nicho-1.jpg", "img/sites-nicho-2.jpg", "img/sites-nicho-3.jpg", "img/sites-nicho-4.jpg", "img/sites-nicho-5.jpg"],
+    entrega: [["Site de uma página", "Seções com âncoras, menu fixo e versão para celular"], ["Formulário e WhatsApp", "Contato direto, sem plataforma paga"], ["SEO básico", "Title, description, Open Graph e dados estruturados LocalBusiness/LegalService"], ["Textos prontos", "Serviços, passo a passo e perguntas frequentes escritos para o cliente final"], ["Publicidade ética", "Versão jurídica sem promessa de resultado, preço ou captação"]],
+    processo: [{"titulo": "Conversa com o escritório", "faz": "Levanto serviços, público, cidade e diferenciais. No site jurídico, já considero as regras de publicidade da OAB: nada de promessa de resultado, preço ou captação.", "recebe": "Resumo com seções e tom do site aprovados", "tempo": "1 dia"}, {"titulo": "Identidade e estrutura", "faz": "Defino cores, fontes e a ordem das seções a partir das dúvidas de quem procura o escritório no Google.", "recebe": "Rascunho visual para aprovar", "tempo": "1 dia"}, {"titulo": "Textos do site", "faz": "Escrevo serviços, passo a passo e perguntas frequentes em linguagem simples. O contador ou o advogado revisa antes de entrar no site.", "recebe": "Textos completos para revisar e aprovar", "tempo": "1 a 2 dias"}, {"titulo": "Construção", "faz": "Monto o site em HTML e CSS leves, celular primeiro, com WhatsApp e formulário, título e descrição para o Google e dados estruturados do escritório.", "recebe": "Link de teste para navegar", "tempo": "2 dias"}, {"titulo": "Testes e ajustes", "faz": "Confiro em celular e computador, velocidade, links e formulário, e faço os ajustes que você pedir.", "recebe": "Versão final aprovada, com 1 rodada de ajustes incluída", "tempo": "1 dia"}, {"titulo": "Publicação", "faz": "Publico no domínio do escritório, cadastro no Google Search Console e ligo o site ao perfil de empresa no Google.", "recebe": "Site no ar e guia curto de uso", "tempo": "meio dia"}]
+  },
+  {
+    slug: "robo-pdf-excel",
+    titulo: "Robô que lê PDFs e monta a planilha",
+    categoria: "IA & Automação",
+    subtema: "Python: extração de PDF para Excel com painel",
+    resumo: "Script Python que lê notas e pedidos em PDF, confere as contas e gera um Excel com painel, gráficos e pendências.",
+    ferramentas: ["Python", "pdfplumber", "openpyxl", "argparse", "reportlab", "Excel"],
+    capa: "img/robo-pdf-excel.png",
+    link_demo: "demos/robo-pdf-excel/",
+    status: "pronto",
+    problema: "Todo fim de mês alguém copia nota por nota de fornecedores para a planilha, cada PDF num layout diferente. Leva horas, e erro de soma ou vencimento trocado passa sem ninguém ver.",
+    solucao: "Um robô em Python lê a pasta de PDFs, encontra fornecedor, CNPJ, número, datas, itens e valores pelos rótulos e refaz as contas. Entrega um relatorio.xlsx com tabelas filtráveis, painel por fornecedor e por mês com gráficos nativos e uma aba de Pendências com o motivo de cada problema.",
+    fluxo: ["Soltar os PDFs na pasta de entrada", "Rodar python robo.py (ou --pasta e --saida)", "Robô extrai campos e itens de cada layout", "Confere soma, datas e dígitos do CNPJ", "Gera o Excel com Painel, Documentos, Itens e Pendências"],
+    telas: ["img/robo-pdf-excel-1.png", "img/robo-pdf-excel-2.png", "img/robo-pdf-excel-3.png", "img/robo-pdf-excel-4.png"],
+    entrega: [["robo.py comentado", "Código limpo em pt-BR, rótulos fáceis de ampliar para fornecedor novo"], ["relatorio.xlsx", "4 abas: Painel com gráficos, Documentos e Itens como Tabela, Pendências"], ["README em 3 passos", "Instalar, colocar os PDFs, rodar; com requirements.txt"], ["PDFs de teste", "12 documentos fictícios em 3 layouts, com 3 erros plantados para validar"]],
+    processo: [{"titulo": "Amostra dos documentos", "faz": "Peço de 10 a 20 PDFs reais por fornecedor, separo os layouts e confiro se o PDF tem texto ou é digitalizado, porque documento escaneado pede outra técnica e eu aviso antes.", "recebe": "Lista dos campos a extrair e dos layouts cobertos", "tempo": "1 dia"}, {"titulo": "Modelo da planilha", "faz": "Desenho as abas Painel, Documentos, Itens e Pendências, com as colunas e os gráficos que você quer ver no fim do mês.", "recebe": "Modelo do Excel para aprovar", "tempo": "1 dia"}, {"titulo": "Leitura dos PDFs", "faz": "Programo em Python, com pdfplumber, a leitura por rótulos de cada layout: fornecedor, CNPJ, número, datas, itens e valores.", "recebe": "Primeira planilha gerada com os seus PDFs", "tempo": "3 a 4 dias"}, {"titulo": "Conferências automáticas", "faz": "O robô refaz a soma dos itens, confere datas, valida os dígitos do CNPJ e acha nota repetida. Cada problema vai para a aba Pendências com o motivo.", "recebe": "Planilha com pendências para você conferir", "tempo": "1 a 2 dias"}, {"titulo": "Teste com um mês real", "faz": "Rodo o robô num mês já lançado à mão e comparo linha a linha, corrigindo o que ele leu errado.", "recebe": "Comparação entre o robô e o lançamento manual", "tempo": "1 a 2 dias"}, {"titulo": "Entrega e instalação", "faz": "Instalo no seu computador e entrego o robô comentado, o README em 3 passos e a explicação de como incluir fornecedor novo.", "recebe": "Robô instalado, README e guia para novos layouts", "tempo": "1 dia"}]
+  },
+  {
+    slug: "integracao-api",
+    titulo: "ERP Leve: pedidos do marketplace direto no ERP",
+    categoria: "IA & Automação",
+    subtema: "Integração de API e JSON (marketplace → ERP/planilha)",
+    resumo: "Conector que traz os pedidos de um marketplace para o ERP, com paginação, retry, webhook e sem duplicados. API simulada.",
+    ferramentas: ["JavaScript (módulos ES)", "REST/JSON", "Webhook", "OAuth", "SheetJS", "SVG"],
+    capa: "img/integracao-api.png",
+    link_demo: "demos/integracao-api/",
+    status: "pronto",
+    problema: "Quem vende em marketplace costuma copiar pedido por pedido para a planilha ou o ERP, e erra valor, esquece pedido ou lança o mesmo duas vezes. Quando alguém tenta automatizar, o robô para no primeiro erro da API e ninguém fica sabendo.",
+    solucao: "Montei um conector que pede o token, busca só os pedidos que mudaram, página por página, repete as chamadas que falharam com espera crescente e grava no ERP sem duplicar, usando o id do pedido como chave. O webhook de novo pedido acelera a entrada, e a rodada agendada garante que nada se perde. Tudo fica registrado num log ao vivo, com exportação para CSV e Excel.",
+    fluxo: ["Marketplace X avisa o pedido novo (webhook) ou o agendador consulta", "Conector autentica e lê as páginas de pedidos", "Falhas 429 e 500 são repetidas com backoff", "JSON do marketplace vira o modelo do ERP, com valores conferidos", "Gravação idempotente: nenhum pedido duplicado", "Painel, log e exportação para planilha"],
+    processo: [{"titulo": "Diagnóstico da integração", "faz": "Entendo de onde vêm os pedidos (qual marketplace), para onde vão (ERP, planilha) e quais campos o financeiro e a expedição usam de verdade. Confiro na documentação oficial o que a API permite e quais limites ela tem.", "recebe": "Um resumo de uma página com o fluxo, os campos que serão levados e o que fica de fora.", "tempo": "1 dia"}, {"titulo": "Acesso e mapa dos campos", "faz": "Você cria o aplicativo de desenvolvedor na plataforma e me passa o acesso de teste. Monto a tabela de-para: cada campo do JSON do marketplace e onde ele cai no ERP, incluindo status, frete e desconto.", "recebe": "A tabela de-para para aprovar antes de qualquer pedido ser gravado.", "tempo": "1 a 2 dias"}, {"titulo": "Conector e regras", "faz": "Escrevo o conector em Node: autenticação, paginação, repetição de chamadas que falham, conversão do JSON e gravação sem duplicados. Testo com pedidos reais em ambiente de teste.", "recebe": "Pedidos de teste aparecendo no ERP ou na planilha, com o log de cada rodada.", "tempo": "3 a 4 dias"}, {"titulo": "Webhook e agendamento", "faz": "Publico o servidor, configuro o endereço do webhook na plataforma e o agendamento de segurança. Simulo falhas e reenvios para provar que nada duplica e nada se perde.", "recebe": "Integração rodando sozinha, com alerta por e-mail ou WhatsApp se algo falhar de vez.", "tempo": "1 a 2 dias"}, {"titulo": "Painel e exportação", "faz": "Ajusto o painel ou a planilha com os filtros que a equipe pede (situação, período, estado) e a exportação para Excel.", "recebe": "Acesso ao painel e um arquivo de exemplo exportado.", "tempo": "1 dia"}, {"titulo": "Entrega e acompanhamento", "faz": "Explico em uma chamada curta como ler o log e reprocessar um pedido, entrego o código e a documentação e acompanho os primeiros dias de uso real.", "recebe": "Código, documentação e 7 dias de acompanhamento para ajustes.", "tempo": "1 dia + suporte para correções após a entrega"}],
+    telas: ["img/integracao-api-1.jpg", "img/integracao-api-2.jpg", "img/integracao-api-3.jpg", "img/integracao-api-4.jpg"],
+    entrega: [["Conector", "Código em Node usando a API oficial do marketplace ou ERP do cliente (Mercado Livre, Shopee, Bling, Tiny etc.), com OAuth e renovação de token."], ["Servidor e agendamento", "Roda num servidor Node com cron (por exemplo a cada 5 minutos) e endpoint HTTPS para os webhooks."], ["Sem duplicados", "Gravação por id do pedido e do evento: reenvio do webhook ou rodada repetida não cria lançamento dobrado."], ["Tolerância a falhas", "Retry com backoff exponencial para limite de taxa e instabilidade, e alerta quando uma rodada falha de vez."], ["Painel e planilha", "Pedidos sincronizados com filtros, situação e exportação para CSV/Excel, ou envio direto ao ERP."], ["Documentação", "Como rodar, onde ver os logs, como reprocessar um pedido e onde ficam as chaves (variáveis de ambiente)."]]
+  },
+  {
+    slug: "cardapio-trifold",
+    titulo: "Cardápio trifold e flyer · Brasa 22 Burger",
     categoria: "Design gráfico",
-    subtema: "Logo, cores, tipografia e aplicações",
-    resumo: "Logo em versões, paleta, fontes e aplicações em cartão, fachada e redes sociais.",
-    ferramentas: ["Figma", "Inkscape", "SVG"],
-    capa: "",
-    status: "em breve"
+    subtema: "Cardápio, flyer e identidade rápida para hamburgueria",
+    resumo: "Cardápio A4 dobrado em três, flyer A5 de inauguração e identidade rápida para hamburgueria artesanal fictícia.",
+    ferramentas: ["SVG vetorial", "Python", "Ilustração própria", "PDF de impressão", "CSS 3D (mockups)"],
+    capa: "img/cardapio-trifold.jpg",
+    link_demo: "demos/cardapio-trifold/",
+    link_pdf: "pdf/cardapio-trifold.pdf",
+    status: "pronto",
+    problema: "Hamburgueria nova costuma imprimir cardápio feito às pressas, com foto de banco e preço espremido. O cliente demora para escolher e o combo, que dá mais margem, some no meio da lista.",
+    solucao: "Cardápio trifold com os combos na primeira aba que se abre, clássicos à esquerda e o burger da casa em destaque no centro. Ilustrações e ícones vetoriais próprios mantêm a cara da marca sem foto. O mesmo sistema visual vira o flyer de inauguração.",
+    fluxo: ["Briefing: cardápio, preços e tom da marca", "Identidade rápida: logo, cores e fontes", "Diagramação dos 6 painéis em escala real", "Ilustrações e ícones em vetor", "PDF com sangria e marcas de corte", "Mockups e ajustes com o cliente"],
+    telas: ["img/cardapio-trifold-1.jpg", "img/cardapio-trifold-2.jpg", "img/cardapio-trifold-3.jpg"],
+    entrega: [["PDF para gráfica", "Frente e verso em A4 com sangria de 3 mm, marcas de corte e de dobra"], ["Flyer A5", "PDF de impressão com sangria, na mesma identidade"], ["PNG para redes", "Mockups e artes prontas para post e WhatsApp"], ["SVG editável", "Arquivos vetoriais para trocar preço ou item sem refazer a arte"], ["2 rodadas de ajuste", "Correções de texto, preço e layout incluídas"]],
+    processo: [{"titulo": "Briefing e cardápio", "faz": "Recebo itens, preços, combos e o tom da marca e confirmo com a gráfica o tamanho, o papel e a dobra.", "recebe": "Lista de itens e especificação de impressão confirmadas", "tempo": "meio dia"}, {"titulo": "Identidade rápida", "faz": "Proponho logo simples, cores e fontes em 2 caminhos, pensando em leitura no balcão e na impressão.", "recebe": "2 caminhos de identidade para escolher", "tempo": "1 dia"}, {"titulo": "Diagramação dos painéis", "faz": "Distribuo o conteúdo nos 6 painéis do A4 seguindo a ordem em que o cliente abre o cardápio, com combos na primeira aba e nenhum texto sobre a dobra.", "recebe": "Cardápio diagramado para revisar", "tempo": "1 dia"}, {"titulo": "Ilustrações e flyer", "faz": "Desenho ilustrações e ícones em vetor para dar cara à marca sem foto e levo o mesmo visual para o flyer A5 de inauguração.", "recebe": "Cardápio ilustrado e flyer para aprovar", "tempo": "1 dia"}, {"titulo": "Conferência de preços", "faz": "Revisamos juntos item por item, preço por preço, e faço os ajustes de texto e layout que você pedir.", "recebe": "Versão final aprovada, com 2 rodadas incluídas", "tempo": "meio dia"}, {"titulo": "Arquivos de gráfica", "faz": "Gero os PDFs com sangria de 3 mm, marcas de corte e de dobra, mais mockups para divulgar e os SVG editáveis.", "recebe": "PDFs de impressão, mockups e SVG editáveis", "tempo": "meio dia"}]
+  },
+  {
+    slug: "redesign-ux",
+    titulo: "Rota Certa: redesign de site antes e depois",
+    categoria: "Design gráfico",
+    subtema: "UI/UX: redesign antes e depois",
+    resumo: "Redesign completo do site de uma autoescola (marca fictícia): diagnóstico, wireframe, guia visual e protótipo pensado para o celular.",
+    ferramentas: ["UI/UX", "Arquitetura de informação", "Wireframe", "HTML", "CSS", "SVG", "Acessibilidade WCAG"],
+    capa: "img/redesign-ux.png",
+    link_demo: "demos/redesign-ux/",
+    status: "pronto",
+    problema: "Muito negócio local tem um site antigo que até tem informação, mas ninguém acha o que procura: menu com vinte links, preço \"a consultar\" e o botão de contato escondido no rodapé. No celular a página encolhe e vira letra miúda, e o cliente vai para o concorrente.",
+    solucao: "Fiz o caminho completo de um redesign: marquei seis problemas no print do site antigo, reorganizei o conteúdo em quatro seções que respondem às perguntas do aluno e desenhei o wireframe em cinza. Depois criei o guia visual com contraste medido (AA ou mais) e entreguei o protótipo navegável em HTML, com botão de agendar sempre à vista, foco visível no teclado e alvos de toque de 48 px.",
+    fluxo: ["Diagnóstico do site atual com print marcado", "Perguntas-chave do cliente final", "Novo mapa do site e ordem das seções", "Wireframe em baixa fidelidade, celular primeiro", "Guia visual com cores, tipos e regras de acessibilidade", "Protótipo navegável e ajustes finais"],
+    processo: [{"titulo": "Conversa e diagnóstico", "faz": "Uso o site atual como cliente, tiro prints e marco cada ponto que atrapalha: menu, contraste, botões, versão celular. Se der, olho as perguntas que chegam no WhatsApp.", "recebe": "Relatório visual com os problemas numerados e as prioridades.", "tempo": "1 dia"}, {"titulo": "Mapa do conteúdo", "faz": "Corto o que não ajuda a vender e agrupo o resto em poucas seções, na ordem em que o cliente procura: o que é, quanto custa, como funciona, como falar.", "recebe": "Mapa do site novo para aprovar.", "tempo": "1 dia"}, {"titulo": "Wireframe", "faz": "Desenho a estrutura em blocos cinza, primeiro no celular e depois no computador, para acertar a ordem antes de pensar em cor.", "recebe": "Wireframe das telas principais para comentar.", "tempo": "1 a 2 dias"}, {"titulo": "Guia visual", "faz": "Defino cores, fontes e botões a partir da marca, medindo o contraste de cada combinação para ficar legível para todo mundo.", "recebe": "Guia de estilo com paleta, tipografia e componentes.", "tempo": "1 dia"}, {"titulo": "Layout e protótipo", "faz": "Monto as telas finais no Figma ou direto em HTML e deixo navegável, para você testar no seu celular como se fosse o site no ar.", "recebe": "Link do protótipo navegável.", "tempo": "2 a 3 dias"}, {"titulo": "Ajustes e entrega", "faz": "Faço até duas rodadas de ajustes, confiro no celular e no computador e organizo os arquivos para quem vai programar, ou publico eu mesma.", "recebe": "Arquivos finais, guia de estilo e protótipo aprovado.", "tempo": "1 a 2 dias"}],
+    telas: ["img/redesign-ux-1.jpg", "img/redesign-ux-2.jpg", "img/redesign-ux-3.jpg", "img/redesign-ux-4.jpg", "img/redesign-ux-5.jpg"],
+    entrega: [["Diagnóstico", "Print do site atual com cada problema numerado e o que muda em cada um, para você entender o porquê antes de aprovar."], ["Wireframe", "Estrutura em blocos cinza, no celular e no computador, para decidir a ordem do conteúdo sem distração de cor."], ["Layout no Figma ou em HTML", "Telas finais desenhadas no Figma para aprovação ou já em HTML, prontas para virar o site."], ["Guia de estilo", "Cores com contraste medido, fontes, tamanhos, botões, estado de foco e tamanho mínimo de toque."], ["Protótipo navegável", "Versão clicável para testar no próprio celular antes de publicar: menu, perguntas frequentes e botão de contato funcionando."]]
+  },
+  {
+    slug: "kit-identidade-visual",
+    titulo: "Kit de identidade visual para confeitaria",
+    categoria: "Design gráfico",
+    subtema: "Identidade visual · Doce Ponto (marca fictícia)",
+    resumo: "Logo em 3 versões, paleta para tela e gráfica, fontes, padrão e peças impressas de uma confeitaria artesanal.",
+    ferramentas: ["SVG à mão", "Python (texto em curvas)", "Google Fonts", "Edge (PDF de impressão)"],
+    capa: "img/kit-identidade-visual.png",
+    link_demo: "demos/kit-identidade-visual/",
+    link_pdf: "pdf/kit-identidade-visual.pdf",
+    status: "pronto",
+    problema: "A confeitaria vende bem no boca a boca, mas cada peça sai com uma cara: logo pixelado no pote, cor diferente no cartão, fonte trocada no Instagram. A gráfica pede vetor e a dona não tem.",
+    solucao: "Criei uma marca completa em vetor: selo recortado como uma forminha de doce, nome em serifada macia e um ponto rosa como assinatura. Entrego logo em versões positiva, negativa e de uma cor, paleta com HEX, RGB e CMYK, par de fontes gratuitas, padrão de granulado e as primeiras peças desenhadas. Um guia de uma página mostra como aplicar sem errar.",
+    fluxo: ["Briefing e referências da confeitaria", "Esboço de 3 caminhos de logo", "Refino do logo escolhido e versões", "Paleta, fontes e padrão de apoio", "Cartão, etiqueta e sacola", "Guia de uso em PDF e arquivos finais"],
+    processo: [{"titulo": "Briefing e referências", "faz": "Converso sobre o que a confeitaria vende, quem compra e onde a marca vai aparecer (pote, sacola, Instagram). Junto referências de que você gosta e de que não gosta.", "recebe": "Um resumo de uma página com o tom da marca e as peças que vamos criar, para você aprovar.", "tempo": "1 dia"}, {"titulo": "Caminhos de logo", "faz": "Desenho 3 caminhos diferentes de logo em preto e branco, para julgar a forma antes da cor. Cada um vem com uma frase explicando a ideia.", "recebe": "3 propostas lado a lado para escolher uma (ou misturar ideias).", "tempo": "3 dias"}, {"titulo": "Refino e versões", "faz": "Ajusto o logo escolhido, aplico as cores e monto as versões horizontal, vertical, ícone, negativa e de uma cor. Testo em tamanho pequeno, como no perfil do Instagram.", "recebe": "O logo final em todas as versões para aprovação, com até 2 rodadas de ajuste.", "tempo": "2 dias"}, {"titulo": "Cores, fontes e padrão", "faz": "Defino a paleta com códigos para tela e para gráfica, escolho fontes gratuitas e crio o padrão de apoio a partir do próprio logo.", "recebe": "Prancha com paleta, fontes e padrão aplicados.", "tempo": "1 dia"}, {"titulo": "Peças impressas", "faz": "Desenho cartão de visita, etiqueta de pote e sacola no tamanho real de produção, com margem de segurança para a gráfica.", "recebe": "Artes em vetor e simulações de como vão ficar.", "tempo": "2 dias"}, {"titulo": "Guia e entrega", "faz": "Monto o guia de uso de uma página e organizo os arquivos em pastas por uso (impressão, redes, site). Explico por chamada como usar cada um.", "recebe": "Pasta final com SVG, PNG, PDF do guia e as fontes indicadas.", "tempo": "1 dia"}],
+    telas: ["img/kit-identidade-visual-1.jpg", "img/kit-identidade-visual-2.jpg", "img/kit-identidade-visual-3.jpg", "img/kit-identidade-visual-4.jpg", "img/kit-identidade-visual-5.jpg"],
+    entrega: [["Logo em SVG", "Horizontal, vertical e ícone, em positivo, negativo e uma cor, com texto em curvas"], ["Paleta", "5 cores com HEX, RGB e CMYK aproximado"], ["Tipografia", "Fraunces e DM Sans, gratuitas no Google Fonts"], ["Padrão de apoio", "Granulado que se repete sem emenda, em SVG"], ["Aplicações", "Cartão de visita frente e verso, etiqueta de pote e sacola em vetor"], ["Guia de uso", "PDF de 1 página: área de proteção, tamanho mínimo e usos proibidos"]]
+  },
+  {
+    slug: "loja-moda",
+    titulo: "Alba Studio: loja virtual de moda",
+    categoria: "Sites",
+    subtema: "Loja virtual de roupas com checkout pelo WhatsApp",
+    resumo: "Loja de moda completa (marca fictícia) com filtros, estoque por cor e tamanho, sacola, cupom e pedido enviado pelo WhatsApp.",
+    ferramentas: ["HTML", "CSS", "JavaScript", "SVG", "JSON", "localStorage"],
+    capa: "img/loja-moda.png",
+    link_demo: "demos/loja-moda/",
+    status: "pronto",
+    problema: "Marca de roupa pequena costuma vender pelo direct, mandando foto e preço peça por peça, e perde venda quando o cliente pergunta se tem o tamanho e ninguém responde a tempo. Sem catálogo organizado, cada pedido vira uma conversa longa e o estoque fica no caderno.",
+    solucao: "Montei uma loja com catálogo filtrável por categoria, tamanho, cor e preço, página de produto com galeria, guia de medidas e estoque por cor e tamanho, e frete calculado pelo CEP. A sacola guarda os itens no aparelho, aceita cupom e o checkout em 3 passos termina com o pedido pronto numa mensagem de WhatsApp: a loja só confere e manda o link de pagamento. As peças são ilustrações próprias em SVG, então a demo carrega rápido e não usa foto de banco.",
+    fluxo: ["Cliente filtra o catálogo por tamanho, cor e preço", "Escolhe cor e tamanho vendo o estoque de cada variação", "Confere o guia de medidas e calcula o frete pelo CEP", "Revisa a sacola e aplica o cupom", "Preenche dados e entrega em 3 passos", "Pedido chega formatado no WhatsApp da loja"],
+    processo: [{"titulo": "Briefing e catálogo", "faz": "Entendo o público, o tíquete médio e como a loja vende hoje. Levanto as peças, tamanhos, cores e políticas de troca e frete, e recomendo a plataforma: Nuvemshop, Shopify, WooCommerce ou código próprio.", "recebe": "Resumo do projeto com a plataforma escolhida, o mapa de páginas e a lista do que a loja precisa enviar.", "tempo": "1 a 2 dias"}, {"titulo": "Layout da loja", "faz": "Desenho home, catálogo, produto, sacola e checkout no celular e no computador, com a identidade da marca, tipografia e o jeito de mostrar as peças.", "recebe": "Telas para aprovar, com até duas rodadas de ajuste.", "tempo": "3 a 4 dias"}, {"titulo": "Montagem e cadastro", "faz": "Monto as páginas, os filtros e o estoque por cor e tamanho, e cadastro os produtos com fotos, descrição, composição e tabela de medidas.", "recebe": "Loja navegável num link de teste, com os produtos já cadastrados.", "tempo": "5 a 7 dias"}, {"titulo": "Frete, pagamento e pedidos", "faz": "Configuro frete por CEP, cupons, Pix e cartão pelo Mercado Pago ou o meio de pagamento da plataforma, e o envio do pedido para o WhatsApp e o e-mail da loja.", "recebe": "Compra de teste feita do começo ao fim, com o pedido chegando para a loja.", "tempo": "2 a 3 dias"}, {"titulo": "Testes e publicação", "faz": "Testo em celulares Android e iPhone, ajusto velocidade e SEO básico, ligo domínio, Pixel da Meta e Google Analytics.", "recebe": "Loja no ar no domínio da marca.", "tempo": "1 a 2 dias"}, {"titulo": "Treino e suporte", "faz": "Gravo um vídeo curto mostrando como cadastrar produto, mudar estoque e criar cupom, e fico de plantão para dúvidas no começo das vendas.", "recebe": "Vídeo de treino, acessos organizados e suporte para correções após a entrega para ajustes.", "tempo": "1 dia + suporte para correções após a entrega"}],
+    telas: ["img/loja-moda-1.jpg", "img/loja-moda-2.jpg", "img/loja-moda-3.jpg", "img/loja-moda-4.jpg"],
+    entrega: [["Vitrine e catálogo", "Home com banner, coleções e mais vendidos; catálogo com busca, filtros e ordenação, pensado primeiro para o celular."], ["Página de produto", "Galeria com frente, costas e detalhe, seletor de cor e tamanho que bloqueia o que está esgotado, guia de medidas e cálculo de frete."], ["Sacola e checkout", "Sacola lateral salva no aparelho, cupom de desconto, favoritos e checkout em 3 passos com validação dos campos."], ["Pedido no WhatsApp", "O pedido sai com itens, cor, tamanho, frete, total e endereço já escritos, direto para o número da loja."], ["Versão real", "Pode ir para Nuvemshop, Shopify ou WooCommerce, ou ficar em código próprio com pagamento por Mercado Pago e Pix e estoque integrado."], ["Fotos e cadastro", "Na loja real entram as fotos da marca; deixo o cadastro de produtos em planilha ou painel para a própria loja atualizar."]]
   },
   {
     slug: "posts-instagram",
-    titulo: "Posts para Instagram",
+    titulo: "Pacote de posts e stories para confeitaria",
     categoria: "Design gráfico",
-    subtema: "Carrossel e feed",
-    resumo: "Série de posts e carrosséis com modelo editável para o cliente seguir publicando.",
-    ferramentas: ["Figma", "Canva"],
-    capa: "",
-    status: "em breve"
+    subtema: "Instagram · Doce Ponto (marca fictícia)",
+    resumo: "6 posts, 3 stories e um carrossel no padrão da marca, com textos curtos de quem vende doce de verdade.",
+    ferramentas: ["HTML/CSS e SVG", "Python", "Edge headless (exportação PNG)", "Google Fonts"],
+    capa: "img/posts-instagram.png",
+    link_demo: "demos/posts-instagram/",
+    status: "pronto",
+    problema: "A confeitaria posta quando sobra tempo, cada arte num estilo, e o feed não parece de uma marca só. Promoção sai com preço riscado sem regra e gera dúvida no direct.",
+    solucao: "Montei um pacote de um mês no padrão do kit de identidade: lançamento, cardápio da semana, bastidores, dica, promoção com regras claras e um passo a passo de como encomendar. Mais 3 stories com enquete e caixinha de perguntas e um carrossel de 4 telas que leva para a encomenda. Tudo exportado nos tamanhos certos e com texto editável.",
+    fluxo: ["Calendário de temas do mês", "Textos curtos e chamadas", "Molde visual de post, story e carrossel", "Artes no padrão da marca", "Exportação PNG/JPG e revisão no celular"],
+    processo: [{"titulo": "Conversa e calendário", "faz": "Entendo o que vende mais, os dias de produção e as datas do mês. Monto um calendário com o tema de cada post e story.", "recebe": "Calendário do mês para aprovar antes de qualquer arte.", "tempo": "1 dia"}, {"titulo": "Textos", "faz": "Escrevo títulos curtos e legendas com uma chamada clara (direct, data de retirada). Confiro sabores, prazos e regras da promoção com você.", "recebe": "Documento com todos os textos para revisar.", "tempo": "1 dia"}, {"titulo": "Molde visual", "faz": "Crio o molde de post, story e carrossel com a paleta, as fontes e o padrão da marca, deixando a área de segurança dos botões do app livre.", "recebe": "Uma peça de cada formato para aprovar o estilo.", "tempo": "1 dia"}, {"titulo": "Produção das artes", "faz": "Desenho as ilustrações dos doces e monto as 13 telas no molde aprovado.", "recebe": "Todas as artes em prévia, com até 2 rodadas de ajuste.", "tempo": "2 dias"}, {"titulo": "Exportação e revisão", "faz": "Exporto em PNG e JPG nos tamanhos do Instagram e reviso cada peça na tela do celular, onde o texto precisa ser lido em 2 segundos.", "recebe": "Pasta final organizada por data de postagem, com legendas.", "tempo": "1 dia"}],
+    telas: ["img/posts-instagram-1.jpg", "img/posts-instagram-2.jpg", "img/posts-instagram-3.jpg", "img/posts-instagram-4.jpg", "img/posts-instagram-5.jpg"],
+    entrega: [["6 posts 1080×1350", "Lançamento, cardápio, bastidores, dica, promoção e como encomendar"], ["3 stories 1080×1920", "Fornada do dia com enquete, aviso de Natal e caixinha de perguntas"], ["Carrossel de 4 telas", "Bolo de pote em camadas, com chamada para encomenda no fim"], ["Arquivos editáveis", "Cada peça em HTML/SVG para trocar sabor, data e texto"], ["Promoção honesta", "Validade e regras na própria arte, sem preço inventado"]]
   },
   {
     slug: "banner-outdoor",
-    titulo: "Banner e outdoor",
+    titulo: "Outdoor 9x3 m e banners · Brasa 22 Burger",
     categoria: "Design gráfico",
-    subtema: "Arte para impressão",
-    resumo: "Arte em vetor com sangria e PDF pronto para a gráfica.",
-    ferramentas: ["Inkscape", "SVG", "PDF para gráfica"],
-    capa: "",
-    status: "em breve"
+    subtema: "Outdoor e banners de loja virtual para hamburgueria",
+    resumo: "Outdoor 9x3 m legível de longe e banners de loja virtual (desktop e celular) para uma hamburgueria fictícia.",
+    ferramentas: ["SVG vetorial", "Python", "Ilustração própria", "PDF de impressão"],
+    capa: "img/banner-outdoor.jpg",
+    link_demo: "demos/banner-outdoor/",
+    link_pdf: "pdf/banner-outdoor.pdf",
+    status: "pronto",
+    problema: "Outdoor com lista de produtos, foto escura e telefone pequeno ninguém lê de dentro do carro. E a campanha da rua quase nunca conversa com o banner do aplicativo de entrega.",
+    solucao: "Uma ideia só: título de 5 palavras, telefone numa faixa de cor própria e um hambúrguer ilustrado grande. A mesma arte se desdobra em banner de loja virtual para desktop e celular, com área segura para o botão.",
+    fluxo: ["Briefing: oferta, contato e onde a placa fica", "Título com no máximo 7 palavras", "Arte em vetor na escala 1:10", "Teste de leitura em tamanho pequeno", "Banners 1920x600 e 1080x1080", "PDF para gráfica e PNG para a loja"],
+    telas: ["img/banner-outdoor-1.jpg", "img/banner-outdoor-2.jpg", "img/banner-outdoor-3.jpg", "img/banner-outdoor-4.jpg"],
+    entrega: [["PDF para gráfica", "Outdoor em escala 1:10 com sangria e marcas de corte"], ["PNG para redes", "Banners 1920x600 e 1080x1080 prontos para loja virtual e feed"], ["SVG editável", "Vetor de todas as peças para trocar oferta, preço ou telefone"], ["2 rodadas de ajuste", "Correções de texto e layout incluídas"]],
+    processo: [{"titulo": "Briefing e local", "faz": "Levanto a oferta, o contato, onde a placa fica e de que distância será vista, e peço à empresa de outdoor ou à gráfica a medida e as especificações do arquivo.", "recebe": "Briefing com texto, medida e especificações confirmados", "tempo": "meio dia"}, {"titulo": "Ideia e título", "faz": "Reduzo a mensagem a um título de no máximo 7 palavras e faço 2 rascunhos de composição, porque no outdoor a leitura dura poucos segundos.", "recebe": "2 rascunhos para escolher", "tempo": "meio dia"}, {"titulo": "Arte em vetor", "faz": "Desenho a arte em vetor na escala 1:10, com ilustração própria e cores de alto contraste, e testo a leitura reduzindo a arte ao tamanho de um polegar.", "recebe": "Arte do outdoor para aprovar", "tempo": "1 dia"}, {"titulo": "Banners digitais", "faz": "Adapto a mesma ideia para banner de loja virtual em 1920x600 e 1080x1080, deixando área livre para o botão e para o corte no celular.", "recebe": "Banners digitais para aprovar", "tempo": "meio dia"}, {"titulo": "Ajustes", "faz": "Faço as correções de texto, preço ou layout que você pedir e confiro telefone e endereço letra por letra.", "recebe": "Versões finais aprovadas, com 2 rodadas incluídas", "tempo": "meio dia"}, {"titulo": "Arquivos finais", "faz": "Gero o PDF para a gráfica com sangria e marcas de corte conforme a especificação dela, mais os PNG e os SVG editáveis.", "recebe": "PDF de impressão, PNG para redes e SVG editável", "tempo": "meio dia"}]
   },
   {
     slug: "reels-legendas",
@@ -193,17 +327,43 @@ window.CASES = [
       ["Prévia", "primeira versão para você assistir e pedir ajustes"],
       ["Arquivos", "MP4 9:16 pronto para Reels, Shorts e TikTok, mais a legenda em SRT"],
       ["Série", "o mesmo modelo serve para os próximos vídeos, trocando só texto e cores"]
-    ]
+    ],
+    processo: [{"titulo": "Briefing e formatos", "faz": "Entendo o produto, o tom e as cores da marca e escolho o formato de cada Reel: promoção, dica em lista ou demonstração de serviço.", "recebe": "Tema e formato de cada vídeo aprovados", "tempo": "meio dia"}, {"titulo": "Roteiros", "faz": "Escrevo 4 ou 5 frases por vídeo, com gancho no primeiro segundo e chamada no fim, cabendo em 11 a 16 segundos.", "recebe": "3 roteiros para aprovar antes de animar", "tempo": "1 dia"}, {"titulo": "Narração", "faz": "Gravo com voz neural em português ou com a sua voz, acerto a pronúncia de siglas e nomes e marco o tempo de cada palavra para a legenda.", "recebe": "Áudios para ouvir antes da edição", "tempo": "meio dia"}, {"titulo": "Animação e legenda", "faz": "Animo as cenas com troca a cada 2 a 4 segundos e coloco a legenda que acende palavra por palavra, fora da área coberta pelos botões do Instagram.", "recebe": "Prévia dos 3 vídeos em link para comentar", "tempo": "1 a 2 dias"}, {"titulo": "Revisão", "faz": "Ajusto o que você pedir e confiro legenda cortada, cena vazia, tempo da legenda e volume no padrão das redes.", "recebe": "Versões revisadas, com 1 rodada de ajustes incluída", "tempo": "meio dia"}, {"titulo": "Entrega", "faz": "Exporto os vídeos em 9:16 leves e deixo o modelo pronto para os próximos, trocando só texto e cores.", "recebe": "3 MP4 9:16 e legendas em SRT prontos para postar", "tempo": "meio dia"}]
+  },
+  {
+    slug: "sistema-orcamentos",
+    titulo: "Cristal Orçamentos: sistema de orçamentos para vidraçaria",
+    categoria: "Sistemas",
+    subtema: "Orçamentos sob medida, pedidos e estoque",
+    resumo: "Orçamento por m², metro ou unidade, com PDF da marca, envio por WhatsApp e pedido com baixa de estoque. Marca fictícia.",
+    ferramentas: ["HTML", "CSS", "JavaScript", "SVG", "localStorage", "Impressão em PDF"],
+    capa: "img/sistema-orcamentos.png",
+    link_demo: "demos/sistema-orcamentos/",
+    link_pdf: "pdf/sistema-orcamentos.pdf",
+    status: "pronto",
+    problema: "Vidraçaria, marcenaria e serralheria orçam peça sob medida na calculadora e no Word: cada orçamento leva meia hora, a área mínima é esquecida e o desconto sai errado. Depois ninguém sabe o que foi aprovado, o que está parado com o cliente e quanto material ainda tem.",
+    solucao: "Montei um sistema em que o vendedor escolhe o produto, digita largura e altura e o total sai na hora, com área mínima por peça, desconto, frete, prazo e validade. O orçamento vira um PDF com a marca da empresa e uma mensagem pronta para o WhatsApp. Quando o cliente aprova, um clique gera o pedido e dá baixa no estoque, e o painel mostra a taxa de aprovação e o valor em aberto.",
+    fluxo: ["Login e painel com orçamentos do mês, aprovação e valor em aberto", "Cadastro de clientes e catálogo por m², metro linear ou unidade", "Orçamento com medidas, área mínima, desconto, frete e validade", "PDF com a marca e mensagem pronta para o WhatsApp", "Status: rascunho, enviado, aprovado ou recusado", "Aprovado vira pedido com baixa automática de estoque"],
+    processo: [{"titulo": "Conversa e planilha atual", "faz": "Entendo como a empresa orça hoje: quais produtos, como cobra cada um (m², metro, unidade), área mínima, descontos e o que sai no papel. Peço a planilha ou um orçamento antigo como modelo.", "recebe": "Lista do que o sistema vai fazer e o que fica para depois, com prazo e valor fechados.", "tempo": "1 dia"}, {"titulo": "Catálogo e regras de cálculo", "faz": "Monto o catálogo com os produtos e preços da empresa e escrevo as regras de conta, conferindo com orçamentos reais já enviados para o total bater centavo por centavo.", "recebe": "Tabela de produtos e um teste com 3 orçamentos antigos recalculados para você conferir.", "tempo": "2 dias"}, {"titulo": "Telas e modelo de PDF", "faz": "Desenho as telas de orçamento, clientes e painel, e o PDF com o logo e as condições da empresa, pensando em quem vai usar no balcão e no celular.", "recebe": "Telas navegáveis e o PDF de exemplo para aprovar antes de programar o resto.", "tempo": "2 dias"}, {"titulo": "Sistema funcionando", "faz": "Programo login, banco de dados, orçamentos, status, WhatsApp, pedidos e baixa de estoque. Cada parte entra num endereço de teste assim que fica pronta.", "recebe": "Acesso ao sistema de teste para usar com dados de verdade.", "tempo": "5 a 7 dias"}, {"titulo": "Teste com a equipe", "faz": "Vocês usam por alguns dias no dia a dia; eu ajusto textos, contas e atalhos conforme o que aparecer e importo clientes e produtos da planilha.", "recebe": "Lista de ajustes feitos e dados antigos já dentro do sistema.", "tempo": "3 dias"}, {"titulo": "Publicação e treinamento", "faz": "Coloco no ar com domínio, backup automático e usuários de cada vendedor, e gravo um vídeo curto mostrando o passo a passo.", "recebe": "Sistema no ar, acessos, vídeo de uso e suporte para correções após a entrega para dúvidas e correções.", "tempo": "1 dia"}],
+    telas: ["img/sistema-orcamentos-1.jpg", "img/sistema-orcamentos-2.jpg", "img/sistema-orcamentos-3.jpg", "img/sistema-orcamentos-4.jpg", "img/sistema-orcamentos-5.jpg", "img/sistema-orcamentos-6.jpg"],
+    entrega: [["Cálculo sob medida", "Preço por m², metro linear ou unidade, área mínima por peça, desconto em % ou R$ e frete, tudo recalculado enquanto digita."], ["PDF do orçamento", "Documento A4 com logo, dados do cliente, itens com medidas, condições, validade e campo de aceite."], ["WhatsApp", "Mensagem pronta com itens, total, prazo e validade, aberta direto na conversa do cliente."], ["Pedidos e estoque", "Orçamento aprovado vira pedido, o material sai do estoque e o painel avisa o que precisa repor."], ["Painel", "Orçamentos do mês, taxa de aprovação, valor em aberto, gráfico de orçado x aprovado e lista do que precisa de atenção."], ["Versão real", "Nesta demonstração os dados ficam no navegador. A versão para o cliente teria banco de dados, login real e vários usuários com permissões (por exemplo Next.js ou NestJS com PostgreSQL), além de backup e acesso pelo celular."]]
   },
   {
     slug: "video-historia-narrado",
-    titulo: "Vídeo de história narrado",
+    titulo: "Como o café chegou ao Brasil",
     categoria: "Vídeo",
-    subtema: "Roteiro, narração e imagens",
-    resumo: "Roteiro, narração, imagens e edição de um vídeo contando uma história do início ao fim.",
-    ferramentas: ["Roteiro", "Narração", "FFmpeg"],
-    capa: "",
-    status: "em breve"
+    subtema: "Storytelling narrado para canal dark (vertical)",
+    resumo: "Vídeo vertical de 1 minuto para canal dark: história narrada, cenas ilustradas, mapa animado e legenda palavra a palavra.",
+    ferramentas: ["HyperFrames", "GSAP", "SVG ilustrado à mão", "Voz neural (Edge TTS)", "FFmpeg"],
+    capa: "img/video-historia-narrado.png",
+    status: "pronto",
+    problema: "Quem tem canal dark precisa de vídeo novo toda semana, com roteiro que prende e edição que segura a pessoa até o fim. Banco de imagem repetido e legenda fora do tempo derrubam a retenção.",
+    solucao: "Roteiro com gancho no primeiro segundo e fatos conferidos, narração com tom de contador de história e cenas ilustradas que trocam a cada 3 a 4 segundos. Mapa animado da rota, parallax nas cenas e legenda grande sincronizada com cada palavra da voz. Entrego MP4 vertical pronto para Shorts, Reels e TikTok, com SRT.",
+    fluxo: ["Pesquisa e roteiro de 60 s com gancho", "Narração e tempo de cada palavra", "Cenas ilustradas e mapa da rota", "Animação, parallax e legenda sincronizada", "Revisão quadro a quadro e áudio em -14 LUFS", "Entrega em MP4 vertical + SRT"],
+    telas: ["img/video-historia-narrado-1.jpg", "img/video-historia-narrado-2.jpg", "img/video-historia-narrado-3.jpg"],
+    videos: [{"src": "video/video-historia.mp4", "capa": "img/video-historia-poster.jpg", "legenda": "Como o café chegou ao Brasil · vídeo vertical narrado de 64 s (canal fictício, projeto demonstrativo)"}],
+    entrega: [["Vídeo vertical 1080x1920", "MP4 H.264 de cerca de 1 minuto, pronto para Shorts, Reels e TikTok"], ["Legenda queimada e SRT", "palavra a palavra no vídeo e arquivo .srt para a plataforma"], ["Roteiro com fatos conferidos", "lenda marcada como lenda, sem inventar dado"], ["Áudio nivelado", "voz em cerca de -14 LUFS, sem música de terceiros"]],
+    processo: [{"titulo": "Tema e referências", "faz": "Combino com você o tema, o tom do canal (mistério, curiosidade, história) e a duração. Vejo 2 ou 3 vídeos que você gosta para pegar ritmo e estilo de legenda.", "recebe": "Resumo do vídeo com tema, duração e estilo aprovados", "tempo": "meio dia"}, {"titulo": "Pesquisa e roteiro", "faz": "Pesquiso em fontes confiáveis, separo fato de lenda e escrevo um roteiro de 60 a 90 s com gancho no primeiro segundo e frases curtas para falar.", "recebe": "Roteiro em texto para aprovar ou pedir ajuste", "tempo": "1 dia"}, {"titulo": "Narração", "faz": "Gravo a narração com voz neural ou com a sua voz, acerto a pronúncia de nomes, siglas e datas e marco o tempo de cada palavra para a legenda.", "recebe": "Áudio da narração para ouvir antes da edição", "tempo": "meio dia"}, {"titulo": "Cenas e animação", "faz": "Desenho as cenas (mapas, objetos, silhuetas), monto o movimento com troca de cena a cada 3 a 4 s e coloco a legenda grande sincronizada com a voz.", "recebe": "Primeira versão do vídeo em link para comentar", "tempo": "2 dias"}, {"titulo": "Revisão", "faz": "Ajusto o que você pedir e confiro quadro a quadro: texto cortado, cena vazia, legenda fora do tempo e volume no padrão das plataformas.", "recebe": "Versão revisada, com 1 rodada de ajustes incluída", "tempo": "1 dia"}, {"titulo": "Entrega", "faz": "Exporto o MP4 vertical leve, a legenda em SRT e uma capa para o post.", "recebe": "MP4 1080x1920, SRT e capa prontos para postar", "tempo": "meio dia"}]
   },
   {
     slug: "pagina-vendas",
@@ -219,7 +379,8 @@ window.CASES = [
     solucao: "Montei uma página de vendas na estrutura que converte: promessa e CTA no topo, para quem é e para quem não é, o problema, o método em módulos, a lista do que vem com valor somado, a professora, a oferta com parcelamento, a garantia de 7 dias e o FAQ. Tudo sem contador falso nem depoimento inventado. No celular, uma barra fixa de compra aparece depois do topo e some na hora da oferta.",
     fluxo: ["Briefing do produto, do público e da oferta", "Copy da página, seção por seção", "Layout e ilustração própria da marca", "Versão celular com barra fixa de compra", "Botão ligado ao checkout, pixel e SEO básico", "Revisão no celular e no desktop antes de publicar"],
     telas: ["img/pagina-vendas-1.jpg", "img/pagina-vendas-2.jpg"],
-    entrega: [["Copy", "Texto completo da página: promessa, objeções, módulos, oferta, garantia e FAQ, sem promessa de ganho."], ["Layout", "Visual próprio da marca, com tipografia forte, ilustração em SVG e animações leves ao rolar."], ["Versão celular", "Pensada primeiro para o celular, com barra fixa de compra e botões fáceis de tocar."], ["Checkout", "Botões ligados ao checkout da Hotmart, Kiwify ou Eduzz no projeto real (aqui o botão abre um aviso de demonstração)."], ["Pixel", "Pixel da Meta e tag do Google com eventos de clique no botão e de início de compra."], ["SEO básico", "Título, descrição, dados estruturados do curso, cartão de compartilhamento e página leve, sem frameworks pesados."]]
+    entrega: [["Copy", "Texto completo da página: promessa, objeções, módulos, oferta, garantia e FAQ, sem promessa de ganho."], ["Layout", "Visual próprio da marca, com tipografia forte, ilustração em SVG e animações leves ao rolar."], ["Versão celular", "Pensada primeiro para o celular, com barra fixa de compra e botões fáceis de tocar."], ["Checkout", "Botões ligados ao checkout da Hotmart, Kiwify ou Eduzz no projeto real (aqui o botão abre um aviso de demonstração)."], ["Pixel", "Pixel da Meta e tag do Google com eventos de clique no botão e de início de compra."], ["SEO básico", "Título, descrição, dados estruturados do curso, cartão de compartilhamento e página leve, sem frameworks pesados."]],
+    processo: [{"titulo": "Briefing da oferta", "faz": "Levanto produto, público, objeções, preço, bônus, garantia e plataforma de venda (Hotmart, Kiwify ou Eduzz), e quais provas reais existem, sem inventar depoimento.", "recebe": "Resumo da oferta aprovado", "tempo": "1 dia"}, {"titulo": "Copy da página", "faz": "Escrevo o texto seção por seção: promessa sem garantia de ganho, para quem é e para quem não é, módulos, oferta, garantia e perguntas frequentes.", "recebe": "Texto completo para revisar", "tempo": "2 dias"}, {"titulo": "Layout e ilustração", "faz": "Crio o visual da marca com tipografia forte e ilustração própria em SVG, desenhando primeiro a versão de celular, onde chega a maior parte do tráfego pago.", "recebe": "Prévia visual para aprovar", "tempo": "2 dias"}, {"titulo": "Construção", "faz": "Monto a página leve em HTML, CSS e JavaScript, com barra fixa de compra no celular, animações discretas e botões ligados ao checkout.", "recebe": "Link de teste para navegar", "tempo": "2 dias"}, {"titulo": "Pixel e testes", "faz": "Instalo o Pixel da Meta e a tag do Google, testo os eventos de clique e de início de compra e confiro velocidade, SEO básico e todos os botões.", "recebe": "Eventos de rastreio conferidos e página revisada", "tempo": "1 dia"}, {"titulo": "Publicação", "faz": "Publico no seu domínio, faço a última conferência no celular e no computador e explico como mudar preço e link do checkout.", "recebe": "Página no ar e guia curto", "tempo": "meio dia"}]
   }
 ];
 
@@ -231,3 +392,8 @@ window.ENTREGA_PADRAO = [
   ["Revisão", "Ajustes combinados a partir do que o cliente testou."],
   ["Entrega", "Arquivos, publicação e um guia curto de uso."]
 ];
+
+/* Ordem de destaque na página inicial (o resto segue a ordem do arquivo) */
+window.ORDEM = ["reels-legendas", "pagina-vendas", "kit-identidade-visual", "loja-moda", "robo-pdf-excel", "video-historia-narrado",
+  "chatbot-whatsapp", "sites-nicho", "posts-instagram", "sistema-orcamentos", "redesign-ux", "integracao-api",
+  "cardapio-trifold", "site-clinica", "banner-outdoor", "motion-infografico", "painel-gestao", "workflows-n8n"];

@@ -87,13 +87,61 @@
       '<div><h3>Solução</h3><p>' + esc(c.solucao) + '</p></div>' +
     '</div></section>' +
 
-    (fluxo ? '<section class="secao"><h2>Fluxo</h2><ol class="fluxo">' + fluxo + '</ol></section>' : '') +
+    processoHtml(c.processo) +
+    (fluxo ? '<section class="secao"><h2>' + (c.processo ? 'Como o projeto funciona' : 'Fluxo') + '</h2><ol class="fluxo">' + fluxo + '</ol></section>' : '') +
     (telas ? '<section class="secao telas"><h2>Telas</h2><div>' + telas + '</div></section>' : '') +
     '<section class="secao"><h2>Ferramentas</h2><ul class="etiquetas">' +
       (c.ferramentas || []).map(function (f) { return '<li>' + esc(f) + '</li>'; }).join("") +
     '</ul></section>' +
     '<section class="secao"><h2>Como seria a entrega</h2><div><ol class="etapas">' + entrega + '</ol>' +
       '<p class="nota-final">Projeto demonstrativo com dados fictícios, feito para mostrar processo e acabamento. Numa versão real, as regras e os dados seriam os do seu negócio.</p></div></section>';
+  animarProcesso();
+
+  /* Fluxograma animado das etapas do trabalho */
+  function processoHtml(p) {
+    if (!p || !p.length) return '';
+    var mapa = p.map(function (e, i) {
+      return '<li data-i="' + i + '"><span class="pn">' + (i + 1) + '</span>' + esc(e.titulo) + '</li>';
+    }).join('<li class="pseta" aria-hidden="true"></li>');
+    var etapas = p.map(function (e, i) {
+      return '<li class="pe" data-i="' + i + '"><div class="pno">' + (i + 1) + '</div><div class="pcard">' +
+        '<div class="ptopo"><h3>' + esc(e.titulo) + '</h3>' + (e.tempo ? '<span class="ptempo">' + esc(e.tempo) + '</span>' : '') + '</div>' +
+        '<p>' + esc(e.faz) + '</p>' +
+        (e.recebe ? '<p class="precebe"><b>Você recebe:</b> ' + esc(e.recebe) + '</p>' : '') +
+        '</div></li>';
+    }).join("");
+    return '<section class="secao processo" id="processo"><h2>Como o trabalho acontece</h2><div>' +
+      '<p class="pintro">As etapas que eu sigo num projeto como este, do primeiro contato à entrega. Você aprova cada passo antes do próximo.</p>' +
+      '<ol class="pmapa">' + mapa + '</ol>' +
+      '<div class="pbarra"><i></i></div>' +
+      '<ol class="plinha">' + etapas + '</ol>' +
+      '<button type="button" class="prever">▶ Ver as etapas de novo</button></div></section>';
+  }
+
+  function animarProcesso() {
+    var sec = document.getElementById("processo");
+    if (!sec) return;
+    var etapas = sec.querySelectorAll(".pe"), chips = sec.querySelectorAll(".pmapa li[data-i]");
+    var barra = sec.querySelector(".pbarra i"), timers = [];
+    var reduzir = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function marcar(i) {
+      etapas.forEach(function (e, k) { e.classList.toggle("on", k <= i); e.classList.toggle("atual", k === i); });
+      chips.forEach(function (c, k) { c.classList.toggle("on", k <= i); c.classList.toggle("atual", k === i); });
+      barra.style.width = ((i + 1) / etapas.length * 100) + "%";
+    }
+    function tocar() {
+      timers.forEach(clearTimeout); timers = [];
+      if (reduzir) { marcar(etapas.length - 1); return; }
+      marcar(-1);
+      etapas.forEach(function (_, i) { timers.push(setTimeout(function () { marcar(i); }, 400 + i * 1100)); });
+    }
+    sec.querySelector(".prever").addEventListener("click", tocar);
+    chips.forEach(function (c) { c.addEventListener("click", function () { timers.forEach(clearTimeout); marcar(+c.dataset.i); etapas[+c.dataset.i].scrollIntoView({ behavior: "smooth", block: "center" }); }); });
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { tocar(); io.disconnect(); } }, { threshold: .25 });
+      io.observe(sec);
+    } else { marcar(etapas.length - 1); }
+  }
 })();
 </script>
 </body>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ERP Leve · Integração com Marketplace X | Vitrine</title>
+<meta name="description" content="Conector que traz os pedidos de um marketplace para o ERP: paginação, retry com backoff, webhook, idempotência e logs. Projeto demonstrativo com API simulada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="../../index.html">← Vitrine</a>
+    <span class="selo">Projeto demonstrativo · API simulada · marcas fictícias</span>
+    <nav aria-label="Seções da demo">
+      <a href="index.html" aria-current="page">Painel</a>
+      <a href="arquitetura.html">Arquitetura e código</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap intro">
+    <div>
+      <div class="eyebrow">Integração de API · ERP Leve</div>
+      <h1>Pedidos do Marketplace X entrando <em>sozinhos</em> no ERP</h1>
+      <p>Clique em sincronizar e acompanhe: o conector pede token, lê as páginas de pedidos, repete o que falhou, converte o JSON e grava sem duplicar. Tudo roda aqui no navegador, com uma API simulada.</p>
+    </div>
+    <div class="fluxo-mini" aria-hidden="true">
+      <span>Marketplace X</span><b>→</b><span>Conector</span><b>→</b><span>ERP Leve</span><b>→</b><span>Planilha</span>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="barra">
+      <button class="btn primario" id="btnSync">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 0 1-15.5 6.2M3 12A9 9 0 0 1 18.5 5.8"/><path d="M18 2v4h-4M6 22v-4h4"/></svg>
+        Sincronizar agora
+      </button>
+      <button class="btn cobre" id="btnWebhook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+        Simular novo pedido (webhook)
+      </button>
+      <label class="chave"><input type="checkbox" id="chkAgenda"> Agendar a cada 20 s</label>
+      <label class="chave"><input type="checkbox" id="chkInstavel"> API instável (mais 429/500)</label>
+      <span class="sep"></span>
+      <button class="btn" id="btnCSV">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v3h16v-3"/></svg>
+        CSV
+      </button>
+      <button class="btn" id="btnXLSX">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8l8 8M16 8l-8 8"/></svg>
+        Excel
+      </button>
+    </div>
+
+    <div class="kpis" aria-live="polite">
+      <div class="kpi"><small>Pedidos no ERP</small><strong id="kPedidos">0</strong></div>
+      <div class="kpi"><small>Valor dos pedidos (demo)</small><strong id="kValor">R$ 0</strong></div>
+      <div class="kpi"><small>Requisições à API</small><strong id="kReq">0</strong></div>
+      <div class="kpi alerta"><small>Retries com backoff</small><strong id="kRetry">0</strong></div>
+      <div class="kpi"><small>Duplicados evitados</small><strong id="kDup">0</strong></div>
+    </div>
+
+    <div class="grade">
+      <section class="cartao" aria-labelledby="tPedidos">
+        <header>
+          <div><h2 id="tPedidos">Pedidos sincronizados</h2><div class="sub" id="subPedidos">Nenhuma sincronização ainda</div></div>
+        </header>
+        <div class="filtros">
+          <input type="search" id="fBusca" placeholder="Buscar cliente, nº, SKU ou rastreio" aria-label="Buscar">
+          <select id="fUF" aria-label="Filtrar por estado"><option value="">Todos os estados</option></select>
+        </div>
+        <div class="chips" id="chips" role="group" aria-label="Filtrar por situação"></div>
+        <div class="tabela-box">
+          <table>
+            <thead><tr><th>Nº ERP</th><th class="col-cliente">Cliente</th><th class="col-data">Data</th><th class="col-itens">Itens</th><th>Situação</th><th class="num">Total</th></tr></thead>
+            <tbody id="tbody"></tbody>
+          </table>
+          <div class="vazio" id="vazio">Clique em <b>Sincronizar agora</b> para trazer os pedidos do Marketplace X.</div>
+        </div>
+      </section>
+
+      <div class="coluna">
+        <section class="cartao console" id="console" aria-labelledby="tLog">
+          <header>
+            <div><h2 id="tLog"><span class="ponto"></span>Console ao vivo</h2><div class="sub">Requisições, retries e erros tratados</div></div>
+            <button class="btn" id="btnLimpar" style="padding:5px 10px;font-size:.8rem;background:transparent;color:var(--con-tinta);border-color:var(--con-linha)">Limpar</button>
+          </header>
+          <div class="legenda-log"><span class="nv req">REQ</span><span class="nv ok">OK</span><span class="nv retry">RETRY</span><span class="nv aviso">AVISO</span><span class="nv erro">ERRO</span></div>
+          <div class="log" id="log" role="log" aria-live="off"></div>
+        </section>
+
+        <section class="cartao" aria-labelledby="tTempo">
+          <header><div><h2 id="tTempo">Linha do tempo</h2><div class="sub">Cada rodada do conector</div></div></header>
+          <ol class="tempo" id="tempo"><li class="fraco" style="display:block;padding:8px 0">As rodadas aparecem aqui.</li></ol>
+        </section>
+      </div>
+    </div>
+
+    <section class="cartao json-sec" aria-labelledby="tJson">
+      <header>
+        <div><h2 id="tJson">Do JSON do marketplace ao JSON do ERP</h2><div class="sub" id="subJson">Clique num pedido da tabela para ver a conversão</div></div>
+      </header>
+      <div class="json-lados">
+        <div class="json-lado"><h3>Marketplace X <span id="jsonOrigemRota">GET /v1/orders/…</span></h3><pre class="codigo" id="jsonOrigem">—</pre></div>
+        <div class="seta" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12h15m-5-6 6 6-6 6"/></svg></div>
+        <div class="json-lado"><h3>ERP Leve <span id="jsonDestinoNum">pedido normalizado</span></h3><pre class="codigo" id="jsonDestino">—</pre></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="wrap"><span>Projeto demonstrativo. "Marketplace X" e "ERP Leve" são fictícios; clientes e pedidos são gerados pelo código.</span><a href="../../index.html">Voltar à vitrine</a></div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script type="module" src="js/painel.js"></script>
+</body>
+</html>

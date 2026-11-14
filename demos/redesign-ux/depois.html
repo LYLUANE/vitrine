@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auto Escola Rota Certa | CNH de carro e moto com aula no seu horário</title>
+<meta name="description" content="Pacotes para carro e moto, instrutor fixo e valores publicados. Agende uma aula experimental pelo WhatsApp. Projeto demonstrativo, marca fictícia.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#14213d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14213d; --ink-2:#22325a; --sol:#f5b700; --sol-2:#ffd25a;
+  --papel:#faf7f0; --branco:#fff; --texto:#1d2433; --suave:#4a5468;
+  --verde:#1f7a4d; --linha:#e3ddcf; --r:18px;
+  --sombra:0 1px 2px rgba(20,33,61,.06),0 10px 30px -12px rgba(20,33,61,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;font:400 17px/1.6 Manrope,system-ui,sans-serif;color:var(--texto);background:var(--papel);padding-bottom:84px}
+@media(min-width:900px){body{padding-bottom:0}}
+img,svg{max-width:100%;display:block}
+a{color:var(--ink)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;color:var(--ink);line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,6.4vw,3.6rem);font-weight:800}
+h2{font-size:clamp(1.7rem,4.4vw,2.5rem);font-weight:800}
+h3{font-size:1.25rem;font-weight:600}
+p{margin:0 0 1em}
+.wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px;box-shadow:0 0 0 6px var(--sol-2)}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:#fff;padding:12px 16px;border-radius:10px;z-index:99;font-weight:700}
+.skip:focus{top:12px}
+.demo{background:var(--ink);color:#d9def0;font-size:13px;text-align:center;padding:6px 12px}
+
+/* botões: alvo mínimo 48px */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font:800 16px/1 Manrope,sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s}
+.btn-sol{background:var(--sol);color:var(--ink);box-shadow:0 6px 0 -1px #c99500}
+.btn-sol:hover{background:var(--sol-2);transform:translateY(-1px)}
+.btn-linha{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-linha:hover{background:var(--ink);color:#fff}
+.btn svg{width:20px;height:20px}
+
+/* topo */
+.topo{position:sticky;top:0;z-index:20;background:rgba(250,247,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
+.topo-in{display:flex;align-items:center;gap:16px;min-height:72px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 19px/1.1 Fraunces,serif;color:var(--ink)}
+.logo small{display:block;font:700 11px Manrope;letter-spacing:.14em;text-transform:uppercase;color:var(--suave)}
+.logo svg{width:42px;height:42px}
+.nav{margin-left:auto;display:none;gap:4px}
+.nav a{padding:12px 14px;border-radius:10px;text-decoration:none;font-weight:700;font-size:15px;color:var(--ink)}
+.nav a:hover{background:#efe9da}
+.topo .btn{margin-left:auto;min-height:48px;padding:0 18px;font-size:15px}
+@media(min-width:900px){.nav{display:flex}.topo .btn{margin-left:8px}}
+@media(max-width:420px){.topo .btn .longo{display:none}}
+
+/* hero */
+.hero{padding:40px 0 56px;overflow:hidden}
+.hero-in{display:grid;gap:36px;align-items:center}
+@media(min-width:900px){.hero{padding:72px 0 88px}.hero-in{grid-template-columns:1.05fr .95fr}}
+.selo{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--linha);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:18px}
+.selo i{width:9px;height:9px;border-radius:50%;background:var(--verde);display:block}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--sol-2) 62%);padding:0 .1em}
+.lead{font-size:1.15rem;color:var(--suave);max-width:34em}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 14px}
+.nota{font-size:14px;color:var(--suave);display:flex;gap:8px;align-items:center}
+.ilus{position:relative;border-radius:28px;background:var(--ink);aspect-ratio:5/4;overflow:hidden;box-shadow:var(--sombra)}
+.ilus svg{width:100%;height:100%}
+.etiqueta{position:absolute;left:18px;bottom:18px;background:#fff;border-radius:14px;padding:12px 16px;box-shadow:var(--sombra);font-size:14px;line-height:1.35;max-width:240px}
+.etiqueta b{display:block;color:var(--ink);font-size:15px}
+
+/* faixa de garantias */
+.faixa{background:#fff;border-block:1px solid var(--linha)}
+.faixa ul{list-style:none;margin:0 auto;padding:22px 0;display:grid;gap:16px}
+@media(min-width:760px){.faixa ul{grid-template-columns:repeat(3,1fr)}}
+.faixa li{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--suave)}
+.faixa li b{display:block;color:var(--ink);font-size:16px}
+.ico{flex:none;width:44px;height:44px;border-radius:12px;background:#fdf1cc;display:grid;place-items:center}
+.ico svg{width:24px;height:24px}
+
+/* seções */
+section{scroll-margin-top:84px}
+.sec{padding:64px 0}
+.kicker{font:800 13px Manrope;letter-spacing:.16em;text-transform:uppercase;color:#8a6400;margin-bottom:10px}
+.intro{max-width:40em;color:var(--suave);margin-bottom:32px}
+
+.cards{display:grid;gap:18px}
+@media(min-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.cards{grid-template-columns:repeat(4,1fr)}}
+.card{background:#fff;border:1px solid var(--linha);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;box-shadow:var(--sombra)}
+.card.dest{border:2px solid var(--ink);position:relative}
+.card.dest::before{content:"Mais procurado aqui";position:absolute;top:-13px;left:20px;background:var(--ink);color:#fff;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px}
+.card .cat{font:800 13px Manrope;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.card ul{padding:0;margin:14px 0 18px;list-style:none;font-size:15px;color:var(--suave)}
+.card li{padding-left:24px;position:relative;margin:6px 0}
+.card li::before{content:"";position:absolute;left:2px;top:.55em;width:12px;height:7px;border-left:2.5px solid var(--verde);border-bottom:2.5px solid var(--verde);transform:rotate(-45deg)}
+.preco{margin-top:auto;font-size:14px;color:var(--suave)}
+.preco b{display:block;font:800 28px/1.1 Fraunces,serif;color:var(--ink)}
+.card .btn{margin-top:16px;width:100%}
+.obs{font-size:13px;color:var(--suave);margin-top:16px}
+
+.passos{counter-reset:p;display:grid;gap:16px;list-style:none;padding:0;margin:0}
+@media(min-width:760px){.passos{grid-template-columns:repeat(4,1fr)}}
+.passos li{counter-increment:p;background:var(--ink);color:#dfe4f2;border-radius:var(--r);padding:24px;font-size:15px}
+.passos li::before{content:counter(p);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--sol);color:var(--ink);font:800 18px Fraunces;margin-bottom:14px}
+.passos b{display:block;color:#fff;font-size:17px;margin-bottom:4px}
+
+.prova{display:grid;gap:18px}
+@media(min-width:900px){.prova{grid-template-columns:1.2fr 1fr 1fr}}
+.garantia{background:var(--sol);border-radius:var(--r);padding:28px;color:var(--ink)}
+.garantia h3{font-size:1.5rem}
+.depo{background:#fff;border:1px dashed #b9b09a;border-radius:var(--r);padding:24px;font-size:15px;color:var(--suave)}
+.depo .rot{display:inline-block;font-size:12px;font-weight:800;background:#efe9da;color:var(--ink);border-radius:6px;padding:2px 8px;margin-bottom:10px}
+.depo b{color:var(--ink)}
+
+.faq{max-width:780px}
+.faq details{background:#fff;border:1px solid var(--linha);border-radius:14px;margin-bottom:10px}
+.faq summary{cursor:pointer;list-style:none;padding:18px 52px 18px 20px;font-weight:800;color:var(--ink);position:relative;min-height:56px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font:600 26px Fraunces;color:var(--ink)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 20px 18px;color:var(--suave);margin:0}
+
+.final{background:var(--ink);color:#dfe4f2;border-radius:28px;padding:40px 24px;display:grid;gap:28px}
+@media(min-width:900px){.final{grid-template-columns:1.3fr 1fr;padding:56px}}
+.final h2{color:#fff}
+.final .btn-linha{border-color:#fff;color:#fff}
+.final .btn-linha:hover{background:#fff;color:var(--ink)}
+.contato{background:var(--ink-2);border-radius:var(--r);padding:22px;font-size:15px}
+.contato dt{font-weight:800;color:#fff;margin-top:10px}
+.contato dt:first-child{margin-top:0}
+.contato dd{margin:0}
+
+footer{padding:36px 0 28px;font-size:14px;color:var(--suave)}
+
+/* barra fixa no celular */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--linha);padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;gap:10px;box-shadow:0 -8px 24px -12px rgba(20,33,61,.3)}
+.barra .btn{flex:1;min-height:52px;padding:0 12px}
+@media(min-width:900px){.barra{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="demo" role="note">Projeto demonstrativo · marca fictícia</div>
+
+<header class="topo">
+  <div class="wrap topo-in">
+    <a class="logo" href="#" aria-label="Auto Escola Rota Certa, início">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="5" width="38" height="38" rx="8" transform="rotate(45 24 24)" fill="#f5b700"/><path d="M17 33c0-8 14-6 14-14 0-3-2-5-5-5" fill="none" stroke="#14213d" stroke-width="4" stroke-linecap="round"/><path d="M22 10l5 4-5 4" fill="none" stroke="#14213d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Rota Certa<small>Auto Escola</small></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#categorias">Categorias</a><a href="#como">Como funciona</a><a href="#valores">Valores</a><a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn btn-sol" href="#agendar"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg><span>Agendar<span class="longo"> aula</span></span></a>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="selo"><i></i>Aulas de segunda a sábado, no Centro</span>
+        <h1>Sua CNH com aula no seu horário e <em>preço na mesa</em>.</h1>
+        <p class="lead">Pacotes para carro e moto, o mesmo instrutor do começo ao fim e ajuda com cada etapa do processo no Detran do seu estado.</p>
+        <div class="acoes">
+          <a class="btn btn-sol" href="#agendar">Agendar aula experimental</a>
+          <a class="btn btn-linha" href="#valores">Ver valores</a>
+        </div>
+        <p class="nota"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#1f7a4d" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="#1f7a4d" stroke-width="2" stroke-linecap="round"/></svg>Resposta pelo WhatsApp em horário comercial.</p>
+      </div>
+      <div class="ilus" aria-hidden="true">
+        <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice">
+          <rect width="500" height="400" fill="#14213d"/>
+          <circle cx="400" cy="90" r="46" fill="#f5b700" opacity=".9"/>
+          <path d="M0 270 Q120 230 250 250 T500 230 V400 H0Z" fill="#1d2d52"/>
+          <path d="M0 310 Q130 280 260 300 T500 290 V400 H0Z" fill="#22325a"/>
+          <path d="M150 400 C210 330 300 330 330 260 C350 210 300 180 330 140" fill="none" stroke="#38497a" stroke-width="70" stroke-linecap="round"/>
+          <path d="M150 400 C210 330 300 330 330 260 C350 210 300 180 330 140" fill="none" stroke="#ffd25a" stroke-width="5" stroke-dasharray="18 16" stroke-linecap="round"/>
+          <g transform="translate(268 286) rotate(-28)">
+            <rect x="-34" y="-17" width="68" height="34" rx="9" fill="#fff"/>
+            <rect x="-18" y="-13" width="30" height="26" rx="5" fill="#9fb4e6"/>
+            <rect x="-40" y="-20" width="10" height="9" rx="3" fill="#0c1529"/><rect x="-40" y="11" width="10" height="9" rx="3" fill="#0c1529"/>
+            <rect x="22" y="-20" width="10" height="9" rx="3" fill="#0c1529"/><rect x="22" y="11" width="10" height="9" rx="3" fill="#0c1529"/>
+          </g>
+          <g transform="translate(110 150)">
+            <rect x="-3" y="20" width="6" height="90" fill="#8c9bc4"/>
+            <rect x="-30" y="-30" width="60" height="60" rx="8" transform="rotate(45)" fill="#f5b700"/>
+            <path d="M-8 14c0-9 16-7 16-16 0-3-2-6-6-6" fill="none" stroke="#14213d" stroke-width="5" stroke-linecap="round"/>
+          </g>
+          <circle cx="330" cy="140" r="12" fill="#f5b700"/><circle cx="330" cy="140" r="5" fill="#14213d"/>
+        </svg>
+        <div class="etiqueta"><b>Aula experimental</b>Conheça o carro e o instrutor antes de fechar o pacote.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="faixa">
+    <ul class="wrap">
+      <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="#14213d" stroke-width="2"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6" fill="none" stroke="#14213d" stroke-width="2" stroke-linecap="round"/></svg></span><span><b>Instrutor fixo</b>Você não recomeça do zero a cada aula.</span></li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15l2-6h14l2 6v4H3z" fill="none" stroke="#14213d" stroke-width="2" stroke-linejoin="round"/><circle cx="7.5" cy="17" r="1.5" fill="#14213d"/><circle cx="16.5" cy="17" r="1.5" fill="#14213d"/></svg></span><span><b>Carro com duplo comando</b>O instrutor freia junto se precisar.</span></li>
+      <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#14213d" stroke-width="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#14213d" stroke-width="2" stroke-linecap="round"/></svg></span><span><b>Valor publicado</b>Sem "consulte na secretaria".</span></li>
+    </ul>
+  </div>
+
+  <section class="sec" id="categorias">
+    <div class="wrap" id="valores">
+      <p class="kicker">Categorias e valores</p>
+      <h2>Escolha o pacote e veja o preço agora</h2>
+      <p class="intro">Todos incluem aula experimental, material da parte teórica e acompanhamento até o exame prático. Parcele no cartão.</p>
+      <div class="cards">
+        <article class="card">
+          <span class="cat">Categoria A</span><h3>Moto</h3>
+          <ul><li>Aulas em pátio e na rua</li><li>Moto e capacete da escola</li><li>Simulado do percurso da prova</li></ul>
+          <p class="preco">a partir de<b>R$ 1.190</b>ou 10x no cartão</p>
+          <a class="btn btn-linha" href="#agendar">Quero este</a>
+        </article>
+        <article class="card dest">
+          <span class="cat">Categoria B</span><h3>Carro</h3>
+          <ul><li>Carro com duplo comando</li><li>Treino de baliza à parte</li><li>Aula no trajeto da prova</li></ul>
+          <p class="preco">a partir de<b>R$ 1.690</b>ou 10x no cartão</p>
+          <a class="btn btn-sol" href="#agendar">Quero este</a>
+        </article>
+        <article class="card">
+          <span class="cat">Categorias A e B</span><h3>Carro e moto</h3>
+          <ul><li>Uma matrícula para as duas</li><li>Agenda montada junto com você</li><li>Desconto no combo</li></ul>
+          <p class="preco">a partir de<b>R$ 2.590</b>ou 12x no cartão</p>
+          <a class="btn btn-linha" href="#agendar">Quero este</a>
+        </article>
+        <article class="card">
+          <span class="cat">Já habilitado</span><h3>Perder o medo</h3>
+          <ul><li>Aulas avulsas, sem pacote</li><li>Começa em rua tranquila</li><li>No seu carro ou no nosso</li></ul>
+          <p class="preco">aula avulsa<b>R$ 120</b>50 minutos</p>
+          <a class="btn btn-linha" href="#agendar">Quero este</a>
+        </article>
+      </div>
+      <p class="obs">Valores de exemplo, marca fictícia. As taxas do Detran são pagas à parte e mudam de estado para estado.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="como" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker">Como funciona</p>
+      <h2>Do primeiro contato à prova, em 4 passos</h2>
+      <ol class="passos">
+        <li><b>Aula experimental</b>Você conhece o carro, o instrutor e tira as dúvidas.</li>
+        <li><b>Matrícula e papelada</b>A gente explica cada etapa e cada taxa do seu estado.</li>
+        <li><b>Aulas no seu horário</b>Agenda pelo WhatsApp, remarcação com 24h de aviso.</li>
+        <li><b>Preparação para a prova</b>Treino no percurso e simulado antes do exame.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap prova">
+      <div class="garantia">
+        <p class="kicker" style="color:#14213d">Combinado</p>
+        <h3>Remarcação sem custo</h3>
+        <p>Avisou com 24 horas de antecedência, a aula muda de dia sem cobrar nada. Está escrito no contrato.</p>
+        <a class="btn" style="background:#14213d;color:#fff" href="#agendar">Agendar agora</a>
+      </div>
+      <figure class="depo" style="margin:0">
+        <span class="rot">Exemplo de depoimento</span>
+        <blockquote style="margin:0 0 10px">"Espaço reservado para a fala de um aluno real, com nome e categoria, depois da autorização dele."</blockquote>
+        <figcaption><b>Nome do aluno</b> · Categoria B</figcaption>
+      </figure>
+      <figure class="depo" style="margin:0">
+        <span class="rot">Exemplo de depoimento</span>
+        <blockquote style="margin:0 0 10px">"Aqui entra o segundo relato, de preferência de quem tinha medo de dirigir."</blockquote>
+        <figcaption><b>Nome do aluno</b> · Habilitado</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="duvidas" style="padding-top:0">
+    <div class="wrap"><div class="faq">
+      <p class="kicker">Dúvidas</p>
+      <h2>O que todo mundo pergunta</h2>
+      <details><summary>Que documentos eu preciso para começar?</summary><p>Documento de identidade com foto, CPF e comprovante de residência. A gente confere tudo na matrícula.</p></details>
+      <details><summary>Quanto tempo leva para tirar a CNH?</summary><p>Depende da sua disponibilidade de horário e da agenda de exames do Detran do seu estado. Na aula experimental a gente monta um cronograma com você.</p></details>
+      <details><summary>As taxas do Detran estão no valor do pacote?</summary><p>Não. As taxas são do órgão de trânsito e variam por estado. A gente mostra quais são e quando pagar cada uma.</p></details>
+      <details><summary>Posso fazer aula no sábado?</summary><p>Pode. Atendemos de segunda a sexta das 8h às 18h e no sábado das 8h às 12h.</p></details>
+    </div></div>
+  </section>
+
+  <section class="sec" id="agendar" style="padding-top:0">
+    <div class="wrap final">
+      <div>
+        <h2>Marque sua aula experimental</h2>
+        <p>Mande uma mensagem dizendo a categoria e os melhores horários. A gente responde com as datas livres da semana.</p>
+        <div class="acoes">
+          <a class="btn btn-sol" href="#agendar" onclick="alert('Demonstração: no site real este botão abre o WhatsApp da autoescola.');return false;">Chamar no WhatsApp</a>
+          <a class="btn btn-linha" href="#agendar" onclick="alert('Demonstração: no site real este botão liga para a autoescola.');return false;">Ligar agora</a>
+        </div>
+      </div>
+      <dl class="contato">
+        <dt>Endereço</dt><dd>Rua Exemplo, 000, Centro</dd>
+        <dt>Horário</dt><dd>Seg. a sex. 8h às 18h · Sáb. 8h às 12h</dd>
+        <dt>Telefone e WhatsApp</dt><dd>(00) 00000-0000</dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Auto Escola Rota Certa é uma marca fictícia criada para um projeto demonstrativo de redesign. Endereço e telefone são de exemplo.</div>
+</footer>
+
+<div class="barra">
+  <a class="btn btn-sol" href="#agendar">Agendar aula</a>
+  <a class="btn btn-linha" href="#valores">Valores</a>
+</div>
+</body>
+</html>

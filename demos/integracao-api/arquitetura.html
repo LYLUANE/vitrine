@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arquitetura do conector · ERP Leve | Vitrine</title>
+<meta name="description" content="Como o conector Marketplace X → ERP Leve funciona: diagrama do fluxo e o código real comentado. Projeto demonstrativo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+<style>
+.arq-intro{padding-top:36px;padding-bottom:10px;max-width:780px}
+.arq-intro h1{font-size:clamp(1.9rem,4vw,2.8rem)}
+.arq-intro p{color:var(--tinta-2);margin:12px 0 0}
+.diagrama{margin:22px 0 10px;padding:8px 0}
+.diagrama .rolar{overflow-x:auto;padding:8px 12px 4px}
+.diagrama svg{display:block;width:100%;min-width:820px;height:auto}
+.dg-caixa{fill:var(--cartao);stroke:var(--linha);stroke-width:1.2}
+.dg-caixa.forte{fill:var(--destaque-claro);stroke:var(--destaque)}
+.dg-caixa.cobre{fill:var(--cobre-claro);stroke:var(--cobre)}
+.dg-caixa.escura{fill:var(--con-fundo);stroke:var(--con-fundo)}
+.dg-passo{fill:var(--papel);stroke:var(--linha)}
+.dg-t{fill:var(--tinta);font:600 14px var(--sans)}
+.dg-t.serif{font:500 17px var(--serifa)}
+.dg-s{fill:var(--tinta-2);font:12px var(--sans)}
+.dg-m{fill:var(--tinta-2);font:11px var(--mono)}
+.dg-claro{fill:#e9e4d8}
+.dg-seta{stroke:var(--tinta-2);stroke-width:1.5;fill:none}
+.dg-seta.cobre{stroke:var(--cobre);stroke-dasharray:5 4}
+.dg-seta.verde{stroke:var(--destaque)}
+.dg-n{fill:var(--destaque);font:600 11px var(--mono)}
+.legenda-dg{display:flex;gap:18px;flex-wrap:wrap;font-size:.82rem;color:var(--tinta-2);padding:4px 16px 12px}
+.legenda-dg i{display:inline-block;width:22px;height:0;border-top:2px solid var(--tinta-2);vertical-align:middle;margin-right:6px}
+.legenda-dg i.cobre{border-top:2px dashed var(--cobre)}
+
+.decisoes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 8px}
+.decisoes div{background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);padding:16px}
+.decisoes h3{font-size:1.02rem;margin-bottom:6px}
+.decisoes p{margin:0;color:var(--tinta-2);font-size:.9rem}
+
+.trecho{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:0;margin-top:16px;overflow:hidden}
+.trecho .explica{padding:18px;border-right:1px solid var(--linha)}
+.trecho .explica .arquivo{font:12px var(--mono);color:var(--cobre);margin-bottom:6px}
+.trecho .explica h3{font-size:1.2rem;margin-bottom:8px}
+.trecho .explica p{color:var(--tinta-2);font-size:.9rem;margin:0 0 8px}
+.trecho .explica ul{margin:0;padding-left:18px;color:var(--tinta-2);font-size:.88rem}
+.trecho pre.codigo{max-height:460px;font-size:12.2px;border-radius:0}
+.arvore{font:12.5px/1.75 var(--mono);padding:4px 18px 18px;margin:0;white-space:pre;overflow-x:auto;color:var(--tinta)}
+.arvore b{color:var(--destaque);font-weight:600}
+.arvore i{color:var(--tinta-2);font-style:normal}
+.real{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.real .cartao{padding:18px}
+.real h2{margin-bottom:8px}
+.real ul{margin:0;padding-left:18px;color:var(--tinta-2)}
+.real li{margin-bottom:6px}
+h2.secao{font-size:1.5rem;margin:34px 0 4px}
+p.secao-sub{color:var(--tinta-2);margin:0}
+@media (max-width:900px){.decisoes{grid-template-columns:1fr}.trecho{grid-template-columns:1fr}.trecho .explica{border-right:0;border-bottom:1px solid var(--linha)}.real{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="../../index.html">← Vitrine</a>
+    <span class="selo">Projeto demonstrativo · API simulada · marcas fictícias</span>
+    <nav aria-label="Seções da demo">
+      <a href="index.html">Painel</a>
+      <a href="arquitetura.html" aria-current="page">Arquitetura e código</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="arq-intro">
+    <div class="eyebrow">Como funciona por dentro</div>
+    <h1>Seis módulos, uma regra: <em style="font-style:italic;color:var(--destaque)">nenhum pedido perdido, nenhum duplicado</em></h1>
+    <p>O conector roda de dois jeitos: por agendamento, buscando o que mudou desde a última rodada, e por webhook, quando o marketplace avisa que entrou pedido. Os dois caminhos passam pelo mesmo funil de retry, normalização e gravação idempotente.</p>
+  </section>
+
+  <section class="cartao diagrama" aria-labelledby="tDiag">
+    <header><div><h2 id="tDiag">Fluxo dos dados</h2><div class="sub">Do pedido feito no marketplace até a planilha do financeiro</div></div></header>
+    <div class="rolar">
+      <svg viewBox="0 0 1160 470" role="img" aria-labelledby="tDiag descDiag">
+        <desc id="descDiag">A API do Marketplace X envia webhooks e responde a consultas agendadas. O conector autentica, pagina, repete chamadas com falha, enriquece, normaliza e grava no ERP Leve sem duplicar. Do ERP saem o painel e a exportação para planilha. Todas as etapas escrevem no log.</desc>
+        <defs>
+          <marker id="pt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="context-stroke"/></marker>
+        </defs>
+
+        <!-- Marketplace X -->
+        <rect class="dg-caixa cobre" x="20" y="120" width="210" height="220" rx="14"/>
+        <text class="dg-t serif" x="40" y="152">Marketplace X</text>
+        <text class="dg-s" x="40" y="172">API REST (simulada)</text>
+        <text class="dg-m" x="40" y="204">POST /oauth/token</text>
+        <text class="dg-m" x="40" y="224">GET  /v1/orders/search</text>
+        <text class="dg-m" x="40" y="244">GET  /v1/customers/:id</text>
+        <text class="dg-m" x="40" y="264">GET  /v1/shipments/:id</text>
+        <text class="dg-s" x="40" y="296">limite 8 req/s · 429</text>
+        <text class="dg-s" x="40" y="314">falhas 500/503 ocasionais</text>
+
+        <!-- gatilhos -->
+        <rect class="dg-caixa" x="290" y="28" width="190" height="62" rx="12"/>
+        <text class="dg-t" x="306" y="54">Agendador</text>
+        <text class="dg-s" x="306" y="74">cron a cada 5 min (real)</text>
+        <rect class="dg-caixa" x="500" y="28" width="210" height="62" rx="12"/>
+        <text class="dg-t" x="516" y="54">Receptor de webhook</text>
+        <text class="dg-s" x="516" y="74">orders.created · responde 200</text>
+
+        <!-- conector -->
+        <rect class="dg-caixa forte" x="290" y="120" width="560" height="220" rx="14"/>
+        <text class="dg-t serif" x="310" y="150">Conector</text>
+        <text class="dg-s" x="392" y="150">conector.js · normalizador.js</text>
+
+        <g>
+          <rect class="dg-passo" x="310" y="170" width="160" height="70" rx="10"/>
+          <text class="dg-n" x="324" y="192">01</text><text class="dg-t" x="346" y="193">Autenticar</text>
+          <text class="dg-s" x="324" y="214">token Bearer, renova</text><text class="dg-s" x="324" y="230">quando dá 401</text>
+
+          <rect class="dg-passo" x="490" y="170" width="160" height="70" rx="10"/>
+          <text class="dg-n" x="504" y="192">02</text><text class="dg-t" x="526" y="193">Paginar</text>
+          <text class="dg-s" x="504" y="214">cursor updated_from,</text><text class="dg-s" x="504" y="230">10 pedidos por página</text>
+
+          <rect class="dg-passo" x="670" y="170" width="160" height="70" rx="10"/>
+          <text class="dg-n" x="684" y="192">03</text><text class="dg-t" x="706" y="193">Retry</text>
+          <text class="dg-s" x="684" y="214">429: Retry-After</text><text class="dg-s" x="684" y="230">5xx: backoff 2ⁿ + jitter</text>
+
+          <rect class="dg-passo" x="310" y="254" width="160" height="70" rx="10"/>
+          <text class="dg-n" x="324" y="276">04</text><text class="dg-t" x="346" y="277">Enriquecer</text>
+          <text class="dg-s" x="324" y="298">cliente (com cache)</text><text class="dg-s" x="324" y="314">e envio</text>
+
+          <rect class="dg-passo" x="490" y="254" width="160" height="70" rx="10"/>
+          <text class="dg-n" x="504" y="276">05</text><text class="dg-t" x="526" y="277">Normalizar</text>
+          <text class="dg-s" x="504" y="298">JSON do ERP, contas</text><text class="dg-s" x="504" y="314">em centavos</text>
+
+          <rect class="dg-passo" x="670" y="254" width="160" height="70" rx="10"/>
+          <text class="dg-n" x="684" y="276">06</text><text class="dg-t" x="706" y="277">Gravar</text>
+          <text class="dg-s" x="684" y="298">upsert por id + hash:</text><text class="dg-s" x="684" y="314">sem duplicado</text>
+
+          <path class="dg-seta verde" d="M470 205h18" marker-end="url(#pt)"/>
+          <path class="dg-seta verde" d="M650 205h18" marker-end="url(#pt)"/>
+          <path class="dg-seta verde" d="M750 240v6 H390 v6" marker-end="url(#pt)"/>
+          <path class="dg-seta verde" d="M470 289h18" marker-end="url(#pt)"/>
+          <path class="dg-seta verde" d="M650 289h18" marker-end="url(#pt)"/>
+        </g>
+
+        <!-- ERP e saídas -->
+        <rect class="dg-caixa" x="910" y="120" width="230" height="110" rx="14"/>
+        <text class="dg-t serif" x="930" y="152">ERP Leve</text>
+        <text class="dg-s" x="930" y="174">tabela pedidos_venda</text>
+        <text class="dg-m" x="930" y="196">chave: pedido_externo</text>
+        <text class="dg-m" x="930" y="214">cursor · eventos vistos</text>
+
+        <rect class="dg-caixa" x="910" y="250" width="110" height="90" rx="12"/>
+        <text class="dg-t" x="926" y="282">Painel</text>
+        <text class="dg-s" x="926" y="302">filtros,</text><text class="dg-s" x="926" y="318">situação</text>
+        <rect class="dg-caixa" x="1030" y="250" width="110" height="90" rx="12"/>
+        <text class="dg-t" x="1046" y="282">Planilha</text>
+        <text class="dg-s" x="1046" y="302">CSV e</text><text class="dg-s" x="1046" y="318">Excel</text>
+
+        <!-- log -->
+        <rect class="dg-caixa escura" x="290" y="380" width="850" height="64" rx="12"/>
+        <text class="dg-t" x="310" y="408" style="fill:#f1ece2">Log estruturado</text>
+        <text class="dg-m dg-claro" x="310" y="428" style="fill:#a9a59b">{ ts, nivel: req | ok | retry | aviso | erro, mensagem, status, ms }  →  console ao vivo · arquivo/observabilidade no servidor</text>
+
+        <!-- setas entre blocos -->
+        <path class="dg-seta" d="M230 205h58" marker-end="url(#pt)" marker-start="url(#pt)"/>
+        <text class="dg-s" x="238" y="196">HTTPS</text>
+        <path class="dg-seta cobre" d="M150 120 V12 H605 V26" marker-end="url(#pt)"/>
+        <text class="dg-s" x="160" y="32" style="fill:var(--cobre)">webhook</text>
+        <path class="dg-seta" d="M385 90v28" marker-end="url(#pt)"/>
+        <path class="dg-seta cobre" d="M605 90v28" marker-end="url(#pt)"/>
+        <path class="dg-seta verde" d="M830 289 H880 V175 h28" marker-end="url(#pt)"/>
+        <path class="dg-seta" d="M965 230v18" marker-end="url(#pt)"/>
+        <path class="dg-seta" d="M1085 230v18" marker-end="url(#pt)"/>
+        <path class="dg-seta" d="M570 340v38" marker-end="url(#pt)" style="stroke-dasharray:2 4"/>
+      </svg>
+    </div>
+    <div class="legenda-dg"><span><i></i>consulta agendada (pull)</span><span><i class="cobre"></i>notificação do marketplace (push)</span></div>
+  </section>
+
+  <div class="decisoes">
+    <div><h3>Cursor só avança no sucesso</h3><p>Se um pedido falhar de vez, o cursor fica onde estava e a próxima rodada busca de novo. Pedido pulado em silêncio não acontece.</p></div>
+    <div><h3>Webhook não é confiável sozinho</h3><p>Plataformas reenviam eventos e às vezes deixam de enviar. Por isso o webhook acelera, e o agendamento garante.</p></div>
+    <div><h3>Dinheiro em centavos</h3><p>Toda conta de valor é feita em inteiros. O total do ERP é conferido com o que o marketplace diz ter cobrado.</p></div>
+  </div>
+
+  <h2 class="secao">O código, de verdade</h2>
+  <p class="secao-sub">Trechos lidos dos mesmos arquivos que rodam no painel. Nada foi reescrito para a vitrine.</p>
+  <div id="trechos"></div>
+
+  <section class="cartao" style="margin-top:16px" aria-labelledby="tArvore">
+    <header><div><h2 id="tArvore">Organização em módulos ES</h2><div class="sub">Cada arquivo com uma responsabilidade</div></div></header>
+<pre class="arvore">integracao-api/
+├── index.html            <i>painel</i>
+├── arquitetura.html      <i>esta página</i>
+└── js/
+    ├── <b>mock-api.js</b>       <i>Marketplace X simulado: token, paginação, 429, 500, webhook</i>
+    ├── <b>conector.js</b>       <i>retry, paginação, enriquecimento, webhook, logs</i>
+    ├── <b>normalizador.js</b>   <i>JSON do marketplace → modelo do ERP (função pura)</i>
+    ├── <b>repositorio-erp.js</b> <i>gravação idempotente, cursor, eventos vistos</i>
+    ├── logger.js         <i>log estruturado com assinantes</i>
+    ├── exportar.js       <i>CSV puro e Excel (SheetJS)</i>
+    ├── destaque.js       <i>destaque de sintaxe sem biblioteca</i>
+    └── painel.js         <i>só apresentação</i></pre>
+  </section>
+
+  <div class="real">
+    <section class="cartao">
+      <h2>Na versão para o cliente</h2>
+      <ul>
+        <li>A API oficial da plataforma que ele usa (Mercado Livre, Shopee, Bling, Tiny ou outra), com o OAuth dela.</li>
+        <li>Servidor Node com o mesmo conector: <code>fetch</code> no lugar do mock.</li>
+        <li>Agendamento por cron e endpoint HTTPS para os webhooks.</li>
+        <li>Banco de dados no lugar do repositório em memória, ou envio direto para o ERP do cliente.</li>
+      </ul>
+    </section>
+    <section class="cartao">
+      <h2>O que vai junto</h2>
+      <ul>
+        <li>Alerta por e-mail ou WhatsApp quando uma rodada falha de vez.</li>
+        <li>Planilha ou painel com os pedidos do dia, filtros e exportação.</li>
+        <li>Tokens guardados em variável de ambiente, nunca no código.</li>
+        <li>Documento curto explicando como rodar, onde ver os logs e como reprocessar.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="wrap"><span>Projeto demonstrativo. "Marketplace X" e "ERP Leve" são fictícios.</span><a href="index.html">Abrir o painel</a></div>
+</footer>
+<script type="module" src="js/arquitetura.js"></script>
+</body>
+</html>

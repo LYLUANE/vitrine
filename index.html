@@ -75,7 +75,9 @@
     }).join("");
     var lista = window.CASES.filter(function (c) { return atual === "Todos" || c.categoria === atual; });
     // prontos primeiro, mantendo a ordem do arquivo
-    lista.sort(function (a, b) { return (a.status === "pronto" ? 0 : 1) - (b.status === "pronto" ? 0 : 1); });
+    var ord = window.ORDEM || [];
+    function pos(c) { var i = ord.indexOf(c.slug); return i < 0 ? 999 + window.CASES.indexOf(c) : i; }
+    lista.sort(function (a, b) { return ((a.status === "pronto" ? 0 : 1) - (b.status === "pronto" ? 0 : 1)) || (pos(a) - pos(b)); });
     grade.innerHTML = lista.length ? lista.map(cartao).join("") : '<p class="vazio">Nenhum projeto nesta categoria ainda.</p>';
   }
 

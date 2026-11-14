@@ -222,3 +222,41 @@ a.cartao:hover h3 { color: var(--destaque); }
 .videos-verticais figure { margin:0; }
 .videos-verticais video { width:100%; aspect-ratio:9/16; border-radius:14px; background:#111; display:block; }
 .videos-verticais figcaption { font-size:.9rem; margin-top:8px; color:var(--tinta-suave, #555); }
+
+/* Processo: fluxograma animado das etapas do trabalho */
+.processo .pintro { color: var(--tinta-2); margin-bottom: 18px; }
+.pmapa { list-style: none; padding: 0; margin: 0 0 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; }
+.pmapa li[data-i] { display: inline-flex; align-items: center; gap: 8px; font-size: .86rem; padding: 7px 12px 7px 7px; border: 1px solid var(--linha);
+  border-radius: 999px; color: var(--tinta-2); cursor: pointer; transition: all .45s ease; background: var(--papel); }
+.pmapa .pn { width: 22px; height: 22px; border-radius: 50%; display: inline-grid; place-items: center; font-size: .72rem; font-weight: 600;
+  background: var(--papel-2); color: var(--tinta-2); transition: all .45s ease; }
+.pmapa li.on { color: var(--tinta); border-color: var(--destaque); }
+.pmapa li.on .pn { background: var(--destaque); color: var(--papel); }
+.pmapa li.atual { background: var(--destaque-claro); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(31,92,90,.15); }
+.pmapa .pseta { width: 22px; height: 1px; background: var(--linha); margin: 0 2px; position: relative; }
+.pmapa .pseta::after { content: ""; position: absolute; right: -1px; top: -3px; border-left: 6px solid var(--linha); border-top: 3.5px solid transparent; border-bottom: 3.5px solid transparent; }
+.pbarra { height: 3px; background: var(--linha); border-radius: 2px; overflow: hidden; margin-bottom: 26px; }
+.pbarra i { display: block; height: 100%; width: 0; background: var(--destaque); transition: width .9s cubic-bezier(.2,.7,.2,1); }
+.plinha { list-style: none; padding: 0; margin: 0; position: relative; }
+.plinha::before { content: ""; position: absolute; left: 19px; top: 8px; bottom: 8px; width: 2px; background: var(--linha); }
+.pe { position: relative; display: grid; grid-template-columns: 40px 1fr; gap: 18px; padding-bottom: 18px; }
+.pno { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font: 500 1rem var(--serifa);
+  background: var(--papel); border: 2px solid var(--linha); color: var(--tinta-2); position: relative; z-index: 1; transition: all .5s ease; }
+.pcard { border: 1px solid var(--linha); padding: 16px 18px; background: var(--papel); opacity: .35; transform: translateX(10px); transition: all .6s cubic-bezier(.2,.7,.2,1); }
+.pe.on .pno { background: var(--destaque); border-color: var(--destaque); color: var(--papel); }
+.pe.on .pcard { opacity: 1; transform: none; }
+.pe.atual .pcard { border-color: var(--destaque); box-shadow: 0 10px 28px rgba(31,92,90,.12); }
+.pe.atual .pno { box-shadow: 0 0 0 6px var(--destaque-claro); }
+.ptopo { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+.ptopo h3 { font-size: 1.12rem; }
+.ptempo { font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; color: var(--destaque); white-space: nowrap; }
+.pcard p { color: var(--tinta-2); font-size: .95rem; max-width: none; }
+.pcard .precebe { margin-top: 8px; color: var(--tinta); font-size: .9rem; padding-top: 8px; border-top: 1px dashed var(--linha); }
+.precebe b { color: var(--destaque); font-weight: 600; }
+.prever { margin-top: 4px; font: 500 .85rem var(--sans); background: none; border: 1px solid var(--linha); color: var(--tinta-2); padding: 8px 14px; cursor: pointer; }
+.prever:hover { border-color: var(--destaque); color: var(--destaque); }
+@media (max-width: 720px) { .pmapa .pseta { width: 12px; } .pmapa li[data-i] { font-size: .8rem; } }
+@media print { .pcard { opacity: 1; transform: none; } .pe .pno { background: var(--destaque); color: #fff; } .prever, .pbarra { display: none; } }
+.secao > * { min-width: 0; }
+.processo .pcard { overflow-wrap: anywhere; }
+@media (max-width: 720px) { .pe { grid-template-columns: 32px 1fr; gap: 12px; } .pno { width: 32px; height: 32px; font-size: .9rem; } .plinha::before { left: 15px; } .ptopo { flex-direction: column; gap: 2px; } }

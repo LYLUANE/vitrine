@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redesign UI/UX antes e depois | Auto Escola Rota Certa (estudo de caso)</title>
+<meta name="description" content="Estudo de caso de redesign: diagnóstico com 6 problemas, arquitetura de informação, wireframe, guia visual e protótipo navegável. Projeto demonstrativo, marca fictícia.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#16181d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="caso.css">
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="barra-topo">
+  <div class="wrap barra-in">
+    <span class="marca">Estudo de caso <b>·</b> Redesign UI/UX</span>
+    <nav aria-label="Abrir as versões completas">
+      <a href="antes.html">Abrir o antes</a>
+      <a class="forte" href="depois.html">Abrir o depois</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="abre">
+    <div class="wrap">
+      <p class="sobre">Projeto demonstrativo · marca fictícia</p>
+      <h1>Auto Escola Rota Certa: de um site de 2013 a uma página que <em>agenda aula</em></h1>
+      <p class="lead">O site antigo tinha tudo e não dizia nada: vinte links no menu, preço "a consultar" e o botão de matrícula escondido no rodapé. Refiz a página do diagnóstico ao protótipo, pensando primeiro em quem chega pelo celular.</p>
+      <ul class="chips" aria-label="O que tem neste caso">
+        <li><a href="#diagnostico">Diagnóstico</a></li><li><a href="#ia">Arquitetura</a></li><li><a href="#wireframe">Wireframe</a></li><li><a href="#guia">Guia visual</a></li><li><a href="#celular">Celular</a></li>
+      </ul>
+    </div>
+
+    <div class="wrap">
+      <figure class="comp" id="comp">
+        <div class="comp-tela">
+          <img class="comp-depois" src="shots/depois-desktop.jpg" alt="Versão depois: topo limpo, título grande, botão amarelo de agendar aula e ilustração de estrada" width="1280" height="800">
+          <div class="comp-antes" aria-hidden="true"><img src="shots/antes-desktop.jpg" alt="" width="1280" height="800"></div>
+          <span class="rot rot-a">Antes</span><span class="rot rot-d">Depois</span>
+          <div class="alca" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <input class="comp-range" type="range" min="0" max="100" value="50" aria-label="Arraste para comparar o antes e o depois">
+        </div>
+        <figcaption>Arraste a alça (ou use as setas do teclado) para comparar a primeira tela do site, no computador.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="diagnostico">
+    <div class="wrap">
+      <p class="kicker">01 · Diagnóstico</p>
+      <h2>Seis problemas que afastavam o aluno</h2>
+      <p class="intro">Antes de desenhar qualquer coisa, marquei no print do site antigo o que atrapalha quem quer uma resposta rápida: quanto custa, como funciona e como falar com a autoescola.</p>
+      <div class="diag">
+        <div class="diag-print">
+          <img src="shots/antes-diagnostico.jpg" alt="Print do site antigo com seis marcações numeradas" width="1004" height="892">
+          <a class="pin" href="#p1" style="left:51%;top:21.9%">1</a>
+          <a class="pin" href="#p2" style="left:51%;top:35.3%">2</a>
+          <a class="pin" href="#p3" style="left:26%;top:52%">3</a>
+          <a class="pin" href="#p4" style="left:73%;top:69.7%">4</a>
+          <a class="pin" href="#p5" style="left:57.5%;top:89.4%">5</a>
+          <a class="pin" href="#p6" style="left:97%;top:47%">6</a>
+        </div>
+        <ol class="diag-lista">
+          <li id="p1"><b>Menu entulhado</b><span>20 links com o mesmo peso, de "Missão, Visão e Valores" a "Mapa do Site". O que importa (categorias e preço) se perde no meio.</span><i>Depois: 4 itens e um botão de agendar sempre à vista.</i></li>
+          <li id="p2"><b>Sem hierarquia</b><span>O topo grita com degradê e selo piscando, o título real é cinza e pequeno, e o banner diz "sua foto aqui". Nada responde "o que eu ganho".</span><i>Depois: uma promessa clara em título grande, com subtítulo e ação logo abaixo.</i></li>
+          <li id="p3"><b>Texto corrido</b><span>Um parágrafo de 200 palavras, centralizado, misturando história, estrutura, pagamento e missão. Ninguém lê.</span><i>Depois: blocos curtos, listas com marcadores e um FAQ.</i></li>
+          <li id="p4"><b>Contraste ruim</b><span>Amarelo claro sobre cinza (1,1:1) justo na frase dos valores e dos documentos. O cinza do texto principal fica em 2,2:1.</span><i>Depois: todo texto passa de 4,5:1 (AA); o corpo fica em 14,5:1.</i></li>
+          <li id="p5"><b>CTA escondido</b><span>A matrícula depende de um "clique aqui" de 10 px no fim da página, ou de achar o telefone no rodapé.</span><i>Depois: botão amarelo no topo, em cada pacote e numa barra fixa no celular.</i></li>
+          <li id="p6"><b>Quebra no celular</b><span>Tabela com largura fixa de 1000 px e sem meta viewport: no celular a página encolhe e vira letra miúda.</span><i>Depois: pensado a partir de 360 px, com alvos de toque de 48 px ou mais.</i></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec escuro" id="processo">
+    <div class="wrap">
+      <p class="kicker">02 · Processo</p>
+      <h2>Do rabisco ao protótipo, em cinco etapas</h2>
+      <ol class="etapas" aria-label="Etapas do processo">
+        <li><span>Pesquisa rápida</span></li><li><span>Arquitetura de informação</span></li><li><span>Wireframe</span></li><li><span>Guia visual</span></li><li><span>Protótipo</span></li>
+      </ol>
+
+      <div class="bloco" id="pesquisa">
+        <div class="bloco-txt">
+          <h3><small>Etapa 1</small>Pesquisa rápida</h3>
+          <p>Num projeto real, converso com 3 a 5 alunos e com a secretaria, e leio as avaliações públicas da escola. Neste caso demonstrativo, parti das perguntas que qualquer pessoa faz antes de escolher uma autoescola.</p>
+        </div>
+        <ul class="perguntas">
+          <li><b>"Quanto custa?"</b>Antes: "consultar". Virou o primeiro bloco depois do topo.</li>
+          <li><b>"Tem horário pra mim?"</b>Dias e horas no topo e no contato.</li>
+          <li><b>"Como funciona o processo?"</b>Quatro passos numerados, sem juridiquês.</li>
+          <li><b>"Como eu falo com vocês?"</b>WhatsApp em um toque, de qualquer ponto da página.</li>
+        </ul>
+      </div>
+
+      <div class="bloco" id="ia">
+        <div class="bloco-txt">
+          <h3><small>Etapa 2</small>Arquitetura de informação</h3>
+          <p>Juntei os 20 links em quatro grupos que respondem às perguntas acima. "Nossa História", "Missão" e "Galeria" saíram do menu; "Links úteis", enquete e previsão do tempo saíram do site.</p>
+        </div>
+        <div class="arvore" role="img" aria-label="Mapa do site: de 20 links para uma página com Categorias e valores, Como funciona, Dúvidas e Agendar">
+          <div class="no raiz">Página inicial</div>
+          <div class="ramos">
+            <div class="no">Categorias e valores<small>A · B · A+B · habilitados</small></div>
+            <div class="no">Como funciona<small>4 passos</small></div>
+            <div class="no">Dúvidas<small>documentos · prazo · taxas</small></div>
+            <div class="no cta">Agendar<small>WhatsApp · telefone</small></div>
+          </div>
+          <p class="corte"><s>Quem Somos · Nossa História · Missão, Visão e Valores · Estrutura · Frota · Instrutores · Legislação · Notícias · Galeria · Links · Downloads · Trabalhe Conosco · Mapa do Site</s> <span>13 itens viraram rodapé ou saíram</span></p>
+        </div>
+      </div>
+
+      <div class="bloco" id="wireframe">
+        <div class="bloco-txt">
+          <h3><small>Etapa 3</small>Wireframe em baixa fidelidade</h3>
+          <p>Caixas cinza, sem cor nem foto, para decidir a ordem antes da aparência. O celular vem primeiro: o que não cabe ali não é prioridade.</p>
+        </div>
+        <div class="wf" aria-label="Wireframe do celular e do computador em blocos cinza" role="img">
+          <div class="wf-cel">
+            <div class="w lin"><i class="c q"></i><i class="b p"></i></div>
+            <div class="w t1"></div><div class="w t2"></div><div class="w tx"></div><div class="w tx c70"></div>
+            <div class="w bt"></div><div class="w bt2"></div>
+            <div class="w img"></div>
+            <div class="w card"></div><div class="w card"></div>
+            <div class="w fixa"><i class="b"></i><i class="b claro"></i></div>
+            <span class="wf-nome">celular · 360</span>
+          </div>
+          <div class="wf-desk">
+            <div class="w lin"><i class="c q"></i><i class="nav"></i><i class="b p"></i></div>
+            <div class="wf-hero"><div><div class="w t1"></div><div class="w t2 c80"></div><div class="w tx"></div><div class="w tx c70"></div><div class="wf-bts"><div class="w bt"></div><div class="w bt2"></div></div></div><div class="w img"></div></div>
+            <div class="w faixa"></div>
+            <div class="wf-cards"><div class="w card"></div><div class="w card destaque"></div><div class="w card"></div><div class="w card"></div></div>
+            <div class="wf-passos"><div class="w"></div><div class="w"></div><div class="w"></div><div class="w"></div></div>
+            <span class="wf-nome">computador · 1280</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloco" id="guia">
+        <div class="bloco-txt">
+          <h3><small>Etapa 4</small>Guia visual</h3>
+          <p>Amarelo de placa de trânsito e azul-noite: lembra estrada sem cair no clichê do carro vermelho. Um serifado com personalidade nos títulos e uma sem serifa legível no texto. Cada par de cor foi medido.</p>
+        </div>
+        <div class="guia">
+          <div class="cores">
+            <div class="cor" style="--c:#14213d;--t:#fff"><b>Noite</b><code>#14213D</code><span>15,0:1 no papel</span></div>
+            <div class="cor" style="--c:#f5b700;--t:#14213d"><b>Placa</b><code>#F5B700</code><span>8,9:1 com noite</span></div>
+            <div class="cor" style="--c:#faf7f0;--t:#14213d;--b:#d9d2c0"><b>Papel</b><code>#FAF7F0</code><span>fundo</span></div>
+            <div class="cor" style="--c:#4a5468;--t:#fff"><b>Texto suave</b><code>#4A5468</code><span>7,1:1 no papel</span></div>
+            <div class="cor" style="--c:#1f7a4d;--t:#fff"><b>Confirma</b><code>#1F7A4D</code><span>5,0:1 no papel</span></div>
+          </div>
+          <div class="tipos">
+            <p class="t-serif">Fraunces <span>títulos</span></p>
+            <p class="t-sans">Manrope <span>texto, botões, rótulos</span></p>
+            <div class="escala"><span style="font-size:40px">Aa</span><span style="font-size:28px">Aa</span><span style="font-size:20px">Aa</span><span style="font-size:17px">Aa</span><span style="font-size:13px">Aa</span></div>
+          </div>
+          <div class="regras">
+            <div class="reg"><span class="exb exb-sol">Agendar aula</span><p><b>Botão principal</b>Um por tela, sempre amarelo, 52 px de altura.</p></div>
+            <div class="reg"><span class="exb exb-foco">Ver valores</span><p><b>Foco visível</b>Contorno escuro com halo amarelo para quem navega no teclado.</p></div>
+            <div class="reg"><span class="alvo"><i>48 px</i></span><p><b>Alvo de toque</b>Nada clicável abaixo de 48 × 48 px.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloco" id="prototipo">
+        <div class="bloco-txt">
+          <h3><small>Etapa 5</small>Protótipo navegável</h3>
+          <p>O resultado está em HTML, pronto para virar o site: menu leva às seções, perguntas abrem e fecham, e no celular uma barra fixa deixa o agendamento a um toque. As mesmas telas podem ser montadas no Figma para aprovação do cliente.</p>
+          <p class="links"><a class="btn sol" href="depois.html">Abrir o protótipo</a><a class="btn linha" href="antes.html">Ver o site antigo</a></p>
+        </div>
+        <a class="proto" href="depois.html" aria-label="Abrir o protótipo completo">
+          <span class="nav-falsa"><i></i><i></i><i></i><em>rotacerta.exemplo / depois</em></span>
+          <img src="shots/depois-desktop.jpg" alt="" width="1280" height="800" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="celular">
+    <div class="wrap">
+      <p class="kicker">03 · No celular</p>
+      <h2>O mesmo site, na mão do aluno</h2>
+      <p class="intro">Muita gente procura serviço do bairro direto no celular. À esquerda, o site antigo encolhido para caber na tela. À direita, o redesign.</p>
+      <div class="celulares">
+        <figure class="cel">
+          <div class="cel-moldura ruim"><img src="shots/antes-celular.jpg" alt="Site antigo no celular: a página inteira encolhida, com letras pequenas demais para ler" width="780" height="1660" loading="lazy"></div>
+          <figcaption><b>Antes</b> Letra de 5 px, links colados, precisa de pinça para ler.</figcaption>
+        </figure>
+        <figure class="cel">
+          <div class="cel-moldura"><img src="shots/depois-celular.jpg" alt="Redesign no celular: título legível, botão de agendar grande e menu simples" width="780" height="1688" loading="lazy"></div>
+          <figcaption><b>Depois</b> Título legível, botão grande e agendamento a um toque.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec fecho">
+    <div class="wrap fecho-in">
+      <h2>Veja as duas versões inteiras</h2>
+      <p>Abra o antes no celular e depois o redesign. A diferença aparece em cinco segundos.</p>
+      <p class="links"><a class="btn sol" href="depois.html">Abrir o depois</a><a class="btn linha-clara" href="antes.html">Abrir o antes</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape"><div class="wrap">Auto Escola Rota Certa é uma marca fictícia. Endereço, telefone e valores são de exemplo. Projeto demonstrativo de portfólio.</div></footer>
+
+<script>
+(function(){
+  var c=document.getElementById('comp'), r=c.querySelector('.comp-range');
+  function set(v){c.style.setProperty('--x',v+'%');}
+  r.addEventListener('input',function(){set(r.value)});
+  set(r.value);
+})();
+</script>
+</body>
+</html>

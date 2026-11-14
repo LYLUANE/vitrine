@@ -1,0 +1,1114 @@
+{
+ "loja": "Alba Studio",
+ "aviso": "Projeto demonstrativo. Marca fictícia.",
+ "produtos": [
+  {
+   "id": "camisa-linho-solta",
+   "nome": "Camisa de linho solta",
+   "tipo": "camisa",
+   "publico": "masculino",
+   "preco": 289,
+   "colecao": "linho-de-verao",
+   "ordem": 1,
+   "novo": false,
+   "textura": "linho",
+   "fundo": "#E9E3D9",
+   "cores": [
+    {
+     "id": "areia",
+     "nome": "Areia",
+     "hex": "#D6C6AA",
+     "familia": "neutros"
+    },
+    {
+     "id": "giz",
+     "nome": "Branco giz",
+     "hex": "#EEEAE2",
+     "familia": "neutros"
+    },
+    {
+     "id": "bruma",
+     "nome": "Azul bruma",
+     "hex": "#9FB2C4",
+     "familia": "azuis"
+    }
+   ],
+   "tamanhos": [
+    "PP",
+    "P",
+    "M",
+    "G",
+    "GG"
+   ],
+   "estoque": {
+    "areia": {
+     "PP": 8,
+     "P": 4,
+     "M": 4,
+     "G": 5,
+     "GG": 8
+    },
+    "giz": {
+     "PP": 10,
+     "P": 9,
+     "M": 8,
+     "G": 2,
+     "GG": 7
+    },
+    "bruma": {
+     "PP": 0,
+     "P": 9,
+     "M": 7,
+     "G": 1,
+     "GG": 4
+    }
+   },
+   "descricao": "Modelagem reta com ombro levemente caído e bolso no peito. Fica bem por dentro ou por fora da calça e amassa do jeito bonito do linho.",
+   "composicao": "100% linho",
+   "cuidados": "Lavar à mão ou ciclo delicado em água fria. Secar à sombra. Passar ainda úmida."
+  },
+  {
+   "id": "vestido-midi-alcas",
+   "nome": "Vestido midi de alças",
+   "tipo": "vestido",
+   "publico": "feminino",
+   "preco": 349,
+   "colecao": "linho-de-verao",
+   "ordem": 2,
+   "novo": true,
+   "textura": "liso",
+   "fundo": "#ECE6DD",
+   "cores": [
+    {
+     "id": "terracota",
+     "nome": "Terracota",
+     "hex": "#B0603C",
+     "familia": "terrosos"
+    },
+    {
+     "id": "preto",
+     "nome": "Preto",
+     "hex": "#252321",
+     "familia": "preto"
+    },
+    {
+     "id": "oliva",
+     "nome": "Oliva",
+     "hex": "#717150",
+     "familia": "verdes"
+    }
+   ],
+   "tamanhos": [
+    "PP",
+    "P",
+    "M",
+    "G",
+    "GG"
+   ],
+   "estoque": {
+    "terracota": {
+     "PP": 1,
+     "P": 7,
+     "M": 8,
+     "G": 9,
+     "GG": 5
+    },
+    "preto": {
+     "PP": 0,
+     "P": 4,
+     "M": 0,
+     "G": 4,
+     "GG": 7
+    },
+    "oliva": {
+     "PP": 10,
+     "P": 5,
+     "M": 2,
+     "G": 7,
+     "GG": 3
+    }
+   },
+   "descricao": "Decote em V suave, cintura marcada e saia evasê no comprimento midi. Alças finas reguláveis e zíper invisível nas costas.",
+   "composicao": "55% linho, 45% viscose. Forro 100% viscose.",
+   "cuidados": "Lavar à mão em água fria. Não torcer. Secar à sombra."
+  },
+  {
+   "id": "calca-alfaiataria-pregas",
+   "nome": "Calça de alfaiataria com pregas",
+   "tipo": "calca",
+   "publico": "feminino",
+   "preco": 319,
+   "colecao": "alfaiataria-leve",
+   "ordem": 3,
+   "novo": false,
+   "textura": "liso",
+   "fundo": "#E7E2DA",
+   "cores": [
+    {
+     "id": "carvao",
+     "nome": "Carvão",
+     "hex": "#3B3A37",
+     "familia": "cinzas"
+    },
+    {
+     "id": "caqui",
+     "nome": "Cáqui",
+     "hex": "#B5A27F",
+     "familia": "neutros"
+    },
+    {
+     "id": "off",
+     "nome": "Off-white",
+     "hex": "#E6DED0",
+     "familia": "neutros"
+    }
+   ],
+   "tamanhos": [
+    "36",
+    "38",
+    "40",
+    "42",
+    "44"
+   ],
+   "estoque": {
+    "carvao": {
+     "36": 10,
+     "38": 10,
+     "40": 6,
+     "42": 7,
+     "44": 4
+    },
+    "caqui": {
+     "36": 9,
+     "38": 0,
+     "40": 3,
+     "42": 3,
+     "44": 8
+    },
+    "off": {
+     "36": 2,
+     "38": 10,
+     "40": 0,
+     "42": 11,
+     "44": 0
+    }
+   },
+   "descricao": "Cintura alta, duas pregas frontais e perna ampla com vinco marcado. Bolsos faca e passantes para cinto.",
+   "composicao": "64% poliéster, 34% viscose, 2% elastano",
+   "cuidados": "Lavar do avesso em ciclo delicado. Passar em temperatura média com pano por cima."
+  },
+  {
+   "id": "jaqueta-sarja-utilitaria",
+   "nome": "Jaqueta utilitária de sarja",
+   "tipo": "jaqueta",
+   "publico": "masculino",
+   "preco": 459,
+   "colecao": "colecao-cidade",
+   "ordem": 4,
+   "novo": true,
+   "textura": "liso",
+   "fundo": "#E8E3DB",
+   "cores": [
+    {
+     "id": "oliva",
+     "nome": "Oliva",
+     "hex": "#717150",
+     "familia": "verdes"
+    },
+    {
+     "id": "areia",
+     "nome": "Areia",
+     "hex": "#D6C6AA",
+     "familia": "neutros"
+    },
+    {
+     "id": "marinho",
+     "nome": "Marinho",
+     "hex": "#2E3A50",
+     "familia": "azuis"
+    }
+   ],
+   "tamanhos": [
+    "PP",
+    "P",
+    "M",
+    "G",
+    "GG"
+   ],
+   "estoque": {
+    "oliva": {
+     "PP": 0,
+     "P": 11,
+     "M": 5,
+     "G": 5,
+     "GG": 0
+    },
+    "areia": {
+     "PP": 4,
+     "P": 10,
+     "M": 9,
+     "G": 9,
+     "GG": 11
+    },
+    "marinho": {
+     "PP": 9,
+     "P": 0,
+     "M": 3,
+     "G": 4,
+     "GG": 8
+    }
+   },
+   "descricao": "Corte curto e ombro estruturado, bolsos com lapela e botões de pressão. Para a meia-estação, sobre camiseta ou tricô.",
+   "composicao": "100% algodão (sarja 300 g/m²)",
+   "cuidados": "Lavar do avesso em água fria. Não usar secadora."
+  },
+  {
+   "id": "bolsa-tote-couro",
+   "nome": "Bolsa tote de couro",
+   "tipo": "bolsa",
+   "publico": "feminino",
+   "preco": 429,
+   "colecao": "acessorios",
+   "ordem": 5,
+   "novo": false,
+   "textura": "liso",
+   "fundo": "#E9E1D5",
+   "cores": [
+    {
+     "id": "caramelo",
+     "nome": "Caramelo",
+     "hex": "#A5683A",
+     "familia": "terrosos"
+    },
+    {
+     "id": "preto",
+     "nome": "Preto",
+     "hex": "#252321",
+     "familia": "preto"
+    },
+    {
+     "id": "creme",
+     "nome": "Creme",
+     "hex": "#E4D7BE",
+     "familia": "neutros"
+    }
+   ],
+   "tamanhos": [
+    "U"
+   ],
+   "estoque": {
+    "caramelo": {
+     "U": 4
+    },
+    "preto": {
+     "U": 2
+    },
+    "creme": {
+     "U": 7
+    }
+   },
+   "descricao": "Cabe notebook de 14\", com bolso interno de zíper e alças no tamanho certo para o ombro. Base reforçada.",
+   "composicao": "Couro bovino curtido ao cromo. Forro de algodão.",
+   "cuidados": "Limpar com pano seco. Guardar no saco de algodão que acompanha."
+  },
+  {
+   "id": "blazer-linho-acinturado",
+   "nome": "Blazer de linho acinturado",
+   "tipo": "blazer",
+   "publico": "feminino",
+   "preco": 529,
+   "colecao": "alfaiataria-leve",
+   "ordem": 6,
+   "novo": true,
+   "textura": "linho",
+   "fundo": "#E7E1D7",
+   "cores": [
+    {
+     "id": "off",
+     "nome": "Off-white",
+     "hex": "#E6DED0",
+     "familia": "neutros"
+    },
+    {
+     "id": "preto",
+     "nome": "Preto",
+     "hex": "#252321",
+     "familia": "preto"
+    },
+    {
+     "id": "salvia",
+     "nome": "Sálvia",
+     "hex": "#9DA88F",
+     "familia": "verdes"
+    }
+   ],
+   "tamanhos": [
+    "PP",
+    "P",
+    "M",
+    "G",
+    "GG"
+   ],
+   "estoque": {
+    "off": {
+     "PP": 8,
+     "P": 3,
+     "M": 4,
+     "G": 1,
+     "GG": 5
+    },
+    "preto": {
+     "PP": 2,
+     "P": 11,
+     "M": 4,
+     "G": 5,
+     "GG": 3
+    },
+    "salvia": {
+     "PP": 5,
+     "P": 8,
+     "M": 0,
+     "G": 8,
+     "GG": 5
+    }
+   },
+   "descricao": "Lapela clássica, dois botões e cintura levemente marcada. Forrado só no corpo para continuar fresco.",
+   "composicao": "100% linho. Forro 100% viscose.",
+   "cuidados": "Lavagem a seco recomendada. Passar pelo avesso."
+  },
+  {
+   "id": "trico-gola-careca",
+   "nome": "Tricô gola careca",
+   "tipo": "trico",
+   "publico": "masculino",
+   "preco": 279,
+   "colecao": "trico-essencial",
+   "ordem": 7,
+   "novo": false,
+   "textura": "malha",
+   "fundo": "#EAE5DD",
+   "cores": [
+    {
+     "id": "mescla",
+     "nome": "Mescla",
+     "hex": "#B7B1A6",
+     "familia": "cinzas"
+    },
+    {
+     "id": "vinho",
+     "nome": "Vinho",
+     "hex": "#6A2E35",
+     "familia": "terrosos"
+    },
+    {
+     "id": "marinho",
+     "nome": "Marinho",
+     "hex": "#2E3A50",
+     "familia": "azuis"
+    }
+   ],
+   "tamanhos": [
+    "PP",
+    "P",
+    "M",
+    "G",
+    "GG"
+   ],
+   "estoque": {
+    "mescla": {
+     "PP": 1,
+     "P": 6,
+     "M": 4,
+     "G": 11,
+     "GG": 10
+    },
+    "vinho": {
+     "PP": 2,
+     "P": 7,
+     "M": 3,
+     "G": 7,
+     "GG": 10
+    },
+    "marinho": {
+     "PP": 8,
+     "P": 3,
+     "M": 10,
+     "G": 3,
+     "GG": 2
+    }
+   },
+   "descricao": "Ponto meia fino, punhos e barra canelados. Leve o bastante para usar sobre camisa em noites frescas.",
+   "composicao": "70% algodão, 30% acrílico",
+   "cuidados": "Lavar à mão em água fria. Secar na horizontal, à sombra."
+  },
+  {
+   "id": "saia-midi-plissada",
+   "nome": "Saia midi plissada",
+   "tipo": "saia",
+   "publico": "feminino",
+   "preco": 259,
+   "colecao": "colecao-cidade",
+   "ordem": 8,
+   "novo": false,
+   "textura": "liso",
+   "fundo": "#E8E2D9",
+   "cores": [
+    {
+     "id": "champanhe",
+     "nome": "Champanhe",
+     "hex": "#D9C29C",
+     "familia": "neutros"
+    },
+    {
+     "id": "preto",
+     "nome": "Preto",
+     "hex": "#252321",
+     "familia": "preto"
+    },
+    {
+     "id": "musgo",
+     "nome": "Musgo",
+     "hex": "#5D6A4C",
+     "familia": "verdes"
+    }
+   ],
+   "tamanhos": [
+    "36",
+    "38",
+    "40",
+    "42",
+    "44"
+   ],
+   "estoque": {
+    "champanhe": {
+     "36": 8,
+     "38": 0,
+     "40": 6,
+     "42": 11,
+     "44": 4
+    },
+    "preto": {
+     "36": 2,
+     "38": 6,
+     "40": 0,
+     "42": 9,
+     "44": 5
+    },
+    "musgo": {
+     "36": 0,
+     "38": 6,
+     "40": 7,
+     "42": 7,
+     "44": 3
+    }
+   },
+   "descricao": "Plissado permanente que mexe bonito ao andar. Cós com elástico nas costas e zíper lateral.",
+   "composicao": "100% poliéster",
+   "cuidados": "Lavar à mão em água fria. Não passar sobre as pregas."
+  },
+  {
+   "id": "camiseta-algodao-pima",
+   "nome": "Camiseta de algodão pima",
+   "tipo": "camiseta",
+   "publico": "masculino",
+   "preco": 129,
+   "colecao": "colecao-cidade",
+   "ordem": 9,
+   "novo": false,
+   "textura": "liso",
+   "fundo": "#E6E1D8",
+   "cores": [
+    {
+     "id": "giz",
+     "nome": "Branco giz",
+     "hex": "#EEEAE2",
+     "familia": "neutros"
+    },
+    {
+     "id": "preto",
+     "nome": "Preto",
+     "hex": "#252321",
+     "familia": "preto"
+    },
+    {
+     "id": "cinza",
+     "nome": "Cinza pedra",
+     "hex": "#9C9993",
+     "familia": "cinzas"
+    },
+    {
+     "id": "terracota",
+     "nome": "Terracota",
+     "hex": "#B0603C",
+     "familia": "terrosos"
+    }
+   ],
+   "tamanhos": [
+    "PP",
+    "P",
+    "M",
+    "G",
+    "GG"
+   ],
+   "estoque": {
+    "giz": {
+     "PP": 6,
+     "P": 7,
+     "M": 5,
+     "G": 5,
+     "GG": 9
+    },
+    "preto": {
+     "PP": 5,
+     "P": 4,
+     "M": 11,
+     "G": 2,
+     "GG": 0
+    },
+    "cinza": {
+     "PP": 8,
+     "P": 2,
+     "M": 11,
+     "G": 6,
+     "GG": 10
+    },
+    "terracota": {
+     "PP": 11,
+     "P": 10,
+     "M": 0,
+     "G": 5,
+     "GG": 4
+    }
+   },
+   "descricao": "Malha de fio longo, macia e encorpada. Gola com ribana que não deforma e caimento reto.",
+   "composicao": "100% algodão pima",
+   "cuidados": "Lavar do avesso. Pode ir à máquina em ciclo normal."
+  },
+  {
+   "id": "calca-chino-reta",
+   "nome": "Calça chino reta",
+   "tipo": "calca",
+   "publico": "masculino",
+   "preco": 269,
+   "colecao": "colecao-cidade",
+   "ordem": 10,
+   "novo": false,
+   "textura": "liso",
+   "fundo": "#E9E4DC",
+   "cores": [
+    {
+     "id": "caqui",
+     "nome": "Cáqui",
+     "hex": "#B5A27F",
+     "familia": "neutros"
+    },
+    {
+     "id": "marinho",
+     "nome": "Marinho",
+     "hex": "#2E3A50",
+     "familia": "azuis"
+    },
+    {
+     "id": "oliva",
+     "nome": "Oliva",
+     "hex": "#717150",
+     "familia": "verdes"
+    }
+   ],
+   "tamanhos": [
+    "36",
+    "38",
+    "40",
+    "42",
+    "44"
+   ],
+   "estoque": {
+    "caqui": {
+     "36": 9,
+     "38": 11,
+     "40": 6,
+     "42": 0,
+     "44": 11
+    },
+    "marinho": {
+     "36": 0,
+     "38": 7,
+     "40": 2,
+     "42": 8,
+     "44": 8
+    },
+    "oliva": {
+     "36": 0,
+     "38": 0,
+     "40": 2,
+     "42": 1,
+     "44": 6
+    }
+   },
+   "descricao": "Perna reta, cintura média e um toque de elastano para mexer o dia inteiro sem marcar.",
+   "composicao": "97% algodão, 3% elastano",
+   "cuidados": "Lavar do avesso em água fria. Secar à sombra."
+  },
+  {
+   "id": "camisa-viscose-fluida",
+   "nome": "Camisa de viscose fluida",
+   "tipo": "camisa",
+   "publico": "feminino",
+   "preco": 299,
+   "colecao": "colecao-cidade",
+   "ordem": 11,
+   "novo": true,
+   "textura": "liso",
+   "fundo": "#ECE7DF",
+   "cores": [
+    {
+     "id": "marfim",
+     "nome": "Marfim",
+     "hex": "#EAE0CC",
+     "familia": "neutros"
+    },
+    {
+     "id": "cobalto",
+     "nome": "Cobalto",
+     "hex": "#3A54A0",
+     "familia": "azuis"
+    },
+    {
+     "id": "argila",
+     "nome": "Rosa argila",
+     "hex": "#C79C8C",
+     "familia": "rosas"
+    }
+   ],
+   "tamanhos": [
+    "PP",
+    "P",
+    "M",
+    "G",
+    "GG"
+   ],
+   "estoque": {
+    "marfim": {
+     "PP": 2,
+     "P": 0,
+     "M": 7,
+     "G": 9,
+     "GG": 9
+    },
+    "cobalto": {
+     "PP": 4,
+     "P": 9,
+     "M": 6,
+     "G": 1,
+     "GG": 5
+    },
+    "argila": {
+     "PP": 0,
+     "P": 3,
+     "M": 1,
+     "G": 3,
+     "GG": 0
+    }
+   },
+   "descricao": "Tecido de caimento leve, com botões de madrepérola sintética e punho com abertura. Vai do trabalho ao jantar.",
+   "composicao": "100% viscose",
+   "cuidados": "Lavar à mão em água fria. Passar em temperatura baixa."
+  },
+  {
+   "id": "vestido-longo-linho",
+   "nome": "Vestido longo de linho",
+   "tipo": "vestido",
+   "publico": "feminino",
+   "preco": 419,
+   "colecao": "linho-de-verao",
+   "ordem": 12,
+   "novo": false,
+   "textura": "linho",
+   "fundo": "#E8E2D8",
+   "cores": [
+    {
+     "id": "areia",
+     "nome": "Areia",
+     "hex": "#D6C6AA",
+     "familia": "neutros"
+    },
+    {
+     "id": "salvia",
+     "nome": "Sálvia",
+     "hex": "#9DA88F",
+     "familia": "verdes"
+    },
+    {
+     "id": "giz",
+     "nome": "Branco giz",
+     "hex": "#EEEAE2",
+     "familia": "neutros"
+    }
+   ],
+   "tamanhos": [
+    "PP",
+    "P",
+    "M",
+    "G",
+    "GG"
+   ],
+   "estoque": {
+    "areia": {
+     "PP": 7,
+     "P": 10,
+     "M": 6,
+     "G": 2,
+     "GG": 3
+    },
+    "salvia": {
+     "PP": 11,
+     "P": 0,
+     "M": 0,
+     "G": 9,
+     "GG": 4
+    },
+    "giz": {
+     "PP": 9,
+     "P": 8,
+     "M": 1,
+     "G": 4,
+     "GG": 10
+    }
+   },
+   "descricao": "Comprimento até o tornozelo, alças largas e saia ampla com bolsos laterais. Feito para dias quentes.",
+   "composicao": "100% linho",
+   "cuidados": "Lavar à mão ou ciclo delicado em água fria. Secar à sombra."
+  },
+  {
+   "id": "jaqueta-camurca",
+   "nome": "Jaqueta de camurça sintética",
+   "tipo": "jaqueta",
+   "publico": "feminino",
+   "preco": 489,
+   "colecao": "acessorios",
+   "ordem": 13,
+   "novo": true,
+   "textura": "liso",
+   "fundo": "#EBE5DC",
+   "cores": [
+    {
+     "id": "caramelo",
+     "nome": "Caramelo",
+     "hex": "#A5683A",
+     "familia": "terrosos"
+    },
+    {
+     "id": "preto",
+     "nome": "Preto",
+     "hex": "#252321",
+     "familia": "preto"
+    },
+    {
+     "id": "creme",
+     "nome": "Creme",
+     "hex": "#E4D7BE",
+     "familia": "neutros"
+    }
+   ],
+   "tamanhos": [
+    "PP",
+    "P",
+    "M",
+    "G",
+    "GG"
+   ],
+   "estoque": {
+    "caramelo": {
+     "PP": 0,
+     "P": 9,
+     "M": 6,
+     "G": 0,
+     "GG": 3
+    },
+    "preto": {
+     "PP": 5,
+     "P": 11,
+     "M": 7,
+     "G": 6,
+     "GG": 9
+    },
+    "creme": {
+     "PP": 2,
+     "P": 4,
+     "M": 7,
+     "G": 1,
+     "GG": 6
+    }
+   },
+   "descricao": "Toque aveludado, gola ampla e bolsos de chapa. Fecha com botões de pressão e combina com jeans e vestido.",
+   "composicao": "100% poliéster com toque de camurça. Forro 100% poliéster.",
+   "cuidados": "Lavagem a seco. Escovar suavemente na direção do pelo."
+  },
+  {
+   "id": "blazer-desestruturado",
+   "nome": "Blazer desestruturado",
+   "tipo": "blazer",
+   "publico": "masculino",
+   "preco": 549,
+   "colecao": "alfaiataria-leve",
+   "ordem": 14,
+   "novo": false,
+   "textura": "linho",
+   "fundo": "#E6E0D6",
+   "cores": [
+    {
+     "id": "carvao",
+     "nome": "Carvão",
+     "hex": "#3B3A37",
+     "familia": "cinzas"
+    },
+    {
+     "id": "areia",
+     "nome": "Areia",
+     "hex": "#D6C6AA",
+     "familia": "neutros"
+    },
+    {
+     "id": "marinho",
+     "nome": "Marinho",
+     "hex": "#2E3A50",
+     "familia": "azuis"
+    }
+   ],
+   "tamanhos": [
+    "PP",
+    "P",
+    "M",
+    "G",
+    "GG"
+   ],
+   "estoque": {
+    "carvao": {
+     "PP": 0,
+     "P": 2,
+     "M": 4,
+     "G": 2,
+     "GG": 6
+    },
+    "areia": {
+     "PP": 9,
+     "P": 5,
+     "M": 6,
+     "G": 2,
+     "GG": 10
+    },
+    "marinho": {
+     "PP": 1,
+     "P": 0,
+     "M": 0,
+     "G": 6,
+     "GG": 4
+    }
+   },
+   "descricao": "Sem ombreira e com meio forro: tem cara de alfaiataria e o conforto de um casaco leve.",
+   "composicao": "55% linho, 45% algodão",
+   "cuidados": "Lavagem a seco recomendada."
+  },
+  {
+   "id": "bolsa-baguete",
+   "nome": "Bolsa baguete com alça",
+   "tipo": "bolsa-mini",
+   "publico": "feminino",
+   "preco": 239,
+   "colecao": "acessorios",
+   "ordem": 15,
+   "novo": true,
+   "textura": "liso",
+   "fundo": "#ECE5DB",
+   "cores": [
+    {
+     "id": "vinho",
+     "nome": "Vinho",
+     "hex": "#6A2E35",
+     "familia": "terrosos"
+    },
+    {
+     "id": "preto",
+     "nome": "Preto",
+     "hex": "#252321",
+     "familia": "preto"
+    },
+    {
+     "id": "creme",
+     "nome": "Creme",
+     "hex": "#E4D7BE",
+     "familia": "neutros"
+    }
+   ],
+   "tamanhos": [
+    "U"
+   ],
+   "estoque": {
+    "vinho": {
+     "U": 5
+    },
+    "preto": {
+     "U": 0
+    },
+    "creme": {
+     "U": 10
+    }
+   },
+   "descricao": "Pequena na medida: cabe celular, carteira e chave. Alça longa removível e fecho de ímã.",
+   "composicao": "Couro sintético. Forro de algodão.",
+   "cuidados": "Limpar com pano úmido. Evitar sol direto."
+  },
+  {
+   "id": "trico-canelado",
+   "nome": "Tricô canelado de manga longa",
+   "tipo": "trico",
+   "publico": "feminino",
+   "preco": 249,
+   "colecao": "trico-essencial",
+   "ordem": 16,
+   "novo": false,
+   "textura": "malha",
+   "fundo": "#E9E3DA",
+   "cores": [
+    {
+     "id": "off",
+     "nome": "Off-white",
+     "hex": "#E6DED0",
+     "familia": "neutros"
+    },
+    {
+     "id": "argila",
+     "nome": "Rosa argila",
+     "hex": "#C79C8C",
+     "familia": "rosas"
+    },
+    {
+     "id": "preto",
+     "nome": "Preto",
+     "hex": "#252321",
+     "familia": "preto"
+    }
+   ],
+   "tamanhos": [
+    "PP",
+    "P",
+    "M",
+    "G",
+    "GG"
+   ],
+   "estoque": {
+    "off": {
+     "PP": 0,
+     "P": 8,
+     "M": 11,
+     "G": 0,
+     "GG": 4
+    },
+    "argila": {
+     "PP": 0,
+     "P": 6,
+     "M": 7,
+     "G": 4,
+     "GG": 8
+    },
+    "preto": {
+     "PP": 3,
+     "P": 1,
+     "M": 8,
+     "G": 5,
+     "GG": 4
+    }
+   },
+   "descricao": "Ponto canelado que acompanha o corpo sem apertar. Bom sozinho ou por baixo do blazer.",
+   "composicao": "80% algodão, 20% poliamida",
+   "cuidados": "Lavar à mão em água fria. Secar na horizontal."
+  }
+ ],
+ "colecoes": [
+  {
+   "id": "linho-de-verao",
+   "nome": "Linho de verão",
+   "texto": "Tecido que respira, cores de areia e terra.",
+   "tipo": "vestido",
+   "cor": "#B0603C"
+  },
+  {
+   "id": "alfaiataria-leve",
+   "nome": "Alfaiataria leve",
+   "texto": "Blazers e calças com estrutura, sem peso.",
+   "tipo": "blazer",
+   "cor": "#3B3A37"
+  },
+  {
+   "id": "trico-essencial",
+   "nome": "Tricô essencial",
+   "texto": "Malhas finas para as noites frescas.",
+   "tipo": "trico",
+   "cor": "#6A2E35"
+  },
+  {
+   "id": "acessorios",
+   "nome": "Bolsas e jaquetas",
+   "texto": "O que completa o look e dura anos.",
+   "tipo": "bolsa",
+   "cor": "#A5683A"
+  },
+  {
+   "id": "colecao-cidade",
+   "nome": "Cidade",
+   "texto": "Básicos bem feitos para todo dia.",
+   "tipo": "camiseta",
+   "cor": "#9C9993"
+  }
+ ],
+ "categorias": {
+  "camisa": "Camisas",
+  "camiseta": "Camisetas",
+  "vestido": "Vestidos",
+  "calca": "Calças",
+  "saia": "Saias",
+  "jaqueta": "Jaquetas",
+  "blazer": "Blazers",
+  "trico": "Tricôs",
+  "bolsa": "Bolsas",
+  "bolsa-mini": "Bolsas"
+ },
+ "familias": {
+  "neutros": [
+   "Neutros",
+   "#E1D6C2"
+  ],
+  "preto": [
+   "Preto",
+   "#252321"
+  ],
+  "cinzas": [
+   "Cinzas",
+   "#9C9993"
+  ],
+  "terrosos": [
+   "Terrosos",
+   "#A5683A"
+  ],
+  "rosas": [
+   "Rosas",
+   "#C79C8C"
+  ],
+  "verdes": [
+   "Verdes",
+   "#717150"
+  ],
+  "azuis": [
+   "Azuis",
+   "#2E3A50"
+  ]
+ },
+ "cupons": {
+  "ALBA10": {
+   "tipo": "percentual",
+   "valor": 10,
+   "texto": "10% de desconto (cupom de exemplo)"
+  }
+ },
+ "freteGratisAcima": 399
+}
