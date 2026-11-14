@@ -260,3 +260,5 @@ a.cartao:hover h3 { color: var(--destaque); }
 .secao > * { min-width: 0; }
 .processo .pcard { overflow-wrap: anywhere; }
 @media (max-width: 720px) { .pe { grid-template-columns: 32px 1fr; gap: 12px; } .pno { width: 32px; height: 32px; font-size: .9rem; } .plinha::before { left: 15px; } .ptopo { flex-direction: column; gap: 2px; } }
+.videos-verticais figure.horizontal { grid-column: 1 / -1; }
+.videos-verticais figure.horizontal video { aspect-ratio: 16/9; }

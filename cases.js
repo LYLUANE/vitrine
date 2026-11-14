@@ -390,7 +390,24 @@ window.ENTREGA_PADRAO = [
   ["Proposta visual", "Rascunho de telas ou layout para aprovar antes de desenvolver."],
   ["Desenvolvimento", "Construção com prévias para acompanhar o andamento."],
   ["Revisão", "Ajustes combinados a partir do que o cliente testou."],
-  ["Entrega", "Arquivos, publicação e um guia curto de uso."]
+  ["Entrega", "Arquivos, publicação e um guia curto de uso."],
+  {
+    slug: "motion-infografico",
+    titulo: "Do pedido à entrega: infográfico animado em motion graphics",
+    categoria: "Vídeo",
+    subtema: "Motion graphics e infográfico animado",
+    resumo: "Infográfico animado de 29 s sobre as 5 etapas de uma venda online, em 16:9 e 9:16, com narração e legenda palavra a palavra.",
+    ferramentas: ["HyperFrames", "GSAP", "SVG", "Python", "FFmpeg", "Voz neural"],
+    capa: "img/motion-infografico.png",
+    status: "pronto",
+    problema: "Muita loja e prestador de serviço precisa explicar um processo (como compra, como paga, quando chega) e acaba com um vídeo de slides parados que ninguém assiste até o fim. Editor que só corta e põe legenda não resolve: falta movimento que explique.",
+    solucao: "Fiz um infográfico animado com motion de verdade: ícones que se desenham, anel de progresso que cresce, números que rolam e contam, barras que enchem no tempo da fala e transições em íris e cortina que nascem de um elemento da tela. A mesma peça sai em 16:9 para YouTube e site e em 9:16 para Reels e Status, com narração e legenda sincronizada palavra a palavra.",
+    fluxo: ["Roteiro curto em 5 etapas", "Narração com tempo de cada palavra", "Ícones e layout em SVG próprios", "Animação sincronizada com a fala", "Versões 16:9 e 9:16", "Revisão quadro a quadro e exportação leve"],
+    processo: [{"titulo": "Briefing e roteiro", "faz": "Entendo o que o vídeo precisa explicar e para quem, e escrevo um roteiro de 25 a 40 s dividido em etapas curtas, uma ideia por cena. Se houver números, uso só dados que você ou uma fonte oficial confirmam.", "recebe": "Roteiro em texto para aprovar", "tempo": "1 dia"}, {"titulo": "Estilo visual", "faz": "Defino cores, fontes e o desenho dos ícones a partir da sua marca e monto um quadro de cada cena principal nos formatos que você vai usar.", "recebe": "Prévia estática das cenas (16:9 e 9:16)", "tempo": "1 dia"}, {"titulo": "Narração", "faz": "Gero a voz neural (ou uso a sua gravação), acerto a pronúncia de siglas e números e marco o tempo de cada palavra para a legenda e a animação.", "recebe": "Áudio da narração para ouvir", "tempo": "meio dia"}, {"titulo": "Animação", "faz": "Animo cada elemento no tempo da fala: ícones se desenhando, números contando, barras e anéis crescendo e transições que saem de algo da tela, sem cena parada.", "recebe": "Primeira versão em vídeo para comentar", "tempo": "2 dias"}, {"titulo": "Revisão", "faz": "Aplico seus ajustes e confiro quadro a quadro: texto cortado, sobreposição, legenda fora do tempo e volume no padrão das redes.", "recebe": "Versão revisada, com 1 rodada de ajustes incluída", "tempo": "1 dia"}, {"titulo": "Entrega", "faz": "Exporto os MP4 leves em cada formato, a legenda em SRT e as capas.", "recebe": "MP4 16:9 e 9:16, SRT e capas", "tempo": "meio dia"}],
+    telas: ["img/motion-infografico-1.jpg", "img/motion-infografico-2.jpg", "img/motion-infografico-3.jpg"],
+    videos: [{"src": "video/motion-infografico-16x9.mp4", "capa": "img/motion-infografico-16x9-poster.jpg", "legenda": "Versão 16:9 (1920x1080) para YouTube, site e apresentação · 29 s · projeto demonstrativo"}, {"src": "video/motion-infografico-9x16.mp4", "capa": "img/motion-infografico-9x16-poster.jpg", "legenda": "Versão 9:16 (1080x1920) para Reels, TikTok e Status · 29 s · projeto demonstrativo"}],
+    entrega: [["Dois formatos", "MP4 horizontal 1920x1080 e vertical 1080x1920, com layout refeito para cada tela, não só cortado."], ["Motion graphics", "Ícones desenhados em traço, anéis e barras de progresso, contadores, tipografia cinética e transições com máscara."], ["Narração e legenda", "Voz neural em português com legenda grande que acende palavra a palavra, no tempo exato da fala."], ["Arquivo leve", "Vídeos com menos de 8 MB cada, prontos para postar ou mandar no WhatsApp."], ["Fonte editável", "Projeto em HTML e SVG: trocar texto, cor ou etapa e exportar de novo leva minutos."]]
+  }
 ];
 
 /* Ordem de destaque na página inicial (o resto segue a ordem do arquivo) */

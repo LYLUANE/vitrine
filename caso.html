@@ -62,7 +62,7 @@
   }).join("");
   if (c.video) telas += '<video src="' + esc(c.video) + '" controls preload="metadata"></video>';
   if (c.videos) telas += '<div class="videos-verticais">' + c.videos.map(function (v) {
-    return '<figure><video src="' + esc(v.src) + '" poster="' + esc(v.capa || "") + '" controls preload="none" playsinline></video><figcaption>' + esc(v.legenda) + '</figcaption></figure>';
+    return '<figure' + (/16x9/.test(v.src) ? ' class="horizontal"' : '') + '><video src="' + esc(v.src) + '" poster="' + esc(v.capa || "") + '" controls preload="none" playsinline></video><figcaption>' + esc(v.legenda) + '</figcaption></figure>';
   }).join("") + '</div>';
 
   var entrega = (c.entrega || window.ENTREGA_PADRAO).map(function (e) {
