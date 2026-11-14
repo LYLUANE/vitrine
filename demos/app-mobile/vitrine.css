@@ -9,7 +9,7 @@ a{color:inherit}
 .marca small{color:var(--muted);font-size:12px}
 .bt{display:inline-flex;align-items:center;height:46px;padding:0 20px;border-radius:14px;border:1.5px solid var(--line);background:#fff;font-weight:700;text-decoration:none;white-space:nowrap}
 .bt.cheio{background:var(--prim);border-color:var(--prim);color:#fff}
-.abre{max-width:1280px;margin:0 auto;padding:20px clamp(16px,4vw,48px) 30px;display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:center}
+.abre{max-width:1280px;margin:0 auto;padding:20px clamp(16px,4vw,48px) 30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:center}
 .olho{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:800;color:var(--prim);margin:0 0 10px}
 h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(32px,4.4vw,54px);line-height:1.06;letter-spacing:-.02em;margin:0 0 16px}
 .abre .txt>p{font-size:17px;color:var(--muted);max-width:540px}
@@ -29,10 +29,10 @@ h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(32px,4.4
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 66 14'%3E%3Cg fill='%231A2420'%3E%3Crect x='0' y='9' width='3' height='4' rx='1'/%3E%3Crect x='5' y='6.5' width='3' height='6.5' rx='1'/%3E%3Crect x='10' y='4' width='3' height='9' rx='1'/%3E%3Crect x='15' y='1.5' width='3' height='11.5' rx='1'/%3E%3Cpath d='M29 4.5a10 10 0 0 1 13 0l-1.6 1.7a7.6 7.6 0 0 0-9.8 0zM31.4 7.2a6.4 6.4 0 0 1 8.2 0L38 8.9a4 4 0 0 0-5 0zM35.5 12.5l-2-2.1a3 3 0 0 1 4 0z'/%3E%3Crect x='47' y='2' width='17' height='10' rx='3' fill='none' stroke='%231A2420' stroke-width='1.3'/%3E%3Crect x='49' y='4' width='12' height='6' rx='1.5'/%3E%3Crect x='64.6' y='5.2' width='1.4' height='3.6' rx='.7'/%3E%3C/g%3E%3C/svg%3E") no-repeat right calc(30px * var(--s)) top calc(16px * var(--s))/calc(66px * var(--s) + 8px) auto}
 .fone.escuro .tela-fone::after{color:#ECEFE9;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 66 14'%3E%3Cg fill='%23ECEFE9'%3E%3Crect x='0' y='9' width='3' height='4' rx='1'/%3E%3Crect x='5' y='6.5' width='3' height='6.5' rx='1'/%3E%3Crect x='10' y='4' width='3' height='9' rx='1'/%3E%3Crect x='15' y='1.5' width='3' height='11.5' rx='1'/%3E%3Cpath d='M29 4.5a10 10 0 0 1 13 0l-1.6 1.7a7.6 7.6 0 0 0-9.8 0zM31.4 7.2a6.4 6.4 0 0 1 8.2 0L38 8.9a4 4 0 0 0-5 0zM35.5 12.5l-2-2.1a3 3 0 0 1 4 0z'/%3E%3Crect x='47' y='2' width='17' height='10' rx='3' fill='none' stroke='%23ECEFE9' stroke-width='1.3'/%3E%3Crect x='49' y='4' width='12' height='6' rx='1.5'/%3E%3Crect x='64.6' y='5.2' width='1.4' height='3.6' rx='.7'/%3E%3C/g%3E%3C/svg%3E")}
 
-.trio{display:flex;justify-content:center;align-items:center;position:relative;min-height:640px}
-.trio .f-a{transform:translateX(34px) rotate(-6deg) translateY(20px);z-index:1}
+.trio{display:flex;justify-content:center;align-items:center;position:relative;min-height:640px;padding-right:20px}
+.trio .f-a{transform:translateX(34px) rotate(-6deg) translateY(20px);z-index:1;margin-right:-60px}
 .trio .f-b{z-index:2}
-.trio .f-c{transform:translateX(-34px) rotate(6deg) translateY(20px);z-index:1}
+.trio .f-c{transform:translateX(-34px) rotate(6deg) translateY(20px);z-index:1;margin-left:-60px}
 .trio::before{content:"";position:absolute;inset:8% 4%;border-radius:50%;background:radial-gradient(closest-side,rgba(14,94,78,.22),transparent);z-index:0}
 
 .dica-toque{text-align:center;color:var(--muted);font-size:14px;margin:10px 16px 0}
@@ -49,7 +49,9 @@ h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(32px,4.4
 .info p{color:var(--muted);margin:8px 0}
 .pe{text-align:center;color:var(--muted);font-size:13px;padding:24px 16px 40px}
 @media (max-width:900px){
-  .abre{grid-template-columns:1fr;gap:10px}
+  .abre{grid-template-columns:minmax(0,1fr);gap:10px}
+  .trio{overflow:hidden;padding-right:0}
+  .trio .f-a{margin-right:-70px}.trio .f-c{margin-left:-70px}
   .trio{min-height:0;padding:10px 0 20px}
   .trio .fone{--s:.5!important}
   .trio .f-b{--s:.56!important}
@@ -59,8 +61,8 @@ h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(32px,4.4
   .cab .bt{height:40px;padding:0 14px;font-size:14px}
 }
 @media (max-width:480px){
-  .trio .fone{--s:.36!important}
-  .trio .f-b{--s:.42!important}
+  .trio .fone{--s:.4!important}
+  .trio .f-b{--s:.46!important}
   .trio .f-a{transform:translateX(26px) rotate(-6deg) translateY(10px)}
   .trio .f-c{transform:translateX(-26px) rotate(6deg) translateY(10px)}
   .fila .fone{--s:.6}

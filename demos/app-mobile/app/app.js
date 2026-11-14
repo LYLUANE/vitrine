@@ -291,6 +291,7 @@ function ir(nome, p = {}, modo = 'push') {
   atual = el;
   const fim = () => velho && velho.remove();
   if (!velho || modo === 'nada') return fim();
+  setTimeout(fim, 520);   // garantia caso a animação não termine
   const t = { duration: 380, easing: EASE };
   if (modo === 'push' || modo === 'substitui') {
     el.animate([{ transform: 'translateX(100%)' }, { transform: 'none' }], t);
