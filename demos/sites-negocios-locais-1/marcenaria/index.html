@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Móveis planejados em Botucatu · Marcenaria Veio Nobre</title>
+<meta name="description" content="Marcenaria e móveis planejados em Botucatu-SP: cozinhas, closets, home office e painéis. Simule o orçamento, veja o projeto em 3D e agende a visita técnica pelo site.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Marcenaria Veio Nobre · Móveis planejados em Botucatu">
+<meta property="og:description" content="Simule o orçamento do seu móvel e agende a visita técnica.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/cozinha1.jpg">
+<meta name="theme-color" content="#2e2119">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Marcenaria Veio Nobre (empresa fictícia)",
+  "description": "Marcenaria e móveis planejados em Botucatu-SP. Projeto demonstrativo.",
+  "image": "img/cozinha1.jpg",
+  "telephone": "+55-14-00000-0000",
+  "priceRange": "$$",
+  "address": {"@type": "PostalAddress", "streetAddress": "Rua Exemplo das Madeiras, 340 (endereço fictício)", "addressLocality": "Botucatu", "addressRegion": "SP", "addressCountry": "BR"},
+  "areaServed": [{"@type": "City", "name": "Botucatu"}],
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}
+  ]
+}
+</script>
+<style>
+:root{
+  --paper:#f4efe6; --paper2:#ebe3d5; --card:#fbf8f2; --line:#d8ccb9;
+  --wal:#2e2119; --wal2:#4a3426; --oak:#b98a5a; --olive:#5e6138; --mute:#7c6f62;
+  --serif:"Fraunces", Georgia, serif; --sans:"Inter", system-ui, sans-serif; --r:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--paper);color:var(--wal);font-size:16px;line-height:1.55;padding-bottom:62px}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.demo{background:var(--wal);color:#d9cdbb;font-size:12px;letter-spacing:.04em;text-align:center;padding:5px 12px}
+.demo b{color:#e9c89b;font-weight:600}
+
+header.top{position:sticky;top:0;z-index:30;background:rgba(244,239,230,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:32px;height:32px}
+.logo span{font-family:var(--serif);font-size:21px;font-weight:500;letter-spacing:-.01em;line-height:1}
+.logo small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.22em;color:var(--mute);margin-top:4px;text-transform:uppercase}
+nav.links{display:none;gap:24px;font-size:14px}
+nav.links a{text-decoration:none}
+nav.links a:hover{color:var(--olive)}
+.top .cta{font-size:13px;font-weight:600;text-decoration:none;background:var(--wal);color:var(--paper);padding:8px 13px;border-radius:99px}
+
+.hero{padding:22px 0 10px}
+.hero figure{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/4.3}
+.hero figure img{width:100%;height:100%;object-fit:cover}
+.hero figcaption{position:absolute;left:12px;bottom:12px;background:rgba(244,239,230,.92);font-size:12px;padding:5px 9px;border-radius:2px;letter-spacing:.02em}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);font-weight:600}
+h1{font-family:var(--serif);font-weight:400;font-size:40px;line-height:1.04;letter-spacing:-.02em;margin:10px 0 14px}
+h1 i{font-style:italic;color:var(--wal2)}
+.lead{font-size:16.5px;color:#5b4d41;max-width:480px}
+.hero .txt{padding:22px 0 0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:99px;border:1px solid var(--wal);background:var(--wal);color:var(--paper);font-weight:600;font-size:15px;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--wal2)}
+.btn.line{background:transparent;color:var(--wal)}
+.btn.line:hover{background:var(--paper2)}
+.btn.wa{background:#25a35a;border-color:#25a35a;color:#fff}
+.btn.full{width:100%;margin-top:16px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{padding:12px 4px;font-size:12.5px;color:var(--mute);line-height:1.3}
+.facts div+div{border-left:1px solid var(--line);padding-left:12px}
+.facts b{display:block;font-family:var(--serif);font-weight:500;font-size:21px;color:var(--wal)}
+
+section{padding:56px 0;scroll-margin-top:52px}
+.sec-h{margin-bottom:26px;max-width:620px}
+.sec-h .n{font-family:var(--serif);font-style:italic;color:var(--oak);font-size:17px}
+h2{font-family:var(--serif);font-weight:400;font-size:33px;line-height:1.08;letter-spacing:-.015em;margin:4px 0 10px}
+.sec-h p{color:#5b4d41}
+.dark{background:var(--wal);color:var(--paper)}
+.dark .sec-h p{color:#cbbda9}
+.dark .sec-h .n{color:#d9ad78}
+.alt{background:var(--paper2)}
+
+/* portfolio */
+.filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-bottom:18px;padding-bottom:2px}
+.filters::-webkit-scrollbar{display:none}
+.filters button{flex:0 0 auto;border:1px solid var(--line);background:transparent;border-radius:99px;padding:8px 15px;font-size:14px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--wal);color:var(--paper);border-color:var(--wal)}
+.filters button span{opacity:.55;margin-left:4px;font-size:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid figure{cursor:zoom-in;position:relative}
+.grid figure.hide{display:none}
+.grid .im{aspect-ratio:4/5;overflow:hidden;border-radius:var(--r);background:var(--paper2)}
+.grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.grid figure:hover img{transform:scale(1.04)}
+.grid figcaption{padding:8px 2px 4px;font-size:13px;line-height:1.35}
+.grid figcaption b{display:block;font-family:var(--serif);font-weight:500;font-size:16px}
+.grid figcaption small{color:var(--mute)}
+.grid figure.wide{grid-column:1/-1}
+.grid figure.wide .im{aspect-ratio:16/10}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(30,22,16,.94);display:none;align-items:center;justify-content:center;padding:16px;flex-direction:column;gap:10px;color:var(--paper)}
+.lb.on{display:flex}
+.lb img{max-height:78vh;width:auto;border-radius:var(--r)}
+.lb button{position:absolute;top:12px;right:12px;background:none;border:1px solid #8a7766;color:var(--paper);border-radius:99px;width:40px;height:40px;font-size:20px;cursor:pointer}
+
+/* simulator */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.dark .card{background:#3a2a20;border-color:#5a4535}
+label{display:block;font-size:13px;font-weight:600;margin:16px 0 7px}
+label:first-child{margin-top:0}
+input,select,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:var(--r);background:#fff;font-size:16px}
+.dark input,.dark select{background:#2e2119;border-color:#5a4535;color:var(--paper)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--olive);outline-offset:1px}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.unit{position:relative}
+.unit::after{content:"m";position:absolute;right:11px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--mute)}
+.unit input{padding-right:26px}
+.kinds{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kind{border:1px solid var(--line);background:#fff;border-radius:var(--r);padding:10px;text-align:left;cursor:pointer;display:flex;gap:10px;align-items:center;font-size:14px;line-height:1.2}
+.kind svg{flex:0 0 28px;width:28px;height:28px;stroke:var(--wal2)}
+.kind[aria-pressed="true"]{border-color:var(--wal);box-shadow:inset 0 0 0 1px var(--wal);background:#f6efe2}
+.finishes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.fin{border:1px solid var(--line);background:#fff;border-radius:var(--r);padding:6px;cursor:pointer;font-size:11.5px;text-align:center;line-height:1.2}
+.fin i{display:block;height:38px;border-radius:2px;margin-bottom:5px}
+.fin[aria-pressed="true"]{border-color:var(--wal);box-shadow:inset 0 0 0 1px var(--wal)}
+.checks label{display:flex;align-items:center;gap:10px;font-weight:400;font-size:14px;margin:8px 0}
+.checks input{width:18px;height:18px;accent-color:var(--olive)}
+.result{margin-top:18px;background:var(--wal);color:var(--paper);border-radius:var(--r);padding:18px;position:relative;overflow:hidden}
+.result small{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#d9ad78}
+.result .range{font-family:var(--serif);font-size:34px;line-height:1.1;margin:6px 0 4px;letter-spacing:-.01em}
+.result p{font-size:13px;color:#cbbda9}
+.result .warn{margin-top:12px;padding-top:12px;border-top:1px solid #5a4535;font-size:12.5px;color:#e5d8c4;display:flex;gap:8px}
+.mini{font-size:12.5px;color:var(--mute);margin-top:6px}
+
+/* swatches (wood textures in css) */
+.w-branco{background:linear-gradient(135deg,#f7f5f0,#e9e5dc)}
+.w-freijo{background:repeating-linear-gradient(92deg,#b98d5c 0 3px,#a87b4b 3px 5px,#c49a69 5px 9px,#ad8152 9px 11px)}
+.w-nogueira{background:repeating-linear-gradient(88deg,#5a3c28 0 4px,#4a3020 4px 6px,#6a4630 6px 11px,#523726 11px 13px)}
+.w-grafite{background:linear-gradient(135deg,#4b4d4f,#393b3d)}
+.w-oliva{background:linear-gradient(135deg,#6e7044,#5a5c36)}
+.w-carvalho{background:repeating-linear-gradient(91deg,#cfae84 0 5px,#c09d72 5px 7px,#d8b98f 7px 12px,#bf9a6e 12px 14px)}
+.w-laca{background:linear-gradient(135deg,#ebe2d3,#d9ccb7)}
+.w-preto{background:linear-gradient(135deg,#2a2826,#1c1a19)}
+
+/* process */
+.proc{list-style:none;counter-reset:p;display:grid;gap:0}
+.proc li{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:18px 0;border-top:1px solid #5a4535}
+.proc li:last-child{border-bottom:1px solid #5a4535}
+.proc .rn{font-family:var(--serif);font-style:italic;font-size:30px;color:#d9ad78;line-height:1}
+.proc h3{font-family:var(--serif);font-weight:500;font-size:21px;display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.proc h3 small{font-family:var(--sans);font-size:12px;font-weight:500;color:#cbbda9;letter-spacing:.06em;white-space:nowrap}
+.proc p{font-size:14.5px;color:#cbbda9;margin-top:4px}
+.proc-ph{margin-top:24px;border-radius:var(--r);overflow:hidden;aspect-ratio:16/10}
+.proc-ph img{width:100%;height:100%;object-fit:cover}
+
+/* materials */
+.mats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mat{background:none;border:0;padding:0;text-align:left;cursor:pointer}
+.mat i{display:block;aspect-ratio:1;border-radius:var(--r);border:1px solid var(--line);position:relative}
+.mat[aria-pressed="true"] i{outline:2px solid var(--wal);outline-offset:3px}
+.mat span{display:block;font-size:12px;margin-top:7px;line-height:1.25}
+.mat-info{margin-top:18px;padding:16px;border-left:3px solid var(--oak);background:var(--card)}
+.mat-info b{font-family:var(--serif);font-weight:500;font-size:19px}
+.mat-info p{font-size:14px;color:#5b4d41;margin-top:4px}
+.hw{display:grid;gap:10px;margin-top:22px}
+.hw>div{display:flex;gap:12px;align-items:flex-start;font-size:14px;padding:12px 0;border-top:1px solid var(--line)}
+.hw b{display:block;font-weight:600}
+.hw span{color:#5b4d41}
+.hw svg{flex:0 0 26px;width:26px;height:26px;stroke:var(--olive)}
+
+/* booking */
+.days{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.days::-webkit-scrollbar{display:none}
+.day{flex:0 0 60px;border:1px solid #5a4535;background:#2e2119;color:var(--paper);border-radius:var(--r);padding:8px 0;text-align:center;cursor:pointer}
+.day small{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#cbbda9}
+.day b{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.15}
+.day[disabled]{opacity:.3;cursor:not-allowed}
+.day[aria-pressed="true"]{background:#e9c89b;color:var(--wal);border-color:#e9c89b}
+.day[aria-pressed="true"] small{color:var(--wal2)}
+.seg{display:grid;grid-template-columns:1fr 1fr;border:1px solid #5a4535;border-radius:99px;overflow:hidden}
+.seg button{border:0;background:transparent;padding:11px;cursor:pointer;color:var(--paper);font-size:14px}
+.seg button[aria-pressed="true"]{background:#e9c89b;color:var(--wal);font-weight:600}
+.sum{margin-top:14px;padding:12px;border:1px dashed #6a5442;border-radius:var(--r);font-size:13.5px;color:#e5d8c4;display:none}
+.sum.on{display:block}
+
+/* faq */
+details{border-top:1px solid var(--line);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;font-family:var(--serif);font-size:19px;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--sans);font-weight:300;font-size:24px;line-height:1;color:var(--oak);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:10px;color:#5b4d41;font-size:15px}
+
+.gbox{display:grid;gap:12px}
+.rev{background:var(--card);border:1px solid var(--line);padding:16px;border-radius:var(--r);position:relative}
+.rev .lbl{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:2px 8px;display:inline-block;margin-bottom:8px}
+.rev p{font-family:var(--serif);font-size:17px;line-height:1.4}
+.rev footer{font-size:12.5px;color:var(--mute);margin-top:8px}
+.gprofile{display:flex;gap:14px;align-items:center;padding:16px;border-radius:var(--r);background:var(--wal);color:var(--paper);text-decoration:none}
+.gprofile svg{flex:0 0 34px;width:34px;height:34px}
+.gprofile b{font-family:var(--serif);font-weight:500;font-size:18px;display:block}
+.gprofile small{color:#cbbda9;font-size:13px}
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:15px}
+.contact dt{color:var(--mute);font-size:13px;padding-top:2px}
+
+footer.foot{background:#1f1611;color:#a89884;font-size:13px;padding:28px 0 34px}
+footer.foot b{color:var(--paper);font-weight:600}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr 1.1fr;background:var(--paper);border-top:1px solid var(--line)}
+.bar a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0 9px;font-size:11.5px;font-weight:600;text-decoration:none}
+.bar svg{width:21px;height:21px}
+.bar a.wa{background:#25a35a;color:#fff}
+.wa-float{display:none;position:fixed;right:22px;bottom:22px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25a35a;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.wa-float svg{width:30px;height:30px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+
+@media (min-width:760px){
+  body{padding-bottom:0}
+  .bar{display:none}
+  .wa-float{display:flex}
+  nav.links{display:flex}
+  .hero{padding:48px 0 30px}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+  .hero .txt{order:-1;padding:0}
+  .hero figure{aspect-ratio:4/4.6}
+  h1{font-size:62px}
+  h2{font-size:46px}
+  section{padding:84px 0}
+  .grid{grid-template-columns:repeat(3,1fr);gap:16px}
+  .grid figure.wide{grid-column:span 2}
+  .grid figure.wide .im{aspect-ratio:auto;height:calc(100% - 52px)}
+  .two{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+  .two>*{min-width:0}
+  .mats{grid-template-columns:repeat(8,1fr)}
+  .gbox{grid-template-columns:1fr 1fr 1.2fr}
+  .proc{grid-template-columns:repeat(5,1fr);gap:18px}
+  .proc li{grid-template-columns:1fr;border-top:1px solid #5a4535;border-bottom:0!important;padding-top:16px}
+  .proc h3{flex-direction:column;gap:2px;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo"><b>Projeto demonstrativo</b> · empresa fictícia · preços e contatos são exemplos</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Marcenaria Veio Nobre, início">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#2e2119"/><g fill="none" stroke="#e9c89b" stroke-width="1.6"><ellipse cx="20" cy="20" rx="12" ry="9"/><ellipse cx="20" cy="20" rx="7.5" ry="5.2"/><ellipse cx="20.5" cy="20" rx="3" ry="2"/></g></svg>
+      <span>Veio Nobre<small>Marcenaria · Botucatu</small></span>
+    </a>
+    <nav class="links" aria-label="Seções">
+      <a href="#portfolio">Ambientes</a><a href="#orcamento">Orçamento</a><a href="#processo">Como trabalhamos</a><a href="#materiais">Materiais</a><a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="cta" href="#visita">Agendar visita</a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero" style="padding-bottom:10px">
+  <div class="wrap">
+    <figure><img src="img/bancada.jpg" alt="Bancada da marcenaria com tábuas de carvalho e nogueira e uma plaina" fetchpriority="high"><figcaption>Nossa bancada · carvalho e nogueira</figcaption></figure>
+    <div class="txt">
+      <div class="eyebrow">Móveis planejados · Botucatu-SP</div>
+      <h1>Feito sob medida, <i>na nossa bancada</i>, para a sua casa.</h1>
+      <p class="lead">Cozinhas, closets e home office desenhados em 3D e produzidos em marcenaria própria. Você vê o projeto antes, aprova e acompanha cada etapa.</p>
+      <div class="actions">
+        <a class="btn" href="#orcamento">Simular orçamento</a>
+        <a class="btn line" href="#portfolio">Ver ambientes</a>
+      </div>
+      <div class="facts">
+        <div><b>3D</b>projeto antes de produzir</div>
+        <div><b>5 anos</b>de garantia na marcenaria</div>
+        <div><b>30 a 45</b>dias da aprovação à montagem</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="wrap">
+    <div class="sec-h reveal"><span class="n">i. Ambientes</span><h2>Projetos por cômodo</h2><p>Filtre pelo ambiente que você quer transformar. Toque na foto para ampliar.</p></div>
+    <div class="filters" id="filters" role="group" aria-label="Filtrar ambientes">
+      <button aria-pressed="true" data-f="all">Todos</button>
+      <button aria-pressed="false" data-f="cozinha">Cozinha</button>
+      <button aria-pressed="false" data-f="closet">Closet</button>
+      <button aria-pressed="false" data-f="office">Home office</button>
+      <button aria-pressed="false" data-f="sala">Sala</button>
+    </div>
+    <div class="grid" id="grid">
+      <figure class="wide" data-c="cozinha"><div class="im"><img src="img/cozinha1.jpg" alt="Cozinha em nogueira e branco" loading="lazy"></div><figcaption><b>Cozinha em L</b><small>Nogueira + laca off-white · bancada em quartzo</small></figcaption></figure>
+      <figure data-c="closet"><div class="im"><img src="img/closet.jpg" alt="Closet em carvalho com gavetas" loading="lazy"></div><figcaption><b>Closet aberto</b><small>Carvalho · LED sob prateleiras</small></figcaption></figure>
+      <figure data-c="office"><div class="im"><img src="img/office.jpg" alt="Home office com bancada de nogueira" loading="lazy"></div><figcaption><b>Home office compacto</b><small>Bancada suspensa · nichos</small></figcaption></figure>
+      <figure data-c="cozinha"><div class="im"><img src="img/cozinha2.jpg" alt="Cozinha estreita em carvalho claro" loading="lazy"></div><figcaption><b>Cozinha de apartamento</b><small>Carvalho claro · prateleira aberta</small></figcaption></figure>
+      <figure data-c="sala"><div class="im"><img src="img/sala.jpg" alt="Painel de TV com ripado de madeira" loading="lazy"></div><figcaption><b>Painel ripado</b><small>Rack suspenso · freijó</small></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="orcamento">
+  <div class="wrap two">
+    <div class="sec-h reveal"><span class="n">ii. Monte seu orçamento</span><h2>Uma faixa de preço em 1 minuto</h2><p>Escolha o móvel, informe as medidas aproximadas e o acabamento. A estimativa ajuda a planejar, e a visita técnica fecha o valor certo.</p>
+      <p class="mini" style="margin-top:14px">Referência de valores fictícia, criada para esta demonstração.</p>
+    </div>
+    <form class="card reveal" id="sim" onsubmit="return false">
+      <label>Móvel</label>
+      <div class="kinds" id="kinds">
+        <button type="button" class="kind" data-k="cozinha" aria-pressed="true"><svg viewBox="0 0 28 28" fill="none" stroke-width="1.5"><rect x="3" y="12" width="22" height="12"/><path d="M3 16h22M14 12v12M5 4h18v5H5z"/></svg>Cozinha</button>
+        <button type="button" class="kind" data-k="closet" aria-pressed="false"><svg viewBox="0 0 28 28" fill="none" stroke-width="1.5"><rect x="4" y="3" width="20" height="22"/><path d="M14 3v22M11 13v3M17 13v3"/></svg>Guarda-roupa / closet</button>
+        <button type="button" class="kind" data-k="office" aria-pressed="false"><svg viewBox="0 0 28 28" fill="none" stroke-width="1.5"><path d="M3 15h22M6 15v9M22 15v9M5 4h18v6H5z"/></svg>Home office</button>
+        <button type="button" class="kind" data-k="painel" aria-pressed="false"><svg viewBox="0 0 28 28" fill="none" stroke-width="1.5"><path d="M5 3v16M9 3v16M13 3v16M17 3v16M21 3v16M3 21h22v3H3z"/></svg>Painel de TV</button>
+      </div>
+      <label>Medidas aproximadas</label>
+      <div class="row3">
+        <div class="unit"><input id="w" inputmode="decimal" value="3,2" aria-label="Largura em metros"></div>
+        <div class="unit"><input id="h" inputmode="decimal" value="2,4" aria-label="Altura em metros"></div>
+        <div class="unit"><input id="d" inputmode="decimal" value="0,6" aria-label="Profundidade em metros"></div>
+      </div>
+      <div class="row3 mini" style="margin-top:4px"><span>largura</span><span>altura</span><span>profundidade</span></div>
+      <label>Acabamento</label>
+      <div class="finishes" id="fins">
+        <button type="button" class="fin" data-m="1" aria-pressed="true"><i class="w-branco"></i>MDF branco</button>
+        <button type="button" class="fin" data-m="1.12" aria-pressed="false"><i class="w-freijo"></i>Amadeirado</button>
+        <button type="button" class="fin" data-m="1.4" aria-pressed="false"><i class="w-laca"></i>Laca fosca</button>
+        <button type="button" class="fin" data-m="1.6" aria-pressed="false"><i class="w-carvalho"></i>Lâmina natural</button>
+      </div>
+      <div class="checks">
+        <label><input type="checkbox" id="xSoft" checked> Dobradiças e corrediças com amortecimento</label>
+        <label><input type="checkbox" id="xLed"> Iluminação em LED embutida</label>
+        <label><input type="checkbox" id="xPux"> Puxador perfil em alumínio</label>
+      </div>
+      <div class="result" aria-live="polite">
+        <small>Estimativa</small>
+        <div class="range" id="range">R$ 0</div>
+        <p id="basis">base</p>
+        <div class="warn"><span aria-hidden="true">※</span><span>Valor de referência. O preço final depende da visita técnica: medição a laser, prumo das paredes, pontos de água e luz, e os detalhes do projeto 3D.</span></div>
+      </div>
+      <a class="btn full" href="#visita" id="toVisit">Agendar visita técnica com esta estimativa</a>
+    </form>
+  </div>
+</section>
+
+<section class="dark" id="processo">
+  <div class="wrap">
+    <div class="sec-h reveal"><span class="n">iii. Como trabalhamos</span><h2>Do metro ao último parafuso</h2><p>Cinco etapas, com aprovação sua antes de cortar a primeira chapa.</p></div>
+    <ol class="proc reveal">
+      <li><span class="rn">I</span><div><h3>Medição <small>1 visita</small></h3><p>Medimos com trena a laser, conferimos prumo, esquadro, tomadas e pontos de água.</p></div></li>
+      <li><span class="rn">II</span><div><h3>Projeto 3D <small>5 a 7 dias</small></h3><p>Você recebe imagens do ambiente com as cores e a distribuição interna de gavetas e portas.</p></div></li>
+      <li><span class="rn">III</span><div><h3>Aprovação <small>no seu tempo</small></h3><p>Ajustamos o que precisar. Contrato com valor fechado, prazo e lista de materiais.</p></div></li>
+      <li><span class="rn">IV</span><div><h3>Produção <small>25 a 35 dias</small></h3><p>Corte, fita de borda e furação na nossa oficina. Mandamos fotos da produção pelo WhatsApp.</p></div></li>
+      <li><span class="rn">V</span><div><h3>Montagem <small>2 a 4 dias</small></h3><p>Equipe própria, com proteção do piso e limpeza no fim. Vistoria final junto com você.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="materiais">
+  <div class="wrap two">
+    <div class="reveal">
+      <div class="sec-h"><span class="n">iv. Materiais e acabamentos</span><h2>Toque nas amostras</h2><p>Na visita levamos o mostruário físico. Aqui vai uma prévia das cores que mais saem.</p></div>
+      <div class="hw">
+        <div><svg viewBox="0 0 26 26" fill="none" stroke-width="1.6"><rect x="3" y="6" width="20" height="14"/><path d="M3 10h20"/></svg><div><b>MDF de 15 e 18 mm</b><span>Caixaria e portas em MDF; fundo de 6 mm. Em áreas úmidas usamos MDF resistente à umidade.</span></div></div>
+        <div><svg viewBox="0 0 26 26" fill="none" stroke-width="1.6"><circle cx="13" cy="13" r="8"/><path d="M13 9v4l3 2"/></svg><div><b>Ferragens com amortecimento</b><span>Portas e gavetas que fecham devagar, sem batida.</span></div></div>
+        <div><svg viewBox="0 0 26 26" fill="none" stroke-width="1.6"><path d="M4 20h18M7 20V8l6-4 6 4v12"/></svg><div><b>Fita de borda aplicada a quente</b><span>Acabamento firme nas bordas, que não descola com o vapor da cozinha.</span></div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="mats" id="mats">
+        <button class="mat" type="button" aria-pressed="true" data-t="Branco texturizado|Clássico e fácil de combinar. Bom para cozinhas pequenas porque reflete a luz."><i class="w-branco"></i><span>Branco texturizado</span></button>
+        <button class="mat" type="button" aria-pressed="false" data-t="Freijó|Amadeirado médio, veio aparente. Combina com piso claro e metais pretos."><i class="w-freijo"></i><span>Freijó</span></button>
+        <button class="mat" type="button" aria-pressed="false" data-t="Nogueira|Tom escuro e quente. Fica bonito em contraste com laca clara."><i class="w-nogueira"></i><span>Nogueira</span></button>
+        <button class="mat" type="button" aria-pressed="false" data-t="Carvalho claro|Leve e escandinavo. Ótimo para closets e quartos."><i class="w-carvalho"></i><span>Carvalho claro</span></button>
+        <button class="mat" type="button" aria-pressed="false" data-t="Grafite|Sóbrio, esconde marcas do dia a dia. Muito pedido em home office."><i class="w-grafite"></i><span>Grafite</span></button>
+        <button class="mat" type="button" aria-pressed="false" data-t="Verde oliva (laca)|Cor de destaque para uma parede só ou para os armários de baixo."><i class="w-oliva"></i><span>Verde oliva</span></button>
+        <button class="mat" type="button" aria-pressed="false" data-t="Laca off-white|Pintura fosca, toque aveludado. Exige um pouco mais de cuidado na limpeza."><i class="w-laca"></i><span>Laca off-white</span></button>
+        <button class="mat" type="button" aria-pressed="false" data-t="Preto fosco|Para puxadores, perfis e detalhes. Usado com moderação, valoriza a madeira."><i class="w-preto"></i><span>Preto fosco</span></button>
+      </div>
+      <div class="mat-info" id="matInfo"><b>Branco texturizado</b><p>Clássico e fácil de combinar. Bom para cozinhas pequenas porque reflete a luz.</p></div>
+      <p class="mini">Cores na tela são aproximadas. Nomes genéricos, sem fabricante.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="visita">
+  <div class="wrap two">
+    <div class="sec-h reveal"><span class="n">v. Visita técnica</span><h2>Agende a medição</h2><p>Atendemos Botucatu e cidades vizinhas. A visita dura cerca de 1 hora e já sai com as medidas para o projeto 3D.</p></div>
+    <form class="card reveal" id="visitForm">
+      <label>Dia</label>
+      <div class="days" id="vdays"></div>
+      <label>Período</label>
+      <div class="seg" id="period"><button type="button" aria-pressed="true">Manhã · 8h às 12h</button><button type="button" aria-pressed="false">Tarde · 13h às 17h</button></div>
+      <div class="row2">
+        <div><label for="vName">Nome</label><input id="vName" placeholder="Seu nome" required></div>
+        <div><label for="vBairro">Bairro</label><input id="vBairro" placeholder="Ex.: Centro" required></div>
+      </div>
+      <div class="sum" id="vSum"></div>
+      <button class="btn wa full" type="submit">Pedir visita pelo WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section id="duvidas">
+  <div class="wrap two">
+    <div class="sec-h reveal"><span class="n">vi. Perguntas frequentes</span><h2>Antes de você perguntar</h2><p>Se a sua dúvida não estiver aqui, mande no WhatsApp.</p></div>
+    <div class="reveal">
+      <details open><summary>Quanto tempo leva do primeiro contato à montagem?</summary><p>Em média de 30 a 45 dias depois da aprovação do projeto. O prazo exato vai no contrato.</p></details>
+      <details><summary>A visita técnica e o projeto 3D são cobrados?</summary><p>A visita em Botucatu é gratuita. O projeto 3D fica incluso quando o pedido é fechado.</p></details>
+      <details><summary>Qual é a garantia?</summary><p>5 anos na marcenaria (caixas, portas e montagem) e a garantia do fabricante nas ferragens. Tudo por escrito.</p></details>
+      <details><summary>MDF ou MDP: qual vocês usam?</summary><p>MDF em portas, frentes e caixaria, porque aceita melhor usinagem e fita de borda. Em áreas úmidas, MDF resistente à umidade.</p></details>
+      <details><summary>Como funciona o pagamento?</summary><p>Entrada na assinatura do contrato e o restante em parcelas até a montagem. Condições combinadas no orçamento.</p></details>
+      <details><summary>Vocês atendem fora de Botucatu?</summary><p>Sim, cidades da região mediante agendamento. A taxa de deslocamento, se houver, vem no orçamento.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="google">
+  <div class="wrap">
+    <div class="sec-h reveal"><span class="n">vii. No Google</span><h2>Perfil, rotas e avaliações</h2><p>As avaliações reais aparecem no perfil da empresa no Google. Os textos abaixo são exemplos para a demonstração.</p></div>
+    <div class="gbox reveal">
+      <div class="rev"><span class="lbl">Exemplo de avaliação</span><p>“O 3D ficou igual à cozinha montada. Mandavam foto da produção toda semana.”</p><footer>Cliente exemplo · cozinha</footer></div>
+      <div class="rev"><span class="lbl">Exemplo de avaliação</span><p>“Montagem limpa, protegeram o piso e conferiram tudo comigo no final.”</p><footer>Cliente exemplo · closet</footer></div>
+      <div class="contact">
+        <a class="gprofile" href="https://www.google.com/maps/search/marcenaria+Botucatu" target="_blank" rel="noopener"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3c-6 0-11 4.7-11 10.7C7 21.5 18 33 18 33s11-11.5 11-19.3C29 7.7 24 3 18 3z" fill="#e9c89b"/><circle cx="18" cy="13.5" r="4.2" fill="#2e2119"/></svg><div><b>Perfil da empresa no Google</b><small>Abrir rotas e fotos</small></div></a>
+        <dl style="margin-top:16px">
+          <dt>Endereço</dt><dd>Rua Exemplo das Madeiras, 340 · Botucatu-SP (fictício)</dd>
+          <dt>Horário</dt><dd>Seg a sex 8h às 18h · sáb 8h às 12h</dd>
+          <dt>WhatsApp</dt><dd>(14) 00000-0000 (fictício)</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><b>Marcenaria Veio Nobre</b> · móveis planejados em Botucatu-SP</p>
+    <p style="margin-top:6px">Projeto demonstrativo de site para negócio local. Empresa, endereço, telefone, preços e avaliações são fictícios. Fotos geradas para a demonstração.</p>
+    <p style="margin-top:10px"><a href="../">← Ver os dois sites demonstrativos</a></p>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button type="button" aria-label="Fechar">×</button><img alt=""><p></p></div>
+
+<nav class="bar" aria-label="Atalhos">
+  <a href="#orcamento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2"/></svg>Simular</a>
+  <a href="#visita"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Visita</a>
+  <a class="wa" href="https://wa.me/5514000000000?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20marcenaria" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp</a>
+</nav>
+<a class="wa-float" href="https://wa.me/5514000000000?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20marcenaria" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></a>
+
+<script>
+(function(){
+const WA = "5514000000000";
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const brl = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+const press = (group, btn) => { $$(group).forEach(b => b.setAttribute("aria-pressed","false")); btn.setAttribute("aria-pressed","true"); };
+
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }), {threshold:.1});
+$$(".reveal").forEach(el => io.observe(el));
+
+/* filters */
+$$("#filters button").forEach(b => {
+  const f = b.dataset.f, n = f==="all" ? $$("#grid figure").length : $$(`#grid figure[data-c="${f}"]`).length;
+  b.insertAdjacentHTML("beforeend", `<span>${n}</span>`);
+  b.addEventListener("click", () => {
+    press("#filters button", b);
+    $$("#grid figure").forEach(fig => fig.classList.toggle("hide", f!=="all" && fig.dataset.c!==f));
+  });
+});
+/* lightbox */
+const lb = $("#lb");
+$$("#grid figure").forEach(fig => fig.addEventListener("click", () => {
+  lb.querySelector("img").src = fig.querySelector("img").src;
+  lb.querySelector("img").alt = fig.querySelector("img").alt;
+  lb.querySelector("p").textContent = fig.querySelector("b").textContent + " · " + fig.querySelector("small").textContent;
+  lb.classList.add("on");
+}));
+lb.addEventListener("click", e => { if(e.target.tagName !== "IMG") lb.classList.remove("on"); });
+document.addEventListener("keydown", e => { if(e.key==="Escape") lb.classList.remove("on"); });
+
+/* simulator — fictional reference prices */
+const KIND = {
+  cozinha:{name:"Cozinha planejada", unit:"ml", lo:2200, hi:3200, basis:"por metro linear de armário (superior + inferior)", q:(w,h,d)=>w, def:[3.2,2.4,0.6]},
+  closet:{name:"Guarda-roupa / closet", unit:"m²", lo:1100, hi:1600, basis:"por m² de frente (largura × altura)", q:(w,h,d)=>w*h*(d>0.62?1.1:1), def:[2.8,2.6,0.6]},
+  office:{name:"Home office", unit:"ml", lo:1500, hi:2300, basis:"por metro linear de bancada com nichos", q:(w,h,d)=>w, def:[1.8,2.2,0.55]},
+  painel:{name:"Painel de TV", unit:"m²", lo:850, hi:1300, basis:"por m² de painel, com rack suspenso", q:(w,h,d)=>w*h, def:[2.4,2.0,0.45]}
+};
+let kind = "cozinha", mult = 1;
+const n = v => Math.max(0, parseFloat(String(v).replace(",", ".")) || 0);
+const r100 = x => Math.round(x/100)*100;
+function calc(){
+  const k = KIND[kind], w = n($("#w").value), h = n($("#h").value), d = n($("#d").value);
+  const q = Math.max(0.5, k.q(w,h,d));
+  let lo = k.lo*q*mult, hi = k.hi*q*mult;
+  if($("#xSoft").checked){ lo*=1.06; hi*=1.08; }
+  if($("#xPux").checked){ lo*=1.04; hi*=1.05; }
+  if($("#xLed").checked){ lo+=450; hi+=800; }
+  $("#range").textContent = `${brl(r100(lo))} a ${brl(r100(hi))}`;
+  $("#basis").textContent = `${k.name} · ${q.toLocaleString("pt-BR",{maximumFractionDigits:1})} ${k.unit} · referência ${k.basis}`;
+  const fin = $('#fins [aria-pressed="true"]').textContent.trim();
+  $("#toVisit").dataset.msg = `${k.name}, ${w.toLocaleString("pt-BR")} × ${h.toLocaleString("pt-BR")} × ${d.toLocaleString("pt-BR")} m, ${fin}. Estimativa do site: ${brl(r100(lo))} a ${brl(r100(hi))}`;
+}
+$$("#kinds .kind").forEach(b => b.addEventListener("click", () => {
+  press("#kinds .kind", b); kind = b.dataset.k;
+  const df = KIND[kind].def; $("#w").value = String(df[0]).replace(".",","); $("#h").value = String(df[1]).replace(".",","); $("#d").value = String(df[2]).replace(".",",");
+  calc();
+}));
+$$("#fins .fin").forEach(b => b.addEventListener("click", () => { press("#fins .fin", b); mult = +b.dataset.m; calc(); }));
+$("#sim").addEventListener("input", calc); calc();
+let simNote = "";
+$("#toVisit").addEventListener("click", () => { simNote = $("#toVisit").dataset.msg; drawSum(); });
+
+/* materials */
+$$("#mats .mat").forEach(b => b.addEventListener("click", () => {
+  press("#mats .mat", b); const [t, p] = b.dataset.t.split("|");
+  $("#matInfo").innerHTML = `<b>${t}</b><p>${p}</p>`;
+}));
+
+/* visit booking */
+const DN = ["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"], MN = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+let vDay = null, period = "Manhã · 8h às 12h";
+const base = new Date(); base.setHours(0,0,0,0);
+for(let i=1;i<=14;i++){
+  const d = new Date(base); d.setDate(base.getDate()+i);
+  const b = document.createElement("button"); b.type="button"; b.className="day"; b.setAttribute("aria-pressed","false");
+  b.innerHTML = `<small>${DN[d.getDay()]}</small><b>${d.getDate()}</b><small>${MN[d.getMonth()]}</small>`;
+  if(d.getDay()===0 || d.getDay()===6) b.disabled = true;
+  b.addEventListener("click", () => { press("#vdays .day", b); vDay = d; drawSum(); });
+  $("#vdays").appendChild(b);
+}
+const first = $$("#vdays .day").find(b => !b.disabled); if(first) first.click();
+$$("#period button").forEach(b => b.addEventListener("click", () => { press("#period button", b); period = b.textContent; drawSum(); }));
+function vMsg(){
+  const lines = ["Olá, Veio Nobre! Quero agendar a visita técnica:", `• Dia: ${DN[vDay.getDay()]}, ${vDay.getDate()} de ${MN[vDay.getMonth()]}`, `• Período: ${period}`];
+  const nm = $("#vName").value.trim(), br = $("#vBairro").value.trim();
+  if(nm) lines.push(`• Nome: ${nm}`); if(br) lines.push(`• Bairro: ${br}, Botucatu`);
+  if(simNote) lines.push(`• Projeto: ${simNote}`);
+  return lines.join("\n");
+}
+function drawSum(){ if(!vDay) return; const s = $("#vSum"); s.classList.add("on"); s.textContent = vMsg(); s.style.whiteSpace = "pre-line"; }
+$("#visitForm").addEventListener("input", drawSum);
+$("#visitForm").addEventListener("submit", e => { e.preventDefault(); window.open(`https://wa.me/${WA}?text=${encodeURIComponent(vMsg())}`, "_blank", "noopener"); });
+})();
+</script>
+</body>
+</html>

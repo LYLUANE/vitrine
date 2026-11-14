@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oficina mecânica em Botucatu · Auto Center Serra Azul</title>
+<meta name="description" content="Oficina mecânica em Botucatu-SP: revisão, freios, suspensão e injeção. Agende pelo site, peça orçamento no WhatsApp e acompanhe o serviço do seu carro pela placa.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Auto Center Serra Azul · Oficina mecânica em Botucatu">
+<meta property="og:description" content="Agende a revisão, peça orçamento e acompanhe o seu carro pelo celular.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/hero.jpg">
+<meta name="theme-color" content="#16181b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Auto Center Serra Azul (empresa fictícia)",
+  "description": "Oficina mecânica em Botucatu-SP. Projeto demonstrativo.",
+  "image": "img/hero.jpg",
+  "telephone": "+55-14-00000-0000",
+  "priceRange": "R$ 120 a R$ 900",
+  "address": {"@type": "PostalAddress", "streetAddress": "Av. Exemplo dos Mecânicos, 1200 (endereço fictício)", "addressLocality": "Botucatu", "addressRegion": "SP", "addressCountry": "BR"},
+  "areaServed": {"@type": "City", "name": "Botucatu"},
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:30", "closes": "18:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#16181b; --ink2:#23262b; --ink3:#30343a; --line:#3b4047;
+  --amber:#f2b632; --amber2:#ffcf5c; --paper:#f3f1ec; --paper2:#e8e4dc;
+  --mute:#9aa0a8; --ok:#4fbf7a; --red:#e2603f;
+  --cond:"Barlow Condensed", "Arial Narrow", sans-serif;
+  --sans:"Barlow", system-ui, sans-serif;
+  --r:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:16px;line-height:1.5;padding-bottom:64px}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+.demo{background:#0c0d0f;color:#c9ccd1;font-size:12px;letter-spacing:.04em;text-align:center;padding:5px 12px}
+.demo b{color:var(--amber);font-weight:600}
+
+/* header */
+header.top{position:sticky;top:0;z-index:30;background:rgba(22,24,27,.96);backdrop-filter:blur(8px);color:#fff;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:34px;height:34px}
+.logo span{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.02em;line-height:1;text-transform:uppercase}
+.logo small{display:block;font-family:var(--sans);font-weight:500;font-size:10.5px;letter-spacing:.14em;color:var(--mute);margin-top:3px}
+nav.links{display:none;gap:22px;font-size:14px;font-weight:500}
+nav.links a{text-decoration:none;color:#d6d8dc}
+nav.links a:hover{color:var(--amber)}
+.top .call{font-family:var(--cond);font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border:1px solid var(--amber);color:var(--amber);padding:7px 12px;border-radius:6px}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.hero .ph{position:relative;height:300px}
+.hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,24,27,.1) 40%,var(--ink) 100%)}
+.hero .tag{position:absolute;left:16px;top:16px;z-index:2;background:var(--amber);color:var(--ink);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:4px}
+.hero .txt{position:relative;z-index:2;padding:0 16px 28px;margin-top:-56px}
+.kicker{font-family:var(--cond);font-weight:600;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber)}
+h1{font-family:var(--cond);font-weight:700;font-size:44px;line-height:.95;letter-spacing:-.005em;text-transform:uppercase;margin:8px 0 12px}
+h1 em{font-style:normal;color:var(--amber)}
+.hero p.lead{color:#c9ccd1;font-size:16.5px;max-width:520px}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:14px;color:#d6d8dc}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(79,191,122,.18)}
+.status.closed i{background:var(--red);box-shadow:0 0 0 4px rgba(226,96,63,.18)}
+
+/* quick tiles */
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.quick a{display:flex;flex-direction:column;justify-content:space-between;min-height:96px;padding:12px;border-radius:var(--r);background:var(--ink2);border:1px solid var(--line);text-decoration:none;transition:border-color .2s,transform .2s}
+.quick a:hover{border-color:var(--amber);transform:translateY(-2px)}
+.quick a.main{background:var(--amber);color:var(--ink);border-color:var(--amber)}
+.quick svg{width:24px;height:24px}
+.quick b{font-family:var(--cond);font-weight:700;font-size:19px;line-height:1.05;text-transform:uppercase;letter-spacing:.01em}
+.quick small{display:block;font-size:12.5px;opacity:.75;margin-top:2px}
+
+/* sections */
+section{padding:52px 0;scroll-margin-top:50px}
+.sec-h{margin-bottom:24px}
+.sec-h .num{font-family:var(--cond);font-weight:600;font-size:13px;letter-spacing:.2em;color:#8a7a52;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.sec-h .num::after{content:"";height:1px;flex:1;background:currentColor;opacity:.35;max-width:120px}
+h2{font-family:var(--cond);font-weight:700;font-size:34px;line-height:1;text-transform:uppercase;margin:8px 0 8px}
+.sec-h p{color:#555a61;max-width:560px}
+.dark{background:var(--ink);color:#fff}
+.dark .sec-h p{color:#b4b8be}
+.dark .sec-h .num{color:var(--amber)}
+.alt{background:var(--paper2)}
+
+/* services */
+.svc{display:grid;gap:1px;background:#d3cec4;border:1px solid #d3cec4;border-radius:var(--r);overflow:hidden}
+.svc article{background:var(--paper);padding:16px;display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:baseline}
+.svc h3{font-family:var(--cond);font-weight:700;font-size:21px;text-transform:uppercase;letter-spacing:.01em}
+.svc p{grid-column:1/-1;font-size:14px;color:#5b6067}
+.price{text-align:right;white-space:nowrap}
+.price small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7b7f86}
+.price b{font-family:var(--cond);font-weight:700;font-size:24px}
+.note{font-size:13px;color:#6c7077;margin-top:12px}
+
+/* forms */
+.card{background:#fff;border-radius:14px;padding:18px;border:1px solid #ddd8ce;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+.dark .card{background:var(--ink2);border-color:var(--line)}
+label{display:block;font-size:13px;font-weight:600;letter-spacing:.02em;margin:14px 0 6px}
+label:first-child{margin-top:0}
+input,select,textarea{width:100%;padding:12px 12px;border:1px solid #cfc9be;border-radius:8px;background:#fbfaf7;font-size:16px}
+.dark input,.dark select,.dark textarea{background:#1b1d21;border-color:var(--line);color:#fff}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:transparent}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:16px;padding:14px 16px;border:0;border-radius:8px;background:var(--amber);color:var(--ink);font-family:var(--cond);font-weight:700;font-size:18px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--amber2)}
+.btn.ghost{background:transparent;border:1px solid currentColor;color:inherit}
+.btn.green{background:#25a35a;color:#fff}
+.btn svg{width:20px;height:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid #cfc9be;background:#fbfaf7;border-radius:999px;padding:7px 12px;font-size:14px;cursor:pointer}
+.dark .chip{border-color:var(--line);background:#1b1d21;color:#dfe1e4}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--amber);border-color:var(--ink)}
+.dark .chip[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber)}
+
+/* days & slots */
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.day{flex:0 0 62px;scroll-snap-align:start;border:1px solid #cfc9be;background:#fbfaf7;border-radius:10px;padding:8px 0;text-align:center;cursor:pointer}
+.day small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7b7f86}
+.day b{font-family:var(--cond);font-size:24px;font-weight:700;line-height:1.1}
+.day[disabled]{opacity:.35;cursor:not-allowed}
+.day[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.day[aria-pressed="true"] small{color:var(--amber)}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.slot{border:1px solid #cfc9be;background:#fbfaf7;border-radius:8px;padding:9px 0;font-weight:600;font-size:15px;cursor:pointer}
+.slot[disabled]{text-decoration:line-through;opacity:.4;cursor:not-allowed}
+.slot[aria-pressed="true"]{background:var(--amber);border-color:var(--amber)}
+.confirm{display:none;margin-top:16px;border:1px dashed #b9b2a4;border-radius:12px;padding:16px;background:#fffdf6}
+.confirm.on{display:block}
+.confirm h4{font-family:var(--cond);font-size:22px;text-transform:uppercase}
+.confirm dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:14px;margin:10px 0}
+.confirm dt{color:#7b7f86}
+.confirm dd{font-weight:600}
+
+/* tracking */
+.track-form{display:flex;gap:8px}
+.track-form input{text-transform:uppercase;font-family:var(--cond);font-size:22px;letter-spacing:.12em;font-weight:600}
+.track-form .btn{width:auto;margin:0;padding:0 18px}
+.hint{font-size:13px;color:#b4b8be;margin-top:10px}
+.hint button{background:none;border:0;border-bottom:1px dashed var(--amber);color:var(--amber);cursor:pointer;font-weight:600;margin:0 4px}
+.os{display:none;margin-top:18px}
+.os.on{display:block}
+.os-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.plate{display:inline-block;background:#fff;color:#111;border-radius:5px;border:2px solid #111;font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.14em;padding:0 8px;position:relative;padding-top:9px}
+.plate::before{content:"BRASIL";position:absolute;top:0;left:0;right:0;height:9px;background:#1d4fa0;color:#fff;font-size:7px;letter-spacing:.3em;line-height:9px;text-align:center}
+.os-head h3{font-family:var(--cond);font-size:22px;text-transform:uppercase;margin-top:6px}
+.os-head p{font-size:13px;color:#b4b8be}
+.os-code{text-align:right;font-size:12px;color:#b4b8be}
+.os-code b{display:block;font-family:var(--cond);font-size:20px;color:#fff;letter-spacing:.06em}
+ol.steps{list-style:none;margin:18px 0 4px;position:relative}
+ol.steps li{position:relative;padding:0 0 18px 38px}
+ol.steps li::before{content:"";position:absolute;left:11px;top:22px;bottom:0;width:2px;background:var(--line)}
+ol.steps li:last-child::before{display:none}
+ol.steps .dot{position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;border:2px solid var(--line);background:var(--ink);display:grid;place-items:center;font-family:var(--cond);font-weight:700;font-size:13px;color:var(--mute)}
+ol.steps li.done .dot{background:var(--ok);border-color:var(--ok);color:#0d2416}
+ol.steps li.done::before{background:var(--ok)}
+ol.steps li.now .dot{background:var(--amber);border-color:var(--amber);color:var(--ink);box-shadow:0 0 0 5px rgba(242,182,50,.2)}
+ol.steps b{font-family:var(--cond);font-size:19px;text-transform:uppercase;letter-spacing:.02em;display:block;line-height:1.2}
+ol.steps li:not(.done):not(.now) b{color:var(--mute)}
+ol.steps small{font-size:13px;color:#b4b8be}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 4px}
+.pics figure{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3}
+.pics img{width:100%;height:100%;object-fit:cover}
+.pics figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 8px 6px;font-size:12px;background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.budget{margin-top:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.budget h4{font-family:var(--cond);font-size:18px;text-transform:uppercase;letter-spacing:.04em;padding:10px 12px;background:#1b1d21;display:flex;justify-content:space-between}
+.budget label.item{display:grid;grid-template-columns:22px 1fr auto;gap:10px;align-items:start;margin:0;padding:11px 12px;border-top:1px solid var(--line);font-weight:400;font-size:14px;cursor:pointer}
+.budget label.item input{width:18px;height:18px;margin-top:2px;accent-color:var(--amber)}
+.budget label.item em{display:block;font-style:normal;font-size:12px;color:#b4b8be}
+.budget .tot{display:flex;justify-content:space-between;align-items:baseline;padding:12px;border-top:1px solid var(--line);background:#1b1d21}
+.budget .tot b{font-family:var(--cond);font-size:28px;color:var(--amber)}
+.approved{display:none;margin-top:12px;padding:12px;border-radius:8px;background:rgba(79,191,122,.12);border:1px solid rgba(79,191,122,.4);font-size:14px}
+.approved.on{display:block}
+.err{color:#ffb4a0;font-size:14px;margin-top:10px;display:none}
+.err.on{display:block}
+
+/* km reminder */
+.km-out{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.km-out div{background:var(--paper);border-radius:10px;padding:12px}
+.km-out small{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7b7f86}
+.km-out b{display:block;font-family:var(--cond);font-size:28px;line-height:1.1}
+.gauge{height:10px;border-radius:99px;background:#e2ddd3;margin-top:14px;overflow:hidden}
+.gauge i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ok),var(--amber) 70%,var(--red));transition:width .6s}
+
+/* guarantee */
+.guar{display:grid;gap:12px}
+.guar>div{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:start;padding:16px;border:1px solid var(--line);border-radius:var(--r)}
+.guar .seal{width:56px;height:56px;border-radius:50%;border:2px solid var(--amber);display:grid;place-items:center;font-family:var(--cond);font-weight:700;color:var(--amber);line-height:.9;text-align:center;font-size:20px}
+.guar .seal small{display:block;font-size:10px;letter-spacing:.1em}
+.guar h3{font-family:var(--cond);font-size:20px;text-transform:uppercase}
+.guar p{font-size:14px;color:#b4b8be}
+
+/* reviews */
+.revs{display:grid;gap:12px}
+.rev{background:#fff;border:1px solid #ddd8ce;border-radius:var(--r);padding:16px;position:relative}
+.rev .lbl{position:absolute;top:-9px;right:12px;background:var(--paper2);border:1px solid #cfc9be;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:99px;color:#6c7077}
+.rev p{font-size:15px}
+.rev footer{font-size:13px;color:#7b7f86;margin-top:8px}
+.stars{color:#c99400;letter-spacing:2px}
+.gprofile{display:flex;gap:14px;align-items:center;margin-top:14px;padding:14px 16px;border-radius:var(--r);background:var(--ink);color:#fff;text-decoration:none}
+.gprofile svg{flex:0 0 36px;width:36px;height:36px}
+.gprofile b{font-family:var(--cond);font-size:19px;text-transform:uppercase;letter-spacing:.02em;display:block}
+.gprofile small{color:#b4b8be;font-size:13px}
+
+/* map */
+.map{border-radius:var(--r);overflow:hidden;border:1px solid #cfc9be;background:#e9e5dc}
+.map svg{width:100%;height:auto;display:block}
+.hours{list-style:none;margin-top:12px;font-size:15px}
+.hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #d6d1c7}
+.hours li.today{font-weight:700}
+.addr{margin-top:14px;font-size:15px}
+
+footer.foot{background:#0c0d0f;color:#9aa0a8;font-size:13px;padding:28px 0 36px}
+footer.foot b{color:#fff}
+
+/* bottom bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--ink);border-top:1px solid var(--line)}
+.bar a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0 10px;color:#d6d8dc;text-decoration:none;font-size:11.5px;font-weight:600;letter-spacing:.03em}
+.bar a svg{width:22px;height:22px}
+.bar a.wa{background:#25a35a;color:#fff}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+
+@media (min-width:760px){
+  body{padding-bottom:0}
+  .bar{display:none}
+  nav.links{display:flex}
+  .hero{display:grid}
+  .hero .ph{position:absolute;inset:0 0 0 46%;height:auto}
+  .hero .ph::after{background:linear-gradient(90deg,var(--ink) 0%,rgba(22,24,27,.0) 35%)}
+  .hero .tag{left:auto;right:20px}
+  .hero .txt{margin-top:0;padding:72px 16px 72px}
+  .hero .txt>*{max-width:540px}
+  .hero .txt>.status{max-width:none}
+  .two>*{min-width:0}
+  h1{font-size:68px}
+  .quick{grid-template-columns:1fr 1fr;max-width:520px}
+  h2{font-size:46px}
+  .svc{grid-template-columns:1fr 1fr}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .guar{grid-template-columns:1fr 1fr 1fr}
+  .revs{grid-template-columns:1fr 1fr 1fr}
+  section{padding:80px 0}
+  .wa-float{display:flex}
+}
+.wa-float{display:none;position:fixed;right:22px;bottom:22px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25a35a;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.wa-float svg{width:30px;height:30px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo"><b>Projeto demonstrativo</b> · empresa fictícia · nomes, endereço, telefone e preços são exemplos</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Auto Center Serra Azul, início">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#f2b632"/><path d="M6 28 L15 15 L21 23 L25 18 L34 28 Z" fill="#16181b"/><circle cx="27" cy="11" r="3.2" fill="#16181b"/></svg>
+      <span>Serra Azul<small>AUTO CENTER · BOTUCATU</small></span>
+    </a>
+    <nav class="links" aria-label="Seções">
+      <a href="#servicos">Serviços</a><a href="#acompanhar">Acompanhar</a><a href="#agendar">Agendar</a><a href="#orcamento">Orçamento</a><a href="#onde">Onde estamos</a>
+    </nav>
+    <a class="call" href="tel:+5514000000000">Ligar</a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero" style="padding:0">
+  <div class="ph"><span class="tag">Botucatu · SP</span><img src="img/hero.jpg" alt="Carro no elevador dentro da oficina" fetchpriority="high"></div>
+  <div class="wrap txt">
+    <div class="kicker">Oficina mecânica · Botucatu</div>
+    <h1>Seu carro <em>na mão certa</em>, e você sabendo de tudo.</h1>
+    <p class="lead">Revisão, freios, suspensão e injeção. Orçamento antes de mexer, foto de cada etapa e aprovação pelo celular.</p>
+    <div class="status" id="status"><i></i><span>Verificando horário…</span></div>
+    <div class="quick">
+      <a class="main" href="#agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><div><b>Agendar revisão</b><small>Escolha dia e hora</small></div></a>
+      <a href="#acompanhar"><svg viewBox="0 0 24 24" fill="none" stroke="#f2b632" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><div><b>Acompanhar meu carro</b><small>Pela placa ou código</small></div></a>
+      <a href="#orcamento"><svg viewBox="0 0 24 24" fill="none" stroke="#f2b632" stroke-width="2"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg><div><b>Orçamento no WhatsApp</b><small>Em 1 minuto</small></div></a>
+      <a href="#lembrete"><svg viewBox="0 0 24 24" fill="none" stroke="#f2b632" stroke-width="2"><path d="M12 13l4-4"/><path d="M4 18a9 9 0 1 1 16 0"/></svg><div><b>Lembrete de revisão</b><small>Pela quilometragem</small></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="wrap">
+    <div class="sec-h reveal"><div class="num">01 · Serviços</div><h2>Preço de partida, sem susto</h2><p>Valores de mão de obra para carros de passeio. O orçamento final sai depois do diagnóstico, com as peças do seu modelo.</p></div>
+    <div class="svc reveal">
+      <article><h3>Troca de óleo e filtro</h3><div class="price"><small>a partir de</small><b>R$ 180</b></div><p>Óleo na especificação do manual, filtro novo e checagem de 20 itens.</p></article>
+      <article><h3>Revisão completa</h3><div class="price"><small>a partir de</small><b>R$ 290</b></div><p>Conforme o plano do fabricante por quilometragem, com relatório e fotos.</p></article>
+      <article><h3>Freios</h3><div class="price"><small>a partir de</small><b>R$ 220</b></div><p>Pastilhas, discos e fluido. Medimos a espessura e mostramos antes de trocar.</p></article>
+      <article><h3>Suspensão</h3><div class="price"><small>a partir de</small><b>R$ 350</b></div><p>Amortecedores, buchas e pivôs. Teste de rodagem antes e depois.</p></article>
+      <article><h3>Injeção e scanner</h3><div class="price"><small>a partir de</small><b>R$ 120</b></div><p>Leitura de falhas, limpeza de bicos e ajuste de luz de injeção acesa.</p></article>
+      <article><h3>Alinhamento e balanceamento</h3><div class="price"><small>a partir de</small><b>R$ 120</b></div><p>Quatro rodas, com relatório impresso das medidas.</p></article>
+      <article><h3>Ar-condicionado</h3><div class="price"><small>a partir de</small><b>R$ 150</b></div><p>Higienização, troca do filtro de cabine e carga de gás.</p></article>
+      <article><h3>Embreagem</h3><div class="price"><small>a partir de</small><b>R$ 900</b></div><p>Kit completo instalado, com garantia de peça e mão de obra.</p></article>
+    </div>
+    <p class="note">Preços e serviços desta página são fictícios, usados só para demonstração.</p>
+  </div>
+</section>
+
+<section class="dark" id="acompanhar">
+  <div class="wrap two">
+    <div class="sec-h reveal"><div class="num">02 · Acompanhamento</div><h2>Onde está o meu carro?</h2><p>Digite a placa ou o código da ordem de serviço. Você vê cada etapa, as fotos do que encontramos e aprova o orçamento daqui mesmo, sem ligar.</p>
+      <p class="hint" style="margin-top:16px">A oficina também manda o link direto no WhatsApp do cliente.<br>Teste com:<button type="button" data-try="BRA2E19">BRA2E19</button>ou<button type="button" data-try="OS-1047">OS-1047</button></p>
+    </div>
+    <div class="card reveal">
+      <form class="track-form" id="trackForm" autocomplete="off">
+        <input id="plate" maxlength="8" placeholder="ABC1D23" aria-label="Placa ou código da OS">
+        <button class="btn" type="submit">Ver</button>
+      </form>
+      <p class="err" id="trackErr">Não achamos essa placa. Confira as letras ou fale com a gente no WhatsApp.</p>
+      <div class="os" id="os"></div>
+    </div>
+  </div>
+</section>
+
+<section id="agendar">
+  <div class="wrap two">
+    <div class="sec-h reveal"><div class="num">03 · Agendamento</div><h2>Marque a revisão em 30 segundos</h2><p>Escolha o serviço, o dia e um horário livre. A gente confirma pelo WhatsApp e manda lembrete na véspera.</p></div>
+    <form class="card reveal" id="bookForm">
+      <label for="bSvc">Serviço</label>
+      <select id="bSvc">
+        <option>Revisão completa</option><option>Troca de óleo e filtro</option><option>Freios</option><option>Suspensão</option><option>Injeção e scanner</option><option>Alinhamento e balanceamento</option><option>Ar-condicionado</option><option>Não sei o que é (diagnóstico)</option>
+      </select>
+      <label>Dia</label>
+      <div class="days" id="days"></div>
+      <label>Horário de entrega do carro</label>
+      <div class="slots" id="slots"></div>
+      <div class="row2">
+        <div><label for="bName">Seu nome</label><input id="bName" required placeholder="Nome"></div>
+        <div><label for="bCar">Carro</label><input id="bCar" required placeholder="Ex.: Onix 2019"></div>
+      </div>
+      <button class="btn" type="submit">Confirmar agendamento</button>
+      <div class="confirm" id="bookOk" role="status"></div>
+    </form>
+  </div>
+</section>
+
+<section class="alt" id="orcamento">
+  <div class="wrap two">
+    <div class="sec-h reveal"><div class="num">04 · Orçamento rápido</div><h2>Conte o problema, a mensagem sai pronta</h2><p>Preencha o básico e toque em enviar. O WhatsApp abre com tudo escrito, e o mecânico já responde com uma estimativa ou um horário para olhar o carro.</p></div>
+    <form class="card reveal" id="quoteForm">
+      <div class="row2">
+        <div><label for="qModel">Modelo</label><input id="qModel" placeholder="Ex.: HB20 1.0" required></div>
+        <div><label for="qYear">Ano</label><input id="qYear" inputmode="numeric" maxlength="4" placeholder="2018" required></div>
+      </div>
+      <label for="qPlate">Placa</label>
+      <input id="qPlate" maxlength="8" placeholder="ABC1D23" style="text-transform:uppercase">
+      <label>O que está acontecendo?</label>
+      <div class="chips" id="symptoms">
+        <button type="button" class="chip" aria-pressed="false">Barulho ao frear</button>
+        <button type="button" class="chip" aria-pressed="false">Luz de injeção acesa</button>
+        <button type="button" class="chip" aria-pressed="false">Puxando para um lado</button>
+        <button type="button" class="chip" aria-pressed="false">Ar não gela</button>
+        <button type="button" class="chip" aria-pressed="false">Barulho na suspensão</button>
+        <button type="button" class="chip" aria-pressed="false">Revisão de km</button>
+      </div>
+      <label for="qText">Detalhes (opcional)</label>
+      <textarea id="qText" rows="3" placeholder="Ex.: começou ontem, só quando o motor está frio"></textarea>
+      <button class="btn green" type="submit"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.2.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>Enviar no WhatsApp</button>
+      <p class="note" id="qPreviewNote" style="display:none">Prévia da mensagem:</p>
+      <pre id="qPreview" style="display:none;white-space:pre-wrap;font-family:var(--sans);font-size:14px;background:#f1efe9;border-radius:8px;padding:12px;margin-top:6px"></pre>
+    </form>
+  </div>
+</section>
+
+<section id="lembrete">
+  <div class="wrap two">
+    <div class="sec-h reveal"><div class="num">05 · Lembrete por quilometragem</div><h2>Quando é a próxima revisão?</h2><p>A maioria dos manuais pede revisão a cada 10.000 km ou 12 meses, o que vier primeiro. Confira o seu manual e deixe a gente avisar na hora certa.</p></div>
+    <form class="card reveal" id="kmForm">
+      <div class="row2">
+        <div><label for="kNow">Km atual</label><input id="kNow" inputmode="numeric" value="47.300"></div>
+        <div><label for="kLast">Km da última revisão</label><input id="kLast" inputmode="numeric" value="40.000"></div>
+      </div>
+      <div class="row2">
+        <div><label for="kMonth">Roda por mês (km)</label><input id="kMonth" inputmode="numeric" value="1.200"></div>
+        <div><label for="kInt">Intervalo do manual</label><select id="kInt"><option value="5000">5.000 km</option><option value="10000" selected>10.000 km</option><option value="15000">15.000 km</option></select></div>
+      </div>
+      <div class="gauge" aria-hidden="true"><i id="kGauge"></i></div>
+      <div class="km-out">
+        <div><small>Próxima revisão</small><b id="kNext">50.000 km</b></div>
+        <div><small>Falta mais ou menos</small><b id="kLeft">2 meses</b></div>
+      </div>
+      <a class="btn ghost" id="kWa" href="#" target="_blank" rel="noopener">Quero lembrete no WhatsApp</a>
+    </form>
+  </div>
+</section>
+
+<section class="dark" id="garantia">
+  <div class="wrap">
+    <div class="sec-h reveal"><div class="num">06 · Garantia</div><h2>Tudo por escrito</h2><p>Cada ordem de serviço sai com as peças trocadas, a quilometragem e o prazo de garantia.</p></div>
+    <div class="guar reveal">
+      <div><span class="seal">90<small>DIAS</small></span><div><h3>Garantia legal</h3><p>Serviço e peças com os 90 dias previstos no Código de Defesa do Consumidor para bens duráveis.</p></div></div>
+      <div><span class="seal">6<small>MESES</small></span><div><h3>Freios e embreagem</h3><p>Prazo estendido da casa nesses serviços, contado da data de entrega do carro.</p></div></div>
+      <div><span class="seal" style="font-size:16px">PEÇA<small>VELHA</small></span><div><h3>Peça trocada fica com você</h3><p>Mostramos a peça retirada e, se quiser, ela vai no porta-malas.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="avaliacoes">
+  <div class="wrap">
+    <div class="sec-h reveal"><div class="num">07 · Avaliações</div><h2>O que aparece no Google</h2><p>Aqui entram as avaliações reais do perfil da oficina no Google. Nesta demonstração, os textos abaixo são exemplos.</p></div>
+    <div class="revs reveal">
+      <div class="rev"><span class="lbl">Exemplo de avaliação</span><div class="stars">★★★★★</div><p>Mandaram foto da pastilha gasta e o orçamento pelo celular. Aprovei do trabalho.</p><footer>Cliente exemplo · revisão de freios</footer></div>
+      <div class="rev"><span class="lbl">Exemplo de avaliação</span><div class="stars">★★★★★</div><p>Agendei pelo site no domingo à noite e na segunda o carro estava no elevador às 8h.</p><footer>Cliente exemplo · revisão completa</footer></div>
+      <div class="rev"><span class="lbl">Exemplo de avaliação</span><div class="stars">★★★★☆</div><p>Gostei de ver as etapas pela placa. Só demorou um dia a mais pela peça.</p><footer>Cliente exemplo · suspensão</footer></div>
+    </div>
+    <a class="gprofile reveal" href="https://www.google.com/maps/search/oficina+mec%C3%A2nica+Botucatu" target="_blank" rel="noopener">
+      <svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3c-6 0-11 4.7-11 10.7C7 21.5 18 33 18 33s11-11.5 11-19.3C29 7.7 24 3 18 3z" fill="#f2b632"/><circle cx="18" cy="13.5" r="4.2" fill="#16181b"/></svg>
+      <div><b>Perfil da empresa no Google</b><small>Horário, rotas, fotos e avaliações. Responder cada avaliação faz parte da manutenção mensal.</small></div>
+    </a>
+  </div>
+</section>
+
+<section id="onde">
+  <div class="wrap two">
+    <div class="reveal">
+      <div class="sec-h"><div class="num">08 · Onde estamos</div><h2>Fácil de chegar em Botucatu</h2></div>
+      <div class="map">
+        <svg viewBox="0 0 400 260" role="img" aria-label="Mapa ilustrativo da localização (fictícia)">
+          <rect width="400" height="260" fill="#e9e5dc"/>
+          <path d="M0 190 C80 170 140 210 220 180 S350 150 400 160" stroke="#c9d6c2" stroke-width="40" fill="none"/>
+          <g stroke="#fff" stroke-width="14" fill="none" stroke-linecap="round"><path d="M-10 90 H410"/><path d="M120 -10 V270"/><path d="M290 -10 L250 270"/><path d="M-10 230 L410 120"/></g>
+          <g stroke="#f6f3ed" stroke-width="6" fill="none"><path d="M30 0 V260"/><path d="M200 0 V260"/><path d="M0 40 H400"/><path d="M0 150 H400"/><path d="M350 0 V260"/></g>
+          <text x="14" y="83" font-family="Barlow" font-size="11" fill="#7b7f86">Av. Exemplo dos Mecânicos</text>
+          <text x="128" y="250" font-family="Barlow" font-size="11" fill="#7b7f86" transform="rotate(-90 128 250)">Rua Fictícia</text>
+          <g transform="translate(205 92)"><path d="M0 0c-11 0-19 8-19 18 0 14 19 32 19 32s19-18 19-32C19 8 11 0 0 0z" fill="#16181b" transform="translate(0 -50)"/><circle cy="-32" r="6" fill="#f2b632"/></g>
+          <rect x="250" y="20" width="134" height="30" rx="6" fill="#16181b"/><text x="262" y="40" font-family="Barlow Condensed" font-weight="700" font-size="14" fill="#f2b632" letter-spacing="1">MAPA ILUSTRATIVO</text>
+        </svg>
+      </div>
+      <p class="addr"><b>Av. Exemplo dos Mecânicos, 1200</b><br>Botucatu-SP · endereço fictício</p>
+      <a class="btn ghost" href="https://www.google.com/maps/search/Botucatu+SP" target="_blank" rel="noopener">Abrir rota no Google Maps</a>
+    </div>
+    <div class="reveal">
+      <div class="sec-h"><div class="num">Horário</div><h2>Aberto de segunda a sábado</h2></div>
+      <ul class="hours" id="hours">
+        <li data-d="1"><span>Segunda</span><span>7h30 às 18h</span></li>
+        <li data-d="2"><span>Terça</span><span>7h30 às 18h</span></li>
+        <li data-d="3"><span>Quarta</span><span>7h30 às 18h</span></li>
+        <li data-d="4"><span>Quinta</span><span>7h30 às 18h</span></li>
+        <li data-d="5"><span>Sexta</span><span>7h30 às 18h</span></li>
+        <li data-d="6"><span>Sábado</span><span>8h às 12h</span></li>
+        <li data-d="0"><span>Domingo</span><span>Fechado</span></li>
+      </ul>
+      <p class="note">Telefone e WhatsApp: (14) 00000-0000 (fictício)</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><b>Auto Center Serra Azul</b> · oficina mecânica em Botucatu-SP</p>
+    <p style="margin-top:6px">Projeto demonstrativo de site para negócio local. Empresa, endereço, telefone, preços e avaliações são fictícios. Fotos geradas para a demonstração.</p>
+    <p style="margin-top:10px"><a href="../">← Ver os dois sites demonstrativos</a></p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Atalhos">
+  <a href="tel:+5514000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Ligar</a>
+  <a href="#agendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Agendar</a>
+  <a class="wa" href="https://wa.me/5514000000000?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20oficina" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp</a>
+</nav>
+<a class="wa-float" href="https://wa.me/5514000000000?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20oficina" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></a>
+
+<script>
+(function(){
+const WA = "5514000000000";
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const brl = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+
+/* open / closed */
+(function(){
+  const now = new Date(), d = now.getDay(), m = now.getHours()*60 + now.getMinutes();
+  const open = (d>=1 && d<=5 && m>=450 && m<1080) || (d===6 && m>=480 && m<720);
+  const el = $("#status");
+  el.classList.toggle("closed", !open);
+  el.querySelector("span").textContent = open ? "Aberto agora · fecha às " + (d===6?"12h":"18h") : "Fechado agora · agende pelo site a qualquer hora";
+  const li = document.querySelector('#hours li[data-d="'+d+'"]'); if(li) li.classList.add("today");
+})();
+
+/* reveal */
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }), {threshold:.12});
+$$(".reveal").forEach(el => io.observe(el));
+
+/* ---------- tracking ---------- */
+const ORDERS = {
+  "BRA2E19": {code:"OS-1047", car:"Hatch 1.0 · 2018", owner:"Cliente exemplo", stage:2,
+    times:["Seg 08:12","Seg 10:40","Seg 11:05",null,null],
+    notes:["Carro recebido com 47.310 km. Checklist de entrada feito.","Pastilhas dianteiras com 2 mm e disco com sulco. Fotos abaixo.","Esperando sua aprovação do orçamento.","",""],
+    pics:[["img/freio.jpg","Pastilha dianteira: 2 mm (mínimo 3 mm)"],["img/motor.jpg","Scanner: sem falhas no motor"]],
+    items:[["Pastilhas dianteiras (par)","peça + mão de obra",320,true],["Retífica dos discos dianteiros","recomendado",180,true],["Fluido de freio DOT 4","troca a cada 2 anos",110,false]]},
+  "XYZ9K88": {code:"OS-1052", car:"Sedã 1.6 · 2015", owner:"Cliente exemplo", stage:4,
+    times:["Ter 07:50","Ter 09:30","Ter 10:02","Ter 10:20","Ter 16:45"],
+    notes:["Carro recebido.","Troca de óleo e filtros conforme o manual.","Aprovado pelo cliente às 10:02.","Serviço concluído, teste de rodagem ok.","Pronto para retirar. Pagamento na entrega."],
+    pics:[["img/hero.jpg","Revisão concluída no elevador 2"]], items:[]}
+};
+const STAGES = ["Recebido","Diagnóstico","Aguardando aprovação","Em execução","Pronto para retirar"];
+function findOrder(q){
+  q = q.toUpperCase().replace(/\s|-/g,"");
+  if(ORDERS[q]) return ORDERS[q];
+  return Object.values(ORDERS).find(o => o.code.replace("-","") === q);
+}
+function plateOf(o){ return Object.keys(ORDERS).find(k => ORDERS[k]===o); }
+function renderOS(o){
+  const box = $("#os");
+  const steps = STAGES.map((s,i) => {
+    const cls = i < o.stage ? "done" : i === o.stage ? "now" : "";
+    const note = o.notes[i] ? `<small>${o.times[i] ? o.times[i]+" · " : ""}${o.notes[i]}</small>` : "";
+    let extra = "";
+    if(i===1 && o.stage>=1 && o.pics.length && o.items.length){
+      extra = `<div class="pics">${o.pics.map(p=>`<figure><img src="${p[0]}" alt="${p[1]}" loading="lazy"><figcaption>${p[1]}</figcaption></figure>`).join("")}</div>`;
+    }
+    if(i===o.stage && o.stage===4){
+      extra = `<div class="pics" style="grid-template-columns:1fr">${o.pics.map(p=>`<figure style="aspect-ratio:16/9"><img src="${p[0]}" alt="${p[1]}" loading="lazy"><figcaption>${p[1]}</figcaption></figure>`).join("")}</div>`;
+    }
+    return `<li class="${cls}"><span class="dot">${i<o.stage?"✓":i+1}</span><b>${s}</b>${note}${extra}</li>`;
+  }).join("");
+  let budget = "";
+  if(o.items.length){
+    budget = `<div class="budget"><h4><span>Orçamento</span><span style="color:#b4b8be;font-size:14px">${o.code}</span></h4>
+      ${o.items.map((it,k)=>`<label class="item"><input type="checkbox" data-v="${it[2]}" ${it[3]?"checked":""} ${o.stage>2?"disabled":""}><span>${it[0]}<em>${it[1]}</em></span><span>${brl(it[2])}</span></label>`).join("")}
+      <div class="tot"><span>Total aprovado</span><b id="osTot"></b></div></div>
+      ${o.stage===2?`<button class="btn" id="approve" type="button">Aprovar orçamento</button><a class="btn ghost" href="https://wa.me/${WA}?text=${encodeURIComponent("Tenho uma dúvida sobre o orçamento "+o.code)}" target="_blank" rel="noopener">Tirar dúvida no WhatsApp</a>`:""}
+      <div class="approved ${o.stage>2?"on":""}" id="apOk">Orçamento aprovado. O mecânico já foi avisado e o carro entra em execução. Previsão de entrega: hoje até 17h.</div>`;
+  }
+  box.innerHTML = `<div class="os-head"><div><span class="plate">${plateOf(o).replace(/^(...)/,"$1-")}</span><h3>${o.car}</h3><p>${o.owner}</p></div><div class="os-code">Ordem de serviço<b>${o.code}</b></div></div><ol class="steps">${steps}</ol>${budget}`;
+  box.classList.add("on");
+  const sum = () => { const t = $$("#os .budget input:checked").reduce((a,c)=>a+ +c.dataset.v,0); const el=$("#osTot"); if(el) el.textContent = brl(t); };
+  $$("#os .budget input").forEach(c => c.addEventListener("change", sum)); sum();
+  const ap = $("#approve");
+  if(ap) ap.addEventListener("click", () => {
+    o.stage = 3; o.times[2] = "agora"; o.notes[2] = "Aprovado por você pelo site."; o.notes[3] = "Mecânico avisado, peças separadas.";
+    o.times[3] = "agora";
+    o.items.forEach((it,k)=>{ it[3] = $$("#os .budget input")[k].checked; });
+    renderOS(o);
+    $("#apOk").scrollIntoView({behavior:"smooth",block:"center"});
+  });
+}
+$("#trackForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const o = findOrder($("#plate").value);
+  $("#trackErr").classList.toggle("on", !o);
+  if(o) renderOS(o); else $("#os").classList.remove("on");
+});
+$$("[data-try]").forEach(b => b.addEventListener("click", () => { $("#plate").value = b.dataset.try; $("#trackForm").requestSubmit(); }));
+/* link direto que a oficina manda ao cliente: ?placa=BRA2E19 */
+const qs = new URLSearchParams(location.search), qp = qs.get("placa");
+if(qp){ $("#plate").value = qp; const o = findOrder(qp); if(o){ renderOS(o); if(qs.get("aprovar") && $("#approve")) $("#approve").click(); } }
+
+/* ---------- booking ---------- */
+const days = $("#days"), slots = $("#slots");
+const DN = ["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];
+const MN = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+let selDay = null, selSlot = null;
+const base = new Date(); base.setHours(0,0,0,0);
+for(let i=1;i<=14;i++){
+  const d = new Date(base); d.setDate(base.getDate()+i);
+  const b = document.createElement("button");
+  b.type="button"; b.className="day"; b.setAttribute("aria-pressed","false");
+  b.innerHTML = `<small>${DN[d.getDay()]}</small><b>${d.getDate()}</b><small>${MN[d.getMonth()]}</small>`;
+  if(d.getDay()===0) b.disabled = true;
+  b.addEventListener("click", () => { $$(".day").forEach(x=>x.setAttribute("aria-pressed","false")); b.setAttribute("aria-pressed","true"); selDay = d; drawSlots(); });
+  days.appendChild(b);
+}
+function drawSlots(){
+  slots.innerHTML = ""; selSlot = null;
+  const sat = selDay && selDay.getDay()===6;
+  const list = sat ? ["08:00","08:30","09:00","09:30","10:00","10:30"] : ["07:30","08:00","08:30","09:00","10:00","11:00","13:30","14:30"];
+  const seed = selDay ? selDay.getDate() : 3;
+  list.forEach((t,i) => {
+    const b = document.createElement("button");
+    b.type="button"; b.className="slot"; b.textContent=t; b.setAttribute("aria-pressed","false");
+    if(!selDay || (i*7+seed)%5===0) b.disabled = true;
+    b.addEventListener("click", () => { $$(".slot").forEach(x=>x.setAttribute("aria-pressed","false")); b.setAttribute("aria-pressed","true"); selSlot = t; });
+    slots.appendChild(b);
+  });
+}
+drawSlots();
+const firstOpen = $$(".day").find(b=>!b.disabled); if(firstOpen) firstOpen.click();
+$("#bookForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const ok = $("#bookOk");
+  if(!selDay || !selSlot){ ok.className="confirm on"; ok.innerHTML = "<p>Escolha um dia e um horário livre.</p>"; return; }
+  const dStr = `${DN[selDay.getDay()]}, ${selDay.getDate()} de ${MN[selDay.getMonth()]}`;
+  const svc = $("#bSvc").value, name = $("#bName").value.trim(), car = $("#bCar").value.trim();
+  const msg = `Olá! Agendei pelo site:\n• ${svc}\n• ${dStr}, às ${selSlot}\n• Carro: ${car}\n• Nome: ${name}`;
+  ok.className = "confirm on";
+  ok.innerHTML = `<h4>Horário reservado</h4><dl><dt>Serviço</dt><dd>${svc}</dd><dt>Quando</dt><dd>${dStr} · ${selSlot}</dd><dt>Carro</dt><dd>${car}</dd></dl>
+    <p style="font-size:14px">Confirme pelo WhatsApp para garantir a vaga. Na véspera mandamos um lembrete.</p>
+    <a class="btn green" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent(msg)}">Confirmar no WhatsApp</a>
+    <button class="btn ghost" type="button" id="ics">Salvar na agenda do celular</button>`;
+  $("#ics").addEventListener("click", () => {
+    const [h,mi] = selSlot.split(":"); const s = new Date(selDay); s.setHours(+h,+mi);
+    const f = d => d.toISOString().replace(/[-:]/g,"").split(".")[0]+"Z";
+    const e2 = new Date(s.getTime()+3600000);
+    const ics = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Demo//Oficina//PT\r\nBEGIN:VEVENT\r\nUID:${Date.now()}@demo\r\nDTSTAMP:${f(new Date())}\r\nDTSTART:${f(s)}\r\nDTEND:${f(e2)}\r\nSUMMARY:${svc} - Auto Center Serra Azul (demo)\r\nLOCATION:Botucatu-SP\r\nEND:VEVENT\r\nEND:VCALENDAR`;
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([ics],{type:"text/calendar"})); a.download = "revisao.ics"; a.click();
+  });
+});
+
+/* ---------- quote ---------- */
+$$("#symptoms .chip").forEach(c => c.addEventListener("click", () => c.setAttribute("aria-pressed", c.getAttribute("aria-pressed")==="true"?"false":"true")));
+function quoteMsg(){
+  const sy = $$('#symptoms .chip[aria-pressed="true"]').map(c=>c.textContent);
+  const lines = ["Olá, Serra Azul! Quero um orçamento:", `• Carro: ${$("#qModel").value.trim()} ${$("#qYear").value.trim()}`];
+  const p = $("#qPlate").value.trim().toUpperCase(); if(p) lines.push(`• Placa: ${p}`);
+  if(sy.length) lines.push(`• Sintoma: ${sy.join(", ")}`);
+  const t = $("#qText").value.trim(); if(t) lines.push(`• Detalhes: ${t}`);
+  return lines.join("\n");
+}
+["input","click"].forEach(ev => $("#quoteForm").addEventListener(ev, () => {
+  if(!$("#qModel").value && !$("#qYear").value) return;
+  $("#qPreview").style.display = $("#qPreviewNote").style.display = "block";
+  $("#qPreview").textContent = quoteMsg();
+}));
+$("#quoteForm").addEventListener("submit", e => { e.preventDefault(); window.open(`https://wa.me/${WA}?text=${encodeURIComponent(quoteMsg())}`, "_blank", "noopener"); });
+
+/* ---------- km ---------- */
+const num = v => +String(v).replace(/\D/g,"") || 0;
+const fmt = n => n.toLocaleString("pt-BR");
+function km(){
+  const now = num($("#kNow").value), last = num($("#kLast").value), pm = Math.max(1,num($("#kMonth").value)), int = +$("#kInt").value;
+  const next = last + int, left = next - now;
+  $("#kNext").textContent = fmt(next) + " km";
+  const months = left / pm;
+  $("#kLeft").textContent = left <= 0 ? "Já passou!" : months < 1 ? `${Math.max(1,Math.round(months*30))} dias` : `${fmt(Math.round(months*10)/10)} ${months<1.95?"mês":"meses"}`;
+  $("#kGauge").style.width = Math.min(100, Math.max(3, (now-last)/int*100)) + "%";
+  const msg = `Olá! Quero lembrete da próxima revisão: estou com ${fmt(now)} km, próxima revisão em ${fmt(next)} km.`;
+  $("#kWa").href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+}
+$("#kmForm").addEventListener("input", km); km();
+})();
+</script>
+</body>
+</html>
