@@ -72,7 +72,7 @@ code { font-family: var(--mono); font-size: .86em; background: var(--sand); padd
 .sec-dark .kicker { color: #E0A383; }
 
 /* estúdio de pré-visualização */
-.studio { display: grid; grid-template-columns: 250px minmax(0, 1fr) 300px; gap: 28px; align-items: start; }
+.studio { display: grid; grid-template-columns: 224px minmax(0, 1fr) 276px; gap: 24px; align-items: start; }
 .mail-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; position: sticky; top: 84px; }
 .mail-list button { width: 100%; text-align: left; background: var(--paper); border: 1px solid var(--line); border-radius: 3px; padding: 14px 14px 13px; display: grid; grid-template-columns: 30px 1fr; gap: 2px 8px; transition: border-color .2s, background .2s, transform .2s; }
 .mail-list button:hover { border-color: var(--muted); }
@@ -177,7 +177,7 @@ code { font-family: var(--mono); font-size: .86em; background: var(--sand); padd
 .token { fill: #F3C7A9; filter: drop-shadow(0 0 6px rgba(243, 199, 169, .9)); }
 
 /* A/B */
-.ab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 18px; }
+.ab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr)); gap: 18px; }
 .ab-card { background: var(--paper); border: 1px solid var(--line); border-radius: 3px; padding: 22px 20px 20px; display: flex; flex-direction: column; }
 .ab-card h3 { font-family: var(--serif); font-size: 24px; line-height: 1.15; margin-bottom: 4px; }
 .ab-card .meta { font-size: 12.5px; color: var(--muted); margin: 0 0 14px; }
@@ -206,7 +206,7 @@ code { font-family: var(--mono); font-size: .86em; background: var(--sand); padd
 .progress { flex: 1; min-width: 180px; max-width: 420px; height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
 .progress span { display: block; height: 100%; width: 0; background: var(--ok); transition: width .4s ease; }
 .check-top p { margin: 0; font-size: 13px; font-weight: 600; }
-.check-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 18px; }
+.check-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
 .check-group { background: var(--paper); border: 1px solid var(--line); border-radius: 3px; padding: 20px 20px 10px; }
 .check-group h3 { font-family: var(--serif); font-size: 24px; margin-bottom: 4px; }
 .check-group > p { font-size: 13px; color: var(--muted); margin: 0 0 10px; }
@@ -216,7 +216,7 @@ code { font-family: var(--mono); font-size: .86em; background: var(--sand); padd
 .citem input:checked { background: var(--ok); border-color: var(--ok); }
 .citem input:checked::after { content: ''; width: 10px; height: 6px; border: 2px solid #fff; border-top: 0; border-right: 0; transform: rotate(-45deg) translate(1px, -1px); }
 .citem b { font-size: 14.5px; font-weight: 600; display: block; line-height: 1.35; }
-.citem input:checked + span b { text-decoration: line-through; text-decoration-color: var(--muted); color: var(--muted); }
+.citem input:checked + span b { color: var(--ok); }
 .citem span span { font-size: 13px; color: var(--ink-2); line-height: 1.5; display: block; margin-top: 3px; }
 .citem pre { margin: 8px 0 0 32px; background: var(--ink); color: #EDE6DA; font-family: var(--mono); font-size: 11.5px; line-height: 1.6; padding: 10px 12px; border-radius: 3px; overflow-x: auto; white-space: pre; }
 .tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 2px 7px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); margin-left: 6px; vertical-align: 2px; }
@@ -253,11 +253,11 @@ dialog code { background: none; padding: 0; font-size: inherit; }
 }
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 48px; }
-  .studio { grid-template-columns: 1fr; }
+  .studio { grid-template-columns: minmax(0, 1fr); }
   .mail-list { position: static; display: flex; overflow-x: auto; gap: 8px; padding-bottom: 6px; scroll-snap-type: x mandatory; }
   .mail-list li { flex: 0 0 200px; scroll-snap-align: start; }
   .mail-list button { height: 100%; }
-  .flow-wrap { grid-template-columns: 1fr; }
+  .flow-wrap { grid-template-columns: minmax(0, 1fr); }
   .nav { display: none; }
 }
 @media (max-width: 640px) {
@@ -268,8 +268,9 @@ dialog code { background: none; padding: 0; font-size: inherit; }
   .mail-info { grid-template-columns: 1fr; padding: 18px 16px; }
   .toolbar .btn-sm { margin-left: 0; }
   .stage { padding: 16px 8px; }
-  .ab-grid, .check-grid { grid-template-columns: 1fr; }
+  .ab-grid, .check-grid { grid-template-columns: minmax(0, 1fr); }
   .citem pre { margin-left: 0; }
+  .hero.wrap { padding-top: 40px; padding-bottom: 48px; }
   .logo { font-size: 26px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -277,3 +278,21 @@ dialog code { background: none; padding: 0; font-size: inherit; }
   .ani .edge-flow { stroke-dasharray: 3 11; opacity: .9; }
   .token { display: none; }
 }
+svg:not(.ani) .edge-flow { opacity: .9; }
+.sizer { position: relative; flex: none; }
+
+.citem .tag { display: inline-block; margin: 0 0 0 6px; font-size: 10px; line-height: 1.5; color: var(--accent); }
+.checks li.more { padding-left: 0; }
+.checks li.more::before { display: none; }
+.ab-how { background: var(--ink); color: #EDE6DA; border-color: var(--ink); }
+.ab-how .meta { color: #BDB4A7; }
+.ab-how ol { margin: 4px 0 0; padding: 0; list-style: none; counter-reset: p; display: grid; gap: 14px; }
+.ab-how li { counter-increment: p; display: grid; grid-template-columns: 30px 1fr; gap: 10px; font-size: 13.5px; line-height: 1.5; color: #CFC6B8; }
+.ab-how li::before { content: counter(p); width: 26px; height: 26px; border-radius: 50%; border: 1px solid #E0A383; color: #E0A383; display: grid; place-items: center; font-size: 12px; font-weight: 700; }
+.ab-how li b { color: #fff; font-weight: 600; display: block; }
+.seg button { padding: 0 12px; }
+
+.studio > *, .flow-wrap > * { min-width: 0; }
+.swipe { display: none; margin: 0 0 10px; font-size: 12px; color: #9C9385; }
+@media (max-width: 760px) { .swipe { display: block; } }
+.sec { scroll-margin-top: 40px; }

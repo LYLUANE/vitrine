@@ -8,7 +8,7 @@
     hoje = hoje || new Date();
     const val = new Date(hoje); val.setDate(val.getDate() + o.validade_dias);
     const d = (x) => x.toLocaleDateString('pt-BR');
-    const linhas = o.itens.map((i) => '<tr><td><code>' + esc(i.sku) + '</code></td><td>' + esc(i.nome) + '</td><td class="n">' + i.qtd.toLocaleString('pt-BR') + ' ' + esc(i.unidade) + '</td><td class="n">' + brl(i.preco) + '</td><td class="n">' + brl(i.total) + '</td></tr>').join('');
+    const linhas = o.itens.map((i) => '<tr><td><code>' + esc(i.sku) + '</code></td><td>' + esc(i.nome) + '</td><td class="n">' + i.qtd.toLocaleString('pt-BR') + ' ' + esc(i.qtd > 1 && i.unidade !== 'm³' ? (i.unidade === 'unidade' ? 'unidades' : i.unidade + 's') : i.unidade) + '</td><td class="n">' + brl(i.preco) + '</td><td class="n">' + brl(i.total) + '</td></tr>').join('');
     return '<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>' + esc(o.numero) + ' · Casa & Obra</title>' +
       '<style>@page{size:A4;margin:16mm}*{box-sizing:border-box}body{font:13px/1.5 Manrope,Segoe UI,Arial,sans-serif;color:#1f2a30;margin:0;padding:28px}' +
       '.top{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid #b9532c;padding-bottom:14px}' +
@@ -19,7 +19,7 @@
       '.tot{margin-left:auto;width:300px;margin-top:12px}.tot div{display:flex;justify-content:space-between;padding:4px 0}.tot .g{border-top:2px solid #1f2a30;margin-top:4px;padding-top:8px;font-size:17px;font-weight:700}' +
       '.obs{margin-top:26px;padding:12px 14px;background:#f6f2ea;border-radius:8px;font-size:12px;color:#4b5961}.obs li{margin:2px 0}' +
       '.rod{margin-top:28px;font-size:10.5px;color:#7d8a90;text-align:center;border-top:1px solid #e6dfd2;padding-top:10px}' +
-      '.bt{position:fixed;top:12px;right:12px;padding:9px 16px;background:#b9532c;color:#fff;border:0;border-radius:8px;font:600 13px sans-serif;cursor:pointer}@media print{.bt{display:none}body{padding:0}}</style></head><body>' +
+      '.bt{position:fixed;bottom:16px;right:16px;box-shadow:0 4px 14px rgba(0,0,0,.2);padding:9px 16px;background:#b9532c;color:#fff;border:0;border-radius:8px;font:600 13px sans-serif;cursor:pointer}@media print{.bt{display:none}body{padding:0}}</style></head><body>' +
       '<button class="bt" onclick="print()">Imprimir / salvar PDF</button>' +
       '<div class="top"><div class="m"><svg width="44" height="44" viewBox="0 0 30 30"><rect width="30" height="30" rx="7" fill="#1f2a30"/><path d="M6 15 15 7l9 8v8H6z" fill="#b9532c"/><path d="M6 19h18M6 23h18M11 15v8M19 19v4" stroke="#f3eee4" stroke-width="1.3"/></svg>' +
       '<div><b>Casa &amp; Obra</b><small>Materiais de construção · marca fictícia</small></div></div>' +
