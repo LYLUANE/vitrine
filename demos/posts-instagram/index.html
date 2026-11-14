@@ -3,189 +3,168 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Doce Ponto · Posts para Instagram</title>
-<meta name="description" content="Pacote de posts, stories e carrossel para a Doce Ponto, confeitaria artesanal (marca fictícia).">
+<title>Doce Ponto · Posts e stories</title>
+<meta name="description" content="Pacote de posts, stories e carrossel para a Doce Ponto, confeitaria artesanal (marca fictícia), com fotografia de produto e layout editorial.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,100;1,9..144,400..700,100&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,30;1,9..144,300..700,30&display=swap" rel="stylesheet">
 <style>
-:root{--creme:#FBEFE3;--rosa:#D9486B;--cacau:#4A2C2A;--glace:#F3C9D1;--papel:#fffaf5;--linha:#eadbcd}
+:root{--creme:#F4EBDD;--framb:#B23A50;--cacau:#3B2321;--glace:#E9CFC6;--caram:#B8834B;--papel:#FAF5EE;--fio:#e2d3c1}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--papel);color:var(--cacau);font:16px/1.6 "DM Sans",system-ui,sans-serif}
-img{display:block;max-width:100%}
-h1,h2,.serif{font-family:"Fraunces",Georgia,serif;font-variation-settings:"SOFT" 100;font-weight:600;line-height:1.1}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-.tag{font:700 12px/1 "DM Sans";letter-spacing:.16em;text-transform:uppercase;color:var(--rosa)}
-.top{padding:56px 0 28px;display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
-.top h1{font-size:clamp(34px,5vw,54px);margin-top:10px}
-.top h1 em{color:var(--rosa)}
-.top p{max-width:34em;margin-top:12px;opacity:.85}
-.kpis{display:flex;gap:10px;flex-wrap:wrap}
-.kpis span{background:#fff;border:1px solid var(--linha);border-radius:99px;padding:8px 14px;font-size:13px;font-weight:600}
+html{scroll-behavior:smooth}
+body{background:var(--papel);color:var(--cacau);font:16px/1.6 "DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,.serif{font-family:"Fraunces",Georgia,serif;font-variation-settings:"SOFT" 30;font-weight:560;letter-spacing:-.015em;line-height:1.02}
+em{font-style:italic;font-weight:400;color:var(--framb)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.k{font:700 11.5px/1 "DM Sans";letter-spacing:.24em;text-transform:uppercase;color:var(--framb);display:flex;gap:10px;align-items:center}
+.k::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+/* hero */
+.hero{background:var(--cacau);color:var(--creme);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center;padding-top:64px;padding-bottom:64px}
+.hero h1{font-size:clamp(36px,4.6vw,60px);margin-top:18px}
+.hero h1 em{color:var(--glace)}.hero .k{color:var(--glace)}
+.hero p{margin-top:18px;color:#ecdcd2;max-width:30em}
+.hero .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.hero .chips span{border:1px solid #e9cfc655;padding:6px 14px;font-size:12.5px;letter-spacing:.06em;color:#f2e2d8}
+.hero .fic{margin-top:28px;font:600 11px "DM Sans";letter-spacing:.2em;text-transform:uppercase;color:#e9cfc699}
+.stack{position:relative;height:560px}
+.stack img{position:absolute;box-shadow:0 30px 60px -24px #000c}
+.stack .s1{width:44%;left:0;top:40px;transform:rotate(-4deg)}
+.stack .s2{width:44%;left:30%;top:0;z-index:2}
+.stack .s3{width:30%;right:0;top:70px;transform:rotate(4deg)}
+nav.sec{position:sticky;top:0;z-index:5;background:#faf5eeee;backdrop-filter:blur(8px);border-bottom:1px solid var(--fio)}
+nav.sec .wrap{display:flex;gap:26px;overflow-x:auto;padding-top:13px;padding-bottom:13px;scrollbar-width:none}
+nav.sec a{color:var(--cacau);text-decoration:none;font-size:13px;font-weight:600;white-space:nowrap}
+nav.sec a span{color:var(--framb);margin-right:6px;font-weight:700}
+section{padding:88px 0 0}
+.head{display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:end;margin-bottom:30px;border-bottom:1px solid var(--fio);padding-bottom:22px}
+.head h2{font-size:clamp(30px,3.8vw,46px);margin-top:12px}
 /* perfil */
-.perfil{background:#fff;border:1px solid var(--linha);border-radius:28px;padding:28px;margin-top:10px}
-.ph{display:flex;gap:26px;align-items:center}
-.av{flex:none;width:112px;height:112px;border-radius:50%;padding:4px;background:conic-gradient(var(--rosa),var(--glace),var(--rosa))}
-.av div{width:100%;height:100%;border-radius:50%;background:var(--creme);display:flex;align-items:center;justify-content:center;border:3px solid #fff}
-.av img{width:74%}
-.ph h2{font:700 20px "DM Sans";display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.ph h2 small{font:600 11px "DM Sans";letter-spacing:.12em;text-transform:uppercase;background:var(--creme);border-radius:99px;padding:4px 10px;color:var(--rosa)}
-.ph .nm{font-weight:700;margin-top:6px}
-.ph .bio{font-size:15px;line-height:1.5;margin-top:2px}
-.btns{display:flex;gap:8px;margin-top:12px}
-.btns span{background:var(--creme);border-radius:10px;padding:7px 16px;font-size:14px;font-weight:700}
-.hl{display:flex;gap:22px;margin:26px 0 6px;overflow-x:auto;padding-bottom:6px}
-.hl button{flex:none;background:none;border:0;font:600 13px "DM Sans";color:var(--cacau);cursor:pointer;text-align:center}
-.hl .c{width:76px;height:76px;border-radius:50%;padding:3px;background:var(--rosa);margin:0 auto 6px}
-.hl .c img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:top;border:3px solid #fff}
-.tabs{display:flex;justify-content:center;gap:40px;border-top:1px solid var(--linha);margin:18px -28px 0;padding-top:12px;font:700 12px "DM Sans";letter-spacing:.14em;text-transform:uppercase}
-.tabs span{opacity:.45}.tabs span.on{opacity:1;color:var(--rosa)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:14px -28px -28px;border-radius:0 0 28px 28px;overflow:hidden}
-.grid button{border:0;padding:0;background:var(--creme);cursor:zoom-in;position:relative;aspect-ratio:4/5;overflow:hidden}
-.grid img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.perfil{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--fio)}
+.perfil .top{display:flex;gap:22px;align-items:center;padding:22px}
+.perfil .av{width:84px;height:84px;border-radius:50%;background:var(--creme);display:flex;align-items:center;justify-content:center;flex:none;outline:2px solid var(--framb);outline-offset:3px}
+.perfil .av img{width:58%}
+.perfil b{font-size:16px}.perfil small{display:block;font-size:13px;opacity:.75;line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.grid button{border:0;padding:0;cursor:zoom-in;background:#eee;aspect-ratio:4/5;overflow:hidden}
+.grid img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .grid button:hover img{transform:scale(1.03)}
-.grid .multi{position:absolute;top:10px;right:10px;width:22px;height:22px}
-section{padding:64px 0 0}
-.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:22px}
-.head h2{font-size:clamp(28px,3.6vw,38px);margin-top:8px}
-.head p{max-width:30em;opacity:.85}
-/* carrossel */
-.car{position:relative;max-width:520px;margin:0 auto}
-.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:22px;scrollbar-width:none;box-shadow:0 30px 60px -34px #4a2c2a88}
-.track::-webkit-scrollbar{display:none}
-.track img{flex:none;width:100%;scroll-snap-align:start;aspect-ratio:4/5}
-.dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
-.dots button{width:9px;height:9px;border-radius:50%;border:0;background:#dcc6b6;cursor:pointer}
-.dots button.on{background:var(--rosa);width:24px;border-radius:9px}
-.arr{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:#fffffff0;box-shadow:0 6px 18px #0002;cursor:pointer;font-size:20px;color:var(--cacau)}
-.arr.p{left:-22px}.arr.n{right:-22px}
-.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
-.thumbs img{border-radius:12px;border:1px solid var(--linha)}
+.legenda{font-size:13.5px;text-align:center;margin-top:14px;opacity:.75}
 /* stories */
-.stories{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.st{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:9/16;box-shadow:0 30px 60px -34px #4a2c2a88;background:#000}
-.st img{width:100%;height:100%;object-fit:cover}
-.st::before{content:"";position:absolute;inset:0 0 auto;height:90px;background:linear-gradient(#0000004d,#0000)}
-.st .bar{position:absolute;left:12px;right:12px;top:12px;height:3px;border-radius:3px;background:#ffffff66;overflow:hidden}
-.st .bar i{display:block;height:100%;width:0;background:#fff}
-.st.on .bar i{animation:prog 6s linear forwards}
-@keyframes prog{to{width:100%}}
-.st .who{position:absolute;left:14px;top:24px;display:flex;align-items:center;gap:8px;color:#fff;font:700 13px "DM Sans";text-shadow:0 1px 6px #0006}
-.st .who img{width:28px;height:28px;border-radius:50%;background:var(--creme);padding:2px}
-.cap{font-size:13px;margin-top:10px;text-align:center;opacity:.8}
-/* entregáveis */
-.ent{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.ent div{background:#fff;border:1px solid var(--linha);border-radius:18px;padding:18px}
-.ent b{display:block;font:600 20px "Fraunces";font-variation-settings:"SOFT" 100}
-.ent span{font-size:14px;opacity:.85}
+.stories{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:900px;margin:0 auto}
+.story{display:block;align-self:start;background:none;border:0;cursor:zoom-in;text-align:left;font:inherit;color:inherit}
+.story .ph{border-radius:22px;overflow:hidden;aspect-ratio:9/16;box-shadow:0 24px 50px -28px #3b2321aa;position:relative}
+.story .ph::before{content:"";position:absolute;left:12px;right:12px;top:10px;height:3px;border-radius:2px;background:#ffffff88;z-index:2}
+.story img{width:100%;height:100%;object-fit:cover}
+.story p{margin-top:12px;font-size:14px}.story p b{display:block;font:560 18px "Fraunces"}
+/* carrossel */
+.car{display:grid;grid-template-columns:repeat(4,minmax(240px,1fr));gap:3px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+.car button{border:0;padding:0;scroll-snap-align:start;cursor:zoom-in;aspect-ratio:4/5;background:#eee}
+.car img{width:100%;height:100%;object-fit:cover}
+/* sistema */
+.sis{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.sis div{border-top:2px solid var(--cacau);padding-top:12px}
+.sis b{display:block;font:560 22px "Fraunces";margin-bottom:6px}
+.sis b i{font-style:italic;font-weight:400;color:var(--framb);margin-right:8px}
+.sis p{font-size:14.5px}
+.aviso{margin-top:28px;background:var(--creme);padding:16px 20px;font-size:14px;border-left:3px solid var(--framb)}
 /* lightbox */
-.lb{position:fixed;inset:0;background:#2a1716e8;display:none;align-items:center;justify-content:center;padding:20px;z-index:20}
+.lb{position:fixed;inset:0;background:#1f1110ee;display:none;align-items:center;justify-content:center;z-index:30;padding:20px}
 .lb.on{display:flex}
-.lb img{max-height:92vh;max-width:min(92vw,720px);border-radius:14px;box-shadow:0 30px 80px #0008}
-.lb button{position:absolute;top:16px;right:18px;background:#fff;border:0;width:44px;height:44px;border-radius:50%;font-size:22px;cursor:pointer;color:var(--cacau)}
-footer{margin-top:80px;padding:26px 0 40px;border-top:1px solid var(--linha);font-size:13px;opacity:.8}
-footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media (max-width:760px){
-  .stories{grid-template-columns:1fr;max-width:320px;margin:0 auto}
-  .ent{grid-template-columns:1fr 1fr}
-  .arr{display:none}
+.lb img{max-height:92vh;max-width:92vw;box-shadow:0 30px 80px #000a}
+.lb button{position:absolute;background:none;border:0;color:var(--creme);font:300 40px/1 "Fraunces";cursor:pointer;padding:12px}
+.lb .x{top:10px;right:16px}.lb .p{left:10px;top:50%}.lb .n{right:10px;top:50%}
+footer{margin-top:96px;background:var(--cacau);color:#e9cfc6;padding:32px 0;font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media (max-width:860px){
+ .hero .wrap{grid-template-columns:1fr;padding-top:40px;padding-bottom:40px;gap:28px}
+ .stack{height:400px}
+ .head{grid-template-columns:1fr;gap:12px}
+ .stories{grid-template-columns:repeat(3,1fr);gap:10px}.story p{font-size:12px}.story p b{font-size:14px}.story .ph{border-radius:12px}
+ .sis{grid-template-columns:1fr}
+ .car{grid-template-columns:repeat(4,78%)}
+ section{padding-top:64px}.wrap{padding:0 16px}
 }
-@media (max-width:520px){
-  .perfil{padding:18px;border-radius:22px}
-  .grid,.tabs{margin-left:-18px;margin-right:-18px}.grid{margin-bottom:-18px;gap:2px}
-  .ph{gap:16px;align-items:flex-start}.av{width:78px;height:78px}
-  .hl .c{width:64px;height:64px}
-  .ent{grid-template-columns:1fr}
-}
+@media (max-width:480px){.stack{height:300px}.perfil .top{padding:16px}.perfil .av{width:64px;height:64px}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <div>
-      <p class="tag">Posts para Instagram · marca fictícia</p>
-      <h1>Um mês de feed <em>com cara de confeitaria</em></h1>
-      <p>Seis posts, três stories e um carrossel para a Doce Ponto, no padrão do kit de identidade. Textos curtos, de quem vende doce de verdade.</p>
-    </div>
-    <div class="kpis"><span>6 posts 1080×1350</span><span>3 stories 1080×1920</span><span>Carrossel 4 telas</span></div>
-  </header>
-
-  <div class="perfil">
-    <div class="ph">
-      <div class="av"><div><img src="img/icone.svg" alt=""></div></div>
-      <div>
-        <h2>doceponto.confeitaria <small>perfil fictício</small></h2>
-        <p class="nm">Doce Ponto · confeitaria artesanal</p>
-        <p class="bio">Bolos, potes e brigadeiros feitos à mão.<br>Encomendas pelo direct · retirada no ateliê</p>
-        <div class="btns"><span>Mensagem</span><span>Cardápio</span></div>
-      </div>
-    </div>
-    <div class="hl" id="hl"></div>
-    <div class="tabs"><span class="on">Posts</span><span>Reels</span><span>Marcados</span></div>
-    <div class="grid" id="grid"></div>
+<header class="hero"><div class="wrap">
+  <div>
+    <p class="k">Social media · um mês de conteúdo</p>
+    <h1>Feed com cara <em>de revista</em> de confeitaria</h1>
+    <p>6 posts, 3 stories e um carrossel de 4 telas. A foto do doce manda, o texto é curto e o layout se repete para o feed parecer de uma marca só.</p>
+    <div class="chips"><span>1080 × 1350</span><span>1080 × 1920</span><span>Texto editável</span><span>Promoção com regras</span></div>
+    <p class="fic">Doce Ponto · projeto demonstrativo · marca fictícia</p>
   </div>
+  <div class="stack">
+    <img class="s1" src="pecas/post-3-bastidores.jpg" alt="Post de bastidores">
+    <img class="s2" src="pecas/post-1-lancamento.jpg" alt="Post de lançamento do bolo de pote">
+    <img class="s3" src="pecas/story-2-natal.jpg" alt="Story de encomendas de Natal">
+  </div>
+</div></header>
 
-  <section id="carrossel">
-    <div class="head"><div><p class="tag">Carrossel</p><h2>Bolo de pote em 4 camadas</h2></div>
-      <p>Um passo a passo que prende o arrasto: cada tela mostra o pote enchendo, e a última leva para a encomenda.</p></div>
-    <div class="car">
-      <div class="track" id="track"></div>
-      <button class="arr p" id="prev" aria-label="Anterior">‹</button><button class="arr n" id="next" aria-label="Próxima">›</button>
-      <div class="dots" id="dots"></div>
+<nav class="sec"><div class="wrap">
+  <a href="#feed"><span>01</span>Feed</a><a href="#stories"><span>02</span>Stories</a><a href="#carrossel"><span>03</span>Carrossel</a><a href="#sistema"><span>04</span>Sistema</a>
+</div></nav>
+
+<main class="wrap">
+  <section id="feed">
+    <div class="head"><div><p class="k">01 · Feed</p><h2>Seis posts, <em>um mês</em></h2></div>
+      <p>Lançamento, cardápio da semana, bastidores, dica, promoção com regras claras e como encomendar. Clique para ver em tamanho real.</p></div>
+    <div class="perfil">
+      <div class="top"><div class="av"><img src="img/logo-icone-positivo.svg" alt=""></div>
+        <div><b>doceponto.confeitaria</b><small>Confeitaria artesanal · encomendas pelo direct<br>Marca fictícia, perfil de demonstração</small></div></div>
+      <div class="grid" id="grid"></div>
     </div>
   </section>
 
   <section id="stories">
-    <div class="head"><div><p class="tag">Stories</p><h2>Três stories do dia a dia</h2></div>
-      <p>Fornada do dia com enquete, aviso de encomendas e caixinha de perguntas. Espaço livre em cima e embaixo para os botões do app.</p></div>
-    <div class="stories" id="sts"></div>
+    <div class="head"><div><p class="k">02 · Stories</p><h2>Para a semana <em>conversar</em></h2></div>
+      <p>Enquete, aviso de data e caixinha de perguntas. O texto fica fora das áreas de 250 px em cima e embaixo, onde o Instagram põe botões.</p></div>
+    <div class="stories" id="stories-list"></div>
   </section>
 
-  <section>
-    <div class="head"><div><p class="tag">Entrega</p><h2>O que vai no pacote</h2></div></div>
-    <div class="ent">
-      <div><b>PNG e JPG</b><span>Nos tamanhos do Instagram: 4:5 no feed, 9:16 nos stories.</span></div>
-      <div><b>Arquivo editável</b><span>Cada peça em HTML/SVG, com texto vivo para trocar sabor e data.</span></div>
-      <div><b>Legendas</b><span>Texto curto com chamada para o direct em cada post.</span></div>
-      <div><b>Promoção honesta</b><span>Regras e validade na própria arte. Sem preço “de” inventado.</span></div>
+  <section id="carrossel">
+    <div class="head"><div><p class="k">03 · Carrossel</p><h2>Bolo de pote <em>em 4 camadas</em></h2></div>
+      <p>Um passo a passo que termina na encomenda. Cada tela funciona sozinha, mas a numeração puxa o dedo para a próxima.</p></div>
+    <div class="car" id="car"></div>
+  </section>
+
+  <section id="sistema">
+    <div class="head"><div><p class="k">04 · Sistema</p><h2>Três layouts, <em>nada de improviso</em></h2></div>
+      <p>Grid de 6 colunas, margem de 72 px e três tamanhos de texto por peça. Com isso, o próximo post sai em minutos e continua parecendo da mesma marca.</p></div>
+    <div class="sis">
+      <div><b><i>a</i>Foto inteira</b><p>Para lançamento e bastidores. Degradê só onde entra o texto, sem cobrir o doce.</p></div>
+      <div><b><i>b</i>Meio a meio</b><p>Foto em cima e bloco de cor embaixo, para dica e promoção, que têm mais texto.</p></div>
+      <div><b><i>c</i>Foto em moldura</b><p>Fundo creme e foto com margem, para cardápio e passo a passo.</p></div>
     </div>
+    <p class="aviso">As fotos foram geradas por IA para este projeto demonstrativo, todas com a mesma direção de arte. Num projeto real, são fotos do produto do cliente. A promoção traz validade e regras na própria arte, e não há preço nem depoimento inventado.</p>
   </section>
-</div>
-<footer><div class="wrap"><span>Doce Ponto é uma marca fictícia. Projeto demonstrativo de portfólio.</span><span>Interface de perfil simulada, sem relação com o app oficial.</span></div></footer>
+</main>
 
-<div class="lb" id="lb" role="dialog" aria-modal="true"><button id="lbx" aria-label="Fechar">×</button><img id="lbi" alt=""></div>
+<footer><div class="wrap"><span>Doce Ponto · confeitaria artesanal</span><span>Projeto demonstrativo · marca e perfil fictícios</span></div></footer>
 
+<div class="lb" id="lb"><img id="lbi" alt=""><button class="x" aria-label="Fechar">×</button><button class="p" aria-label="Anterior">‹</button><button class="n" aria-label="Próxima">›</button></div>
 <script>
-const POSTS=[["post-1-lancamento","Lançamento: bolo de pote de morango"],["post-2-cardapio","Cardápio da semana"],["post-3-bastidores","Bastidores: doce de leite"],["post-4-dica","Dica: como guardar brigadeiro"],["post-5-promocao","Promoção: o 13º brigadeiro é brinde"],["post-6-como-encomendar","Como encomendar"]];
-const CAR=["carrossel-1","carrossel-2","carrossel-3","carrossel-4"];
-const STS=[["story-1-fornada","Fornada de hoje"],["story-2-natal","Encomendas de Natal"],["story-3-pergunta","Caixinha de perguntas"]];
-const $=id=>document.getElementById(id), src=n=>`pecas/${n}.jpg`;
-const lb=$("lb"),lbi=$("lbi");
-function open(n,alt){lbi.src=src(n);lbi.alt=alt||"";lb.classList.add("on")}
-$("lbx").onclick=()=>lb.classList.remove("on");lb.onclick=e=>{if(e.target===lb)lb.classList.remove("on")};
-document.addEventListener("keydown",e=>{if(e.key==="Escape")lb.classList.remove("on")});
-const multi='<svg class="multi" viewBox="0 0 24 24"><rect x="7" y="3" width="14" height="14" rx="3" fill="none" stroke="#fff" stroke-width="2"/><rect x="3" y="7" width="14" height="14" rx="3" fill="#fff" opacity=".9"/></svg>';
-const grid=$("grid");
-POSTS.forEach(([n,a,m])=>{const b=document.createElement("button");b.type="button";b.setAttribute("aria-label",a);
- b.innerHTML=`<img src="${src(n)}" alt="${a}" loading="lazy">${m?multi:""}`;b.onclick=()=>m?document.getElementById("carrossel").scrollIntoView({behavior:"smooth"}):open(n,a);grid.appendChild(b)});
-// destaque de stories no perfil
-const hl=$("hl");
-[...STS,["post-2-cardapio","Cardápio"]].forEach(([n,a],i)=>{const b=document.createElement("button");b.type="button";
- b.innerHTML=`<div class="c"><img src="${src(n)}" alt=""></div>${["Hoje","Natal","Perguntas","Cardápio"][i]}`;b.onclick=()=>open(n,a);hl.appendChild(b)});
-// carrossel
-const track=$("track"),dots=$("dots");
-CAR.forEach((n,i)=>{track.insertAdjacentHTML("beforeend",`<img src="${src(n)}" alt="Carrossel, tela ${i+1} de 4">`);
- const d=document.createElement("button");d.setAttribute("aria-label","Tela "+(i+1));d.onclick=()=>go(i);dots.appendChild(d)});
-let cur=0;function go(i){cur=Math.max(0,Math.min(3,i));track.scrollTo({left:cur*track.clientWidth,behavior:"smooth"})}
-function mark(){cur=Math.round(track.scrollLeft/track.clientWidth);[...dots.children].forEach((d,i)=>d.classList.toggle("on",i===cur))}
-track.addEventListener("scroll",()=>requestAnimationFrame(mark));mark();
-$("prev").onclick=()=>go(cur-1);$("next").onclick=()=>go(cur+1);
-// stories
-const sts=$("sts");
-STS.forEach(([n,a],i)=>{sts.insertAdjacentHTML("beforeend",`<div><div class="st${i===0?" on":""}" data-i="${i}"><img src="${src(n)}" alt="Story: ${a}" loading="lazy"><div class="bar"><i></i></div><div class="who"><img src="img/icone.svg" alt="">doceponto.confeitaria</div></div><p class="cap">${a}</p></div>`)});
-const els=[...document.querySelectorAll(".st")];let si=0;
-function play(i){els.forEach(e=>{e.classList.remove("on");e.querySelector("i").style.animation="none";void e.offsetWidth;e.querySelector("i").style.animation=""});si=i%els.length;els[si].classList.add("on")}
-els.forEach(e=>{e.querySelector("i").addEventListener("animationend",()=>play(si+1));e.onclick=()=>open(STS[+e.dataset.i][0],STS[+e.dataset.i][1])});
+const posts=[["post-1-lancamento","Lançamento"],["post-2-cardapio","Cardápio da semana"],["post-3-bastidores","Bastidores"],["post-4-dica","Dica da confeiteira"],["post-5-promocao","Promoção com regras"],["post-6-como-encomendar","Como encomendar"]];
+const stories=[["story-1-fornada","Fornada do dia","com enquete"],["story-2-natal","Natal","aviso de data e lembrete"],["story-3-pergunta","Caixinha","de perguntas"]];
+const car=["carrossel-1","carrossel-2","carrossel-3","carrossel-4"];
+const all=[];
+const add=(src,el,html)=>{const i=all.push(src)-1;el.insertAdjacentHTML("beforeend",html(i))};
+const g=document.getElementById("grid"),s=document.getElementById("stories-list"),c=document.getElementById("car");
+posts.forEach(([f,t])=>add(`pecas/${f}.jpg`,g,i=>`<button data-i="${i}" aria-label="${t}"><img src="pecas/${f}.jpg" alt="${t}" loading="lazy"></button>`));
+stories.forEach(([f,t,d])=>add(`pecas/${f}.jpg`,s,i=>`<button class="story" data-i="${i}"><div class="ph"><img src="pecas/${f}.jpg" alt="Story ${t}" loading="lazy"></div><p><b>${t}</b>${d}</p></button>`));
+car.forEach((f,k)=>add(`pecas/${f}.jpg`,c,i=>`<button data-i="${i}" aria-label="Tela ${k+1}"><img src="pecas/${f}.jpg" alt="Carrossel, tela ${k+1}" loading="lazy"></button>`));
+const lb=document.getElementById("lb"),lbi=document.getElementById("lbi");let cur=0;
+const show=i=>{cur=(i+all.length)%all.length;lbi.src=all[cur];lb.classList.add("on")};
+document.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>show(+b.dataset.i));
+lb.querySelector(".x").onclick=()=>lb.classList.remove("on");
+lb.querySelector(".p").onclick=e=>{e.stopPropagation();show(cur-1)};
+lb.querySelector(".n").onclick=e=>{e.stopPropagation();show(cur+1)};
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove("on")};
+document.onkeydown=e=>{if(!lb.classList.contains("on"))return;if(e.key==="Escape")lb.classList.remove("on");if(e.key==="ArrowRight")show(cur+1);if(e.key==="ArrowLeft")show(cur-1)};
 </script>
 </body>
 </html>
