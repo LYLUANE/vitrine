@@ -349,7 +349,7 @@ window.CASES = [
     entrega: [["Cálculo sob medida", "Preço por m², metro linear ou unidade, área mínima por peça, desconto em % ou R$ e frete, tudo recalculado enquanto digita."], ["PDF do orçamento", "Documento A4 com logo, dados do cliente, itens com medidas, condições, validade e campo de aceite."], ["WhatsApp", "Mensagem pronta com itens, total, prazo e validade, aberta direto na conversa do cliente."], ["Pedidos e estoque", "Orçamento aprovado vira pedido, o material sai do estoque e o painel avisa o que precisa repor."], ["Painel", "Orçamentos do mês, taxa de aprovação, valor em aberto, gráfico de orçado x aprovado e lista do que precisa de atenção."], ["Versão real", "Nesta demonstração os dados ficam no navegador. A versão para o cliente teria banco de dados, login real e vários usuários com permissões (por exemplo Next.js ou NestJS com PostgreSQL), além de backup e acesso pelo celular."]]
   },
   {
-    slug: "video-historia-narrado", "video-produto", "portal-imobiliario", "app-mobile",
+    slug: "video-historia-narrado",
     titulo: "Como o café chegou ao Brasil",
     categoria: "Vídeo",
     subtema: "Storytelling narrado para canal dark (vertical)",
@@ -381,16 +381,7 @@ window.CASES = [
     telas: ["img/pagina-vendas-1.jpg", "img/pagina-vendas-2.jpg"],
     entrega: [["Copy", "Texto completo da página: promessa, objeções, módulos, oferta, garantia e FAQ, sem promessa de ganho."], ["Layout", "Visual próprio da marca, com tipografia forte, ilustração em SVG e animações leves ao rolar."], ["Versão celular", "Pensada primeiro para o celular, com barra fixa de compra e botões fáceis de tocar."], ["Checkout", "Botões ligados ao checkout da Hotmart, Kiwify ou Eduzz no projeto real (aqui o botão abre um aviso de demonstração)."], ["Pixel", "Pixel da Meta e tag do Google com eventos de clique no botão e de início de compra."], ["SEO básico", "Título, descrição, dados estruturados do curso, cartão de compartilhamento e página leve, sem frameworks pesados."]],
     processo: [{"titulo": "Briefing da oferta", "faz": "Levanto produto, público, objeções, preço, bônus, garantia e plataforma de venda (Hotmart, Kiwify ou Eduzz), e quais provas reais existem, sem inventar depoimento.", "recebe": "Resumo da oferta aprovado", "tempo": "1 dia"}, {"titulo": "Copy da página", "faz": "Escrevo o texto seção por seção: promessa sem garantia de ganho, para quem é e para quem não é, módulos, oferta, garantia e perguntas frequentes.", "recebe": "Texto completo para revisar", "tempo": "2 dias"}, {"titulo": "Layout e ilustração", "faz": "Crio o visual da marca com tipografia forte e ilustração própria em SVG, desenhando primeiro a versão de celular, onde chega a maior parte do tráfego pago.", "recebe": "Prévia visual para aprovar", "tempo": "2 dias"}, {"titulo": "Construção", "faz": "Monto a página leve em HTML, CSS e JavaScript, com barra fixa de compra no celular, animações discretas e botões ligados ao checkout.", "recebe": "Link de teste para navegar", "tempo": "2 dias"}, {"titulo": "Pixel e testes", "faz": "Instalo o Pixel da Meta e a tag do Google, testo os eventos de clique e de início de compra e confiro velocidade, SEO básico e todos os botões.", "recebe": "Eventos de rastreio conferidos e página revisada", "tempo": "1 dia"}, {"titulo": "Publicação", "faz": "Publico no seu domínio, faço a última conferência no celular e no computador e explico como mudar preço e link do checkout.", "recebe": "Página no ar e guia curto", "tempo": "meio dia"}]
-  }
-];
-
-/* Etapas padrão de entrega, usadas quando o caso não define "entrega". */
-window.ENTREGA_PADRAO = [
-  ["Briefing", "Conversa curta para entender o negócio, o público e o que precisa ficar pronto."],
-  ["Proposta visual", "Rascunho de telas ou layout para aprovar antes de desenvolver."],
-  ["Desenvolvimento", "Construção com prévias para acompanhar o andamento."],
-  ["Revisão", "Ajustes combinados a partir do que o cliente testou."],
-  ["Entrega", "Arquivos, publicação e um guia curto de uso."],
+  },
   {
     slug: "motion-infografico",
     titulo: "Do pedido à entrega: infográfico animado em motion graphics",
@@ -494,6 +485,15 @@ window.ENTREGA_PADRAO = [
     videos: [{"src": "video/video-produto-9x16.mp4", "capa": "img/video-produto-9x16-poster.jpg", "legenda": "Versão 9:16 (1080x1920) para anúncio no Reels e Stories · 23 s · marca fictícia"}, {"src": "video/video-produto-16x9.mp4", "capa": "img/video-produto-16x9-poster.jpg", "legenda": "Versão 16:9 (1920x1080) para YouTube e site · 23 s · marca fictícia"}],
     entrega: [["Dois formatos", "MP4 vertical 1080x1920 para Reels e Stories e horizontal 1920x1080 para YouTube e site, cada um com layout próprio."], ["Telas de verdade", "O vídeo mostra o seu site funcionando: filtro, escolha de cor e tamanho, sacola, cupom e pedido, sem tela inventada."], ["Ritmo de anúncio", "Gancho no primeiro segundo, corte ou movimento a cada 1,5 a 3 s, zoom no que importa e chamada final com a marca."], ["Narração e legenda", "Voz neural em português com legenda que acende palavra a palavra, para quem assiste sem som."], ["Trilha e efeitos", "Trilha própria por baixo da voz e som nos toques e transições, no volume das redes."], ["Arquivo leve", "Menos de 8 MB por versão, pronto para subir no gerenciador de anúncios ou mandar no WhatsApp."]]
   }
+];
+
+/* Etapas padrão de entrega, usadas quando o caso não define "entrega". */
+window.ENTREGA_PADRAO = [
+  ["Briefing", "Conversa curta para entender o negócio, o público e o que precisa ficar pronto."],
+  ["Proposta visual", "Rascunho de telas ou layout para aprovar antes de desenvolver."],
+  ["Desenvolvimento", "Construção com prévias para acompanhar o andamento."],
+  ["Revisão", "Ajustes combinados a partir do que o cliente testou."],
+  ["Entrega", "Arquivos, publicação e um guia curto de uso."]
 ];
 
 /* Ordem de destaque na página inicial (o resto segue a ordem do arquivo) */
