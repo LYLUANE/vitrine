@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planilha financeira com painel | Vitrine</title>
+<meta name="description" content="Planilha Excel de controle financeiro com fluxo de caixa, DRE, contas a pagar e receber e painel com gráficos, mais uma versão de produção e frequência. Projeto demonstrativo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#f6f1e7; --papel-2:#ede6d7; --cartao:#fffdf8; --tinta:#1c1a17; --tinta-2:#5a554c; --linha:#dcd3c2;
+  --petroleo:#1f4e4a; --sobre-petroleo:#fff; --petroleo-claro:#e1ebe8; --cobre:#b5471b; --cobre-claro:#f6e3da; --ok:#1e6b34; --erro:#9c1c10;
+  --serifa:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,"Segoe UI",sans-serif; --mono:"JetBrains Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--papel:#161513;--papel-2:#1f1d1a;--cartao:#23211d;--tinta:#ede7db;--tinta-2:#aaa293;--linha:#37332d;
+  --petroleo:#7fb8b1;--sobre-petroleo:#10201d;--petroleo-claro:#1d2a28;--cobre:#e08a5f;--cobre-claro:#33231b;--ok:#7cc48f;--erro:#f08a7e}
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.6 var(--sans);overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+a{color:var(--petroleo);text-underline-offset:3px}
+h1,h2,h3{font-family:var(--serifa);font-weight:500;line-height:1.12;margin:0;letter-spacing:-.01em}
+code{font-family:var(--mono);font-size:.86em;background:var(--papel-2);padding:1px 6px;border-radius:4px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.topo{border-bottom:1px solid var(--linha)}
+.topo .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:16px;padding-bottom:16px;gap:12px}
+.topo a{text-decoration:none;color:var(--tinta-2);font-size:.92rem}
+.topo .marca{font-family:var(--serifa);font-size:1.1rem;color:var(--tinta)}
+.selo{font-size:.78rem;color:var(--tinta-2);border:1px solid var(--linha);border-radius:99px;padding:2px 10px;white-space:nowrap}
+
+.hero{padding:56px 0 36px;display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:center}
+.eyebrow{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cobre);font-weight:600;margin-bottom:14px}
+.hero h1{font-size:clamp(2.2rem,4.6vw,3.5rem)}
+.hero h1 em{font-style:italic;color:var(--petroleo)}
+.lead{font-size:1.1rem;color:var(--tinta-2);margin:18px 0 26px;max-width:52ch}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:8px;font-weight:500;font-size:.95rem;text-decoration:none;border:1px solid var(--tinta);color:var(--tinta);background:transparent;cursor:pointer;font-family:inherit}
+.btn.cheio{background:var(--petroleo);border-color:var(--petroleo);color:var(--sobre-petroleo)}
+.btn:hover{border-color:var(--cobre);color:var(--cobre)}
+.btn.cheio:hover{background:var(--cobre);border-color:var(--cobre);color:#fff}
+.btn svg{width:16px;height:16px;flex:none}
+.hero-img{border-radius:12px;overflow:hidden;box-shadow:0 24px 50px -28px rgba(40,30,10,.6);border:1px solid var(--linha);background:#e9e3d6}
+.legenda{font-size:.82rem;color:var(--tinta-2);margin-top:10px}
+.numeros{display:flex;flex-wrap:wrap;gap:22px 40px;padding:26px 0 8px;border-top:1px solid var(--linha);margin-top:6px}
+.numeros div{min-width:120px}
+.numeros b{display:block;font-family:var(--serifa);font-size:2rem;font-weight:500;color:var(--petroleo);line-height:1.1}
+.numeros span{font-size:.86rem;color:var(--tinta-2)}
+
+section{padding:64px 0;border-top:1px solid var(--linha)}
+.sec-cab{display:grid;grid-template-columns:150px 1fr;gap:24px;margin-bottom:34px}
+.sec-cab .n{font-family:var(--mono);font-size:.8rem;color:var(--cobre);padding-top:8px}
+.sec-cab h2{font-size:clamp(1.6rem,3vw,2.3rem);max-width:24ch}
+.sec-cab p{color:var(--tinta-2);max-width:64ch;margin:12px 0 0}
+
+/* teste ao vivo */
+.teste{display:grid;grid-template-columns:330px minmax(0,1fr);gap:28px;background:var(--cartao);border:1px solid var(--linha);border-radius:14px;padding:26px}
+.teste form{display:flex;flex-direction:column;gap:12px}
+.teste h3{font-size:1.25rem}
+.teste label{font-size:.82rem;color:var(--tinta-2);display:flex;flex-direction:column;gap:4px}
+.teste select,.teste input{width:100%;min-width:0;font:inherit;font-size:.95rem;padding:9px 10px;border:1px solid var(--linha);border-radius:7px;background:#fffbe9;color:#1c1a17}
+.teste .linha2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.teste .acoes{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.teste .acoes .btn{padding:9px 14px}
+.nota{font-size:.8rem;color:var(--tinta-2);margin:0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.kpi{background:var(--papel);border-left:4px solid var(--petroleo);border-radius:4px 8px 8px 4px;padding:10px 12px;transition:background .5s}
+.kpi.des{border-color:var(--cobre)}
+.kpi small{display:block;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2);font-weight:600}
+.kpi b{display:block;font-family:var(--serifa);font-weight:600;font-size:1.45rem;color:var(--petroleo);line-height:1.25;white-space:nowrap}
+.kpi.des b{color:var(--cobre)}
+.kpi i{font-style:normal;font-size:.74rem;color:var(--tinta-2)}
+.kpi.pisca{background:var(--cobre-claro)}
+.grafico{margin-top:14px}
+.grafico svg{width:100%;height:auto;display:block}
+.grafico .leg{display:flex;gap:16px;font-size:.78rem;color:var(--tinta-2);margin-top:4px}
+.grafico .leg span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;background:var(--c);vertical-align:-1px}
+.hist{font-size:.82rem;color:var(--tinta-2);margin-top:10px;font-family:var(--mono);min-height:1.4em}
+
+/* gif */
+.gif-bloco{display:grid;grid-template-columns:1.25fr 1fr;gap:32px;align-items:start;margin-top:40px}
+.gif-bloco figure{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--linha);background:#e9e3d6}
+.passos{list-style:none;margin:0;padding:0;counter-reset:p}
+.passos li{counter-increment:p;padding:14px 0 14px 52px;position:relative;border-bottom:1px solid var(--linha)}
+.passos li::before{content:counter(p);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;background:var(--cobre);color:#fff;display:grid;place-items:center;font-weight:600}
+.passos b{display:block}
+.passos span{color:var(--tinta-2);font-size:.94rem}
+
+/* abas */
+.abas-nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.abas-nav button{font:inherit;font-size:.92rem;padding:8px 14px;border-radius:99px;border:1px solid var(--linha);background:transparent;color:var(--tinta-2);cursor:pointer}
+.abas-nav button[aria-selected="true"]{background:var(--petroleo);border-color:var(--petroleo);color:var(--sobre-petroleo)}
+.aba{display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start}
+.js .aba[hidden]{display:none}
+.aba figure{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--linha);background:#e9e3d6}
+.aba figure a{display:block}
+.aba h3{font-size:1.4rem;margin-bottom:10px}
+.aba p{color:var(--tinta-2);margin:0 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-family:var(--mono);font-size:.74rem;background:var(--petroleo-claro);color:var(--petroleo);padding:3px 8px;border-radius:5px}
+.no-js-nota{display:none}
+
+/* producao */
+.prod{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.prod figure{margin:0}
+.prod figure img{border-radius:10px;border:1px solid var(--linha)}
+.prod figcaption{font-size:.86rem;color:var(--tinta-2);margin-top:8px}
+.prod .larga{grid-column:1/-1}
+
+/* por dentro */
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.item{background:var(--cartao);border:1px solid var(--linha);border-radius:12px;padding:20px}
+.item h3{font-family:var(--sans);font-size:1rem;font-weight:600;margin-bottom:6px}
+.item p{margin:0;color:var(--tinta-2);font-size:.93rem}
+.item svg{width:26px;height:26px;color:var(--cobre);margin-bottom:10px}
+.teste-excel{margin-top:22px;background:#1f4e4a;color:#f2efe6;border-radius:12px;padding:22px 24px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.teste-excel b{font-family:var(--serifa);font-size:2.2rem;font-weight:500;line-height:1}
+.teste-excel p{margin:0;color:#dfe9e6}
+
+/* downloads */
+.downloads{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.arq{background:var(--cartao);border:1px solid var(--linha);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.arq .ico{width:46px;height:54px;border-radius:6px;background:#1f4e4a;color:#fff;display:grid;place-items:center;font:600 .72rem var(--mono);position:relative}
+.arq .ico::after{content:"";position:absolute;right:0;top:0;border:8px solid;border-color:var(--cartao) var(--cartao) #ffffff55 #ffffff55}
+.arq h3{font-size:1.3rem}
+.arq ul{margin:0;padding-left:18px;color:var(--tinta-2);font-size:.93rem}
+.arq .btn{align-self:flex-start;margin-top:auto}
+.arq small{color:var(--tinta-2);font-family:var(--mono);font-size:.76rem}
+
+.cta{background:var(--cartao);border:1px solid var(--linha);border-radius:14px;padding:30px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.cta h2{font-size:1.7rem}
+.cta p{color:var(--tinta-2);margin:10px 0 0;max-width:62ch}
+.rodape{border-top:1px solid var(--linha);padding:26px 0 40px;font-size:.86rem;color:var(--tinta-2)}
+.rodape .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:940px){
+  .hero{grid-template-columns:1fr;padding-top:36px}
+  .teste{grid-template-columns:1fr}
+  .gif-bloco,.aba{grid-template-columns:1fr}
+  .grade{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .sec-cab{grid-template-columns:1fr;gap:6px}
+  .kpis{grid-template-columns:1fr 1fr}
+  .prod,.downloads,.grade{grid-template-columns:1fr}
+  .cta{grid-template-columns:1fr}
+  .teste{padding:18px}
+  .teste-excel{grid-template-columns:1fr}
+  section{padding:48px 0}
+  .topo .selo{display:none}
+}
+</style>
+</head>
+<body>
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="../../index.html">← Vitrine</a>
+    <span class="selo">Projeto demonstrativo · marca fictícia</span>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <div class="eyebrow">Planilhas Excel automatizadas</div>
+    <h1>A planilha que fecha o mês <em>sozinha</em></h1>
+    <p class="lead">Controle financeiro para pequena empresa: você lança entradas e saídas escolhendo em listas, e o fluxo de caixa, a DRE e o painel com gráficos se recalculam. Vem junto uma versão para produção e frequência da equipe.</p>
+    <div class="btns">
+      <a class="btn cheio" href="arquivos/controle-financeiro-ponto-firme.xlsx" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>Baixar a planilha financeira</a>
+      <a class="btn" href="#abas">Ver as abas</a>
+    </div>
+  </div>
+  <div>
+    <div class="hero-img"><img src="img/lanca-e-atualiza.gif" width="880" height="716" alt="Sequência: o painel mostra outubro, um pedido de R$ 8.400 é lançado na tabela e o painel passa a mostrar a receita nova, o lucro e o gráfico atualizados."></div>
+    <p class="legenda">Gravado no Excel: um pedido novo lançado e o painel recalculado.</p>
+  </div>
+</div>
+<div class="wrap">
+  <div class="numeros">
+    <div><b>7 abas</b><span>do lançamento ao painel</span></div>
+    <div><b>3.963</b><span>fórmulas, nenhum valor colado</span></div>
+    <div><b>273</b><span>lançamentos fictícios em 6 meses</span></div>
+    <div><b>0</b><span>macros: abre sem aviso de segurança</span></div>
+  </div>
+</div>
+
+<section id="teste">
+  <div class="wrap">
+    <div class="sec-cab"><div class="n">01 · Na prática</div><div><h2>Lança um valor e o painel atualiza</h2><p>Teste aqui com os mesmos números da planilha (outubro do Ateliê Ponto Firme). Na planilha de verdade é igual: digitou na tabela de lançamentos, o resto se refaz.</p></div></div>
+
+    <div class="teste">
+      <form id="form-lanc" autocomplete="off">
+        <h3>Novo lançamento</h3>
+        <label>Mês
+          <select id="f-mes"></select>
+        </label>
+        <label>Categoria
+          <select id="f-cat"></select>
+        </label>
+        <div class="linha2">
+          <label>Valor (R$)
+            <input id="f-val" type="number" min="1" step="0.01" value="8400" inputmode="decimal">
+          </label>
+          <label>Forma
+            <select id="f-forma"><option>Pix</option><option>Boleto</option><option>Cartão de crédito</option><option>Cartão de débito</option><option>Dinheiro</option><option>Transferência</option></select>
+          </label>
+        </div>
+        <div class="acoes">
+          <button class="btn cheio" type="submit">Lançar</button>
+          <button class="btn" type="button" id="b-desfaz">Desfazer</button>
+        </div>
+        <p class="nota">O tipo (receita ou despesa) vem da categoria, como na planilha: lá a coluna é um PROCV na aba Cadastros.</p>
+      </form>
+      <div>
+        <div class="kpis" aria-live="polite">
+          <div class="kpi" id="k-rec"><small>Receita</small><b>–</b><i></i></div>
+          <div class="kpi des" id="k-des"><small>Despesa</small><b>–</b><i></i></div>
+          <div class="kpi" id="k-luc"><small>Lucro</small><b>–</b><i></i></div>
+          <div class="kpi" id="k-mar"><small>Margem</small><b>–</b><i></i></div>
+        </div>
+        <div class="grafico">
+          <svg id="g-barras" viewBox="0 0 600 230" role="img" aria-label="Gráfico de receita e despesa por mês"></svg>
+          <div class="leg"><span style="--c:#1f4e4a">Receita</span><span style="--c:#b5471b">Despesa</span></div>
+        </div>
+        <div class="hist" id="hist">Nenhum lançamento novo ainda.</div>
+      </div>
+    </div>
+
+    <div class="gif-bloco">
+      <figure><img src="img/passo-4.jpg" width="1100" height="895" loading="lazy" alt="Painel no Excel depois do lançamento, com os cartões de receita, lucro, margem, ticket médio e saldo destacados."></figure>
+      <ol class="passos">
+        <li><b>Outubro fechado</b><span>Receita de R$ 38.175, lucro de R$ 7.019, margem de 18,4%.</span></li>
+        <li><b>Primeira linha livre da tabela</b><span>A tabela já vem com 800 linhas prontas, com as fórmulas esperando.</span></li>
+        <li><b>Seis campos, quatro com lista</b><span>Data validada, categoria, centro de custo e forma de pagamento em lista suspensa. Valor sempre positivo.</span></li>
+        <li><b>Tudo recalculado</b><span>Receita vai a R$ 46.575, lucro a R$ 15.419, e o gráfico de outubro sobe. Fluxo de caixa e DRE também.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="abas">
+  <div class="wrap">
+    <div class="sec-cab"><div class="n">02 · Abas</div><div><h2>O que tem em cada aba</h2><p>Prints exportados do próprio Excel, com os dados da demo. Clique na imagem para ver em tamanho real. Embaixo de cada aba, as fórmulas que fazem o trabalho.</p></div></div>
+    <div class="abas-nav" role="tablist" aria-label="Abas da planilha financeira"></div>
+
+    <article class="aba" id="aba-painel" data-nome="Painel">
+      <figure><a href="img/planilha-financeira-1.jpg"><img src="img/planilha-financeira-1.jpg" width="1280" height="1334" loading="lazy" alt="Aba Painel: indicadores do mês, do período e das contas em aberto, com quatro gráficos."></a></figure>
+      <div><h3>Painel executivo</h3><p>Escolha o mês na célula amarela e veja receita, despesa, lucro, margem e ticket médio, com a variação sobre o mês anterior. Abaixo, o acumulado do período e as contas em aberto. Quatro gráficos nativos: colunas, linha, pizza e lucro mensal.</p>
+      <div class="chips"><span>SOMASES</span><span>CONT.SES</span><span>SEERRO</span><span>DATA</span><span>validação de lista</span></div></div>
+    </article>
+    <article class="aba" id="aba-lanc" data-nome="Lançamentos">
+      <figure><a href="img/planilha-financeira-2.jpg"><img src="img/planilha-financeira-2.jpg" width="1280" height="722" loading="lazy" alt="Aba Lançamentos: tabela com data, descrição, categoria, centro de custo, forma de pagamento, valor e colunas calculadas."></a></figure>
+      <div><h3>Lançamentos</h3><p>Uma Tabela do Excel com filtro. Você digita seis colunas; tipo, grupo da DRE, mês e valor com sinal são fórmulas protegidas. Categoria fora da lista vira "Revisar" em vermelho.</p>
+      <div class="chips"><span>PROCV</span><span>SEERRO</span><span>SE</span><span>validação de data</span><span>Tabela do Excel</span></div></div>
+    </article>
+    <article class="aba" id="aba-contas" data-nome="Contas">
+      <figure><a href="img/planilha-financeira-3.jpg"><img src="img/planilha-financeira-3.jpg" width="1280" height="637" loading="lazy" alt="Aba Contas: contas a pagar e a receber com vencidas em vermelho e as que vencem em 7 dias em amarelo."></a></figure>
+      <div><h3>Contas a pagar e a receber</h3><p>Vencimento, valor e data de pagamento. A situação sai sozinha: vencido em vermelho, vence em até 7 dias em amarelo, quitado em cinza. Ao lado, o resumo do que entra e do que sai.</p>
+      <div class="chips"><span>formatação condicional</span><span>SOMASES</span><span>DataRef</span></div></div>
+    </article>
+    <article class="aba" id="aba-fluxo" data-nome="Fluxo de caixa">
+      <figure><a href="img/planilha-financeira-4.jpg"><img src="img/planilha-financeira-4.jpg" width="1280" height="948" loading="lazy" alt="Aba Fluxo de caixa: entradas e saídas por categoria em seis meses, saldo inicial e final, total e média."></a></figure>
+      <div><h3>Fluxo de caixa mensal</h3><p>Entradas e saídas por categoria, mês a mês, com saldo acumulado, total e média. Mude o mês inicial na aba Cadastros e a janela anda. Um bloco de conferência avisa se algum lançamento ficou de fora.</p>
+      <div class="chips"><span>SOMASES</span><span>MÉDIA</span><span>nomes definidos</span></div></div>
+    </article>
+    <article class="aba" id="aba-dre" data-nome="DRE">
+      <figure><a href="img/planilha-financeira-5.jpg"><img src="img/planilha-financeira-5.jpg" width="1280" height="614" loading="lazy" alt="Aba DRE: receita bruta, impostos, custos, despesas, resultado líquido e margens por mês."></a></figure>
+      <div><h3>DRE simplificada</h3><p>Da receita bruta ao resultado líquido, com margem bruta, margem líquida e análise vertical. Cada categoria cai no grupo certo pela tabela de cadastro.</p>
+      <div class="chips"><span>SOMASES por grupo</span><span>SEERRO</span><span>análise vertical</span></div></div>
+    </article>
+    <article class="aba" id="aba-instr" data-nome="Instruções">
+      <figure><a href="img/planilha-financeira-9.jpg"><img src="img/planilha-financeira-9.jpg" width="1280" height="1369" loading="lazy" alt="Aba Instruções: como usar em três passos, o que tem em cada aba e legenda de cores."></a></figure>
+      <div><h3>Instruções</h3><p>Como usar em três passos, o que tem em cada aba, como incluir categoria nova e a legenda de cores. A pessoa que vai usar não precisa me ligar para lembrar.</p>
+      <div class="chips"><span>hiperlinks</span><span>legenda</span></div></div>
+    </article>
+  </div>
+</section>
+
+<section id="producao">
+  <div class="wrap">
+    <div class="sec-cab"><div class="n">03 · Outra versão</div><div><h2>Produção e frequência da equipe</h2><p>Para quem precisa acompanhar peças produzidas, metas, refugo e faltas. Os dados conversam: quem faltou não tem produção no dia, e a assiduidade sai da folha de frequência.</p></div></div>
+    <div class="prod">
+      <figure class="larga"><a href="img/planilha-financeira-6.jpg"><img src="img/planilha-financeira-6.jpg" width="1280" height="1102" loading="lazy" alt="Painel de produção: peças boas, meta atingida, refugo, assiduidade, faltas, tabelas por pessoa e por produto e três gráficos."></a><figcaption>Painel do mês: meta atingida, refugo, assiduidade, desempenho por pessoa e por produto.</figcaption></figure>
+      <figure class="larga"><a href="img/planilha-financeira-7.jpg"><img src="img/planilha-financeira-7.jpg" width="1280" height="413" loading="lazy" alt="Folha de frequência com códigos por dia, fins de semana e feriado em cinza e totais por pessoa."></a><figcaption>Folha de frequência: código por dia em lista, fim de semana e feriado em cinza, assiduidade calculada.</figcaption></figure>
+      <figure class="larga"><a href="img/planilha-financeira-8.jpg"><img src="img/planilha-financeira-8.jpg" width="1280" height="900" loading="lazy" alt="Tabela de produção diária com meta do período, peças boas e percentual da meta colorido."></a><figcaption>Produção diária: meta proporcional às horas, % da meta em verde, amarelo ou vermelho.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="dentro">
+  <div class="wrap">
+    <div class="sec-cab"><div class="n">04 · Por dentro</div><div><h2>Feita para não quebrar na mão de quem usa</h2><p>Planilha bonita que alguém estraga na segunda semana não serve. Estes cuidados vêm de fábrica.</p></div></div>
+    <div class="grade">
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/><path d="m17 16 2 2 3-4"/></svg><h3>Listas suspensas</h3><p>Categoria, centro de custo, forma de pagamento e códigos de frequência vêm de cadastro. Ninguém digita "aluguel" de três jeitos.</p></div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><h3>Fórmulas protegidas</h3><p>As abas são protegidas sem senha: só as células de digitação ficam liberadas. Evita apagar conta sem querer e não tranca o dono.</p></div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16M9 4v16"/></svg><h3>Nomes definidos</h3><p>As fórmulas leem <code>L_Valor</code>, <code>L_Mes</code>, <code>MesPainel</code>, em vez de <code>$F$5:$F$804</code>. Qualquer pessoa audita.</p></div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>Vencimentos à vista</h3><p>Formatação condicional pela data de referência: vencido em vermelho, próximos 7 dias em amarelo.</p></div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m5 12 4 4 10-10"/></svg><h3>Conferência embutida</h3><p>O fluxo de caixa avisa se há lançamento sem categoria ou fora do período. A DRE lê a mesma base do fluxo, então os totais batem.</p></div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16M9 4v16"/></svg><h3>Detalhes de acabamento</h3><p>Moeda em R$, cabeçalhos congelados, impressão em A4 deitado ajustada à largura, cores por tipo de aba.</p></div>
+    </div>
+    <div class="teste-excel">
+      <b>7.760</b>
+      <p>fórmulas nas duas planilhas, recalculadas no Excel e varridas uma a uma: nenhum erro (#N/D, #VALOR!, #NOME?). Depois, 77 totais conferidos contra uma conta feita à parte em Python, com o mesmo resultado.</p>
+    </div>
+  </div>
+</section>
+
+<section id="baixar">
+  <div class="wrap">
+    <div class="sec-cab"><div class="n">05 · Arquivos</div><div><h2>Baixe e abra no seu Excel</h2><p>Abre no Excel 2010 ou mais novo e no Google Sheets (Arquivo › Importar). Sem macros. Os dados são fictícios.</p></div></div>
+    <div class="downloads">
+      <div class="arq">
+        <div class="ico">XLSX</div>
+        <h3>Controle financeiro</h3>
+        <ul><li>Painel, Lançamentos, Contas, Fluxo de caixa, DRE, Cadastros e Instruções</li><li>273 lançamentos de maio a outubro de 2026</li><li>4 gráficos nativos ligados às fórmulas</li></ul>
+        <small>controle-financeiro-ponto-firme.xlsx · 100 KB</small>
+        <a class="btn cheio" href="arquivos/controle-financeiro-ponto-firme.xlsx" download>Baixar</a>
+      </div>
+      <div class="arq">
+        <div class="ico" style="background:#b5471b">XLSX</div>
+        <h3>Produção e frequência</h3>
+        <ul><li>Painel, Produção, Frequência, Cadastros e Instruções</li><li>6 pessoas, 7 produtos ou etapas, outubro de 2026</li><li>Metas por produto, refugo e assiduidade</li></ul>
+        <small>controle-producao-frequencia.xlsx · 78 KB</small>
+        <a class="btn cheio" href="arquivos/controle-producao-frequencia.xlsx" download>Baixar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <div><h2>Quer uma dessas com a cara do seu negócio?</h2><p>Monto com as suas categorias, centros de custo e indicadores, em Excel ou Google Sheets. Quando a rotina pede, entra macro (VBA) ou Apps Script para importar extrato, gerar relatório ou mandar aviso. Entrego com uma chamada de treinamento e um guia curto.</p></div>
+      <a class="btn cheio" href="../../index.html">Voltar à vitrine</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap"><span>Projeto demonstrativo. Ateliê Ponto Firme, clientes, fornecedores, pessoas e valores são fictícios.</span><a href="../../index.html">Voltar à vitrine</a></div>
+</footer>
+
+<script>
+document.documentElement.classList.add("js");
+// ---- abas
+(function(){
+  var nav = document.querySelector(".abas-nav");
+  var abas = [].slice.call(document.querySelectorAll(".aba"));
+  abas.forEach(function(a, i){
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = a.dataset.nome; b.setAttribute("role","tab");
+    b.setAttribute("aria-controls", a.id); b.setAttribute("aria-selected", i === 0 ? "true" : "false");
+    b.addEventListener("click", function(){
+      abas.forEach(function(x){ x.hidden = x !== a; });
+      [].forEach.call(nav.children, function(y){ y.setAttribute("aria-selected", y === b ? "true" : "false"); });
+    });
+    nav.appendChild(b);
+    a.setAttribute("role","tabpanel");
+    if (i) a.hidden = true;
+  });
+})();
+
+// ---- teste ao vivo (mesmos totais da planilha)
+(function(){
+  var MESES = ["mai/26","jun/26","jul/26","ago/26","set/26","out/26"];
+  var base = {rec:[36445.03,39884.19,50454.83,50407.76,39330.46,38174.71],
+              des:[33290.37,30807.59,38687.94,34666.99,35993.06,31155.64]};
+  var CATS = [["Venda de uniformes","Receita"],["Bordado personalizado","Receita"],["Ajustes e consertos","Receita"],
+    ["Impostos (DAS)","Despesa"],["Tecidos","Despesa"],["Aviamentos e linhas","Despesa"],["Salários e encargos","Despesa"],
+    ["Pró-labore","Despesa"],["Aluguel","Despesa"],["Energia e água","Despesa"],["Internet e telefone","Despesa"],
+    ["Manutenção de máquinas","Despesa"],["Contabilidade","Despesa"],["Marketing e anúncios","Despesa"],
+    ["Fretes e entregas","Despesa"],["Tarifas bancárias e maquininha","Despesa"]];
+  var extra = []; // {m, tipo, v, cat}
+  var fm = document.getElementById("f-mes"), fc = document.getElementById("f-cat");
+  MESES.forEach(function(m, i){ var o = new Option(m, i); fm.appendChild(o); });
+  fm.value = 5;
+  var g1 = document.createElement("optgroup"); g1.label = "Receitas";
+  var g2 = document.createElement("optgroup"); g2.label = "Despesas";
+  CATS.forEach(function(c, i){ (c[1] === "Receita" ? g1 : g2).appendChild(new Option(c[0], i)); });
+  fc.appendChild(g1); fc.appendChild(g2);
+  var brl = new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+  function tot(){
+    var r = base.rec.slice(), d = base.des.slice();
+    extra.forEach(function(e){ if (e.tipo === "Receita") r[e.m] += e.v; else d[e.m] += e.v; });
+    return {r:r, d:d};
+  }
+  function pinta(id, txt, nota){
+    var el = document.getElementById(id);
+    var b = el.querySelector("b");
+    if (b.textContent !== txt && b.textContent !== "–") { el.classList.add("pisca"); setTimeout(function(){ el.classList.remove("pisca"); }, 900); }
+    b.textContent = txt; el.querySelector("i").textContent = nota || "";
+  }
+  function desenha(){
+    var t = tot(), m = +fm.value;
+    var rec = t.r[m], des = t.d[m], luc = rec - des;
+    var var_ = m > 0 ? (rec / t.r[m-1] - 1) : null;
+    pinta("k-rec", brl.format(rec), var_ === null ? MESES[m] : "vs mês anterior: " + (var_ >= 0 ? "+" : "") + (var_*100).toFixed(1).replace(".",",") + "%");
+    pinta("k-des", brl.format(des), MESES[m]);
+    pinta("k-luc", brl.format(luc), "receita − despesa");
+    pinta("k-mar", rec ? (luc/rec*100).toFixed(1).replace(".",",") + "%" : "–", "lucro ÷ receita");
+    var svg = document.getElementById("g-barras"), max = 70000, H = 190, x0 = 54, w = 546, s = "";
+    for (var k = 0; k <= 70000; k += 10000) {
+      var y = 10 + H - k / max * H;
+      s += '<line x1="'+x0+'" x2="600" y1="'+y+'" y2="'+y+'" stroke="currentColor" stroke-opacity=".12"/>';
+      s += '<text x="'+(x0-6)+'" y="'+(y+4)+'" text-anchor="end" font-size="11" fill="currentColor" fill-opacity=".6">'+(k/1000)+' mil</text>';
+    }
+    var gw = w / 6;
+    for (var i = 0; i < 6; i++) {
+      var hr = t.r[i]/max*H, hd = t.d[i]/max*H, cx = x0 + gw*i + gw/2;
+      var sel = i === m;
+      if (sel) s += '<rect x="'+(cx-gw/2+4)+'" y="6" width="'+(gw-8)+'" height="'+(H+8)+'" rx="6" fill="#b5471b" fill-opacity=".08"/>';
+      s += '<rect x="'+(cx-30)+'" y="'+(10+H-hr)+'" width="28" height="'+hr+'" fill="#1f4e4a" rx="2"/>';
+      s += '<rect x="'+(cx+2)+'" y="'+(10+H-hd)+'" width="28" height="'+hd+'" fill="#b5471b" rx="2"/>';
+      s += '<text x="'+cx+'" y="'+(H+26)+'" text-anchor="middle" font-size="12" fill="currentColor" '+(sel?'font-weight="700"':'fill-opacity=".7"')+'>'+MESES[i]+'</text>';
+    }
+    svg.innerHTML = s;
+    svg.style.color = getComputedStyle(document.body).color;
+    var h = document.getElementById("hist");
+    h.textContent = extra.length ? extra.map(function(e){ return MESES[e.m] + " · " + e.cat + " · " + (e.tipo === "Receita" ? "+" : "−") + brl.format(e.v); }).join("   |   ") : "Nenhum lançamento novo ainda.";
+  }
+  document.getElementById("form-lanc").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var v = parseFloat(document.getElementById("f-val").value);
+    if (!(v > 0)) { document.getElementById("f-val").focus(); return; }
+    var c = CATS[+fc.value];
+    extra.push({m:+fm.value, tipo:c[1], v:v, cat:c[0]});
+    desenha();
+  });
+  document.getElementById("b-desfaz").addEventListener("click", function(){ extra.pop(); desenha(); });
+  fm.addEventListener("change", desenha);
+  desenha();
+})();
+</script>
+</body>
+</html>
