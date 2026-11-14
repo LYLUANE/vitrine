@@ -173,13 +173,27 @@ window.CASES = [
   },
   {
     slug: "reels-legendas",
-    titulo: "Reels animado com legendas",
+    titulo: "Pacote de 3 Reels com legenda animada",
     categoria: "Vídeo",
-    subtema: "Vídeo curto vertical",
-    resumo: "Vídeo vertical de até 60 segundos com cortes, legendas animadas e trilha.",
-    ferramentas: ["FFmpeg", "HyperFrames", "Legendas animadas"],
-    capa: "",
-    status: "em breve"
+    subtema: "Confeitaria, contabilidade e atendimento com IA",
+    resumo: "Três Reels 9:16 de 14 a 19 segundos, com narração, legenda palavra por palavra e animação no ritmo da voz.",
+    ferramentas: ["HyperFrames", "GSAP", "Narração local (Kokoro)", "FFmpeg"],
+    capa: "img/reels.png",
+    status: "pronto",
+    problema: "Pequenos negócios precisam postar vídeo curto toda semana, mas não têm tempo de gravar nem de editar. Muita gente assiste sem som, então vídeo sem legenda perde o público.",
+    solucao: "Três formatos que se repetem toda semana: promoção de produto (confeitaria), dica em lista (contabilidade para MEI) e demonstração de serviço (atendente de WhatsApp com IA). Cada um tem gancho no primeiro segundo, texto na área segura do Instagram e legenda que acende palavra por palavra.",
+    fluxo: ["Roteiro de 4 ou 5 frases", "Narração", "Tempo de cada palavra", "Animação das cenas", "Legenda e revisão", "MP4 9:16"],
+    videos: [
+      { src: "video/reel-confeitaria.mp4", capa: "img/reel-confeitaria.jpg", legenda: "Promoção de produto · Doce Ponto (marca fictícia)" },
+      { src: "video/reel-mei.mp4", capa: "img/reel-mei.jpg", legenda: "Dica em lista · Conta Clara (marca fictícia)" },
+      { src: "video/reel-atendente-ia.mp4", capa: "img/reel-atendente-ia.jpg", legenda: "Demonstração de serviço · atendente com IA" }
+    ],
+    entrega: [
+      ["Roteiro", "4 ou 5 frases com gancho, prova e chamada, aprovado antes de animar"],
+      ["Prévia", "primeira versão para você assistir e pedir ajustes"],
+      ["Arquivos", "MP4 9:16 pronto para Reels, Shorts e TikTok, mais a legenda em SRT"],
+      ["Série", "o mesmo modelo serve para os próximos vídeos, trocando só texto e cores"]
+    ]
   },
   {
     slug: "video-historia-narrado",

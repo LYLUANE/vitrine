@@ -216,3 +216,9 @@ a.cartao:hover h3 { color: var(--destaque); }
 .passos-curtos li { grid-template-columns: 60px 1fr; }
 .servicos-faixa { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 18px; font-size: .92rem; }
 .servicos-faixa a { color: var(--tinta-2); }
+
+/* Reels: vídeos verticais lado a lado */
+.videos-verticais { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:20px; margin-top:8px; }
+.videos-verticais figure { margin:0; }
+.videos-verticais video { width:100%; aspect-ratio:9/16; border-radius:14px; background:#111; display:block; }
+.videos-verticais figcaption { font-size:.9rem; margin-top:8px; color:var(--tinta-suave, #555); }
