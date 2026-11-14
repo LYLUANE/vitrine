@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robô PDF → Excel | Vitrine</title>
+<meta name="description" content="Script Python que lê PDFs de fornecedores, confere as contas e monta uma planilha com painel e pendências. Projeto demonstrativo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#f6f1e7; --papel-2:#efe8da; --tinta:#1c1a17; --tinta-2:#57524a; --linha:#d9d0bf;
+  --destaque:#1f5c5a; --destaque-claro:#e1ebe8; --cobre:#b5471b;
+  --serifa:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--papel:#171614;--papel-2:#201e1b;--tinta:#ece6da;--tinta-2:#a8a092;--linha:#34312c;--destaque:#7fb8b1;--destaque-claro:#1f2b29;--cobre:#e08a5f}
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.6 var(--sans);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--destaque);text-underline-offset:3px}
+h1,h2,h3{font-family:var(--serifa);font-weight:500;line-height:1.12;margin:0;letter-spacing:-.01em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.topo{border-bottom:1px solid var(--linha)}
+.topo .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:16px;padding-bottom:16px;gap:12px}
+.topo a{text-decoration:none;color:var(--tinta-2);font-size:.92rem}
+.topo .marca{font-family:var(--serifa);font-size:1.1rem;color:var(--tinta)}
+.selo{font-size:.78rem;color:var(--tinta-2);border:1px solid var(--linha);border-radius:99px;padding:2px 10px;white-space:nowrap}
+
+/* abertura */
+.hero{padding-top:64px;padding-bottom:40px}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--destaque);font-weight:600;margin-bottom:14px}
+.hero h1{font-size:clamp(2.1rem,5vw,3.6rem);max-width:15ch}
+.hero h1 em{font-style:italic;color:var(--destaque)}
+.hero p.lead{font-size:1.12rem;color:var(--tinta-2);max-width:60ch;margin:20px 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:8px;font-weight:500;font-size:.95rem;text-decoration:none;border:1px solid var(--tinta);color:var(--tinta);background:transparent}
+.btn.cheio{background:var(--tinta);color:var(--papel)}
+.btn:hover{border-color:var(--destaque);color:var(--destaque)}
+.btn.cheio:hover{background:var(--destaque);color:#fff}
+.btn svg{width:16px;height:16px;flex:none}
+.numeros{display:flex;flex-wrap:wrap;gap:28px 44px;margin-top:40px;padding-top:24px;border-top:1px solid var(--linha)}
+.numeros div{font-size:.86rem;color:var(--tinta-2)}
+.numeros b{display:block;font-family:var(--serifa);font-size:1.7rem;font-weight:500;color:var(--tinta)}
+
+section{padding:56px 0;border-top:1px solid var(--linha)}
+.sec-cab{display:grid;grid-template-columns:200px 1fr;gap:24px;margin-bottom:32px}
+.sec-cab .n{font-family:var(--serifa);font-style:italic;color:var(--destaque);font-size:1.05rem}
+.sec-cab h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+.sec-cab p{color:var(--tinta-2);margin:10px 0 0;max-width:62ch}
+
+/* fluxo */
+.fluxo{display:grid;grid-template-columns:1fr 70px 1fr 70px 1fr;align-items:stretch}
+.no{background:var(--papel-2);border:1px solid var(--linha);border-radius:14px;padding:22px}
+.no h3{font-size:1.25rem;margin:14px 0 6px}
+.no p{margin:0;font-size:.92rem;color:var(--tinta-2)}
+.no.robo{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+.no.robo p{color:color-mix(in srgb,var(--papel) 75%,transparent)}
+.no ul{margin:10px 0 0;padding:0;list-style:none;font-size:.86rem}
+.no li{padding:3px 0;border-top:1px dashed color-mix(in srgb,currentColor 25%,transparent)}
+.seta{display:flex;align-items:center;justify-content:center;color:var(--destaque)}
+.seta svg{width:46px}
+.ico{height:64px}
+.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px;counter-reset:p}
+.passos div{font-size:.92rem;color:var(--tinta-2);padding-top:12px;border-top:2px solid var(--destaque)}
+.passos div::before{counter-increment:p;content:"0" counter(p);display:block;font-family:var(--mono);font-size:.78rem;color:var(--destaque);margin-bottom:4px}
+.passos b{color:var(--tinta);font-weight:600}
+
+/* pdfs */
+.pdfs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pdfs figure{margin:0}
+.pdfs .folha{background:#fff;border:1px solid var(--linha);border-radius:6px;overflow:hidden;box-shadow:0 10px 24px -14px rgba(0,0,0,.35);aspect-ratio:1/0.78}
+.pdfs .folha img{width:100%;height:100%;object-fit:cover;object-position:top}
+.pdfs figcaption{font-size:.86rem;color:var(--tinta-2);margin-top:10px}
+.pdfs figcaption b{color:var(--tinta);display:block;font-weight:600}
+
+/* terminal */
+.term{background:#14161a;border-radius:12px;overflow:hidden;box-shadow:0 24px 48px -24px rgba(0,0,0,.5);border:1px solid #2a2d33}
+.term-barra{display:flex;align-items:center;gap:7px;padding:10px 14px;background:#202329;color:#8b919c;font:12px var(--sans)}
+.term-barra i{width:11px;height:11px;border-radius:50%;background:#3a3e46}
+.term-barra span{margin-left:10px}
+.term pre{margin:0;padding:18px 20px 22px;color:#d6dbe3;font:13px/1.65 var(--mono);overflow-x:auto;white-space:pre}
+.term .pr{color:#7fb8b1}.term .ok{color:#7ed492}.term .av{color:#f2b45c;font-weight:600}.term .er{color:#e7958a}.term .tt{color:#fff;font-weight:600}
+.cursor{display:inline-block;width:8px;height:15px;background:#d6dbe3;vertical-align:-2px;animation:pisca 1s steps(1) infinite}
+@keyframes pisca{50%{opacity:0}}
+.nota{font-size:.84rem;color:var(--tinta-2);margin-top:12px}
+
+/* "Excel" */
+.excel{background:#fff;color:#222;border:1px solid #c8c8c8;border-radius:10px;overflow:hidden;box-shadow:0 24px 48px -26px rgba(0,0,0,.45);font-family:Calibri,"Segoe UI",Arial,sans-serif}
+.x-topo{background:#1e6e42;color:#fff;display:flex;align-items:center;gap:12px;padding:8px 14px;font-size:13px}
+.x-topo .x-logo{width:22px;height:22px;border-radius:4px;background:#fff;color:#1e6e42;font-weight:700;display:grid;place-items:center;font-size:13px}
+.x-topo .x-nome{font-weight:600}
+.x-topo .x-dir{margin-left:auto;opacity:.8;font-size:12px}
+.x-menu{display:flex;gap:18px;padding:6px 14px;background:#f3f3f3;border-bottom:1px solid #dcdcdc;font-size:12.5px;color:#444;overflow:hidden;white-space:nowrap}
+.x-menu b{color:#1e6e42;border-bottom:2px solid #1e6e42;font-weight:600}
+.x-formula{display:flex;align-items:center;gap:0;border-bottom:1px solid #dcdcdc;font-size:12.5px;background:#fff}
+.x-formula .ref{width:74px;padding:4px 8px;border-right:1px solid #dcdcdc;color:#333}
+.x-formula .fx{padding:4px 10px;color:#888;font-style:italic;border-right:1px solid #dcdcdc}
+.x-formula .val{padding:4px 10px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.x-area{height:470px;overflow:auto;background:#fff}
+.x-abas{display:flex;align-items:stretch;background:#f3f3f3;border-top:1px solid #d0d0d0;font-size:12.5px;overflow-x:auto}
+.x-abas .nav{padding:6px 12px;color:#999;letter-spacing:2px}
+.x-abas button{all:unset;cursor:pointer;padding:7px 16px;color:#444;border-right:1px solid #ddd;white-space:nowrap;position:relative}
+.x-abas button[aria-selected=true]{background:#fff;color:#1e6e42;font-weight:600;box-shadow:inset 0 -3px 0 #1e6e42}
+.x-abas button .cor{position:absolute;left:0;right:0;bottom:0;height:3px}
+.x-abas button:focus-visible{outline:2px solid #1e6e42;outline-offset:-2px}
+.x-status{display:flex;justify-content:space-between;padding:3px 12px;background:#1e6e42;color:#e6f2ea;font-size:11.5px}
+.aba{display:none}.aba.on{display:block}
+
+table.xl{border-collapse:collapse;font-size:13px;table-layout:fixed;width:max-content}
+table.xl th,table.xl td{border:1px solid #e1e1e1;padding:2px 6px;height:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left}
+table.xl thead th{background:#f3f3f3;color:#555;font-weight:400;text-align:center;font-size:12px;position:sticky;top:0;z-index:2;border-color:#d4d4d4}
+table.xl col.rn{width:38px}
+table.xl td.rn,table.xl th.canto{background:#f3f3f3;color:#666;text-align:center;font-size:12px;position:sticky;left:0;z-index:1;border-color:#d4d4d4}
+table.xl th.canto{z-index:3}
+table.xl td.num{text-align:right;font-variant-numeric:tabular-nums}
+table.xl tr.cab td:not(.rn){font-weight:700;position:relative;padding-right:20px;white-space:normal;line-height:1.15;height:40px;vertical-align:middle}
+.filtro{position:absolute;right:3px;top:50%;margin-top:-8px;width:15px;height:15px;border:1px solid #bbb;background:#fff linear-gradient(transparent,transparent);border-radius:2px}
+.filtro::after{content:"";position:absolute;left:3px;top:5px;border:4px solid transparent;border-top:5px solid #666}
+/* estilos de tabela do Excel */
+.med2 tr.cab td:not(.rn){background:#4472c4;color:#fff;border-color:#4472c4}
+.med2 tr.par td:not(.rn){background:#d9e1f2}
+.med2 tr.par td:not(.rn),.med2 tr.impar td:not(.rn){border-color:#fff #e1e1e1}
+.light9 tr.cab td:not(.rn){background:#4472c4;color:#fff}
+.light9 tr.par td:not(.rn),.light9 tr.impar td:not(.rn){border-bottom:1px solid #8ea9db}
+.med3 tr.cab td:not(.rn){background:#ed7d31;color:#fff;border-color:#ed7d31}
+.med3 tr.par td:not(.rn){background:#fce4d6}
+table.xl td.st-ok{background:#ddefe3!important;color:#1e6b3a}
+table.xl td.st-pend{background:#fbe3d6!important;color:#9c2a00;font-weight:700}
+
+/* painel */
+.painel{padding:22px 26px 30px;min-width:1040px;background-image:linear-gradient(#f7f7f7 1px,transparent 1px);background-size:100% 22px}
+.p-tit{font-size:24px;font-weight:700;color:#1f4e5f}
+.p-sub{font-size:12.5px;color:#666;font-style:italic;margin-bottom:16px}
+.cards{display:grid;grid-template-columns:repeat(4,200px);gap:4px;margin-bottom:26px}
+.card{background:#1f4e5f;color:#fff;padding:6px 12px 8px}
+.card.alerta{background:#b5471b}
+.card span{display:block;font-size:11.5px;font-weight:700}
+.card b{font-size:21px}
+.p-grid{display:grid;grid-template-columns:470px 1fr;gap:22px 34px;align-items:start}
+.p-bt{font-weight:700;color:#1f4e5f;font-size:15px;margin-bottom:6px}
+table.pt{border-collapse:collapse;font-size:13px;width:100%;background:#fff}
+table.pt th{background:#1f4e5f;color:#fff;text-align:left;padding:3px 8px;font-weight:700;white-space:nowrap}
+table.pt td:first-child{white-space:nowrap}
+table.pt td{padding:3px 8px;border-bottom:1px solid #d0d7de}
+table.pt td.num{text-align:right;font-variant-numeric:tabular-nums}
+table.pt tr.tot td{font-weight:700;border-bottom:0}
+.graf{background:#fff;border:1px solid #d9d9d9;padding:8px 10px;max-width:600px}
+.graf svg{width:100%;height:auto;display:block}
+.graf .gt{font:600 15px Calibri,"Segoe UI",sans-serif;fill:#404040;text-anchor:middle}
+.graf .gl{font:12px Calibri,"Segoe UI",sans-serif;fill:#595959}
+.graf .gv{font:12px Calibri,"Segoe UI",sans-serif;fill:#404040}
+.graf .eixo{stroke:#bfbfbf}.graf .guia{stroke:#e6e6e6}
+
+/* confere */
+.confere{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.confere div{border:1px solid var(--linha);border-radius:12px;padding:20px;background:var(--papel-2)}
+.confere h3{font-size:1.1rem;margin-bottom:6px}
+.confere p{margin:0;font-size:.92rem;color:var(--tinta-2)}
+.confere code{font-family:var(--mono);font-size:.82rem;background:var(--destaque-claro);padding:1px 5px;border-radius:4px;color:var(--tinta)}
+
+/* downloads */
+.downs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.down{display:flex;flex-direction:column;gap:6px;padding:22px;border-radius:12px;border:1px solid var(--linha);text-decoration:none;color:var(--tinta);transition:border-color .2s,transform .2s}
+.down:hover{border-color:var(--destaque);transform:translateY(-2px)}
+.down .tipo{font-family:var(--mono);font-size:.76rem;color:var(--destaque)}
+.down b{font-family:var(--serifa);font-weight:500;font-size:1.25rem}
+.down span{font-size:.9rem;color:var(--tinta-2)}
+.down .baixar{margin-top:auto;padding-top:10px;color:var(--destaque);font-weight:500;font-size:.9rem}
+.rodape{padding:34px 0 48px;border-top:1px solid var(--linha);font-size:.85rem;color:var(--tinta-2)}
+.rodape .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .sec-cab{grid-template-columns:1fr;gap:6px}
+  .fluxo{grid-template-columns:1fr}
+  .seta{height:54px}.seta svg{transform:rotate(90deg);width:38px}
+  .passos{grid-template-columns:1fr 1fr}
+  .pdfs,.confere,.downs{grid-template-columns:1fr}
+  .pdfs{grid-template-columns:repeat(3,minmax(220px,1fr));overflow-x:auto;padding-bottom:8px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .hero{padding-top:40px;padding-bottom:28px}
+  .selo{display:none}
+  .passos{grid-template-columns:1fr}
+  .x-area{height:420px}
+  .x-topo .x-dir{display:none}
+  .term pre{font-size:11px;padding:14px}
+  .numeros{gap:18px 30px}
+}
+
+/* modo captura: só a planilha, para gerar as telas */
+body.captura{background:#e9e4da}
+body.captura>*:not(main){display:none}
+body.captura main>*:not(#planilha){display:none}
+body.captura #planilha{border:0;padding:24px}
+body.captura #planilha .sec-cab{display:none}
+body.captura .x-area{height:auto;max-height:none;overflow:hidden}
+body.captura .wrap{max-width:none;padding:0}
+</style>
+</head>
+<body>
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="../../index.html">← Vitrine</a>
+    <span class="selo">Projeto demonstrativo · dados fictícios</span>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div class="eyebrow">IA &amp; Automação · Python</div>
+  <h1>Robô que lê os PDFs e <em>monta a planilha</em> sozinho</h1>
+  <p class="lead">Notas de serviço, pedidos e faturas de vários fornecedores, cada um num layout. O robô abre a pasta, tira os dados de cada PDF, confere as contas e entrega um Excel com painel, gráficos e a lista do que não bateu.</p>
+  <div class="btns">
+    <a class="btn cheio" href="arquivos/relatorio.xlsx" download><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v9m-4-4 4 4 4-4M2.5 14h11"/></svg>Baixar relatorio.xlsx</a>
+    <a class="btn" href="#planilha">Ver a planilha</a>
+    <a class="btn" href="#baixar">Código e exemplos</a>
+  </div>
+  <div class="numeros">
+    <div><b>12</b>PDFs lidos</div>
+    <div><b>3</b>layouts diferentes</div>
+    <div><b>33</b>itens extraídos</div>
+    <div><b>3</b>pendências apontadas</div>
+    <div><b>&lt; 2 s</b>do PDF ao Excel</div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-cab"><div class="n">01 · Fluxo</div><div><h2>Da pasta de PDFs ao Excel, sem digitar nada</h2><p>Quem fecha o mês costuma copiar nota por nota para a planilha. O robô faz essa parte e ainda aponta onde o fornecedor errou a conta.</p></div></div>
+    <div class="fluxo">
+      <div class="no">
+        <svg class="ico" viewBox="0 0 80 64" fill="none">
+          <rect x="22" y="4" width="40" height="52" rx="3" fill="var(--papel)" stroke="var(--tinta-2)" stroke-width="1.5"/>
+          <rect x="14" y="8" width="40" height="52" rx="3" fill="var(--papel)" stroke="var(--tinta-2)" stroke-width="1.5"/>
+          <rect x="6" y="12" width="40" height="50" rx="3" fill="var(--papel)" stroke="var(--tinta)" stroke-width="1.6"/>
+          <rect x="6" y="12" width="40" height="11" rx="3" fill="var(--cobre)"/>
+          <text x="26" y="20.5" fill="#fff" font-size="7" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">PDF</text>
+          <path d="M12 30h28M12 36h22M12 42h28M12 48h16" stroke="var(--tinta-2)" stroke-width="1.6"/>
+        </svg>
+        <h3>Pasta de PDFs</h3>
+        <p>Do jeito que chegam por e-mail. Cada fornecedor com seu modelo.</p>
+        <ul><li>Nota de serviço com grade</li><li>Pedido com frete e desconto</li><li>Fatura com data por extenso</li></ul>
+      </div>
+      <div class="seta"><svg viewBox="0 0 46 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10h40m-8-7 8 7-8 7"/></svg></div>
+      <div class="no robo">
+        <svg class="ico" viewBox="0 0 80 64" fill="none">
+          <rect x="14" y="16" width="52" height="38" rx="9" stroke="var(--papel)" stroke-width="1.8"/>
+          <path d="M40 16V7" stroke="var(--papel)" stroke-width="1.8"/><circle cx="40" cy="6" r="3" fill="#7fb8b1"/>
+          <circle cx="30" cy="33" r="4.5" fill="#7fb8b1"/><circle cx="50" cy="33" r="4.5" fill="#7fb8b1"/>
+          <path d="M31 45h18" stroke="var(--papel)" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M8 30v10M72 30v10" stroke="var(--papel)" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <h3>robo.py</h3>
+        <p>Python + pdfplumber lê o texto, encontra os campos pelos rótulos e confere.</p>
+        <ul><li>Fornecedor, CNPJ, nº, datas</li><li>Itens, frete, desconto, total</li><li>Soma, datas e CNPJ conferidos</li></ul>
+      </div>
+      <div class="seta"><svg viewBox="0 0 46 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10h40m-8-7 8 7-8 7"/></svg></div>
+      <div class="no">
+        <svg class="ico" viewBox="0 0 80 64" fill="none">
+          <rect x="6" y="6" width="68" height="52" rx="4" fill="var(--papel)" stroke="var(--tinta)" stroke-width="1.6"/>
+          <rect x="6" y="6" width="68" height="10" rx="4" fill="#1e6e42"/>
+          <path d="M6 26h68M6 36h68M6 46h68M26 16v42M46 16v42" stroke="var(--linha)" stroke-width="1.3"/>
+          <rect x="52" y="40" width="5" height="12" fill="var(--destaque)"/><rect x="60" y="32" width="5" height="20" fill="var(--destaque)"/><rect x="68" y="44" width="4" height="8" fill="var(--cobre)"/>
+        </svg>
+        <h3>relatorio.xlsx</h3>
+        <p>Abre direto no Excel, com tabelas filtráveis e gráficos editáveis.</p>
+        <ul><li>Painel por fornecedor e mês</li><li>Documentos e Itens</li><li>Pendências para cobrar</li></ul>
+      </div>
+    </div>
+    <div class="passos">
+      <div><b>Solte os PDFs</b> na pasta <code>entrada</code>, ou aponte outra com <code>--pasta</code>.</div>
+      <div><b>Rode um comando.</b> O robô lê, extrai e confere cada documento.</div>
+      <div><b>Abra o Excel</b> e veja o painel com totais e gráficos.</div>
+      <div><b>Cobre o fornecedor</b> usando a aba Pendências, já com o motivo.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-cab"><div class="n">02 · Entrada</div><div><h2>Três modelos de documento, um robô só</h2><p>Os 12 PDFs de teste foram gerados com fornecedores fictícios e layouts diferentes de propósito: rótulos, posição dos campos e formato de data mudam.</p></div></div>
+    <div class="pdfs">
+      <figure><div class="folha"><img src="img/NS-0412_tecnolar.jpg" alt="Nota de serviço fictícia da Tecnolar, com cabeçalho azul e tabela com grade" loading="lazy"></div><figcaption><b>Nota de serviço</b>Cabeçalho escuro, "Emissão" e "Vencimento", tabela com grade.</figcaption></figure>
+      <figure><div class="folha"><img src="img/PC-2026-0057_graobom.jpg" alt="Pedido de compra fictício da Grão Bom com quadro de dados e códigos de item" loading="lazy"></div><figcaption><b>Pedido de compra</b>Quadro de dados, CNPJ do comprador junto, código do item, frete.</figcaption></figure>
+      <figure><div class="folha"><img src="img/F-1187_oficina.jpg" alt="Fatura fictícia da Oficina Digital sem grade e com data por extenso" loading="lazy"></div><figcaption><b>Fatura</b>Sem grade, "Emitida em 22 de janeiro de 2026", "Pagar até".</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-cab"><div class="n">03 · Execução</div><div><h2>O que aparece no terminal</h2><p>Saída real do robô rodando nos 12 PDFs. Cada linha é um documento; as setas mostram o motivo da pendência.</p></div></div>
+    <div class="term">
+      <div class="term-barra"><i></i><i></i><i></i><span>Windows PowerShell · robo-pdf-excel</span></div>
+<pre><span class="pr">PS C:\robo-pdf-excel&gt;</span> python robo.py --pasta entrada --saida saida/relatorio.xlsx
+<span class="tt">Robô PDF -&gt; Excel  |  12 PDFs em &#x27;entrada&#x27;</span>
+
+  [<span class="ok">OK</span> ] F-0093_limpamais.pdf            3 itens  R$   2.750,00
+  [<span class="ok">OK</span> ] F-0101_limpamais.pdf            2 itens  R$   1.180,00
+  [<span class="ok">OK</span> ] F-1187_oficina.pdf              3 itens  R$   1.205,00
+  [<span class="av">!!</span> ] F-1203_oficina.pdf              2 itens  R$     870,00
+<span class="er">         -&gt; Datas inconsistentes: Vencimento 06/03/2026 é anterior à emissão 16/03/2026</span>
+  [<span class="ok">OK</span> ] NS-0412_tecnolar.pdf            3 itens  R$   1.515,00
+  [<span class="ok">OK</span> ] NS-0431_ventura.pdf             3 itens  R$   1.630,00
+  [<span class="ok">OK</span> ] NS-0447_tecnolar.pdf            2 itens  R$   2.764,00
+  [<span class="av">!!</span> ] NS-0459_ventura.pdf             2 itens  R$   1.095,00
+<span class="er">         -&gt; CNPJ inválido: 39.581.726/0001-02: dígito verificador não confere</span>
+  [<span class="ok">OK</span> ] PC-2026-0041_pontofirme.pdf     4 itens  R$   1.284,70
+  [<span class="av">!!</span> ] PC-2026-0057_graobom.pdf        4 itens  R$   3.088,50
+<span class="er">         -&gt; Soma não confere: Itens + frete - desconto = R$ 2.674,50, documento diz R$ 3.088,50 (dif. R$ 414,00)</span>
+  [<span class="ok">OK</span> ] PC-2026-0078_pontofirme.pdf     2 itens  R$     346,90
+  [<span class="ok">OK</span> ] PC-2026-0093_graobom.pdf        3 itens  R$   1.607,00
+
+  12 documentos  |  33 itens  |  total R$ 19.336,10  |  3 com pendência
+<span class="ok">  Planilha salva em saida\relatorio.xlsx  (0.7 s)</span>
+<span class="pr">PS C:\robo-pdf-excel&gt;</span> <span class="cursor"></span></pre>
+    </div>
+  </div>
+</section>
+
+<section id="planilha">
+  <div class="wrap">
+    <div class="sec-cab"><div class="n">04 · Saída</div><div><h2>A planilha que sai do outro lado</h2><p>Reprodução em HTML do conteúdo real do <code>relatorio.xlsx</code>, célula por célula. Clique nas abas. No Excel os gráficos são nativos e as abas de dados são Tabelas com filtro.</p></div></div>
+    <div class="excel">
+      <div class="x-topo"><span class="x-logo">X</span><span class="x-nome">relatorio.xlsx</span><span class="x-dir">Gerado por robo.py</span></div>
+      <div class="x-menu"><span>Arquivo</span><b>Página Inicial</b><span>Inserir</span><span>Layout da Página</span><span>Fórmulas</span><span>Dados</span><span>Revisão</span><span>Exibir</span></div>
+      <div class="x-formula"><span class="ref" id="xref">B2</span><span class="fx">fx</span><span class="val" id="xval">Painel de compras e serviços</span></div>
+      <div class="x-area">
+        <div class="aba on" id="aba-painel" data-ref="B2" data-val="Painel de compras e serviços"><div class="painel"><div class="p-tit">Painel de compras e serviços</div><div class="p-sub">Gerado pelo robô em 13/11/2026 22:53 a partir de 12 PDFs</div><div class="cards"><div class="card"><span>Total processado</span><b>R$ 19.336,10</b></div><div class="card"><span>Documentos lidos</span><b>12</b></div><div class="card alerta"><span>Com pendência</span><b>3</b></div><div class="card"><span>Fornecedores</span><b>6</b></div></div><div class='p-grid'><div><div class='p-bt'>Total por fornecedor</div><table class="pt"><tr><th>Fornecedor</th><th>Docs</th><th>Total</th><th>% do total</th></tr><tr><td>Grão Bom Distribuidora de Alimentos Ltda</td><td class='num'>2</td><td class='num'>R$ 4.695,50</td><td class='num'>24,3%</td></tr><tr><td>Tecnolar Manutenção Predial Ltda</td><td class='num'>2</td><td class='num'>R$ 4.279,00</td><td class='num'>22,1%</td></tr><tr><td>Limpa Mais Higienização Profissional</td><td class='num'>2</td><td class='num'>R$ 3.930,00</td><td class='num'>20,3%</td></tr><tr><td>Ventura Climatização e Serviços ME</td><td class='num'>2</td><td class='num'>R$ 2.725,00</td><td class='num'>14,1%</td></tr><tr><td>Oficina Digital Soluções em TI</td><td class='num'>2</td><td class='num'>R$ 2.075,00</td><td class='num'>10,7%</td></tr><tr><td>Papelaria Ponto Firme Comércio Ltda</td><td class='num'>2</td><td class='num'>R$ 1.631,60</td><td class='num'>8,4%</td></tr><tr class='tot'><td>Total</td><td class='num'>12</td><td class='num'>R$ 19.336,10</td><td></td></tr></table></div><div class='graf'><svg viewBox="0 0 560 244" role="img" aria-label="Total por fornecedor"><text x="280.0" y="20" class="gt">Total por fornecedor (R$)</text><text x="202" y="50" class="gl" text-anchor="end">Grão Bom Distribuidora de Ali…</text><rect x="210" y="37" width="280.0" height="20" fill="#1F4E5F"/><text x="496.0" y="51" class="gv">4.695</text><text x="202" y="84" class="gl" text-anchor="end">Tecnolar Manutenção Predial L…</text><rect x="210" y="71" width="255.2" height="20" fill="#1F4E5F"/><text x="471.2" y="85" class="gv">4.279</text><text x="202" y="118" class="gl" text-anchor="end">Limpa Mais Higienização Profi…</text><rect x="210" y="105" width="234.4" height="20" fill="#1F4E5F"/><text x="450.4" y="119" class="gv">3.930</text><text x="202" y="152" class="gl" text-anchor="end">Ventura Climatização e Serviç…</text><rect x="210" y="139" width="162.5" height="20" fill="#1F4E5F"/><text x="378.5" y="153" class="gv">2.725</text><text x="202" y="186" class="gl" text-anchor="end">Oficina Digital Soluções em TI</text><rect x="210" y="173" width="123.7" height="20" fill="#1F4E5F"/><text x="339.7" y="187" class="gv">2.075</text><text x="202" y="220" class="gl" text-anchor="end">Papelaria Ponto Firme Comérci…</text><rect x="210" y="207" width="97.3" height="20" fill="#1F4E5F"/><text x="313.3" y="221" class="gv">1.631</text><line x1="210" y1="30" x2="210" y2="238" class="eixo"/></svg></div><div><div class='p-bt'>Total por mês de emissão</div><table class="pt"><tr><th>Mês</th><th>Docs</th><th>Total</th><th>% do total</th></tr><tr><td>jan/2026</td><td class='num'>3</td><td class='num'>R$ 4.004,70</td><td class='num'>20,7%</td></tr><tr><td>fev/2026</td><td class='num'>3</td><td class='num'>R$ 7.468,50</td><td class='num'>38,6%</td></tr><tr><td>mar/2026</td><td class='num'>4</td><td class='num'>R$ 5.587,90</td><td class='num'>28,9%</td></tr><tr><td>abr/2026</td><td class='num'>2</td><td class='num'>R$ 2.275,00</td><td class='num'>11,8%</td></tr><tr class='tot'><td>Total</td><td class='num'>12</td><td class='num'>R$ 19.336,10</td><td></td></tr></table></div><div class='graf'><svg viewBox="0 0 560 300" role="img" aria-label="Total por mês"><text x="280.0" y="22" class="gt">Total por mês (R$)</text><line x1="60" y1="250.0" x2="540" y2="250.0" class="guia"/><text x="54" y="254.0" class="gl" text-anchor="end">0 mil</text><line x1="60" y1="200.0" x2="540" y2="200.0" class="guia"/><text x="54" y="204.0" class="gl" text-anchor="end">2 mil</text><line x1="60" y1="150.0" x2="540" y2="150.0" class="guia"/><text x="54" y="154.0" class="gl" text-anchor="end">4 mil</text><line x1="60" y1="100.0" x2="540" y2="100.0" class="guia"/><text x="54" y="104.0" class="gl" text-anchor="end">6 mil</text><line x1="60" y1="50.0" x2="540" y2="50.0" class="guia"/><text x="54" y="54.0" class="gl" text-anchor="end">7 mil</text><rect x="86.4" y="142.8" width="67.2" height="107.2" fill="#2A9D8F"/><text x="120.0" y="136.8" class="gv" text-anchor="middle">4.004</text><text x="120.0" y="268" class="gl" text-anchor="middle">jan/2026</text><rect x="206.4" y="50.0" width="67.2" height="200.0" fill="#2A9D8F"/><text x="240.0" y="44.0" class="gv" text-anchor="middle">7.468</text><text x="240.0" y="268" class="gl" text-anchor="middle">fev/2026</text><rect x="326.4" y="100.4" width="67.2" height="149.6" fill="#2A9D8F"/><text x="360.0" y="94.4" class="gv" text-anchor="middle">5.587</text><text x="360.0" y="268" class="gl" text-anchor="middle">mar/2026</text><rect x="446.4" y="189.1" width="67.2" height="60.9" fill="#2A9D8F"/><text x="480.0" y="183.1" class="gv" text-anchor="middle">2.275</text><text x="480.0" y="268" class="gl" text-anchor="middle">abr/2026</text></svg></div></div></div></div>
+        <div class="aba" id="aba-documentos" data-ref="A1" data-val="Arquivo"><table class="xl med2"><colgroup><col class="rn"><col style="width:170px"><col style="width:110px"><col style="width:250px"><col style="width:135px"><col style="width:105px"><col style="width:82px"><col style="width:82px"><col style="width:70px"><col style="width:64px"><col style="width:92px"><col style="width:78px"><col style="width:78px"><col style="width:92px"><col style="width:82px"></colgroup><thead><tr><th class="canto"></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th></tr></thead><tbody><tr class="cab"><td class="rn">1</td><td class="">Arquivo<span class="filtro"></span></td><td class="">Tipo<span class="filtro"></span></td><td class="">Fornecedor<span class="filtro"></span></td><td class="">CNPJ<span class="filtro"></span></td><td class="">Número<span class="filtro"></span></td><td class="">Emissão<span class="filtro"></span></td><td class="">Vencimento<span class="filtro"></span></td><td class="">Mês<span class="filtro"></span></td><td class="">Qtd itens<span class="filtro"></span></td><td class="">Soma itens<span class="filtro"></span></td><td class="">Frete<span class="filtro"></span></td><td class="">Desconto<span class="filtro"></span></td><td class="">Total<span class="filtro"></span></td><td class="">Status<span class="filtro"></span></td></tr><tr class="par"><td class="rn">2</td><td class="">F-0093_limpamais.pdf</td><td class="">Fatura</td><td class="">Limpa Mais Higienização Profissional</td><td class="">73.824.461/0001-52</td><td class="">F-0093</td><td class="num">18/02/2026</td><td class="num">04/03/2026</td><td class="">fev/2026</td><td class="num">3</td><td class="num">R$ 2.750,00</td><td class="num">R$ 0,00</td><td class="num">R$ 0,00</td><td class="num">R$ 2.750,00</td><td class="st-ok">OK</td></tr><tr class="impar"><td class="rn">3</td><td class="">F-0101_limpamais.pdf</td><td class="">Fatura</td><td class="">Limpa Mais Higienização Profissional</td><td class="">73.824.461/0001-52</td><td class="">F-0101</td><td class="num">15/04/2026</td><td class="num">29/04/2026</td><td class="">abr/2026</td><td class="num">2</td><td class="num">R$ 1.180,00</td><td class="num">R$ 0,00</td><td class="num">R$ 0,00</td><td class="num">R$ 1.180,00</td><td class="st-ok">OK</td></tr><tr class="par"><td class="rn">4</td><td class="">F-1187_oficina.pdf</td><td class="">Fatura</td><td class="">Oficina Digital Soluções em TI</td><td class="">62.153.098/0001-74</td><td class="">F-1187</td><td class="num">22/01/2026</td><td class="num">05/02/2026</td><td class="">jan/2026</td><td class="num">3</td><td class="num">R$ 1.205,00</td><td class="num">R$ 0,00</td><td class="num">R$ 0,00</td><td class="num">R$ 1.205,00</td><td class="st-ok">OK</td></tr><tr class="impar"><td class="rn">5</td><td class="">F-1203_oficina.pdf</td><td class="">Fatura</td><td class="">Oficina Digital Soluções em TI</td><td class="">62.153.098/0001-74</td><td class="">F-1203</td><td class="num">16/03/2026</td><td class="num">06/03/2026</td><td class="">mar/2026</td><td class="num">2</td><td class="num">R$ 870,00</td><td class="num">R$ 0,00</td><td class="num">R$ 0,00</td><td class="num">R$ 870,00</td><td class="st-pend">Pendência</td></tr><tr class="par"><td class="rn">6</td><td class="">NS-0412_tecnolar.pdf</td><td class="">Nota de serviço</td><td class="">Tecnolar Manutenção Predial Ltda</td><td class="">28.374.619/0001-85</td><td class="">000412</td><td class="num">08/01/2026</td><td class="num">07/02/2026</td><td class="">jan/2026</td><td class="num">3</td><td class="num">R$ 1.515,00</td><td class="num">R$ 0,00</td><td class="num">R$ 0,00</td><td class="num">R$ 1.515,00</td><td class="st-ok">OK</td></tr><tr class="impar"><td class="rn">7</td><td class="">NS-0431_ventura.pdf</td><td class="">Nota de serviço</td><td class="">Ventura Climatização e Serviços ME</td><td class="">39.581.726/0001-09</td><td class="">000431</td><td class="num">10/02/2026</td><td class="num">12/03/2026</td><td class="">fev/2026</td><td class="num">3</td><td class="num">R$ 1.630,00</td><td class="num">R$ 0,00</td><td class="num">R$ 0,00</td><td class="num">R$ 1.630,00</td><td class="st-ok">OK</td></tr><tr class="par"><td class="rn">8</td><td class="">NS-0447_tecnolar.pdf</td><td class="">Nota de serviço</td><td class="">Tecnolar Manutenção Predial Ltda</td><td class="">28.374.619/0001-85</td><td class="">000447</td><td class="num">02/03/2026</td><td class="num">01/04/2026</td><td class="">mar/2026</td><td class="num">2</td><td class="num">R$ 2.764,00</td><td class="num">R$ 0,00</td><td class="num">R$ 0,00</td><td class="num">R$ 2.764,00</td><td class="st-ok">OK</td></tr><tr class="impar"><td class="rn">9</td><td class="">NS-0459_ventura.pdf</td><td class="">Nota de serviço</td><td class="">Ventura Climatização e Serviços ME</td><td class="">39.581.726/0001-02</td><td class="">000459</td><td class="num">06/04/2026</td><td class="num">06/05/2026</td><td class="">abr/2026</td><td class="num">2</td><td class="num">R$ 1.095,00</td><td class="num">R$ 0,00</td><td class="num">R$ 0,00</td><td class="num">R$ 1.095,00</td><td class="st-pend">Pendência</td></tr><tr class="par"><td class="rn">10</td><td class="">PC-2026-0041_pontofirme.pdf</td><td class="">Pedido de compra</td><td class="">Papelaria Ponto Firme Comércio Ltda</td><td class="">17.490.235/0001-01</td><td class="">PC-2026-0041</td><td class="num">14/01/2026</td><td class="num">13/02/2026</td><td class="">jan/2026</td><td class="num">4</td><td class="num">R$ 1.249,70</td><td class="num">R$ 35,00</td><td class="num">R$ 0,00</td><td class="num">R$ 1.284,70</td><td class="st-ok">OK</td></tr><tr class="impar"><td class="rn">11</td><td class="">PC-2026-0057_graobom.pdf</td><td class="">Pedido de compra</td><td class="">Grão Bom Distribuidora de Alimentos Ltda</td><td class="">50.611.847/0001-80</td><td class="">PC-2026-0057</td><td class="num">03/02/2026</td><td class="num">05/03/2026</td><td class="">fev/2026</td><td class="num">4</td><td class="num">R$ 2.594,50</td><td class="num">R$ 80,00</td><td class="num">R$ 0,00</td><td class="num">R$ 3.088,50</td><td class="st-pend">Pendência</td></tr><tr class="par"><td class="rn">12</td><td class="">PC-2026-0078_pontofirme.pdf</td><td class="">Pedido de compra</td><td class="">Papelaria Ponto Firme Comércio Ltda</td><td class="">17.490.235/0001-01</td><td class="">PC-2026-0078</td><td class="num">09/03/2026</td><td class="num">08/04/2026</td><td class="">mar/2026</td><td class="num">2</td><td class="num">R$ 346,90</td><td class="num">R$ 0,00</td><td class="num">R$ 0,00</td><td class="num">R$ 346,90</td><td class="st-ok">OK</td></tr><tr class="impar"><td class="rn">13</td><td class="">PC-2026-0093_graobom.pdf</td><td class="">Pedido de compra</td><td class="">Grão Bom Distribuidora de Alimentos Ltda</td><td class="">50.611.847/0001-80</td><td class="">PC-2026-0093</td><td class="num">24/03/2026</td><td class="num">23/04/2026</td><td class="">mar/2026</td><td class="num">3</td><td class="num">R$ 1.567,00</td><td class="num">R$ 80,00</td><td class="num">R$ 40,00</td><td class="num">R$ 1.607,00</td><td class="st-ok">OK</td></tr><tr class="vazia"><td class="rn">14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="vazia"><td class="rn">15</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="vazia"><td class="rn">16</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+        <div class="aba" id="aba-itens" data-ref="A1" data-val="Arquivo"><table class="xl light9"><colgroup><col class="rn"><col style="width:170px"><col style="width:105px"><col style="width:250px"><col style="width:70px"><col style="width:290px"><col style="width:46px"><col style="width:44px"><col style="width:90px"><col style="width:90px"></colgroup><thead><tr><th class="canto"></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th></tr></thead><tbody><tr class="cab"><td class="rn">1</td><td class="">Arquivo<span class="filtro"></span></td><td class="">Número<span class="filtro"></span></td><td class="">Fornecedor<span class="filtro"></span></td><td class="">Código<span class="filtro"></span></td><td class="">Descrição<span class="filtro"></span></td><td class="">Qtd<span class="filtro"></span></td><td class="">Un<span class="filtro"></span></td><td class="">Valor unit.<span class="filtro"></span></td><td class="">Total item<span class="filtro"></span></td></tr><tr class="par"><td class="rn">2</td><td class="">F-0093_limpamais.pdf</td><td class="">F-0093</td><td class="">Limpa Mais Higienização Profissional</td><td class=""></td><td class="">Limpeza pós-obra - salão principal</td><td class="num">1</td><td class="">serv</td><td class="num">R$ 1.450,00</td><td class="num">R$ 1.450,00</td></tr><tr class="impar"><td class="rn">3</td><td class="">F-0093_limpamais.pdf</td><td class="">F-0093</td><td class="">Limpa Mais Higienização Profissional</td><td class=""></td><td class="">Limpeza de coifa e duto</td><td class="num">2</td><td class="">un</td><td class="num">R$ 380,00</td><td class="num">R$ 760,00</td></tr><tr class="par"><td class="rn">4</td><td class="">F-0093_limpamais.pdf</td><td class="">F-0093</td><td class="">Limpa Mais Higienização Profissional</td><td class=""></td><td class="">Lavagem de estofados</td><td class="num">12</td><td class="">un</td><td class="num">R$ 45,00</td><td class="num">R$ 540,00</td></tr><tr class="impar"><td class="rn">5</td><td class="">F-0101_limpamais.pdf</td><td class="">F-0101</td><td class="">Limpa Mais Higienização Profissional</td><td class=""></td><td class="">Limpeza de coifa e duto</td><td class="num">2</td><td class="">un</td><td class="num">R$ 380,00</td><td class="num">R$ 760,00</td></tr><tr class="par"><td class="rn">6</td><td class="">F-0101_limpamais.pdf</td><td class="">F-0101</td><td class="">Limpa Mais Higienização Profissional</td><td class=""></td><td class="">Higienização de caixa d&#x27;água 5.000 L</td><td class="num">1</td><td class="">un</td><td class="num">R$ 420,00</td><td class="num">R$ 420,00</td></tr><tr class="impar"><td class="rn">7</td><td class="">F-1187_oficina.pdf</td><td class="">F-1187</td><td class="">Oficina Digital Soluções em TI</td><td class=""></td><td class="">Suporte técnico mensal - plano básico</td><td class="num">1</td><td class="">mês</td><td class="num">R$ 650,00</td><td class="num">R$ 650,00</td></tr><tr class="par"><td class="rn">8</td><td class="">F-1187_oficina.pdf</td><td class="">F-1187</td><td class="">Oficina Digital Soluções em TI</td><td class=""></td><td class="">Formatação e backup de notebook</td><td class="num">2</td><td class="">un</td><td class="num">R$ 160,00</td><td class="num">R$ 320,00</td></tr><tr class="impar"><td class="rn">9</td><td class="">F-1187_oficina.pdf</td><td class="">F-1187</td><td class="">Oficina Digital Soluções em TI</td><td class=""></td><td class="">Cabo de rede Cat6 instalado</td><td class="num">25</td><td class="">m</td><td class="num">R$ 9,40</td><td class="num">R$ 235,00</td></tr><tr class="par"><td class="rn">10</td><td class="">F-1203_oficina.pdf</td><td class="">F-1203</td><td class="">Oficina Digital Soluções em TI</td><td class=""></td><td class="">Suporte técnico mensal - plano básico</td><td class="num">1</td><td class="">mês</td><td class="num">R$ 650,00</td><td class="num">R$ 650,00</td></tr><tr class="impar"><td class="rn">11</td><td class="">F-1203_oficina.pdf</td><td class="">F-1203</td><td class="">Oficina Digital Soluções em TI</td><td class=""></td><td class="">Instalação de impressora fiscal</td><td class="num">1</td><td class="">un</td><td class="num">R$ 220,00</td><td class="num">R$ 220,00</td></tr><tr class="par"><td class="rn">12</td><td class="">NS-0412_tecnolar.pdf</td><td class="">000412</td><td class="">Tecnolar Manutenção Predial Ltda</td><td class=""></td><td class="">Troca de reatores e lâmpadas LED - salão</td><td class="num">18</td><td class="">un</td><td class="num">R$ 42,50</td><td class="num">R$ 765,00</td></tr><tr class="impar"><td class="rn">13</td><td class="">NS-0412_tecnolar.pdf</td><td class="">000412</td><td class="">Tecnolar Manutenção Predial Ltda</td><td class=""></td><td class="">Reparo de tomadas e disjuntores - cozinha</td><td class="num">6</td><td class="">h</td><td class="num">R$ 95,00</td><td class="num">R$ 570,00</td></tr><tr class="par"><td class="rn">14</td><td class="">NS-0412_tecnolar.pdf</td><td class="">000412</td><td class="">Tecnolar Manutenção Predial Ltda</td><td class=""></td><td class="">Visita técnica emergencial (sábado)</td><td class="num">1</td><td class="">un</td><td class="num">R$ 180,00</td><td class="num">R$ 180,00</td></tr><tr class="impar"><td class="rn">15</td><td class="">NS-0431_ventura.pdf</td><td class="">000431</td><td class="">Ventura Climatização e Serviços ME</td><td class=""></td><td class="">Higienização de split 12.000 BTUs</td><td class="num">4</td><td class="">un</td><td class="num">R$ 180,00</td><td class="num">R$ 720,00</td></tr><tr class="par"><td class="rn">16</td><td class="">NS-0431_ventura.pdf</td><td class="">000431</td><td class="">Ventura Climatização e Serviços ME</td><td class=""></td><td class="">Higienização de split 24.000 BTUs</td><td class="num">2</td><td class="">un</td><td class="num">R$ 260,00</td><td class="num">R$ 520,00</td></tr><tr class="impar"><td class="rn">17</td><td class="">NS-0431_ventura.pdf</td><td class="">000431</td><td class="">Ventura Climatização e Serviços ME</td><td class=""></td><td class="">Recarga de gás R410A</td><td class="num">1</td><td class="">un</td><td class="num">R$ 390,00</td><td class="num">R$ 390,00</td></tr><tr class="par"><td class="rn">18</td><td class="">NS-0447_tecnolar.pdf</td><td class="">000447</td><td class="">Tecnolar Manutenção Predial Ltda</td><td class=""></td><td class="">Pintura de parede externa (fachada)</td><td class="num">64</td><td class="">m²</td><td class="num">R$ 28,00</td><td class="num">R$ 1.792,00</td></tr><tr class="impar"><td class="rn">19</td><td class="">NS-0447_tecnolar.pdf</td><td class="">000447</td><td class="">Tecnolar Manutenção Predial Ltda</td><td class=""></td><td class="">Impermeabilização de laje - área técnica</td><td class="num">18</td><td class="">m²</td><td class="num">R$ 54,00</td><td class="num">R$ 972,00</td></tr><tr class="par"><td class="rn">20</td><td class="">NS-0459_ventura.pdf</td><td class="">000459</td><td class="">Ventura Climatização e Serviços ME</td><td class=""></td><td class="">Manutenção preventiva câmara fria</td><td class="num">1</td><td class="">un</td><td class="num">R$ 640,00</td><td class="num">R$ 640,00</td></tr><tr class="impar"><td class="rn">21</td><td class="">NS-0459_ventura.pdf</td><td class="">000459</td><td class="">Ventura Climatização e Serviços ME</td><td class=""></td><td class="">Troca de ventilador do condensador</td><td class="num">1</td><td class="">un</td><td class="num">R$ 455,00</td><td class="num">R$ 455,00</td></tr><tr class="par"><td class="rn">22</td><td class="">PC-2026-0041_pontofirme.pdf</td><td class="">PC-2026-0041</td><td class="">Papelaria Ponto Firme Comércio Ltda</td><td class="">PF-1102</td><td class="">Papel A4 75g - caixa com 10 resmas</td><td class="num">3</td><td class="">cx</td><td class="num">R$ 249,90</td><td class="num">R$ 749,70</td></tr><tr class="impar"><td class="rn">23</td><td class="">PC-2026-0041_pontofirme.pdf</td><td class="">PC-2026-0041</td><td class="">Papelaria Ponto Firme Comércio Ltda</td><td class="">PF-2210</td><td class="">Bobina térmica 80mm x 40m</td><td class="num">30</td><td class="">un</td><td class="num">R$ 6,80</td><td class="num">R$ 204,00</td></tr><tr class="par"><td class="rn">24</td><td class="">PC-2026-0041_pontofirme.pdf</td><td class="">PC-2026-0041</td><td class="">Papelaria Ponto Firme Comércio Ltda</td><td class="">PF-3305</td><td class="">Caneta esferográfica azul - cx 50</td><td class="num">2</td><td class="">cx</td><td class="num">R$ 38,00</td><td class="num">R$ 76,00</td></tr><tr class="impar"><td class="rn">25</td><td class="">PC-2026-0041_pontofirme.pdf</td><td class="">PC-2026-0041</td><td class="">Papelaria Ponto Firme Comércio Ltda</td><td class="">PF-4120</td><td class="">Etiqueta adesiva 100x50 - rolo</td><td class="num">8</td><td class="">un</td><td class="num">R$ 27,50</td><td class="num">R$ 220,00</td></tr><tr class="par"><td class="rn">26</td><td class="">PC-2026-0057_graobom.pdf</td><td class="">PC-2026-0057</td><td class="">Grão Bom Distribuidora de Alimentos Ltda</td><td class="">GB-0011</td><td class="">Arroz agulhinha tipo 1 - fardo 30kg</td><td class="num">6</td><td class="">fd</td><td class="num">R$ 148,00</td><td class="num">R$ 888,00</td></tr><tr class="impar"><td class="rn">27</td><td class="">PC-2026-0057_graobom.pdf</td><td class="">PC-2026-0057</td><td class="">Grão Bom Distribuidora de Alimentos Ltda</td><td class="">GB-0204</td><td class="">Feijão carioca - fardo 30kg</td><td class="num">4</td><td class="">fd</td><td class="num">R$ 189,00</td><td class="num">R$ 756,00</td></tr><tr class="par"><td class="rn">28</td><td class="">PC-2026-0057_graobom.pdf</td><td class="">PC-2026-0057</td><td class="">Grão Bom Distribuidora de Alimentos Ltda</td><td class="">GB-0350</td><td class="">Óleo de soja 900ml - cx 20</td><td class="num">5</td><td class="">cx</td><td class="num">R$ 132,50</td><td class="num">R$ 662,50</td></tr><tr class="impar"><td class="rn">29</td><td class="">PC-2026-0057_graobom.pdf</td><td class="">PC-2026-0057</td><td class="">Grão Bom Distribuidora de Alimentos Ltda</td><td class="">GB-0712</td><td class="">Farinha de trigo especial 25kg</td><td class="num">3</td><td class="">sc</td><td class="num">R$ 96,00</td><td class="num">R$ 288,00</td></tr><tr class="par"><td class="rn">30</td><td class="">PC-2026-0078_pontofirme.pdf</td><td class="">PC-2026-0078</td><td class="">Papelaria Ponto Firme Comércio Ltda</td><td class="">PF-2210</td><td class="">Bobina térmica 80mm x 40m</td><td class="num">40</td><td class="">un</td><td class="num">R$ 6,80</td><td class="num">R$ 272,00</td></tr><tr class="impar"><td class="rn">31</td><td class="">PC-2026-0078_pontofirme.pdf</td><td class="">PC-2026-0078</td><td class="">Papelaria Ponto Firme Comércio Ltda</td><td class="">PF-5001</td><td class="">Pasta suspensa kraft - cx 50</td><td class="num">1</td><td class="">cx</td><td class="num">R$ 74,90</td><td class="num">R$ 74,90</td></tr><tr class="par"><td class="rn">32</td><td class="">PC-2026-0093_graobom.pdf</td><td class="">PC-2026-0093</td><td class="">Grão Bom Distribuidora de Alimentos Ltda</td><td class="">GB-0011</td><td class="">Arroz agulhinha tipo 1 - fardo 30kg</td><td class="num">5</td><td class="">fd</td><td class="num">R$ 151,00</td><td class="num">R$ 755,00</td></tr><tr class="impar"><td class="rn">33</td><td class="">PC-2026-0093_graobom.pdf</td><td class="">PC-2026-0093</td><td class="">Grão Bom Distribuidora de Alimentos Ltda</td><td class="">GB-0204</td><td class="">Feijão carioca - fardo 30kg</td><td class="num">3</td><td class="">fd</td><td class="num">R$ 192,00</td><td class="num">R$ 576,00</td></tr><tr class="par"><td class="rn">34</td><td class="">PC-2026-0093_graobom.pdf</td><td class="">PC-2026-0093</td><td class="">Grão Bom Distribuidora de Alimentos Ltda</td><td class="">GB-0901</td><td class="">Açúcar refinado - fardo 30kg</td><td class="num">2</td><td class="">fd</td><td class="num">R$ 118,00</td><td class="num">R$ 236,00</td></tr><tr class="vazia"><td class="rn">35</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="vazia"><td class="rn">36</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="vazia"><td class="rn">37</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+        <div class="aba" id="aba-pendencias" data-ref="E2" data-val="Vencimento 06/03/2026 é anterior à emissão 16/03/2026"><table class="xl med3"><colgroup><col class="rn"><col style="width:170px"><col style="width:250px"><col style="width:105px"><col style="width:150px"><col style="width:560px"></colgroup><thead><tr><th class="canto"></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr></thead><tbody><tr class="cab"><td class="rn">1</td><td class="">Arquivo<span class="filtro"></span></td><td class="">Fornecedor<span class="filtro"></span></td><td class="">Número<span class="filtro"></span></td><td class="">Tipo<span class="filtro"></span></td><td class="">Detalhe<span class="filtro"></span></td></tr><tr class="par"><td class="rn">2</td><td class="">F-1203_oficina.pdf</td><td class="">Oficina Digital Soluções em TI</td><td class="">F-1203</td><td class="">Datas inconsistentes</td><td class="">Vencimento 06/03/2026 é anterior à emissão 16/03/2026</td></tr><tr class="impar"><td class="rn">3</td><td class="">NS-0459_ventura.pdf</td><td class="">Ventura Climatização e Serviços ME</td><td class="">000459</td><td class="">CNPJ inválido</td><td class="">39.581.726/0001-02: dígito verificador não confere</td></tr><tr class="par"><td class="rn">4</td><td class="">PC-2026-0057_graobom.pdf</td><td class="">Grão Bom Distribuidora de Alimentos Ltda</td><td class="">PC-2026-0057</td><td class="">Soma não confere</td><td class="">Itens + frete - desconto = R$ 2.674,50, documento diz R$ 3.088,50 (dif. R$ 414,00)</td></tr><tr class="vazia"><td class="rn">5</td><td></td><td></td><td></td><td></td><td></td></tr><tr class="vazia"><td class="rn">6</td><td></td><td></td><td></td><td></td><td></td></tr><tr class="vazia"><td class="rn">7</td><td></td><td></td><td></td><td></td><td></td></tr><tr class="vazia"><td class="rn">8</td><td></td><td></td><td></td><td></td><td></td></tr><tr class="vazia"><td class="rn">9</td><td></td><td></td><td></td><td></td><td></td></tr><tr class="vazia"><td class="rn">10</td><td></td><td></td><td></td><td></td><td></td></tr><tr class="vazia"><td class="rn">11</td><td></td><td></td><td></td><td></td><td></td></tr><tr class="vazia"><td class="rn">12</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+      </div>
+      <div class="x-abas" role="tablist" aria-label="Abas da planilha">
+        <span class="nav" aria-hidden="true">◂ ▸</span>
+        <button role="tab" aria-selected="true" data-aba="painel">Painel<span class="cor" style="background:#1f4e5f"></span></button>
+        <button role="tab" aria-selected="false" data-aba="documentos">Documentos</button>
+        <button role="tab" aria-selected="false" data-aba="itens">Itens</button>
+        <button role="tab" aria-selected="false" data-aba="pendencias">Pendências<span class="cor" style="background:#b5471b"></span></button>
+      </div>
+      <div class="x-status"><span>Pronto</span><span>100%</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-cab"><div class="n">05 · Conferência</div><div><h2>O que o robô confere antes de aceitar</h2><p>Digitar à mão esconde erro. O robô refaz as contas de cada documento e não deixa passar calado.</p></div></div>
+    <div class="confere">
+      <div><h3>Soma dos itens</h3><p>Qtd × unitário de cada linha, e itens + frete − desconto = total do documento, com tolerância de 1 centavo.</p></div>
+      <div><h3>Datas</h3><p>Lê <code>05/03/2026</code> e <code>5 de março de 2026</code>. Vencimento antes da emissão vira pendência.</p></div>
+      <div><h3>CNPJ</h3><p>Separa o CNPJ do fornecedor do CNPJ da sua empresa e confere os dígitos verificadores.</p></div>
+      <div><h3>Campos faltando</h3><p>Se um PDF não tiver número, data ou total legível, ele entra na lista em vez de sumir.</p></div>
+      <div><h3>PDF com defeito</h3><p>Arquivo corrompido ou protegido não derruba o robô: vira linha "Erro de leitura" e o resto segue.</p></div>
+      <div><h3>Fornecedor novo</h3><p>Os rótulos ficam numa lista no topo do código. Fornecedor novo é uma linha a mais, não um robô novo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="baixar">
+  <div class="wrap">
+    <div class="sec-cab"><div class="n">06 · Arquivos</div><div><h2>Baixe e rode na sua máquina</h2><p>Python 3.10 ou mais novo. Instale as dependências, solte os PDFs na pasta e rode <code>python robo.py</code>. O passo a passo está no README.</p></div></div>
+    <div class="downs">
+      <a class="down" href="arquivos/pdfs-exemplo.zip" download><span class="tipo">ZIP · 3 PDFs</span><b>PDFs de exemplo</b><span>Um de cada layout, incluindo o pedido com a soma errada.</span><span class="baixar">Baixar pdfs-exemplo.zip ↓</span></a>
+      <a class="down" href="arquivos/relatorio.xlsx" download><span class="tipo">XLSX · 4 abas</span><b>Planilha gerada</b><span>Painel, Documentos, Itens e Pendências, do jeito que o robô entrega.</span><span class="baixar">Baixar relatorio.xlsx ↓</span></a>
+      <a class="down" href="arquivos/robo-pdf-excel.zip" download><span class="tipo">ZIP · código</span><b>robo-pdf-excel</b><span>robo.py comentado, requirements.txt, README e o gerador dos PDFs de teste.</span><span class="baixar">Baixar robo-pdf-excel.zip ↓</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap"><span>Projeto demonstrativo. Fornecedores, CNPJs e valores são fictícios.</span><a href="../../index.html">Voltar à vitrine</a></div>
+</footer>
+
+<script>
+(function(){
+  var botoes=document.querySelectorAll('.x-abas button');
+  var ref=document.getElementById('xref'), val=document.getElementById('xval');
+  function abrir(nome){
+    botoes.forEach(function(b){b.setAttribute('aria-selected', b.dataset.aba===nome?'true':'false');});
+    document.querySelectorAll('.aba').forEach(function(a){
+      var on=a.id==='aba-'+nome; a.classList.toggle('on',on);
+      if(on){ref.textContent=a.dataset.ref; val.textContent=a.dataset.val;}
+    });
+  }
+  botoes.forEach(function(b){b.addEventListener('click',function(){abrir(b.dataset.aba);});});
+  // ?captura=painel deixa só a planilha na tela (usado para gerar as imagens)
+  var m=location.search.match(/captura=(\w+)/);
+  if(m){document.body.classList.add('captura'); abrir(m[1]);}
+})();
+</script>
+</body>
+</html>

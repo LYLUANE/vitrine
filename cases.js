@@ -176,8 +176,8 @@ window.CASES = [
     titulo: "Pacote de 3 Reels com legenda animada",
     categoria: "Vídeo",
     subtema: "Confeitaria, contabilidade e atendimento com IA",
-    resumo: "Três Reels 9:16 de 14 a 19 segundos, com narração, legenda palavra por palavra e animação no ritmo da voz.",
-    ferramentas: ["HyperFrames", "GSAP", "Narração local (Kokoro)", "FFmpeg"],
+    resumo: "Três Reels 9:16 de 11 a 16 segundos, com narração, legenda palavra por palavra e animação no ritmo da voz.",
+    ferramentas: ["HyperFrames", "GSAP", "Narração neural pt-BR", "FFmpeg"],
     capa: "img/reels.png",
     status: "pronto",
     problema: "Pequenos negócios precisam postar vídeo curto toda semana, mas não têm tempo de gravar nem de editar. Muita gente assiste sem som, então vídeo sem legenda perde o público.",
@@ -207,13 +207,19 @@ window.CASES = [
   },
   {
     slug: "pagina-vendas",
-    titulo: "Página de vendas",
+    titulo: "Doce Lucro: página de vendas de curso online",
     categoria: "Sites",
-    subtema: "Landing page de produto",
-    resumo: "Página única de oferta com seções claras, prova e chamada para ação.",
-    ferramentas: ["HTML", "CSS", "JavaScript"],
-    capa: "",
-    status: "em breve"
+    subtema: "Página de vendas para infoproduto",
+    resumo: "Página de vendas completa para um curso de confeitaria (marca fictícia), com ilustração própria, oferta clara e versão celular.",
+    ferramentas: ["HTML", "CSS", "JavaScript", "SVG", "Copywriting"],
+    capa: "img/pagina-vendas.png",
+    link_demo: "demos/pagina-vendas/",
+    status: "pronto",
+    problema: "Quem cria um curso ou ebook costuma ter o conteúdo pronto e uma página que não explica direito o que vende. Sem promessa clara, oferta organizada e versão celular caprichada, o tráfego pago vira clique sem compra.",
+    solucao: "Montei uma página de vendas na estrutura que converte: promessa e CTA no topo, para quem é e para quem não é, o problema, o método em módulos, a lista do que vem com valor somado, a professora, a oferta com parcelamento, a garantia de 7 dias e o FAQ. Tudo sem contador falso nem depoimento inventado. No celular, uma barra fixa de compra aparece depois do topo e some na hora da oferta.",
+    fluxo: ["Briefing do produto, do público e da oferta", "Copy da página, seção por seção", "Layout e ilustração própria da marca", "Versão celular com barra fixa de compra", "Botão ligado ao checkout, pixel e SEO básico", "Revisão no celular e no desktop antes de publicar"],
+    telas: ["img/pagina-vendas-1.jpg", "img/pagina-vendas-2.jpg"],
+    entrega: [["Copy", "Texto completo da página: promessa, objeções, módulos, oferta, garantia e FAQ, sem promessa de ganho."], ["Layout", "Visual próprio da marca, com tipografia forte, ilustração em SVG e animações leves ao rolar."], ["Versão celular", "Pensada primeiro para o celular, com barra fixa de compra e botões fáceis de tocar."], ["Checkout", "Botões ligados ao checkout da Hotmart, Kiwify ou Eduzz no projeto real (aqui o botão abre um aviso de demonstração)."], ["Pixel", "Pixel da Meta e tag do Google com eventos de clique no botão e de início de compra."], ["SEO básico", "Título, descrição, dados estruturados do curso, cartão de compartilhamento e página leve, sem frameworks pesados."]]
   }
 ];
 

@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moura &amp; Lins Advocacia | Trabalhista, família, previdenciário e consumidor</title>
+<meta name="description" content="Escritório de advocacia com atuação em direito do trabalho, família, previdenciário e do consumidor. Informações sobre a primeira consulta e artigos explicativos.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Moura &amp; Lins Advocacia">
+<meta property="og:description" content="Atuação em direito do trabalho, família, previdenciário e do consumidor. Atendimento com hora marcada.">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#4a1622">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Moura & Lins Advocacia (marca fictícia)",
+  "description": "Projeto demonstrativo: escritório de advocacia com atuação em direito do trabalho, família, previdenciário e do consumidor.",
+  "url": "https://exemplo.invalid/moura-lins/",
+  "telephone": "+55-00-0000-0000",
+  "address": {"@type": "PostalAddress", "streetAddress": "Av. Exemplo, 200, sala 00", "addressLocality": "Cidade Exemplo", "addressRegion": "UF", "addressCountry": "BR"},
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "knowsAbout": ["Direito do Trabalho", "Direito de Família", "Direito Previdenciário", "Direito do Consumidor"],
+  "employee": [
+    {"@type": "Person", "name": "Helena Moura (fictícia)", "jobTitle": "Advogada sócia"},
+    {"@type": "Person", "name": "Beatriz Lins (fictícia)", "jobTitle": "Advogada sócia"}
+  ]
+}
+</script>
+<style>
+:root{
+  --vinho:#5a1e2a; --vinho-d:#3f121c; --verde:#1f3a32; --verde-2:#2c4f45;
+  --creme:#f4ede1; --creme-2:#ebe1cf; --papel:#faf6ef; --ouro:#b08d57;
+  --ink:#231a17; --muted:#6b5f57; --line:#dccfb9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Source Sans 3",system-ui,sans-serif;color:var(--ink);background:var(--papel);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.12;color:var(--vinho-d)}
+h2{font-size:clamp(2rem,4vw,2.9rem)}
+.eyebrow{font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ouro);font-weight:600;display:block;margin-bottom:14px}
+.orn{display:flex;align-items:center;gap:14px;color:var(--ouro);margin:18px 0}
+.orn::before,.orn::after{content:"";height:1px;width:48px;background:currentColor}
+.center{text-align:center}.center .orn{justify-content:center}
+.btn{display:inline-block;padding:13px 26px;border:1px solid var(--vinho);font-weight:600;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;transition:background .2s,color .2s;cursor:pointer;font-family:inherit}
+.btn-solid{background:var(--vinho);color:var(--creme)}
+.btn-solid:hover{background:var(--vinho-d)}
+.btn-line{color:var(--vinho)}
+.btn-line:hover{background:var(--vinho);color:var(--creme)}
+
+.demo-bar{background:var(--verde);color:#c9d6cf;font-size:.78rem;text-align:center;padding:5px 12px;letter-spacing:.03em}
+header.top{background:var(--papel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.brand{display:flex;align-items:center;gap:14px}
+.mono{width:46px;height:46px;border:1px solid var(--vinho);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:700;color:var(--vinho);position:relative}
+.mono::after{content:"";position:absolute;inset:3px;border:1px solid var(--line)}
+.brand b{font-family:"Cormorant Garamond",serif;font-size:1.45rem;font-weight:700;color:var(--vinho-d);line-height:1;display:block}
+.brand small{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+nav.menu{display:flex;gap:30px;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+nav.menu a:hover{color:var(--vinho)}
+.burger{display:none;background:none;border:0;color:var(--vinho);cursor:pointer}
+
+/* hero */
+.hero{background:var(--vinho-d);color:var(--creme);position:relative;overflow:hidden;padding:0}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;padding:96px 0}
+.hero h1{color:var(--creme);font-size:clamp(2.6rem,5.6vw,4.4rem);font-weight:500}
+.hero h1 i{color:#e3c99a}
+.hero p{color:#dcc9c0;font-size:1.12rem;max-width:50ch;margin-top:22px}
+.hero .eyebrow{color:#d6b98a}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.hero .btn-solid{background:var(--creme);color:var(--vinho-d);border-color:var(--creme)}
+.hero .btn-solid:hover{background:#fff}
+.hero .btn-line{color:var(--creme);border-color:rgba(244,237,225,.45)}
+.hero .btn-line:hover{background:var(--creme);color:var(--vinho-d)}
+.seal{aspect-ratio:1;max-width:400px;margin-left:auto;position:relative}
+.seal svg{width:100%;height:100%}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--verde) 0 50%,var(--ouro) 50% 100%)}
+
+section{padding:100px 0}
+
+/* áreas */
+.areas{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:54px}
+.area{padding:36px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--papel);transition:background .25s}
+.area:hover{background:var(--creme)}
+.area .num{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.1rem;color:var(--ouro)}
+.area svg{display:block;width:40px;height:40px;stroke:var(--verde);fill:none;stroke-width:1.3;margin:18px 0 16px}
+.area h3{font-size:1.6rem;margin-bottom:10px}
+.area p{color:var(--muted);font-size:.96rem}
+.area ul{list-style:none;margin-top:14px;font-size:.9rem;color:var(--ink)}
+.area li{padding:6px 0;border-top:1px dotted var(--line)}
+
+/* sócias */
+#socias{background:var(--creme)}
+.soc-intro{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:end;margin-bottom:56px}
+.soc-intro p{color:var(--muted)}
+.socias{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.socia{background:var(--papel);border:1px solid var(--line);display:grid;grid-template-columns:170px 1fr;}
+.retrato{background:var(--verde);display:grid;place-items:center;position:relative;min-height:240px}
+.retrato.v{background:var(--vinho)}
+.retrato span{font-family:"Cormorant Garamond",serif;font-size:3.6rem;color:var(--creme);font-weight:500;font-style:italic}
+.retrato::after{content:"";position:absolute;inset:12px;border:1px solid rgba(244,237,225,.3)}
+.socia .txt{padding:30px}
+.socia h3{font-size:1.75rem}
+.oab{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro);font-weight:600}
+.socia p{color:var(--muted);font-size:.95rem;margin-top:12px}
+.socia .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.socia .tags span{font-size:.78rem;border:1px solid var(--line);padding:3px 10px;color:var(--verde)}
+
+/* consulta */
+.consulta{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}
+.consulta-side{position:sticky;top:110px;align-self:start}
+.consulta-side p{color:var(--muted);margin-top:16px}
+.box-doc{margin-top:28px;background:var(--verde);color:#dbe5df;padding:26px 28px}
+.box-doc h3{color:var(--creme);font-size:1.35rem;margin-bottom:10px}
+.box-doc ul{padding-left:18px;font-size:.94rem}
+.timeline{list-style:none;border-left:1px solid var(--ouro);padding-left:0}
+.timeline li{position:relative;padding:0 0 42px 44px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:attr(data-n);position:absolute;left:-19px;top:-2px;width:38px;height:38px;border-radius:50%;background:var(--papel);border:1px solid var(--ouro);display:grid;place-items:center;font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-weight:700;color:var(--vinho)}
+.timeline h3{font-size:1.55rem;margin-bottom:6px}
+.timeline p{color:var(--muted)}
+
+/* artigos */
+#artigos{background:var(--verde);color:#dbe5df}
+#artigos h2{color:var(--creme)}
+#artigos .eyebrow{color:#d6b98a}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:54px}
+.post{background:var(--papel);color:var(--ink);display:flex;flex-direction:column;transition:transform .25s}
+.post:hover{transform:translateY(-4px)}
+.post .capa{height:150px;display:grid;place-items:center;position:relative;overflow:hidden}
+.post .capa svg{width:64px;height:64px;stroke:var(--creme);fill:none;stroke-width:1.2;position:relative}
+.post .capa::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
+.post .body{padding:26px;display:flex;flex-direction:column;flex:1}
+.post .meta{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro);font-weight:600}
+.post h3{font-size:1.5rem;margin:10px 0 10px;color:var(--vinho-d)}
+.post p{font-size:.94rem;color:var(--muted);flex:1}
+.post .ler{margin-top:18px;font-size:.84rem;letter-spacing:.1em;text-transform:uppercase;color:var(--vinho);font-weight:600}
+
+/* contato */
+.contato{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.dados{list-style:none;margin-top:28px;border-top:1px solid var(--line)}
+.dados li{display:grid;grid-template-columns:120px 1fr;padding:16px 0;border-bottom:1px solid var(--line);font-size:.98rem}
+.dados b{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro);font-weight:600;padding-top:4px}
+form{background:var(--creme);padding:40px;border:1px solid var(--line);display:grid;gap:18px}
+label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--vinho-d);font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:1rem;letter-spacing:0;text-transform:none;border:0;border-bottom:1px solid var(--muted);background:transparent;padding:10px 2px;color:var(--ink);width:100%;border-radius:0}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--vinho);border-bottom-width:2px}
+textarea{min-height:100px;resize:vertical}
+.aviso{font-size:.84rem;color:var(--muted);line-height:1.5}
+.ok{display:none;background:var(--papel);border-left:3px solid var(--verde);padding:14px 16px;font-size:.95rem;color:var(--verde)}
+.ok.show{display:block}
+
+footer{background:var(--vinho-d);color:#cdb9b0;padding:44px 0 34px;font-size:.88rem}
+footer .wrap{display:grid;gap:16px}
+footer .linha{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer b{font-family:"Cormorant Garamond",serif;font-size:1.3rem;color:var(--creme)}
+footer .etica{border-top:1px solid rgba(244,237,225,.15);padding-top:16px;font-size:.8rem;color:#a99189}
+
+@media (max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;padding:70px 0 80px;gap:40px}
+  .seal{max-width:260px;margin:0 auto}
+  .areas{grid-template-columns:1fr 1fr}
+  .soc-intro,.consulta,.contato{grid-template-columns:1fr;gap:30px}
+  .socias{grid-template-columns:1fr}
+  .consulta-side{position:static}
+  .posts{grid-template-columns:1fr 1fr}
+  nav.menu{display:none}
+  nav.menu.open{display:flex;flex-direction:column;position:absolute;top:78px;left:0;right:0;background:var(--papel);padding:22px;gap:16px;border-bottom:1px solid var(--line)}
+  .burger{display:block}
+}
+@media (max-width:620px){
+  section{padding:70px 0}
+  .areas,.posts{grid-template-columns:1fr}
+  .socia{grid-template-columns:1fr}
+  .retrato{min-height:150px}
+  form{padding:26px 20px}
+  .timeline{margin-left:20px}
+  .dados li{grid-template-columns:1fr;gap:2px}
+  .hero .btn{flex:1 1 100%;text-align:center}
+  .brand b{font-size:1.25rem}
+  .seal{display:none}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar">Projeto demonstrativo · escritório e advogadas fictícios, criados para portfólio</div>
+<header class="top">
+  <div class="wrap">
+    <a href="#inicio" class="brand"><span class="mono">ML</span><span><b>Moura &amp; Lins</b><small>Advocacia</small></span></a>
+    <nav class="menu" id="menu">
+      <a href="#areas">Atuação</a>
+      <a href="#socias">O escritório</a>
+      <a href="#consulta">Primeira consulta</a>
+      <a href="#artigos">Artigos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="burger" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('open')"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Advocacia · desde a primeira conversa</span>
+      <h1>Orientação jurídica com <i>clareza</i>, escuta e cuidado.</h1>
+      <p>Atuamos em direito do trabalho, de família, previdenciário e do consumidor. Antes de qualquer decisão, você entende sua situação, seus direitos e os caminhos possíveis.</p>
+      <div class="ctas">
+        <a href="#consulta" class="btn btn-solid">Como funciona a consulta</a>
+        <a href="#areas" class="btn btn-line">Áreas de atuação</a>
+      </div>
+    </div>
+    <div class="seal" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <defs><path id="c" d="M200,200 m-150,0 a150,150 0 1,1 300,0 a150,150 0 1,1 -300,0"/></defs>
+        <circle cx="200" cy="200" r="190" fill="none" stroke="#b08d57" stroke-width="1"/>
+        <circle cx="200" cy="200" r="178" fill="none" stroke="#b08d57" stroke-width=".6" opacity=".6"/>
+        <text font-family="Cormorant Garamond,serif" font-size="17" letter-spacing="7" fill="#d6b98a"><textPath href="#c">TRABALHO · FAMÍLIA · PREVIDÊNCIA · CONSUMIDOR ·</textPath></text>
+        <circle cx="200" cy="200" r="118" fill="#4f1925" stroke="#b08d57" stroke-width="1"/>
+        <g fill="none" stroke="#f4ede1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M200 132v136M168 268h64M200 148l-58 14M200 148l58 14"/>
+          <path d="M142 162l-24 50h48zM258 162l-24 50h48z"/>
+          <path d="M118 212a24 12 0 0048 0M234 212a24 12 0 0048 0"/>
+          <circle cx="200" cy="140" r="6"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="areas">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Áreas de atuação</span>
+      <h2>Quatro áreas, um mesmo cuidado</h2>
+      <div class="orn">§</div>
+      <p style="color:var(--muted);max-width:60ch;margin:0 auto">Cada caso começa pela análise dos documentos e da história de quem nos procura. Abaixo, alguns dos temas mais comuns em cada área.</p>
+    </div>
+    <div class="areas">
+      <article class="area"><span class="num">I.</span>
+        <svg viewBox="0 0 40 40"><rect x="6" y="13" width="28" height="20" rx="1"/><path d="M15 13V9h10v4M6 21h28"/></svg>
+        <h3>Trabalhista</h3><p>Orientação a empregados sobre a relação de trabalho e o seu encerramento.</p>
+        <ul><li>Verbas rescisórias</li><li>Horas extras e jornada</li><li>Reconhecimento de vínculo</li></ul></article>
+      <article class="area"><span class="num">II.</span>
+        <svg viewBox="0 0 40 40"><path d="M20 33s-12-7-12-16a7 7 0 0112-4.6A7 7 0 0132 17c0 9-12 16-12 16z"/></svg>
+        <h3>Família</h3><p>Questões delicadas tratadas com discrição e, sempre que possível, pelo diálogo.</p>
+        <ul><li>Divórcio e partilha</li><li>Guarda e convivência</li><li>Pensão alimentícia</li></ul></article>
+      <article class="area"><span class="num">III.</span>
+        <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13"/><path d="M20 12v8l6 4"/></svg>
+        <h3>Previdenciário</h3><p>Análise do histórico de contribuições e dos requisitos de cada benefício.</p>
+        <ul><li>Aposentadorias</li><li>Auxílio por incapacidade</li><li>Revisão de benefício</li></ul></article>
+      <article class="area"><span class="num">IV.</span>
+        <svg viewBox="0 0 40 40"><path d="M8 11h4l4 15h14l3-10H14"/><circle cx="17" cy="31" r="2"/><circle cx="28" cy="31" r="2"/></svg>
+        <h3>Consumidor</h3><p>Orientação em conflitos com empresas, bancos e prestadores de serviço.</p>
+        <ul><li>Produto ou serviço com defeito</li><li>Cobrança indevida</li><li>Negativação irregular</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section id="socias">
+  <div class="wrap">
+    <div class="soc-intro">
+      <div><span class="eyebrow">O escritório</span><h2>As sócias</h2></div>
+      <p>O escritório nasceu da parceria entre duas advogadas que preferem atender poucas pessoas por vez e acompanhar cada caso de perto, do primeiro atendimento ao encerramento.</p>
+    </div>
+    <div class="socias">
+      <article class="socia">
+        <div class="retrato v"><span>HM</span></div>
+        <div class="txt">
+          <h3>Helena Moura</h3>
+          <span class="oab">OAB/UF 000.000 · fictício</span>
+          <p>Advogada com atuação em direito do trabalho e previdenciário. Pós-graduada em Direito do Trabalho (formação ilustrativa).</p>
+          <div class="tags"><span>Trabalhista</span><span>Previdenciário</span></div>
+        </div>
+      </article>
+      <article class="socia">
+        <div class="retrato"><span>BL</span></div>
+        <div class="txt">
+          <h3>Beatriz Lins</h3>
+          <span class="oab">OAB/UF 000.000 · fictício</span>
+          <p>Advogada com atuação em direito de família e do consumidor. Formação em mediação de conflitos (formação ilustrativa).</p>
+          <div class="tags"><span>Família</span><span>Consumidor</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="consulta">
+  <div class="wrap consulta">
+    <div class="consulta-side">
+      <span class="eyebrow">Primeira consulta</span>
+      <h2>Como funciona o primeiro atendimento</h2>
+      <p>A consulta é o momento de entender o seu caso. Nela explicamos as possibilidades, os riscos e as etapas, sem compromisso de contratação.</p>
+      <div class="box-doc">
+        <h3>O que levar</h3>
+        <ul><li>Documento de identidade e CPF</li><li>Contratos, recibos, mensagens ou cartas ligadas ao caso</li><li>Para previdenciário: carteira de trabalho e extrato do CNIS</li></ul>
+      </div>
+    </div>
+    <ol class="timeline">
+      <li data-n="1"><h3>Agendamento</h3><p>Você entra em contato pelo formulário ou telefone e escolhe um horário, presencial ou por vídeo.</p></li>
+      <li data-n="2"><h3>Escuta</h3><p>Você conta o que aconteceu, no seu tempo. Fazemos perguntas para entender os detalhes que importam.</p></li>
+      <li data-n="3"><h3>Análise</h3><p>Avaliamos os documentos e explicamos, em linguagem simples, quais são os caminhos possíveis, inclusive os extrajudiciais.</p></li>
+      <li data-n="4"><h3>Próximos passos</h3><p>Se houver contratação, você recebe por escrito o que será feito e as condições combinadas. A decisão é sempre sua.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="artigos">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Artigos</span>
+      <h2>Para entender seus direitos</h2>
+      <div class="orn">§</div>
+    </div>
+    <div class="posts">
+      <article class="post">
+        <div class="capa" style="background:var(--vinho)"><svg viewBox="0 0 40 40"><rect x="6" y="13" width="28" height="20" rx="1"/><path d="M15 13V9h10v4"/></svg></div>
+        <div class="body"><span class="meta">Trabalhista · 5 min</span><h3>Pedi demissão: quais verbas eu recebo?</h3><p>Saldo de salário, férias, 13º proporcional e o que muda em relação à dispensa sem justa causa.</p><a class="ler" href="#artigos">Ler artigo →</a></div>
+      </article>
+      <article class="post">
+        <div class="capa" style="background:var(--verde-2)"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="13"/><path d="M20 12v8l6 4"/></svg></div>
+        <div class="body"><span class="meta">Previdenciário · 4 min</span><h3>O que é o CNIS e por que vale conferir o seu</h3><p>O extrato reúne seus vínculos e contribuições. Erros nele podem afetar o cálculo de um benefício.</p><a class="ler" href="#artigos">Ler artigo →</a></div>
+      </article>
+      <article class="post">
+        <div class="capa" style="background:#7a5a33"><svg viewBox="0 0 40 40"><path d="M8 11h4l4 15h14l3-10H14"/><circle cx="17" cy="31" r="2"/><circle cx="28" cy="31" r="2"/></svg></div>
+        <div class="body"><span class="meta">Consumidor · 4 min</span><h3>Produto com defeito: qual o prazo para reclamar?</h3><p>O Código de Defesa do Consumidor prevê 30 dias para bens não duráveis e 90 dias para duráveis.</p><a class="ler" href="#artigos">Ler artigo →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap contato">
+    <div>
+      <span class="eyebrow">Contato</span>
+      <h2>Agende um atendimento</h2>
+      <p style="color:var(--muted);margin-top:16px">Atendimento com hora marcada, presencial ou por vídeo.</p>
+      <ul class="dados">
+        <li><b>Endereço</b>Av. Exemplo, 200, sala 00 · Cidade Exemplo/UF</li>
+        <li><b>Telefone</b>(00) 0000-0000</li>
+        <li><b>E-mail</b>contato@exemplo.invalid</li>
+        <li><b>Horário</b>Segunda a sexta, das 9h às 18h</li>
+      </ul>
+    </div>
+    <form id="form">
+      <label>Nome<input name="nome" placeholder="Seu nome completo"></label>
+      <label>Telefone ou e-mail<input name="contato" placeholder="Como prefere ser contatado"></label>
+      <label>Assunto
+        <select name="area"><option>Trabalhista</option><option>Família</option><option>Previdenciário</option><option>Consumidor</option><option>Outro</option></select>
+      </label>
+      <label>Mensagem<textarea name="msg" placeholder="Descreva brevemente, sem dados sensíveis"></textarea></label>
+      <p class="aviso">O envio deste formulário não estabelece relação de advogado e cliente. Seus dados são usados apenas para retorno do contato.</p>
+      <button class="btn btn-solid" type="submit">Solicitar agendamento</button>
+      <p class="ok" id="ok" role="status">Demonstração: nenhuma mensagem foi enviada. Num site real, o pedido chegaria ao e-mail do escritório.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="linha"><b>Moura &amp; Lins Advocacia</b><span>Escritório fictício · OAB/UF 000.000 (exemplo)</span></div>
+    <p class="etica">Conteúdo de caráter informativo, conforme as regras de publicidade da advocacia. Não substitui a análise individual de um caso. Projeto demonstrativo de portfólio.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').classList.add('show');this.reset();});
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+</script>
+</body>
+</html>
