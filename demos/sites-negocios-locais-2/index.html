@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sites para pet shop e academia em Botucatu · Projeto demonstrativo</title>
+<meta name="description" content="Dois sites demonstrativos para negócios locais de Botucatu-SP: pet shop com agendamento, leva e traz e cartão de vacina; estúdio de treino com grade de aulas, matrícula online e área do aluno.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1ede6;--ink:#211e1b;--ink-2:#5e5850;--line:#d6cfc3;--terra:#b4532c;--rust:#c4552a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Manrope",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.demo{background:var(--ink);color:#e8e1d6;font-size:12px;text-align:center;padding:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+header{padding:44px 0 26px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+h1{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(34px,7.5vw,58px);line-height:1.05;letter-spacing:-.015em;margin:12px 0 14px;max-width:820px}
+.lead{color:var(--ink-2);font-size:17px;max-width:620px}
+.grid{display:grid;gap:22px;padding:22px 0 50px}
+.item{background:#fbf8f3;border:1px solid var(--line);border-radius:22px;padding:22px;display:grid;gap:22px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+.item:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.phone{width:230px;margin:0 auto;border-radius:34px;background:#1a1816;padding:9px;box-shadow:0 20px 40px rgba(0,0,0,.18)}
+.phone .scr{border-radius:26px;overflow:hidden;aspect-ratio:9/19;background:#ddd}
+.phone img{width:100%;display:block}
+.num{font-family:"Fraunces",serif;color:var(--terra);font-size:14px}
+h2{font-family:"Fraunces",serif;font-weight:600;font-size:30px;line-height:1.1;margin:6px 0 8px}
+.item p{color:var(--ink-2);font-size:15px}
+ul{list-style:none;margin:14px 0 18px;font-size:14.5px}
+li{padding:7px 0;border-bottom:1px solid var(--line);display:flex;gap:10px}
+li::before{content:"→";color:var(--terra);font-weight:700}
+.go{display:inline-flex;font-weight:700;background:var(--ink);color:#fff;border-radius:999px;padding:12px 20px;font-size:15px}
+.item.b .num,.item.b li::before{color:var(--rust)}
+.base{border-top:1px solid var(--line);padding:30px 0 50px;display:grid;gap:14px}
+.base h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13.5px;background:#fbf8f3}
+footer{font-size:13px;color:var(--ink-2);padding:0 0 40px}
+@media (min-width:860px){
+  .wrap{padding:0 32px}
+  header{padding:70px 0 30px}
+  .grid{grid-template-columns:1fr 1fr}
+  .item{grid-template-columns:230px 1fr;align-items:center;padding:28px}
+}
+</style>
+</head>
+<body>
+<div class="demo">Projeto demonstrativo · empresas fictícias</div>
+<div class="wrap">
+<header>
+  <span class="eyebrow">Sites para negócios locais · Botucatu-SP</span>
+  <h1>Pet shop e academia que atendem pelo celular, até fora do horário.</h1>
+  <p class="lead">Dois sites completos de empresas fictícias, feitos para abrir no celular durante a visita ao cliente. Cada um tira da recepção as tarefas repetidas: agendar, tirar dúvida de preço, avisar que está pronto, controlar vaga.</p>
+</header>
+<div class="grid">
+  <a class="item" href="petshop/">
+    <div class="phone"><div class="scr"><img src="thumb-petshop.jpg" alt="Tela do site Pet Lar Botucatu no celular" width="390" height="823"></div></div>
+    <div>
+      <span class="num">01 · Pet shop com banho, tosa e veterinário</span>
+      <h2>Pet Lar Botucatu</h2>
+      <p>Para o pet shop que vive com o WhatsApp lotado de "tem horário?" e "já tá pronto?".</p>
+      <ul><li>Agenda por porte e serviço, só com horários livres</li><li>Leva e traz com taxa por bairro</li><li>Status "seu pet está pronto" por código</li><li>Cartão de vacina digital com lembrete</li><li>Lojinha com pedido pelo WhatsApp e plano mensal</li></ul>
+      <span class="go">Abrir o site</span>
+    </div>
+  </a>
+  <a class="item b" href="academia/">
+    <div class="phone"><div class="scr"><img src="thumb-academia.jpg" alt="Tela do site Estúdio Movimento no celular" width="390" height="823"></div></div>
+    <div>
+      <span class="num">02 · Estúdio de treino funcional</span>
+      <h2>Estúdio Movimento</h2>
+      <p>Para o estúdio que controla vaga de turma em caderno e perde aluno novo por demora na resposta.</p>
+      <ul><li>Grade de aulas por dia com vagas e fila de espera</li><li>Aula experimental grátis agendada no site</li><li>Planos com comparativo e matrícula online</li><li>Área do aluno com treino do dia e check-in</li><li>Avaliação física, horário de pico e dúvidas</li></ul>
+      <span class="go">Abrir o site</span>
+    </div>
+  </a>
+</div>
+<div class="base">
+  <h3>O que os dois têm por baixo</h3>
+  <div class="tags"><span>Celular primeiro</span><span>Carrega rápido, sem plataforma paga</span><span>SEO local para Botucatu</span><span>Schema LocalBusiness</span><span>Botão de WhatsApp fixo</span><span>Pronto para o perfil no Google</span></div>
+</div>
+<footer>Pet Lar Botucatu e Estúdio Movimento são empresas fictícias. Endereços, telefones, preços e avaliações são ilustrativos.</footer>
+</div>
+</body>
+</html>

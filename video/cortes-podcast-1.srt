@@ -1,0 +1,32 @@
+1
+00:00:00,000 --> 00:00:02,690
+E você deve estar se perguntando por que alguém faria isso, né?
+
+2
+00:00:02,700 --> 00:00:10,829
+Bom, é uma ótima simulação do espaço, principalmente das missões que devem nos levar à Lua, como o programa Artemis.
+
+3
+00:00:10,839 --> 00:00:14,269
+Dormimos lá cinco noites e ficamos uns seis dias.
+
+4
+00:00:14,279 --> 00:00:17,982
+A gente entrava e saía da caverna a pé. Exploramos a caverna.
+
+5
+00:00:17,992 --> 00:00:23,690
+Tivemos até que atravessar a nado uma pequena poça d'água para chegar ao outro lado da caverna.
+
+6
+00:00:23,700 --> 00:00:27,032
+E imaginamos que, quando voltarmos à Lua
+
+7
+00:00:27,042 --> 00:00:33,239
+e decidirmos investigar as cavernas que talvez existam lá, ou os tubos de lava,
+
+8
+00:00:33,249 --> 00:00:37,809
+a gente usaria técnicas parecidas, mesmo com a gravidade muito menor da Lua.
+

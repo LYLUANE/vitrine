@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pet Lar Botucatu · Banho e tosa, veterinário e leva e traz em Botucatu-SP</title>
+<meta name="description" content="Banho e tosa com horário marcado, veterinário, cartão de vacina digital e leva e traz por bairro em Botucatu-SP. Agende pelo site e acompanhe quando seu pet fica pronto.">
+<meta name="theme-color" content="#f3ece1">
+<meta property="og:title" content="Pet Lar Botucatu · Banho, tosa e veterinário">
+<meta property="og:description" content="Agende banho e tosa, peça leva e traz e acompanhe o atendimento do seu pet pelo celular.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PetStore",
+  "additionalType": "https://schema.org/VeterinaryCare",
+  "name": "Pet Lar Botucatu (empresa fictícia)",
+  "description": "Banho e tosa, veterinário, loja e leva e traz em Botucatu-SP. Projeto demonstrativo.",
+  "telephone": "+55-14-00000-0000",
+  "priceRange": "$$",
+  "image": "img/hero.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua das Acácias, 120 (endereço fictício)",
+    "addressLocality": "Botucatu",
+    "addressRegion": "SP",
+    "addressCountry": "BR"
+  },
+  "areaServed": {"@type": "City", "name": "Botucatu"},
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00"}
+  ]
+}
+</script>
+<style>
+:root{
+  --paper:#f3ece1; --paper-2:#eae0d1; --card:#fbf7f1; --ink:#2a231e; --ink-2:#5b5048; --line:#d8cbb8;
+  --terra:#b4532c; --terra-d:#8f3f1f; --sage:#64735a; --sage-l:#dfe3d4; --gold:#c99a3b;
+  --r:14px; --serif:"Fraunces",Georgia,serif; --sans:"Manrope",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.55;font-size:16px}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 18px}
+.demo{background:var(--ink);color:#e9dfd0;font-size:12px;text-align:center;padding:6px 12px;letter-spacing:.04em}
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(243,236,225,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo b{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:-.01em}
+.logo small{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);margin-top:-3px}
+.menu{display:none;gap:22px;font-size:14px;font-weight:600}
+.menu a{text-decoration:none;color:var(--ink-2)}
+.menu a:hover{color:var(--terra)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:13px 22px;font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn-terra{background:var(--terra);color:#fff}.btn-terra:hover{background:var(--terra-d)}
+.btn-line{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.btn-sm{padding:9px 16px;font-size:14px}
+.btn-wa{background:#24724a;color:#fff}
+/* hero */
+.hero{padding:22px 0 40px}
+.hero-grid{display:grid;gap:26px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.015em;line-height:1.08}
+h1{font-size:clamp(36px,9vw,64px);margin:12px 0 16px}
+h1 em{font-style:italic;color:var(--terra);font-weight:400}
+.lead{font-size:17px;color:var(--ink-2);max-width:520px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 22px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding-top:16px;gap:8px}
+.facts div{font-size:12.5px;color:var(--ink-2)}
+.facts b{display:block;font-family:var(--serif);font-size:22px;color:var(--ink);font-weight:600}
+.hero-photo{position:relative;border-radius:22px 22px 22px 120px;overflow:hidden;aspect-ratio:4/4.6;background:var(--paper-2)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.seal{position:absolute;right:14px;bottom:14px;width:96px;height:96px;border-radius:50%;background:var(--paper);display:grid;place-items:center;text-align:center;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.seal span{font-family:var(--serif);font-size:24px;display:block;letter-spacing:0;text-transform:none;color:var(--terra)}
+/* sections */
+section{padding:56px 0;scroll-margin-top:60px}
+.sec-head{display:grid;gap:10px;margin-bottom:28px}
+.num{font-family:var(--serif);font-size:14px;color:var(--terra);display:flex;align-items:center;gap:10px}
+.num::after{content:"";height:1px;width:48px;background:var(--terra)}
+h2{font-size:clamp(28px,6.5vw,44px)}
+.sec-head p{color:var(--ink-2);max-width:560px}
+.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.dark{background:var(--ink);color:#f0e7da}
+.dark .sec-head p,.dark .muted{color:#c9bcab}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.alt .card{background:var(--paper)}
+.label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin:18px 0 10px;display:block}
+.label:first-child{margin-top:0}
+[class$="-grid"]>*,.contact>*,.status-box>*{min-width:0}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:10px 14px;cursor:pointer;font-weight:600;font-size:14px;text-align:left;line-height:1.2}
+.chip small{display:block;font-weight:500;color:var(--ink-2);font-size:12px;margin-top:2px}
+.chip[aria-pressed="true"]{border-color:var(--terra);background:#f6e3d8;color:var(--terra-d)}
+.chip:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.days .chip{min-width:66px;text-align:center;flex:none}
+.days .chip b{display:block;font-family:var(--serif);font-size:20px}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.slots .chip{text-align:center;padding:10px 4px}
+select,input[type=text],input[type=date],input[type=tel]{width:100%;border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:12px 14px;font-size:15px}
+.row{display:flex;align-items:center;gap:10px}
+.check{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-weight:600}
+.check input{width:20px;height:20px;accent-color:var(--terra);margin-top:2px}
+.book-grid{display:grid;gap:18px}
+.summary{position:relative;background:var(--ink);color:#f3ebe0;border-radius:var(--r);padding:22px}
+.summary h3{font-size:24px;margin-bottom:12px}
+.sum-line{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed #5a4e45;font-size:14.5px}
+.sum-line span:first-child{color:#c9bcab}
+.sum-total{display:flex;justify-content:space-between;align-items:baseline;margin:16px 0}
+.sum-total b{font-family:var(--serif);font-size:34px}
+.note{font-size:12.5px;color:var(--ink-2);margin-top:10px}
+.summary .note{color:#b5a796}
+/* status */
+.status-box{display:grid;gap:18px}
+.code-form{display:flex;gap:8px}
+.code-form input{text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.steps{list-style:none;position:relative;margin-top:6px}
+.steps li{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:11px 0;position:relative;color:#8c7f71}
+.steps li::before{content:"";position:absolute;left:16px;top:38px;bottom:-12px;width:2px;background:#4a3f37}
+.steps li:last-child::before{display:none}
+.dot{width:34px;height:34px;border-radius:50%;border:2px solid #4a3f37;display:grid;place-items:center;font-size:13px;font-weight:700;background:var(--ink);z-index:1}
+.steps li.done{color:#f0e7da}.steps li.done .dot{background:var(--sage);border-color:var(--sage);color:#fff}
+.steps li.now{color:#fff}.steps li.now .dot{border-color:var(--gold);color:var(--gold);animation:pulse 1.6s infinite}
+.steps time{font-size:12px;font-family:var(--sans)}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(201,154,59,.18)}}
+.pet-tag{display:flex;gap:14px;align-items:center;padding:14px;border:1px solid #4a3f37;border-radius:12px}
+.pet-tag .av{width:52px;height:52px;border-radius:50%;background:var(--terra);display:grid;place-items:center;font-family:var(--serif);font-size:22px;color:#fff;flex:none}
+.ready-banner{background:var(--sage);color:#fff;border-radius:12px;padding:14px 16px;font-weight:600;display:none}
+/* leva e traz */
+.lt-grid{display:grid;gap:22px}
+.lt-photo{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3.4}
+.lt-photo img{width:100%;height:100%;object-fit:cover}
+.fee-table{width:100%;border-collapse:collapse;font-size:14.5px}
+.fee-table td{padding:10px 0;border-bottom:1px solid var(--line)}
+.fee-table td:last-child{text-align:right;font-weight:700;font-family:var(--serif);font-size:17px}
+.fee-table tr.on td{color:var(--terra)}
+.calc-out{font-family:var(--serif);font-size:30px;margin-top:6px}
+/* vacina */
+.vac-grid{display:grid;gap:20px}
+.vcard{background:#fffaf3;color:var(--ink);border-radius:16px;padding:20px;box-shadow:0 18px 40px rgba(0,0,0,.25);position:relative;overflow:hidden}
+.vcard::before{content:"";position:absolute;inset:0 0 auto 0;height:8px;background:repeating-linear-gradient(90deg,var(--terra) 0 18px,var(--gold) 18px 36px,var(--sage) 36px 54px)}
+.vhead{display:flex;justify-content:space-between;align-items:flex-start;margin:6px 0 14px;gap:10px}
+.vhead h3{font-size:26px}
+.vhead small{color:var(--ink-2);font-size:12.5px;display:block}
+.stamp{border:2px solid var(--terra);color:var(--terra);border-radius:8px;padding:4px 8px;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;transform:rotate(-4deg);white-space:nowrap}
+.vlist{list-style:none;border-top:1px solid var(--line)}
+.vlist li{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+.vlist li b{font-weight:700}
+.vlist li .when{font-size:12.5px;color:var(--ink-2)}
+.vlist .next{text-align:right;font-weight:700;font-size:13px}
+.next.soon{color:var(--terra)}.next.late{color:#a3261a}.next.ok{color:var(--sage)}
+.vnext{margin-top:14px;background:var(--sage-l);border-radius:12px;padding:12px 14px;font-size:14px}
+.vnext b{font-family:var(--serif);font-size:18px}
+.vform{display:grid;gap:10px}
+.vform .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dark select,.dark input{background:#3a312a;border-color:#57493f;color:#f3ebe0}
+.dark .label{color:#c9bcab}
+.toggle{display:flex;gap:10px;align-items:center;font-size:14px;margin-top:4px}
+.toggle input{accent-color:var(--gold);width:18px;height:18px}
+/* loja */
+.shop-head{display:grid;gap:18px;margin-bottom:22px}
+.shop-banner{border-radius:var(--r);overflow:hidden;aspect-ratio:16/10}
+.shop-banner img{width:100%;height:100%;object-fit:cover}
+.filters{display:flex;gap:8px;overflow-x:auto;margin-bottom:16px;scrollbar-width:none}
+.filters .chip{flex:none}
+.prods{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px;display:flex;flex-direction:column}
+.prod .pic{aspect-ratio:1;border-radius:10px;background:var(--paper-2);display:grid;place-items:center;margin-bottom:10px}
+.prod .pic svg{width:58%;height:58%}
+.prod h4{font-size:14px;font-weight:700;line-height:1.25}
+.prod small{color:var(--ink-2);font-size:12px}
+.prod .pr{font-family:var(--serif);font-size:20px;margin:6px 0 10px}
+.prod .add{margin-top:auto;border:1.5px solid var(--ink);background:transparent;border-radius:999px;padding:8px;font-weight:700;font-size:13px;cursor:pointer}
+.prod .add.in{background:var(--ink);color:var(--paper)}
+.cart{position:fixed;left:12px;right:84px;bottom:14px;z-index:40;background:var(--ink);color:#fff;border-radius:16px;padding:12px 14px;display:none;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.cart.show{display:flex}
+.cart b{font-family:var(--serif);font-size:19px}
+.cart small{display:block;color:#c9bcab;font-size:12px}
+/* planos */
+.plans{display:grid;gap:14px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative}
+.plan.best{border:2px solid var(--terra);background:#fff9f3}
+.plan .tag{position:absolute;top:-12px;left:20px;background:var(--terra);color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.plan h3{font-size:24px}
+.plan .price{font-family:var(--serif);font-size:40px;font-weight:600;margin:10px 0 0;line-height:1}
+.plan .price small{font-size:15px;font-family:var(--sans);color:var(--ink-2);font-weight:500}
+.plan .save{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;color:var(--sage);background:var(--sage-l);border-radius:6px;padding:3px 8px;min-height:24px}
+.plan ul{list-style:none;margin:16px 0 18px;font-size:14.5px}
+.plan li{padding:7px 0;border-bottom:1px solid var(--line);display:flex;gap:8px}
+.plan li::before{content:"✓";color:var(--sage);font-weight:800}
+.plan li.no{color:#a3978a}.plan li.no::before{content:"–";color:#a3978a}
+.plan .btn{width:100%}
+.compare{margin-top:24px;overflow-x:auto}
+.compare table{width:100%;min-width:0;border-collapse:collapse;font-size:14px}
+.compare th,.compare td{padding:10px 4px;border-bottom:1px solid var(--line);text-align:center}
+.compare th:first-child,.compare td:first-child{text-align:left}
+.compare th{font-family:var(--serif);font-size:16px;font-weight:600}
+.compare .hl{background:#f6e3d8}
+/* vet */
+.vet-grid{display:grid;gap:20px}
+.vet-photo{border-radius:var(--r);overflow:hidden;aspect-ratio:4/4.4}
+.vet-photo img{width:100%;height:100%;object-fit:cover}
+.svc{list-style:none}
+.svc li{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.svc li span{font-family:var(--serif);font-size:15px;color:var(--terra)}
+.svc h4{font-family:var(--serif);font-size:19px;font-weight:600}
+.svc p{font-size:14.5px;color:var(--ink-2)}
+/* reviews */
+.revs{display:grid;gap:12px}
+.rev{border:1px dashed var(--ink-2);border-radius:var(--r);padding:18px;background:transparent}
+.rev .ex{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--ink-2);border-radius:4px;padding:2px 6px;display:inline-block;margin-bottom:10px}
+.rev p{font-family:var(--serif);font-size:17px;line-height:1.4}
+.rev small{display:block;margin-top:10px;color:var(--ink-2)}
+.stars{color:var(--gold);letter-spacing:2px;font-size:14px}
+/* contato */
+.contact{display:grid;gap:18px}
+.map{border-radius:var(--r);overflow:hidden;background:var(--paper-2);aspect-ratio:16/10;border:1px solid var(--line)}
+.info dt{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-top:14px}
+.info dd{font-size:16px}
+footer{padding:28px 0 100px;font-size:13px;color:var(--ink-2);border-top:1px solid var(--line)}
+.wa-float{position:fixed;right:14px;bottom:14px;z-index:41;width:58px;height:58px;border-radius:50%;background:#24724a;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.wa-float svg{width:30px;height:30px}
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(30,24,20,.55);z-index:60;display:none;align-items:flex-end;justify-content:center}
+.modal.open{display:flex}
+.sheet{background:var(--paper);width:100%;max-width:480px;border-radius:22px 22px 0 0;padding:24px 20px 28px;max-height:90vh;overflow:auto}
+.sheet h3{font-size:26px;margin-bottom:8px}
+.sheet p{color:var(--ink-2);font-size:15px}
+.sheet .msg{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13.5px;white-space:pre-line;margin:14px 0}
+.sheet .row{flex-wrap:wrap}
+@media (min-width:760px){
+  .wrap{padding:0 32px}
+  .compare th,.compare td{padding:11px 10px}
+  .menu{display:flex}
+  .hero{padding:44px 0 70px}
+  .hero-grid{grid-template-columns:1.05fr .95fr;align-items:center;gap:56px}
+  section{padding:84px 0}
+  .sec-head{grid-template-columns:1fr 1fr;align-items:end;gap:30px}
+  .book-grid{grid-template-columns:1.4fr 1fr;align-items:start}
+  .summary{position:sticky;top:84px}
+  .status-box{grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+  .lt-grid{grid-template-columns:1fr 1fr;align-items:center;gap:48px}
+  .vac-grid{grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .prods{grid-template-columns:repeat(4,1fr);gap:16px}
+  .shop-head{grid-template-columns:1fr 1.2fr;align-items:end}
+  .plans{grid-template-columns:repeat(3,1fr);align-items:stretch}
+  .vet-grid{grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+  .revs{grid-template-columns:repeat(3,1fr)}
+  .contact{grid-template-columns:1fr 1.3fr;gap:40px}
+  .slots{grid-template-columns:repeat(6,1fr)}
+  .cart{left:auto;right:90px;width:360px}
+  .modal{align-items:center}.sheet{border-radius:22px}
+}
+</style>
+</head>
+<body>
+<div class="demo">Projeto demonstrativo · empresa fictícia · dados e endereço ilustrativos</div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#topo" aria-label="Pet Lar Botucatu, início">
+      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 4 17v19h32V17z" fill="#b4532c"/><circle cx="14.5" cy="20.5" r="2.6" fill="#f3ece1"/><circle cx="20" cy="18" r="2.6" fill="#f3ece1"/><circle cx="25.5" cy="20.5" r="2.6" fill="#f3ece1"/><path d="M20 23c-4 0-6.5 4.2-6.5 6.4 0 1.8 1.6 2.4 3 2.1 1.3-.3 2.2-.9 3.5-.9s2.2.6 3.5.9c1.4.3 3-.3 3-2.1 0-2.2-2.5-6.4-6.5-6.4z" fill="#f3ece1"/></svg>
+      <span><b>Pet Lar</b><small>Botucatu · SP</small></span>
+    </a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#agendar">Agendar</a><a href="#status">Status</a><a href="#vacinas">Vacinas</a><a href="#loja">Loja</a><a href="#planos">Planos</a><a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-terra btn-sm" href="#agendar">Agendar</a>
+  </div>
+</header>
+
+<main id="topo">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Banho e tosa · Veterinário · Leva e traz</span>
+      <h1>Seu pet sai cheiroso, <em>e você nem sai de casa.</em></h1>
+      <p class="lead">Marque o banho no horário livre, peça para buscarmos no seu bairro e acompanhe pelo celular até a hora em que ele estiver pronto. Tudo em Botucatu.</p>
+      <div class="hero-cta">
+        <a class="btn btn-terra" href="#agendar">Ver horários livres</a>
+        <a class="btn btn-line" href="#status">Meu pet está pronto?</a>
+      </div>
+      <div class="facts">
+        <div><b>8h–18h</b>seg. a sex.<br>sáb. até 13h</div>
+        <div><b>8</b>bairros com<br>leva e traz</div>
+        <div><b>1 a 3h</b>de atendimento<br>por porte</div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="img/hero.jpg" alt="Cachorro de pelo creme enrolado em uma toalha depois do banho, olhando pela janela" width="900" height="1125" fetchpriority="high">
+      <div class="seal"><div><span>Leva</span>e traz<br>por bairro</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="agendar" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="num">01</span><h2>Agende banho e tosa em 1 minuto</h2></div>
+      <p>Escolha o porte e o serviço: o preço aparece na hora. Só mostramos horários que estão livres de verdade na agenda.</p>
+    </div>
+    <div class="book-grid">
+      <div class="card">
+        <span class="label">Porte do pet</span>
+        <div class="chips" id="porte"></div>
+        <span class="label">Serviço</span>
+        <div class="chips" id="servico"></div>
+        <label class="check" style="margin-top:14px"><input type="checkbox" id="hidra"> Hidratação de pelo (+R$ 25)</label>
+        <span class="label">Dia</span>
+        <div class="days" id="dias"></div>
+        <span class="label">Horário de entrada</span>
+        <div class="slots" id="slots"></div>
+        <span class="label">Leva e traz</span>
+        <label class="check"><input type="checkbox" id="lt"> Quero que busquem e levem meu pet</label>
+        <div id="ltBox" style="display:none;margin-top:10px"><select id="ltBairro" aria-label="Bairro para leva e traz"></select></div>
+      </div>
+      <aside class="summary" aria-live="polite">
+        <h3>Resumo</h3>
+        <div class="sum-line"><span>Porte</span><span id="sPorte">–</span></div>
+        <div class="sum-line"><span>Serviço</span><span id="sServ">–</span></div>
+        <div class="sum-line"><span>Quando</span><span id="sQuando">escolha dia e hora</span></div>
+        <div class="sum-line"><span>Leva e traz</span><span id="sLt">não</span></div>
+        <div class="sum-total"><span>Total</span><b id="sTotal">R$ 0</b></div>
+        <button class="btn btn-terra" style="width:100%" id="confirmar">Confirmar agendamento</button>
+        <p class="note">Pagamento no local, em Pix ou cartão. Remarcação grátis até 2h antes.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="status" class="dark">
+  <div class="wrap status-box">
+    <div>
+      <span class="num">02</span>
+      <h2 style="margin:10px 0 14px">Seu pet está pronto?</h2>
+      <p class="muted">Na entrada você recebe um código. Digite aqui e veja em que etapa ele está, sem precisar ligar. Quando terminar, avisamos no WhatsApp.</p>
+      <form class="code-form" id="codeForm" style="margin-top:20px">
+        <input type="text" id="code" value="PL-2048" aria-label="Código do atendimento" maxlength="8">
+        <button class="btn btn-terra" type="submit">Ver</button>
+      </form>
+      <p class="note muted" style="margin-top:10px">Teste com <b>PL-2048</b> (em andamento) ou <b>PL-1175</b> (pronto).</p>
+    </div>
+    <div>
+      <div class="pet-tag"><div class="av" id="petAv">P</div><div><b id="petNome">Paçoca</b><br><span class="muted" id="petServ">Banho e tosa higiênica · porte M</span></div></div>
+      <ol class="steps" id="steps"></ol>
+      <div class="ready-banner" id="ready">Pronto! Pode buscar até 18h ou aguarde o leva e traz.</div>
+      <button class="btn btn-line btn-sm" id="nextStep" style="border-color:#c9bcab;color:#f0e7da;margin-top:12px">Simular próxima etapa</button>
+    </div>
+  </div>
+</section>
+
+<section id="leva">
+  <div class="wrap lt-grid">
+    <div class="lt-photo"><img src="img/levatraz.jpg" alt="Cachorro pequeno no banco de trás do carro olhando pela janela" loading="lazy" width="900" height="1125"></div>
+    <div>
+      <span class="num">03</span>
+      <h2 style="margin:10px 0 14px">Leva e traz por bairro</h2>
+      <p style="color:var(--ink-2)">Buscamos e devolvemos em carro com caixa de transporte presa ao banco. A taxa vale ida e volta.</p>
+      <table class="fee-table" style="margin-top:18px" id="feeTable"></table>
+      <p class="note">Outro bairro ou zona rural? Chame no WhatsApp que calculamos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="vacinas" class="dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="num">04</span><h2>Cartão de vacina digital</h2></div>
+      <p>O cartão de papel some na gaveta. Aqui ele fica no celular, com a data da próxima dose e lembrete no WhatsApp alguns dias antes.</p>
+    </div>
+    <div class="vac-grid">
+      <div class="vcard">
+        <div class="vhead">
+          <div><h3 id="vPet">Paçoca</h3><small id="vInfo">Cão · SRD · nasc. 03/2022</small></div>
+          <span class="stamp">Pet Lar · Vet</span>
+        </div>
+        <ul class="vlist" id="vList"></ul>
+        <div class="vnext" id="vNext"></div>
+      </div>
+      <form class="vform" id="vForm">
+        <span class="label">Registrar dose (simulação)</span>
+        <div class="two">
+          <input type="text" id="fPet" placeholder="Nome do pet" value="Paçoca" aria-label="Nome do pet">
+          <select id="fEsp" aria-label="Espécie"><option>Cão</option><option>Gato</option></select>
+        </div>
+        <select id="fVac" aria-label="Vacina"></select>
+        <div class="two">
+          <input type="date" id="fData" aria-label="Data da aplicação">
+          <button class="btn btn-terra" type="submit">Adicionar</button>
+        </div>
+        <label class="toggle"><input type="checkbox" id="fLembrete" checked> Lembrar pelo WhatsApp 7 dias antes</label>
+        <p class="note muted">Os intervalos são referências comuns para cães e gatos adultos. O calendário do seu pet é definido pelo veterinário na consulta.</p>
+        <button class="btn btn-line btn-sm" type="button" id="vReset" style="border-color:#c9bcab;color:#f0e7da;justify-self:start">Restaurar exemplo</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="vet">
+  <div class="wrap vet-grid">
+    <div class="vet-photo"><img src="img/vet.jpg" alt="Gato dormindo sobre manta na mesa do consultório veterinário" loading="lazy" width="900" height="1125"></div>
+    <div>
+      <span class="num">05</span>
+      <h2 style="margin:10px 0 8px">Veterinário no mesmo lugar</h2>
+      <p style="color:var(--ink-2)">Consulta com hora marcada, sem misturar com a fila do banho.</p>
+      <ul class="svc" style="margin-top:12px">
+        <li><span>i.</span><div><h4>Consulta clínica</h4><p>Check-up, queixa do dia e orientação de alimentação. A partir de R$ 140.</p></div></li>
+        <li><span>ii.</span><div><h4>Vacinas e vermífugo</h4><p>Aplicação registrada direto no cartão digital do pet.</p></div></li>
+        <li><span>iii.</span><div><h4>Exames de rotina</h4><p>Coleta aqui; o resultado chega no seu WhatsApp.</p></div></li>
+      </ul>
+      <a class="btn btn-wa" style="margin-top:20px" href="https://wa.me/5514000000000?text=Ol%C3%A1!%20Quero%20marcar%20uma%20consulta%20veterin%C3%A1ria." target="_blank" rel="noopener">Marcar consulta no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="loja" class="alt">
+  <div class="wrap">
+    <div class="shop-head">
+      <div><span class="num">06</span><h2 style="margin:10px 0 12px">Lojinha com entrega no bairro</h2><p style="color:var(--ink-2)">Monte o pedido, toque em enviar e ele chega pronto no nosso WhatsApp. Pague na entrega ou retire no balcão.</p></div>
+      <div class="shop-banner"><img src="img/produtos.jpg" alt="Prateleira de madeira com sacos de ração, tigelas de cerâmica e brinquedos de corda" loading="lazy" width="900" height="1125"></div>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="prods" id="prods"></div>
+  </div>
+</section>
+
+<section id="planos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="num">07</span><h2>Plano mensal de banhos</h2></div>
+      <p>Para quem dá banho todo mês: preço fechado, horário fixo reservado e cobrança automática. Cancele quando quiser.</p>
+    </div>
+    <div class="chips" id="planPorte" style="margin-bottom:26px"></div>
+    <div class="plans" id="plans"></div>
+    <div class="compare"><table id="cmp"></table></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="num">08</span><h2>Avaliações</h2></div>
+      <p>Espaço para as avaliações reais do Google. Os textos abaixo são só exemplos de como elas aparecem.</p>
+    </div>
+    <div class="revs">
+      <div class="rev"><span class="ex">Exemplo de avaliação</span><div class="stars">★★★★★</div><p>“O leva e traz salvou minha semana. Acompanhei pelo código e ele voltou cheiroso.”</p><small>Nome do cliente · bairro</small></div>
+      <div class="rev"><span class="ex">Exemplo de avaliação</span><div class="stars">★★★★★</div><p>“Gostei de ver o preço antes de marcar. Sem surpresa na hora de pagar.”</p><small>Nome do cliente · bairro</small></div>
+      <div class="rev"><span class="ex">Exemplo de avaliação</span><div class="stars">★★★★★</div><p>“O lembrete da vacina chegou certinho. Nunca mais atrasei a dose.”</p><small>Nome do cliente · bairro</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap contact">
+    <div>
+      <span class="num">09</span>
+      <h2 style="margin:10px 0 10px">Onde estamos</h2>
+      <dl class="info">
+        <dt>Endereço</dt><dd>Rua das Acácias, 120 · Centro<br>Botucatu-SP (endereço fictício)</dd>
+        <dt>Horário</dt><dd>Seg. a sex. 8h às 18h · Sáb. 8h às 13h</dd>
+        <dt>WhatsApp</dt><dd>(14) 00000-0000</dd>
+      </dl>
+      <a class="btn btn-wa" style="margin-top:20px" href="https://wa.me/5514000000000" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+    <div class="map" aria-label="Mapa ilustrativo">
+      <svg viewBox="0 0 640 400" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="640" height="400" fill="#eae0d1"/>
+        <g stroke="#f8f3ea" stroke-width="18" fill="none" stroke-linecap="round"><path d="M-20 120 L660 90"/><path d="M-20 280 L660 300"/><path d="M180 -20 L150 420"/><path d="M430 -20 L470 420"/><path d="M0 400 L640 0" stroke-width="12"/></g>
+        <g stroke="#ddd0bc" stroke-width="6" fill="none"><path d="M-20 200 L660 196"/><path d="M300 -20 L310 420"/><path d="M560 -20 L580 420"/><path d="M60 -20 L40 420"/></g>
+        <path d="M480 330 q60 -40 180 -10 L660 420 L470 420z" fill="#d7dccb"/>
+        <circle cx="318" cy="196" r="34" fill="#b4532c" opacity=".18"/>
+        <path d="M318 150c-15 0-26 11-26 25 0 19 26 45 26 45s26-26 26-45c0-14-11-25-26-25z" fill="#b4532c"/><circle cx="318" cy="175" r="9" fill="#f3ece1"/>
+        <text x="340" y="242" font-family="Manrope,sans-serif" font-size="15" font-weight="700" fill="#2a231e">Pet Lar · Centro</text>
+      </svg>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Pet Lar Botucatu é uma empresa fictícia criada como projeto demonstrativo de site para pet shop. Preços, endereço e telefone são ilustrativos.</div></footer>
+
+<div class="cart" id="cart"><div><small id="cartQtd">0 itens</small><b id="cartTotal">R$ 0</b></div><button class="btn btn-wa btn-sm" id="cartSend">Pedir no WhatsApp</button></div>
+<a class="wa-float" href="https://wa.me/5514000000000" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 32 32" fill="#fff"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5v-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 2.8 1.1 3.4.9 4 .8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.8-.4z"/></svg></a>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="sheet"><h3 id="mTitle"></h3><p id="mText"></p><div class="msg" id="mMsg"></div><div class="row"><a class="btn btn-wa" id="mWa" target="_blank" rel="noopener" href="#">Enviar no WhatsApp</a><button class="btn btn-line" id="mClose">Fechar</button></div><p class="note">Demonstração: nada é enviado de verdade sem você tocar no botão, e o número é fictício.</p></div></div>
+
+<script src="app.js"></script>
+</body>
+</html>

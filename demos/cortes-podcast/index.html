@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cortes de entrevista · Projeto demonstrativo</title>
+<meta name="description" content="Uma entrevista longa transformada em três cortes verticais com legenda animada, tradução e reenquadramento no rosto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="topo">
+  <div class="wrap topo-in">
+    <span class="marca">Sala de corte</span>
+    <span class="selo">Projeto demonstrativo</span>
+  </div>
+</header>
+
+<main>
+  <section class="abre wrap">
+    <p class="kicker"><span class="num">01</span> Cortes de vídeo longo</p>
+    <h1>Uma entrevista de <em>19 minutos</em> virou três cortes prontos para o Reels.</h1>
+    <p class="lead">Escolhi os trechos com gancho, tirei os respiros, reenquadrei no rosto e coloquei legenda palavra a palavra com tradução para o português. Tudo a partir de uma gravação bruta, de uma câmera só.</p>
+    <dl class="ficha">
+      <div><dt>Bruto</dt><dd>19:25, 16:9, 720p</dd></div>
+      <div><dt>Entrega</dt><dd>3 cortes 9:16</dd></div>
+      <div><dt>Legenda</dt><dd>inglês + português</dd></div>
+      <div><dt>Áudio</dt><dd>-14 LUFS</dd></div>
+    </dl>
+  </section>
+
+  <section class="linha wrap" aria-labelledby="t-linha">
+    <div class="sec-cab">
+      <h2 id="t-linha">De onde saiu cada corte</h2>
+      <p>A gravação original tem duas entrevistas ao vivo seguidas, com repórteres de emissoras diferentes. Os cortes usam só as respostas da entrevistada; as perguntas ficaram de fora.</p>
+    </div>
+    <div class="regua" id="regua" aria-hidden="true"></div>
+    <ol class="marcas" id="marcas"></ol>
+  </section>
+
+  <section class="cortes wrap" aria-labelledby="t-cortes">
+    <div class="sec-cab">
+      <h2 id="t-cortes">Os três cortes</h2>
+      <p>Toque para assistir com som. A legenda funciona também no mudo, que é como a maioria vê no feed.</p>
+    </div>
+    <div class="grade" id="grade"></div>
+  </section>
+
+  <section class="ad wrap" aria-labelledby="t-ad">
+    <div class="sec-cab">
+      <h2 id="t-ad">Antes e depois</h2>
+      <p>À esquerda, o material como chegou: horizontal, com pausas, sem legenda. À direita, o mesmo trecho depois da edição.</p>
+    </div>
+    <figure class="ad-fig">
+      <video controls playsinline preload="none" poster="../../img/cortes-podcast-antes-depois-poster.jpg" src="../../video/cortes-podcast-antes-depois.mp4"></video>
+    </figure>
+  </section>
+
+  <section class="feito wrap" aria-labelledby="t-feito">
+    <div class="sec-cab">
+      <h2 id="t-feito">O que entra em cada corte</h2>
+    </div>
+    <ol class="itens">
+      <li><b>Gancho nos 2 primeiros segundos.</b> O corte começa na frase mais forte, não no "então...".</li>
+      <li><b>Rosto sempre no quadro.</b> Detecção de rosto quadro a quadro e câmera virtual suavizada, sem tremer.</li>
+      <li><b>Jump cut limpo.</b> Pausas e respiros cortados com micro-fade, e um leve punch-in alternado para esconder a emenda.</li>
+      <li><b>Legenda palavra a palavra.</b> Transcrição com tempo de cada palavra, palavra-chave em destaque e zoom de ênfase.</li>
+      <li><b>Tradução fiel.</b> Fala em inglês com legenda em português escrita frase a frase, não tradução automática.</li>
+      <li><b>Título fixo e barra de progresso.</b> Quem chega no meio entende o assunto e vê quanto falta.</li>
+      <li><b>Som de rede social.</b> Música baixa que abaixa sozinha quando a pessoa fala, volume final em -14 LUFS.</li>
+    </ol>
+  </section>
+
+  <section class="cred wrap" aria-labelledby="t-cred">
+    <h2 id="t-cred">Créditos</h2>
+    <p id="cred-fonte"></p>
+    <p id="cred-musica"></p>
+    <p class="nota">Projeto demonstrativo de edição, feito para portfólio. Sem ligação com a NASA nem com a entrevistada, e sem endosso de nenhuma das duas. Os símbolos que aparecem no cenário e no uniforme fazem parte da gravação original.</p>
+  </section>
+</main>
+
+<footer class="rodape"><div class="wrap">Edição e página: Evelyn Luane · projeto demonstrativo</div></footer>
+
+<script src="dados.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
