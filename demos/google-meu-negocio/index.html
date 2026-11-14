@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Bella · Perfil da empresa e SEO local</title>
+<meta name="description" content="Antes e depois do perfil de empresa de um salão fictício: ficha completa, fotos ilustradas, posts, respostas a avaliações, checklist e relatório de SEO local.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,60;1,9..144,400..700,60&display=swap" rel="stylesheet">
+<style>
+:root{--vinho:#5B2335;--vinho2:#7A2E44;--rose:#EBCFC4;--rose2:#F6E6DF;--creme:#FBF7F2;--ouro:#B98B4E;--ouro2:#C9A063;--tinta:#2B1E23;--cinza:#6F6468;--linha:#E8DCD5;--ok:#2F7D57;--warn:#B4442E;--warnbg:#FBEAE5}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--creme);color:var(--tinta);font:16px/1.6 "DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,.serif{font-family:"Fraunces",Georgia,serif;font-variation-settings:"SOFT" 60;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,42px)}
+h2 em,h1 em{font-style:italic;font-weight:500;color:var(--vinho2)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.k{font:700 12px/1 "DM Sans";letter-spacing:.2em;text-transform:uppercase;color:var(--vinho2);display:flex;align-items:center;gap:10px}
+.k::before{content:"";width:24px;height:1.5px;background:currentColor}
+.lead{color:var(--cinza);max-width:38em;margin-top:12px}
+section{padding:72px 0;border-top:1px solid var(--linha)}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+.sec-h h2{margin-top:12px}
+
+/* topo */
+.bar{position:sticky;top:0;z-index:20;background:rgba(251,247,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;white-space:nowrap}
+.mono{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--vinho);color:var(--vinho);display:grid;place-items:center;font:italic 600 15px Fraunces}
+.bar nav{display:flex;gap:22px;font-size:14px}
+.bar nav a{text-decoration:none;color:var(--cinza)}
+.bar nav a:hover{color:var(--vinho2)}
+.fict{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cinza);border:1px solid var(--linha);padding:5px 10px;border-radius:99px;white-space:nowrap}
+
+/* hero */
+.hero{padding:64px 0 72px;border:0}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,68px);margin-top:16px}
+.hero p.lead{font-size:18px;margin-top:20px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.stat{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:12px 16px;min-width:130px}
+.stat b{display:block;font:600 26px/1.1 Fraunces;color:var(--vinho)}
+.stat span{font-size:13px;color:var(--cinza)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:99px;font-weight:700;text-decoration:none;border:1.5px solid var(--vinho);font-size:15px;cursor:pointer;background:none;font-family:inherit;color:var(--vinho)}
+.btn.p{background:var(--vinho);color:var(--creme)}
+.btn:hover{filter:brightness(1.08)}
+.hero-art{position:relative}
+.arch{border-radius:260px 260px 20px 20px;overflow:hidden;border:10px solid #fff;box-shadow:0 40px 80px -40px rgba(91,35,53,.5);aspect-ratio:4/4.4;background:var(--rose2)}
+.arch img{width:100%;height:100%;object-fit:cover}
+.pin-card{position:absolute;left:-28px;bottom:34px;background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 18px 40px -18px rgba(43,30,35,.45);display:flex;gap:12px;align-items:center;max-width:270px}
+.pin-card .pi{width:38px;height:38px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--vinho2);flex:none;display:grid;place-items:center}
+.pin-card .pi i{width:12px;height:12px;border-radius:50%;background:#fff}
+.pin-card b{display:block;font-size:15px}
+.pin-card small{color:var(--cinza);font-size:12.5px;line-height:1.35;display:block}
+
+/* comparador */
+.cmp-grid{display:grid;grid-template-columns:430px 1fr;gap:48px;align-items:start}
+.cmp-box{position:sticky;top:78px}
+.cmp{position:relative;height:720px;border-radius:28px;background:#fff;border:1px solid var(--linha);box-shadow:0 30px 70px -40px rgba(43,30,35,.45);overflow:hidden;user-select:none}
+.scroller{height:100%;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.stack{display:grid}
+.lay{grid-area:1/1;background:#fff}
+.lay.depois{clip-path:inset(0 0 0 var(--x,50%))}
+.cmp-bar{position:absolute;top:0;bottom:0;left:var(--x,50%);width:0;z-index:5}
+.cmp-bar::before{content:"";position:absolute;top:0;bottom:0;left:-1.5px;width:3px;background:var(--vinho);opacity:.9}
+.knob{position:absolute;top:50%;left:-22px;width:44px;height:44px;margin-top:-22px;border-radius:50%;background:var(--vinho);color:#fff;display:grid;place-items:center;cursor:ew-resize;box-shadow:0 6px 18px rgba(0,0,0,.25);touch-action:none;border:3px solid #fff}
+.tagl{position:absolute;top:12px;z-index:6;font:700 11px/1 "DM Sans";letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;border-radius:99px;pointer-events:none}
+.tagl.a{left:12px;background:var(--warnbg);color:var(--warn)}
+.tagl.d{right:12px;background:#E5F2EA;color:var(--ok)}
+.cmp-ctl{display:flex;align-items:center;gap:12px;margin-top:14px}
+.cmp-ctl input{flex:1;accent-color:var(--vinho)}
+.cmp-ctl button{font:700 12px "DM Sans";letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--linha);background:#fff;border-radius:99px;padding:8px 12px;cursor:pointer;color:var(--tinta)}
+.sim{font-size:12px;color:var(--cinza);margin-top:10px;text-align:center}
+
+/* perfil simulado (neutro) */
+.pf{font-family:"DM Sans",Arial,sans-serif;color:#202124;font-size:13.5px;line-height:1.45;padding-bottom:16px}
+.pf-top{padding:46px 14px 12px;background:#F4F4F2;border-bottom:1px solid #E4E4E0}
+.pf-q{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #DADAD6;border-radius:99px;padding:9px 14px;font-size:13px;color:#3c3c3c}
+.pf-q svg{flex:none}
+.pf-q span{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.pf-ph{height:170px;display:grid;grid-template-columns:2fr 1fr;gap:3px;background:#fff}
+.pf-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.pf>*{box-sizing:border-box}
+.pf-ph .col{display:grid;grid-template-rows:1fr 1fr;gap:3px}
+.pf-ph .more{display:grid;place-items:center;background:#3A2A30;color:#fff;font-size:12px;font-weight:700}
+.pf-ph.vazio{grid-template-columns:1fr;background:#EFEFEC;place-items:center;color:#8a8a86;text-align:center;font-size:12.5px}
+.pf-ph.vazio svg{margin:0 auto 6px}
+.pf-b{padding:14px 16px 0}
+.pf-b h3{font:600 22px/1.15 "DM Sans",Arial,sans-serif;letter-spacing:-.01em;color:#202124}
+.pf-sub{color:#5f5f5f;margin-top:3px}
+.pf-st{margin-top:4px;font-weight:600}
+.pf-st.ok{color:#1E7A46}
+.warn{display:inline-flex;align-items:center;gap:5px;color:var(--warn);font-weight:700;font-size:12px;background:var(--warnbg);border-radius:6px;padding:2px 7px}
+.pf-act{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:14px 16px 12px;border-bottom:1px solid #ECECE8}
+.pf-act div{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:#2f4d6b}
+.pf-act i{width:38px;height:38px;border-radius:50%;border:1px solid #D7DCE1;display:grid;place-items:center}
+.pf-act .pri i{background:#2f4d6b;border-color:#2f4d6b}
+.pf-act .off{opacity:.28}
+.pf-row{display:flex;gap:12px;padding:10px 16px;border-bottom:1px solid #F0F0EC;align-items:flex-start}
+.pf-row svg{flex:none;margin-top:2px}
+.pf-row .hrs{display:grid;grid-template-columns:auto auto;gap:0 14px;margin-top:4px;font-size:12.5px;color:#444}
+.pf-sec{padding:14px 16px;border-bottom:1px solid #F0F0EC}
+.pf-sec h4{font:700 14.5px "DM Sans";margin-bottom:6px;color:#202124}
+.pf-sec p{color:#3c3c3c}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.chips span{border:1px solid #DADAD6;border-radius:99px;padding:3px 10px;font-size:12px;color:#3c3c3c;background:#fff}
+.svc{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed #E6E6E2}
+.svc:last-child{border:0}
+.svc small{color:#6a6a6a;display:block;font-size:11.5px}
+.svc b{white-space:nowrap;font-size:12.5px}
+.qa{background:#F7F7F5;border-radius:10px;padding:10px 12px;margin-top:8px}
+.qa b{display:block;font-size:13px}
+.qa .r{margin-top:6px;padding-left:10px;border-left:2px solid #2f4d6b;color:#333}
+.qa .r small{display:block;color:#666;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.post-m{display:flex;gap:10px;align-items:center;margin-top:6px}
+.post-m img{width:96px;height:72px;object-fit:cover;border-radius:8px;flex:none}
+.rev{margin-top:6px}
+.rev .who{display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px}
+.rev .who i{width:28px;height:28px;border-radius:50%;background:#D9D3CF;display:grid;place-items:center;font-style:normal;font-size:12px;color:#555}
+.rev .ex{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8a8a86}
+.pf-map{margin:14px 16px 0;border-radius:12px;overflow:hidden;border:1px solid #E4E4E0}
+.empty{color:#8a8a86;font-style:italic}
+
+/* lista do que mudou */
+.mud{list-style:none;counter-reset:m;display:grid;gap:4px}
+.mud li{counter-increment:m;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--linha)}
+.mud li::before{content:counter(m,decimal-leading-zero);font:600 20px/1.2 Fraunces;color:var(--ouro)}
+.mud b{display:block;font-size:16.5px}
+.mud span{color:var(--cinza);font-size:14.5px}
+.mud s{color:var(--warn);text-decoration-thickness:1.5px}
+.mud .to{color:var(--ok);font-weight:700}
+
+/* fotos */
+.fotos{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.foto figure{background:#fff;border:1px solid var(--linha);border-radius:20px;overflow:hidden}
+.foto img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.foto figcaption{padding:14px 18px;font-size:14px;color:var(--cinza)}
+.foto figcaption b{color:var(--tinta);display:block;font-size:15px}
+.nota{margin-top:18px;font-size:13.5px;color:var(--cinza);background:var(--rose2);border-radius:12px;padding:12px 16px}
+
+/* posts */
+.posts{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.post{background:#fff;border:1px solid var(--linha);border-radius:18px;overflow:hidden;text-decoration:none}
+.post img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .4s}
+.post:hover img{transform:scale(1.02)}
+.post div{padding:12px 16px;display:flex;justify-content:space-between;gap:10px;font-size:13.5px;color:var(--cinza);flex-wrap:wrap}
+.post div b{color:var(--tinta)}
+.cal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}
+.cal div{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:12px 14px;font-size:13.5px}
+.cal b{display:block;font:600 15px Fraunces;color:var(--vinho2)}
+
+/* avaliações */
+.av-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:start}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tab{border:1px solid var(--linha);background:#fff;border-radius:99px;padding:9px 16px;font:700 14px "DM Sans";cursor:pointer;color:var(--tinta)}
+.tab[aria-selected=true]{background:var(--vinho);color:var(--creme);border-color:var(--vinho)}
+.modelo{background:#fff;border:1px solid var(--linha);border-radius:20px;padding:22px}
+.modelo .orig{font-size:14px;color:var(--cinza);background:var(--creme);border-radius:12px;padding:12px 14px}
+.modelo .orig b{color:var(--tinta)}
+.modelo textarea{width:100%;min-height:150px;margin-top:14px;border:1px solid var(--linha);border-radius:12px;padding:14px;font:15px/1.55 "DM Sans";color:var(--tinta);background:#fff;resize:vertical}
+.modelo .row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap;font-size:13px;color:var(--cinza)}
+.regras{background:var(--vinho);color:var(--creme);border-radius:20px;padding:24px}
+.regras h3{font-size:22px}
+.regras ul{list-style:none;margin-top:14px;display:grid;gap:12px}
+.regras li{padding-left:22px;position:relative;font-size:14.5px;line-height:1.5}
+.regras li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--ouro2)}
+
+/* checklist */
+.ck-grid{display:grid;grid-template-columns:1fr 320px;gap:36px;align-items:start}
+.grupo{background:#fff;border:1px solid var(--linha);border-radius:20px;padding:8px 20px 12px;margin-bottom:16px}
+.grupo h3{font-size:19px;padding:14px 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+.grupo h3 small{font:600 13px "DM Sans";color:var(--cinza)}
+.item{display:grid;grid-template-columns:24px 1fr auto;gap:12px;align-items:start;padding:11px 0;border-top:1px solid #F1E9E4;cursor:pointer}
+.item input{width:20px;height:20px;margin-top:2px;accent-color:var(--vinho);cursor:pointer}
+.item b{display:block;font-size:15px;font-weight:600}
+.item span{font-size:13.5px;color:var(--cinza);line-height:1.45;display:block}
+.item em{font:700 12px "DM Sans";font-style:normal;color:var(--ouro);background:#F8F0E4;border-radius:99px;padding:3px 9px;white-space:nowrap}
+.placar{position:sticky;top:78px;background:#fff;border:1px solid var(--linha);border-radius:24px;padding:26px;text-align:center}
+.ring{width:190px;height:190px;border-radius:50%;margin:6px auto 0;display:grid;place-items:center;background:conic-gradient(var(--cor,var(--vinho)) calc(var(--p,0)*1%),#F1E7E1 0);transition:--p .5s}
+.ring div{width:150px;height:150px;border-radius:50%;background:#fff;display:grid;place-items:center;align-content:center}
+.ring b{font:600 54px/1 Fraunces;color:var(--tinta)}
+.ring small{font-size:12px;color:var(--cinza);letter-spacing:.1em;text-transform:uppercase}
+.nivel{font:600 20px Fraunces;margin-top:16px}
+.placar p{font-size:13.5px;color:var(--cinza);margin-top:6px}
+.placar .btns{justify-content:center;margin-top:18px;gap:8px}
+.placar .btn{padding:9px 14px;font-size:13px}
+.falta{text-align:left;margin-top:18px;border-top:1px solid var(--linha);padding-top:14px;font-size:13.5px}
+.falta b{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cinza)}
+.falta ol{margin:8px 0 0 18px;color:var(--tinta)}
+.falta li{margin:3px 0}
+
+/* relatório */
+.rel{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel a{display:block;background:#fff;border:1px solid var(--linha);border-radius:12px;overflow:hidden;box-shadow:0 20px 40px -30px rgba(43,30,35,.5);text-decoration:none}
+.rel img{width:100%;aspect-ratio:210/297;object-fit:cover;object-position:top}
+.rel span{display:block;padding:10px 14px;font-size:13.5px;color:var(--cinza)}
+.rel span b{color:var(--tinta)}
+
+.fpill{display:none;position:fixed;left:50%;bottom:16px;transform:translate(-50%,120px);z-index:30;background:var(--vinho);color:var(--creme);border-radius:99px;padding:10px 18px;font-weight:700;font-size:14px;gap:8px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .3s;white-space:nowrap}
+.fpill.on{transform:translate(-50%,0)}
+.fpill b{font:600 18px Fraunces;color:var(--ouro2)}
+footer{padding:40px 0 56px;border-top:1px solid var(--linha);font-size:13.5px;color:var(--cinza)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media (max-width:980px){
+  .bar nav{display:none}
+  .hero .wrap,.cmp-grid,.av-grid,.ck-grid{grid-template-columns:1fr}
+  .hero-art{max-width:440px;margin:0 auto;width:100%}
+  .cmp-box,.placar{position:static}
+  .placar{order:-1}
+  .fpill{display:flex}
+  .cmp-box{max-width:430px;margin:0 auto;width:100%}
+  .cal{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  section{padding:52px 0}
+  .hero{padding:36px 0 52px}
+  .fotos,.posts{grid-template-columns:1fr}
+  .rel{grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .rel span{font-size:11.5px;padding:8px}
+  .cmp{height:620px}
+  .pin-card{left:8px;bottom:14px}
+  .fict{display:none}
+  .stat{min-width:0;flex:1}
+  .stat{padding:10px 12px}.stat span{font-size:12px;line-height:1.3;display:block}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <span class="brand"><span class="mono">SB</span>Studio Bella</span>
+    <nav>
+      <a href="#comparar">Antes e depois</a><a href="#posts">Posts</a><a href="#avaliacoes">Avaliações</a><a href="#checklist">Checklist</a><a href="#relatorio">Relatório</a>
+    </nav>
+    <span class="fict">Projeto demonstrativo · marca fictícia</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="k">Perfil da empresa e SEO local</div>
+      <h1>O salão já existia. Faltava <em>aparecer no mapa.</em></h1>
+      <p class="lead">Otimização completa do perfil de empresa no Google (o antigo Google Meu Negócio) de um salão fictício: categoria certa, horário, serviços com preço, fotos próprias, posts semanais, respostas a avaliações e um plano de 30 dias.</p>
+      <div class="stats">
+        <div class="stat"><b>17</b><span>itens otimizados</span></div>
+        <div class="stat"><b>4</b><span>artes de post</span></div>
+        <div class="stat"><b>3</b><span>páginas de relatório</span></div>
+      </div>
+      <div class="btns">
+        <a class="btn p" href="#comparar">Ver antes e depois</a>
+        <a class="btn" href="../../pdf/google-meu-negocio.pdf" target="_blank" rel="noopener">Relatório PDF</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="arch"><img src="img/fachada.svg" alt="Ilustração da fachada do Studio Bella"></div>
+      <div class="pin-card"><span class="pi"><i></i></span><div><b>Studio Bella</b><small>Salão de beleza · Rua das Camélias, 418, Centro</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="comparar">
+  <div class="wrap">
+    <div class="sec-h">
+      <div><div class="k">Comparador</div><h2>Mesmo salão, <em>dois perfis</em></h2>
+      <p class="lead">Arraste a barra para comparar. Role dentro do cartão para ver serviços, perguntas, posts e avaliações.</p></div>
+    </div>
+    <div class="cmp-grid">
+      <div class="cmp-box">
+        <div class="cmp" id="cmp">
+          <span class="tagl a">Antes</span><span class="tagl d">Depois</span>
+          <div class="scroller">
+            <div class="stack">
+              <!-- ANTES -->
+              <div class="lay antes" aria-label="Perfil antes da otimização">
+                <div class="pf">
+                  <div class="pf-top"><div class="pf-q"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="2.2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><span>salão de beleza centro serra clara</span></div></div>
+                  <div class="pf-ph vazio"><div><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9a9a96" stroke-width="1.6"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>Nenhuma foto enviada pelo dono</div></div>
+                  <div class="pf-b">
+                    <h3>Studio Bella</h3>
+                    <div class="pf-sub">Loja de cosméticos <span class="warn">categoria errada</span></div>
+                    <div class="pf-sub">Nenhuma avaliação respondida</div>
+                    <div class="pf-st"><span class="warn">Horário não informado</span></div>
+                  </div>
+                  <div class="pf-act">
+                    <div><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f4d6b" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></i>Ligar</div>
+                    <div><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f4d6b" stroke-width="2"><path d="M12 2l9 9-9 11-9-11z"/><path d="M9 13v-2h5l-2-2m2 2l-2 2"/></svg></i>Rotas</div>
+                    <div class="off"><i></i>Site</div>
+                    <div class="off"><i></i>Agendar</div>
+                  </div>
+                  <div class="pf-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><div>R. das Camélias, 418 – Centro, Serra Clara</div></div>
+                  <div class="pf-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><span class="warn">Adicionar horário</span></div></div>
+                  <div class="pf-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div>(00) 3333-0418 <span class="warn">número antigo</span></div></div>
+                  <div class="pf-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><div class="empty">Sem site nem link de agendamento</div></div>
+                  <div class="pf-sec"><h4>Sobre</h4><p>Salão. Venha conhecer!!</p><p style="margin-top:6px"><span class="warn">descrição vaga</span></p></div>
+                  <div class="pf-sec"><h4>Serviços</h4><p class="empty">Nenhum serviço cadastrado</p></div>
+                  <div class="pf-sec"><h4>Atributos</h4><p class="empty">Nenhum atributo informado</p></div>
+                  <div class="pf-sec"><h4>Perguntas e respostas</h4>
+                    <div class="qa"><b>Vocês abrem no sábado?</b><span class="warn" style="margin-top:6px">sem resposta há meses</span></div>
+                  </div>
+                  <div class="pf-sec"><h4>Atualizações do dono</h4><p class="empty">Nenhuma publicação</p></div>
+                  <div class="pf-sec"><h4>Avaliações</h4>
+                    <div class="rev"><div class="who"><i>C</i>Cliente <span class="ex">exemplo</span></div>
+                    <p style="margin-top:6px">Gostei do corte, mas esperei uns 30 minutos além do meu horário.</p>
+                    <p style="margin-top:6px"><span class="warn">sem resposta do dono</span></p></div>
+                  </div>
+                  <div class="pf-map"><img src="img/mapa.svg" alt="Mapa ilustrado"></div>
+                </div>
+              </div>
+
+              <!-- DEPOIS -->
+              <div class="lay depois" aria-label="Perfil depois da otimização">
+                <div class="pf">
+                  <div class="pf-top"><div class="pf-q"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="2.2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg><span>salão de beleza centro serra clara</span></div></div>
+                  <div class="pf-ph"><img src="img/fachada.svg" alt="Fachada (ilustração)"><div class="col"><img src="img/interior.svg" alt="Interior (ilustração)"><div class="more">Ver fotos</div></div></div>
+                  <div class="pf-b">
+                    <h3>Studio Bella</h3>
+                    <div class="pf-sub">Salão de beleza · Centro</div>
+                    <div class="pf-sub">Avaliações respondidas pelo dono</div>
+                    <div class="pf-st ok">Aberto · fecha às 19:00</div>
+                  </div>
+                  <div class="pf-act">
+                    <div><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f4d6b" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></i>Ligar</div>
+                    <div><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f4d6b" stroke-width="2"><path d="M12 2l9 9-9 11-9-11z"/><path d="M9 13v-2h5l-2-2m2 2l-2 2"/></svg></i>Rotas</div>
+                    <div><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f4d6b" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></i>Site</div>
+                    <div class="pri"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></i>Agendar</div>
+                  </div>
+                  <div class="pf-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><div>R. das Camélias, 418 – Centro, Serra Clara<br><small style="color:#666">A 2 quadras da praça · entrada sem degrau</small></div></div>
+                  <div class="pf-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b style="color:#1E7A46">Aberto</b> · fecha às 19:00<div class="hrs"><span>Ter. a sex.</span><span>9:00 – 19:00</span><span>Sábado</span><span>8:00 – 17:00</span><span>Dom. e seg.</span><span>Fechado</span><span>Feriados</span><span>horário especial</span></div></div></div>
+                  <div class="pf-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div>(00) 98888-0418 · também WhatsApp</div></div>
+                  <div class="pf-row"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><div>studiobella.exemplo<br><small style="color:#666">Link de agendamento: studiobella.exemplo/agendar</small></div></div>
+                  <div class="pf-sec"><h4>Sobre</h4><p>Salão de beleza no Centro de Serra Clara, a duas quadras da praça. Corte, escova, coloração, manicure e pedicure, esmaltação em gel e design de sobrancelhas. Atendimento com hora marcada de terça a sábado: agende pelo botão do perfil ou pelo WhatsApp. Material de manicure esterilizado e aberto na sua frente.</p>
+                  <div class="chips" style="margin-top:10px"><span>Salão de beleza (principal)</span><span>Manicure</span><span>Design de sobrancelhas</span><span>Esteticista</span></div></div>
+                  <div class="pf-sec"><h4>Serviços</h4>
+                    <div class="svc"><div>Corte feminino<small>com lavagem e finalização</small></div><b>a partir de R$ 70</b></div>
+                    <div class="svc"><div>Escova + hidratação<small>cerca de 1h15</small></div><b>a partir de R$ 90</b></div>
+                    <div class="svc"><div>Coloração<small>avaliação no salão</small></div><b>a partir de R$ 160</b></div>
+                    <div class="svc"><div>Manicure e pedicure<small>material esterilizado</small></div><b>a partir de R$ 55</b></div>
+                    <div class="svc"><div>Design de sobrancelhas<small>com ou sem henna</small></div><b>a partir de R$ 40</b></div>
+                  </div>
+                  <div class="pf-sec"><h4>Atributos</h4><div class="chips"><span>Entrada acessível</span><span>Wi-Fi</span><span>Pix, débito e crédito</span><span>Com hora marcada</span></div></div>
+                  <div class="pf-sec"><h4>Perguntas e respostas</h4>
+                    <div class="qa"><b>Vocês abrem no sábado?</b><div class="r"><small>Resposta do dono</small>Sim, das 8h às 17h. Sábado lota rápido: vale agendar pelo botão do perfil.</div></div>
+                    <div class="qa"><b>Tem estacionamento?</b><div class="r"><small>Resposta do dono</small>Não temos próprio. Há vagas na rua e um estacionamento pago na esquina com a praça.</div></div>
+                  </div>
+                  <div class="pf-sec"><h4>Atualizações do dono</h4>
+                    <div class="post-m"><img src="pecas/post-1-agenda.jpg" alt="Post agenda aberta"><div><b>Agenda de dezembro aberta</b><br><small style="color:#666">Publicação semanal · botão Agendar</small></div></div>
+                  </div>
+                  <div class="pf-sec"><h4>Avaliações</h4>
+                    <div class="rev"><div class="who"><i>C</i>Cliente <span class="ex">exemplo</span></div>
+                    <p style="margin-top:6px">Gostei do corte, mas esperei uns 30 minutos além do meu horário.</p>
+                    <div class="qa"><div class="r" style="margin-top:0"><small>Resposta do dono</small>Obrigada pelo retorno e desculpe a espera. Mudamos a agenda para ter 15 minutos entre atendimentos. Se quiser, chama a gente no WhatsApp.</div></div></div>
+                  </div>
+                  <div class="pf-map"><img src="img/mapa.svg" alt="Mapa ilustrado com pino"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cmp-bar" id="bar"><div class="knob" id="knob" role="slider" aria-label="Comparar antes e depois" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></div></div>
+        </div>
+        <div class="cmp-ctl"><button type="button" data-x="100">Antes</button><input type="range" id="rng" min="0" max="100" value="50" aria-label="Posição do comparador"><button type="button" data-x="0">Depois</button></div>
+        <p class="sim">Simulação de um perfil em buscador e mapa genéricos. Não reproduz a interface real de nenhum serviço.</p>
+      </div>
+
+      <div>
+        <ol class="mud">
+          <li><div><b>Categoria principal</b><span><s>Loja de cosméticos</s> → <span class="to">Salão de beleza</span>. É o que mais pesa para aparecer na busca certa.</span></div></li>
+          <li><div><b>Categorias secundárias</b><span>Poucas e verdadeiras: manicure, design de sobrancelhas, esteticista. Nada de categoria para serviço que não existe.</span></div></li>
+          <li><div><b>Horário completo</b><span>Dias da semana, sábado, dias fechados e horário especial de feriado, atualizado antes de cada data.</span></div></li>
+          <li><div><b>Um telefone só</b><span>O número antigo saiu. O mesmo celular com WhatsApp aparece no perfil, no site, no Instagram e nos diretórios.</span></div></li>
+          <li><div><b>Descrição que vende</b><span>Serviços, bairro e diferenciais em texto corrido, sem lista de palavras-chave e sem link (a descrição não aceita).</span></div></li>
+          <li><div><b>Serviços com preço</b><span>"A partir de" com o que muda o valor. A cliente já chega sabendo a faixa de preço e o salão responde menos "quanto custa?".</span></div></li>
+          <li><div><b>Fotos próprias</b><span>Fachada para reconhecer a porta, interior, equipe e trabalhos. Na demo, ilustrações em SVG; no cliente, fotos do local.</span></div></li>
+          <li><div><b>Atributos e agendamento</b><span>Acessibilidade, formas de pagamento, Wi-Fi e o link de agendamento no botão "Agendar".</span></div></li>
+          <li><div><b>Perguntas, posts e avaliações</b><span>Dúvidas comuns respondidas pelo dono, um post por semana e todas as avaliações respondidas, inclusive as negativas.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fotos">
+  <div class="wrap">
+    <div class="sec-h"><div><div class="k">Fotos</div><h2>Fachada e interior <em>desenhados para a demo</em></h2>
+    <p class="lead">Quem procura salão quer saber como é o lugar e reconhecer a porta ao chegar. Essas duas imagens entram como foto de capa e da galeria.</p></div></div>
+    <div class="fotos">
+      <div class="foto"><figure><img src="img/fachada.svg" alt="Fachada do Studio Bella, ilustração própria"><figcaption><b>Fachada</b>Letreiro legível, número da porta e entrada sem degrau visíveis.</figcaption></figure></div>
+      <div class="foto"><figure><img src="img/interior.svg" alt="Interior do Studio Bella, ilustração própria"><figcaption><b>Interior</b>Estações de atendimento, iluminação e organização do espaço.</figcaption></figure></div>
+    </div>
+    <p class="nota">Ilustrações próprias em SVG, sem banco de imagens. No trabalho real eu monto a lista de fotos (fachada de dia, interior, equipe, antes e depois com autorização da cliente) e oriento como tirar com o celular.</p>
+  </div>
+</section>
+
+<section id="posts">
+  <div class="wrap">
+    <div class="sec-h"><div><div class="k">Publicações</div><h2>Um post por semana, <em>pronto para subir</em></h2>
+    <p class="lead">Quatro artes em 1200×900, com o texto longe das bordas (a prévia pode recortar a imagem), cada uma com uma frase curta e um botão de ação.</p></div></div>
+    <div class="posts">
+      <a class="post" href="pecas/post-1-agenda.jpg" target="_blank" rel="noopener"><img src="pecas/post-1-agenda.jpg" alt="Post: agenda de dezembro aberta" loading="lazy"><div><b>Semana 1 · Novidade</b><span>Botão: Reservar</span></div></a>
+      <a class="post" href="pecas/post-2-servico.jpg" target="_blank" rel="noopener"><img src="pecas/post-2-servico.jpg" alt="Post: escova e hidratação a partir de R$ 90" loading="lazy"><div><b>Semana 2 · Serviço com preço</b><span>Botão: Reservar</span></div></a>
+      <a class="post" href="pecas/post-3-dica.jpg" target="_blank" rel="noopener"><img src="pecas/post-3-dica.jpg" alt="Post: 3 cuidados com a esmaltação em gel" loading="lazy"><div><b>Semana 3 · Dica</b><span>Botão: Saiba mais</span></div></a>
+      <a class="post" href="pecas/post-4-bastidores.jpg" target="_blank" rel="noopener"><img src="pecas/post-4-bastidores.jpg" alt="Post: alicate em pacote lacrado" loading="lazy"><div><b>Semana 4 · Bastidores</b><span>Botão: Ligar agora</span></div></a>
+    </div>
+    <div class="cal">
+      <div><b>Seg.</b>Publicar o post da semana</div>
+      <div><b>Qua.</b>Subir 2 fotos novas de trabalhos</div>
+      <div><b>Sex.</b>Responder avaliações e perguntas</div>
+      <div><b>Fim do mês</b>Ler as métricas do painel</div>
+    </div>
+  </div>
+</section>
+
+<section id="avaliacoes">
+  <div class="wrap">
+    <div class="sec-h"><div><div class="k">Avaliações</div><h2>Modelos de <em>resposta</em></h2>
+    <p class="lead">Edite o texto na caixa e copie. Troque o que está entre colchetes pelo nome e pelo serviço de verdade.</p></div></div>
+    <div class="av-grid">
+      <div class="modelo">
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" aria-selected="true" data-t="pos">Positiva</button>
+          <button class="tab" role="tab" aria-selected="false" data-t="neg">Negativa</button>
+          <button class="tab" role="tab" aria-selected="false" data-t="est">Só estrelas</button>
+        </div>
+        <div class="orig" id="orig"></div>
+        <textarea id="resp" aria-label="Texto da resposta"></textarea>
+        <div class="row"><span id="dica"></span><button class="btn p" type="button" id="copiar" style="padding:10px 18px;font-size:14px">Copiar resposta</button></div>
+      </div>
+      <aside class="regras">
+        <h3>Regras da casa</h3>
+        <ul>
+          <li>Responder em até 2 dias úteis, todas as avaliações, boas e ruins.</li>
+          <li>Agradecer pelo nome e citar o serviço. Resposta copiada e colada igual em todas parece robô.</li>
+          <li>Na negativa: reconhecer, dizer o que mudou e chamar para o privado. Sem discutir em público.</li>
+          <li>Nunca expor dados do atendimento, valores pagos ou informação de saúde da cliente.</li>
+          <li>Avaliação falsa ou ofensiva: denunciar pelo próprio painel do perfil, sem revidar na resposta.</li>
+          <li>Pedir avaliação para todas as clientes, sem filtrar só as satisfeitas e sem dar desconto em troca.</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="sec-h"><div><div class="k">Checklist interativa</div><h2>Quanto o seu perfil <em>está pronto?</em></h2>
+    <p class="lead">Marque o que já está feito. Cada item tem um peso de acordo com o quanto ajuda a cliente a achar, confiar e agendar. A pontuação é desta checklist, não uma nota oficial de nenhuma plataforma.</p></div></div>
+    <div class="ck-grid">
+      <div id="grupos"></div>
+      <aside class="placar">
+        <div class="ring" id="ring"><div><b id="pts">0</b><small>de 100</small></div></div>
+        <div class="nivel" id="nivel">Comece marcando</div>
+        <p id="nivel-p">Os itens de maior peso ficam no topo de cada grupo.</p>
+        <div class="btns">
+          <button class="btn" type="button" id="b-antes">Perfil antes</button>
+          <button class="btn" type="button" id="b-depois">Perfil depois</button>
+          <button class="btn" type="button" id="b-limpar">Limpar</button>
+        </div>
+        <div class="falta" id="falta"></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="relatorio">
+  <div class="wrap">
+    <div class="sec-h"><div><div class="k">Relatório de SEO local</div><h2>Três páginas que <em>o dono entende</em></h2>
+    <p class="lead">Diagnóstico, palavras-chave do bairro, conferência de nome, endereço e telefone nos diretórios, plano de 30 dias de posts e de pedido de avaliações, e as métricas para acompanhar todo mês.</p></div>
+    <a class="btn p" href="../../pdf/google-meu-negocio.pdf" target="_blank" rel="noopener">Abrir o PDF</a></div>
+    <div class="rel">
+      <a href="../../pdf/google-meu-negocio.pdf" target="_blank" rel="noopener"><img src="img/relatorio-1.jpg" alt="Página 1 do relatório" loading="lazy"><span><b>1.</b> Diagnóstico e palavras-chave</span></a>
+      <a href="../../pdf/google-meu-negocio.pdf" target="_blank" rel="noopener"><img src="img/relatorio-2.jpg" alt="Página 2 do relatório" loading="lazy"><span><b>2.</b> NAP e diretórios</span></a>
+      <a href="../../pdf/google-meu-negocio.pdf" target="_blank" rel="noopener"><img src="img/relatorio-3.jpg" alt="Página 3 do relatório" loading="lazy"><span><b>3.</b> Plano de 30 dias e métricas</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="fpill" id="fpill" aria-hidden="true">Pontuação <b id="fpts">0</b>/100</div>
+<footer>
+  <div class="wrap">
+    <span>Projeto demonstrativo · Studio Bella, Serra Clara, endereço e telefone são fictícios.</span>
+    <span>Simulação visual, sem marca nem interface real de buscador ou mapa.</span>
+  </div>
+</footer>
+
+<script>
+/* ---------- comparador ---------- */
+(function(){
+  var cmp=document.getElementById('cmp'),knob=document.getElementById('knob'),rng=document.getElementById('rng');
+  function set(x){x=Math.max(0,Math.min(100,x));cmp.style.setProperty('--x',x+'%');rng.value=x;knob.setAttribute('aria-valuenow',Math.round(x));}
+  var drag=false;
+  function pos(e){var r=cmp.getBoundingClientRect();set((e.clientX-r.left)/r.width*100);}
+  knob.addEventListener('pointerdown',function(e){drag=true;knob.setPointerCapture(e.pointerId);e.preventDefault();});
+  knob.addEventListener('pointermove',function(e){if(drag)pos(e);});
+  knob.addEventListener('pointerup',function(){drag=false;});
+  knob.addEventListener('keydown',function(e){var v=+rng.value;if(e.key==='ArrowLeft'){set(v-5);e.preventDefault();}if(e.key==='ArrowRight'){set(v+5);e.preventDefault();}});
+  rng.addEventListener('input',function(){set(+rng.value);});
+  document.querySelectorAll('.cmp-ctl button').forEach(function(b){b.addEventListener('click',function(){set(+b.dataset.x);});});
+  set(50);
+  /* alinha os blocos equivalentes das duas camadas */
+  var A=document.querySelector('.lay.antes .pf').children,D=document.querySelector('.lay.depois .pf').children;
+  function eq(){for(var i=0;i<A.length&&i<D.length;i++){A[i].style.minHeight=D[i].style.minHeight='';}
+    for(var j=0;j<A.length&&j<D.length;j++){var h=Math.max(A[j].offsetHeight,D[j].offsetHeight);A[j].style.minHeight=D[j].style.minHeight=h+'px';}}
+  eq();window.addEventListener('resize',eq);window.addEventListener('load',eq);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(eq);
+})();
+
+/* ---------- respostas a avaliações ---------- */
+(function(){
+  var M={
+    pos:{o:'<b>Exemplo de avaliação (5 estrelas):</b> "Amei a escova, atendimento muito atencioso."',
+         t:'Oi, [nome]! Que bom que você gostou da [escova] com a [profissional]. Obrigada por contar aqui, isso ajuda quem está procurando salão no Centro. Te esperamos na próxima!\n— Bella, Studio Bella',
+         d:'Cite o serviço e a profissional. Tom de conversa, curto.'},
+    neg:{o:'<b>Exemplo de avaliação (2 estrelas):</b> "Esperei 30 minutos além do meu horário."',
+         t:'Oi, [nome]. Sinto muito pela espera, não é o que a gente quer para ninguém. Já ajustamos a agenda para ter 15 minutos entre um atendimento e outro. Se puder, me chama no WhatsApp (00) 98888-0418 para eu entender melhor e acertar com você.\n— Bella, Studio Bella',
+         d:'Reconheça, diga o que mudou e leve para o privado. Prometa só o que dá para cumprir.'},
+    est:{o:'<b>Exemplo de avaliação:</b> só as estrelas, sem comentário.',
+         t:'Obrigada pela avaliação, [nome]! Se quiser contar o que achou do atendimento, a gente lê tudo. Até a próxima.\n— Studio Bella',
+         d:'Curta e sem pressão. Serve para nota alta ou média.'}
+  };
+  var orig=document.getElementById('orig'),resp=document.getElementById('resp'),dica=document.getElementById('dica'),cp=document.getElementById('copiar');
+  function show(k){orig.innerHTML=M[k].o;resp.value=M[k].t;dica.textContent=M[k].d;
+    document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',t.dataset.t===k);});}
+  document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){show(t.dataset.t);});});
+  cp.addEventListener('click',function(){
+    function ok(){cp.textContent='Copiado';setTimeout(function(){cp.textContent='Copiar resposta';},1600);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(resp.value).then(ok,function(){resp.select();try{document.execCommand('copy');ok();}catch(e){}});}
+    else{resp.select();try{document.execCommand('copy');ok();}catch(e){}}
+  });
+  show('pos');
+})();
+
+/* ---------- checklist ---------- */
+(function(){
+  var G=[
+    {n:'Base do perfil',it:[
+      ['ver',10,'Perfil verificado pelo dono','A verificação é feita pelo dono, pelo método que a plataforma oferecer. Sem ela, várias edições não aparecem.'],
+      ['cat',10,'Categoria principal correta','A que descreve o negócio como um todo: "Salão de beleza", não "Loja de cosméticos".'],
+      ['hor',8,'Horário completo e feriados','Dias, horários, dias fechados e horário especial nas datas comemorativas.'],
+      ['nome',6,'Nome igual ao da fachada','Sem cidade, serviço ou palavra-chave enfiada no nome. Isso vai contra as regras e pode suspender o perfil.'],
+      ['end',6,'Endereço e pino no lugar certo','O pino na porta do salão, não no meio da quadra.'],
+      ['tel',6,'Telefone igual em todo lugar','O mesmo número no perfil, site, Instagram, WhatsApp e diretórios.'],
+      ['sec',4,'Categorias secundárias relevantes','Só serviços que o salão faz de verdade.']
+    ]},
+    {n:'Conteúdo',it:[
+      ['fot',8,'Fotos de fachada, interior, equipe e trabalhos','Fotos reais e atuais, tiradas no local.'],
+      ['svc',6,'Serviços com preço "a partir de"','Com o que muda o valor (comprimento, avaliação).'],
+      ['desc',5,'Descrição com serviços e bairro','Texto natural, sem repetir palavra-chave e sem link.'],
+      ['ag',5,'Site e link de agendamento','O botão Agendar leva direto para a agenda.'],
+      ['logo',3,'Logo e foto de capa','Logo legível no tamanho pequeno.'],
+      ['atr',3,'Atributos preenchidos','Acessibilidade, pagamento, Wi-Fi e o que mais se aplicar.']
+    ]},
+    {n:'Relacionamento',it:[
+      ['post',6,'Post toda semana','Novidade, serviço, dica ou bastidores, com botão de ação.'],
+      ['resp',5,'Avaliações respondidas em até 2 dias','Todas, inclusive as negativas.'],
+      ['ped',5,'Pedido de avaliação no pós-atendimento','Link curto ou QR no balcão, para todas as clientes, sem brinde em troca.'],
+      ['faq',4,'Perguntas frequentes respondidas','Respostas do dono às dúvidas comuns: sábado, estacionamento, formas de pagamento.']
+    ]}
+  ];
+  var ANTES=['ver','nome','end'];
+  var cont=document.getElementById('grupos'),html='';
+  G.forEach(function(g){
+    var tot=g.it.reduce(function(s,i){return s+i[1];},0);
+    html+='<div class="grupo"><h3>'+g.n+'<small>'+tot+' pts</small></h3>';
+    g.it.forEach(function(i){html+='<label class="item"><input type="checkbox" data-k="'+i[0]+'" data-w="'+i[1]+'"><div><b>'+i[2]+'</b><span>'+i[3]+'</span></div><em>+'+i[1]+'</em></label>';});
+    html+='</div>';
+  });
+  cont.innerHTML=html;
+  var boxes=[].slice.call(cont.querySelectorAll('input'));
+  var ring=document.getElementById('ring'),pts=document.getElementById('pts'),nv=document.getElementById('nivel'),np=document.getElementById('nivel-p'),falta=document.getElementById('falta');
+  var cur=0,anim;
+  function calc(now){
+    var s=0,miss=[];
+    boxes.forEach(function(b){if(b.checked)s+=+b.dataset.w;else miss.push([+b.dataset.w,b.parentNode.querySelector('b').textContent]);});
+    var from=cur;cancelAnimationFrame(anim);var t0=null;
+    function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/450);var v=Math.round(from+(s-from)*(1-Math.pow(1-k,3)));pts.textContent=v;ring.style.setProperty('--p',v);if(k<1)anim=requestAnimationFrame(step);}
+    document.getElementById('fpts').textContent=s;
+    if(now===true){pts.textContent=s;ring.style.setProperty('--p',s);}else anim=requestAnimationFrame(step);cur=s;
+    var c,l,p;
+    if(s<40){c='#B4442E';l='Perfil fraco';p='A cliente acha o salão, mas não tem motivo para escolher.';}
+    else if(s<70){c='#B98B4E';l='No caminho';p='O básico está lá. Faltam conteúdo e relacionamento.';}
+    else if(s<90){c='#7A2E44';l='Bem otimizado';p='Agora é manter: post semanal e avaliações em dia.';}
+    else{c='#2F7D57';l='Completo';p='Perfil pronto. O trabalho daqui em diante é constância.';}
+    ring.style.setProperty('--cor',c);nv.textContent=l;nv.style.color=c;np.textContent=p;
+    miss.sort(function(a,b){return b[0]-a[0];});
+    falta.innerHTML=miss.length?'<b>Próximos passos</b><ol>'+miss.slice(0,3).map(function(m){return '<li>'+m[1]+' <span style="color:#B98B4E;font-weight:700">+'+m[0]+'</span></li>';}).join('')+'</ol>':'<b>Tudo marcado</b><p style="margin-top:6px">Revise a cada mês: horário de feriado, fotos novas e respostas.</p>';
+    try{localStorage.setItem('gmn-ck',JSON.stringify(boxes.filter(function(b){return b.checked;}).map(function(b){return b.dataset.k;})));}catch(e){}
+  }
+  function preset(list,now){boxes.forEach(function(b){b.checked=list.indexOf(b.dataset.k)>-1;});calc(now);}
+  boxes.forEach(function(b){b.addEventListener('change',function(){calc();});});
+  document.getElementById('b-antes').onclick=function(){preset(ANTES);};
+  document.getElementById('b-depois').onclick=function(){preset(boxes.map(function(b){return b.dataset.k;}));};
+  document.getElementById('b-limpar').onclick=function(){preset([]);};
+  var saved=null;try{saved=JSON.parse(localStorage.getItem('gmn-ck'));}catch(e){}
+  preset(Array.isArray(saved)?saved:ANTES,true);
+  if('IntersectionObserver' in window){var fp=document.getElementById('fpill'),pl=document.querySelector('.placar'),gv=false,pv=false;
+    function up(){fp.classList.toggle('on',gv&&!pv);}
+    new IntersectionObserver(function(e){gv=e[0].isIntersecting;up();}).observe(cont);
+    new IntersectionObserver(function(e){pv=e[0].isIntersecting;up();}).observe(pl);}
+})();
+</script>
+</body>
+</html>

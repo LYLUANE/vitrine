@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel Comercial · Distribuidora Rio Claro (marca fictícia)</title>
+<meta name="description" content="Painel de indicadores comerciais com filtros, drill-down, mapa de calor, funil e modo apresentação. Projeto demonstrativo com dados fictícios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem('rc-tema');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+  <div class="marca">
+    <svg class="selo" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 25c5-6 9-6 12-2s7 4 12-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 19c5-6 9-6 12-2s7 4 12-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".45"/></svg>
+    <div>
+      <p class="marca-nome">Distribuidora Rio Claro</p>
+      <p class="marca-sub">Painel comercial · <span class="demo-tag">projeto demonstrativo, marca e dados fictícios</span></p>
+    </div>
+  </div>
+  <nav class="abas" role="tablist" aria-label="Páginas do painel">
+    <button role="tab" id="aba-0" aria-controls="pag-0" aria-selected="true" data-pag="0">Visão geral</button>
+    <button role="tab" id="aba-1" aria-controls="pag-1" aria-selected="false" data-pag="1" tabindex="-1">Vendas e equipe</button>
+    <button role="tab" id="aba-2" aria-controls="pag-2" aria-selected="false" data-pag="2" tabindex="-1">Pedidos</button>
+  </nav>
+  <div class="acoes">
+    <button class="btn-icone" id="btn-tema" type="button" aria-label="Alternar tema claro e escuro" title="Tema claro / escuro">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="btn" id="btn-apresentar" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 16v4M8 20h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 8l4 2-4 2z" fill="currentColor"/></svg>
+      Apresentar
+    </button>
+  </div>
+</header>
+
+<section class="filtros" aria-label="Filtros globais">
+  <label class="campo"><span>Período</span>
+    <select id="f-periodo">
+      <option value="1">Último mês</option>
+      <option value="3">Últimos 3 meses</option>
+      <option value="6">Últimos 6 meses</option>
+      <option value="12" selected>Últimos 12 meses</option>
+    </select>
+  </label>
+  <label class="campo"><span>Região</span><select id="f-regiao"></select></label>
+  <label class="campo"><span>Filial</span><select id="f-filial"></select></label>
+  <label class="campo"><span>Categoria</span><select id="f-categoria"></select></label>
+  <label class="campo"><span>Vendedor</span><select id="f-vendedor"></select></label>
+  <button class="btn-link" id="btn-limpar" type="button">Limpar filtros</button>
+  <p class="periodo-txt" id="periodo-txt" aria-live="polite"></p>
+</section>
+<div class="chips" id="chips" aria-live="polite"></div>
+
+<main id="conteudo">
+  <!-- Página 1 -->
+  <section class="pagina ativa" id="pag-0" role="tabpanel" aria-labelledby="aba-0">
+    <div class="kpis" id="kpis"></div>
+    <div class="grade g-2-1">
+      <article class="cartao" data-card="linha">
+        <header><div><h2>Faturamento no período</h2><p class="sub" id="sub-linha"></p></div><button class="btn-tab" type="button" aria-pressed="false">Tabela</button></header>
+        <div class="legenda" id="leg-linha"></div>
+        <div class="viz" id="viz-linha"></div><div class="tabela-viz"></div>
+      </article>
+      <article class="cartao" data-card="funil">
+        <header><div><h2>Funil de vendas</h2><p class="sub">Do orçamento ao dinheiro no caixa</p></div><button class="btn-tab" type="button" aria-pressed="false">Tabela</button></header>
+        <div class="viz" id="viz-funil"></div><div class="tabela-viz"></div>
+      </article>
+    </div>
+    <div class="grade g-1-1">
+      <article class="cartao" data-card="regiao">
+        <header><div><h2>Faturamento por região</h2><p class="sub">Clique numa região para filtrar o painel inteiro</p></div><button class="btn-tab" type="button" aria-pressed="false">Tabela</button></header>
+        <div class="viz" id="viz-regiao"></div><div class="tabela-viz"></div>
+      </article>
+      <article class="cartao" data-card="categoria">
+        <header><div><h2>Participação por categoria</h2><p class="sub">Clique num bloco para filtrar</p></div><button class="btn-tab" type="button" aria-pressed="false">Tabela</button></header>
+        <div class="viz" id="viz-categoria"></div><div class="tabela-viz"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Página 2 -->
+  <section class="pagina" id="pag-1" role="tabpanel" aria-labelledby="aba-1" hidden>
+    <div class="grade g-1-1">
+      <article class="cartao" data-card="produtos">
+        <header><div><h2>Top 10 produtos</h2><p class="sub">Por faturamento no período</p></div><button class="btn-tab" type="button" aria-pressed="false">Tabela</button></header>
+        <div class="viz" id="viz-produtos"></div><div class="tabela-viz"></div>
+      </article>
+      <article class="cartao" data-card="vendedores">
+        <header><div><h2>Ranking de vendedores</h2><p class="sub">Clique num nome para ver só a carteira dele</p></div><button class="btn-tab" type="button" aria-pressed="false">Tabela</button></header>
+        <div class="viz" id="viz-vendedores"></div><div class="tabela-viz"></div>
+      </article>
+    </div>
+    <article class="cartao" data-card="calor">
+      <header><div><h2>Pedidos por dia da semana e hora</h2><p class="sub">Quando os clientes compram. Domingo sem expediente.</p></div><button class="btn-tab" type="button" aria-pressed="false">Tabela</button></header>
+      <div class="viz" id="viz-calor"></div><div class="tabela-viz"></div>
+    </article>
+  </section>
+
+  <!-- Página 3 -->
+  <section class="pagina" id="pag-2" role="tabpanel" aria-labelledby="aba-2" hidden>
+    <article class="cartao">
+      <header class="tab-topo">
+        <div><h2>Pedidos detalhados</h2><p class="sub" id="sub-tabela"></p></div>
+        <div class="tab-acoes">
+          <label class="busca"><span class="sr">Buscar pedidos</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <input id="busca" type="search" placeholder="Cliente, produto, vendedor ou nº">
+          </label>
+          <button class="btn" id="btn-csv" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 19h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Exportar CSV
+          </button>
+        </div>
+      </header>
+      <div class="tabela-rolagem"><table class="detalhe" id="tabela"><thead></thead><tbody></tbody></table></div>
+      <div class="paginacao" id="paginacao"></div>
+    </article>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p>Dados fictícios gerados por script, com sazonalidade, de nov/2024 a out/2026. Na versão real, o painel lê o banco, ERP ou planilha da empresa e se atualiza sozinho.</p>
+</footer>
+
+<div class="apres-barra" id="apres-barra" hidden>
+  <button class="btn-icone" id="apres-ant" type="button" aria-label="Página anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <div class="apres-pontos" id="apres-pontos"></div>
+  <button class="btn-icone" id="apres-pausa" type="button" aria-label="Pausar troca automática"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+  <button class="btn-icone" id="apres-prox" type="button" aria-label="Próxima página"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <button class="btn" id="apres-sair" type="button">Sair (Esc)</button>
+  <div class="apres-prog"><span id="apres-prog"></span></div>
+</div>
+
+<div class="tooltip" id="tooltip" role="status" aria-live="polite"></div>
+
+<script src="dados.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

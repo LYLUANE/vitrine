@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="Mapa ilustrado genérico com o pino do Studio Bella">
+  <rect width="600" height="260" fill="#EEF0EC"/>
+  <path d="M-10 210C80 190 140 236 230 214S400 160 470 180 560 230 620 214v60H-10z" fill="#CFE0E6"/>
+  <rect x="300" y="40" width="120" height="78" rx="6" fill="#D5E6CF"/>
+  <circle cx="345" cy="70" r="9" fill="#BCD6B4"/><circle cx="380" cy="88" r="11" fill="#BCD6B4"/><circle cx="398" cy="60" r="7" fill="#BCD6B4"/>
+  <g fill="#E3E5E0">
+    <rect x="20" y="20" width="110" height="70" rx="5"/><rect x="150" y="20" width="130" height="70" rx="5"/><rect x="440" y="20" width="140" height="70" rx="5"/>
+    <rect x="20" y="110" width="110" height="70" rx="5"/><rect x="150" y="110" width="130" height="70" rx="5"/><rect x="300" y="138" width="120" height="42" rx="5"/><rect x="440" y="110" width="140" height="56" rx="5"/>
+  </g>
+  <g stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" fill="none">
+    <path d="M0 100h600M140 0v200M290 0v196M430 0v186"/>
+    <path d="M0 10h600" stroke-width="8"/>
+  </g>
+  <path d="M0 100h600" stroke="#F6E2B8" stroke-width="7"/>
+  <text x="40" y="89" font-family="DM Sans, Arial, sans-serif" font-size="9" fill="#8B8F87" letter-spacing=".5">RUA DAS CAMÉLIAS</text>
+  <text x="318" y="130" font-family="DM Sans, Arial, sans-serif" font-size="9" fill="#7E9A76">Praça (ilustrativa)</text>
+  <g transform="translate(214 58)">
+    <ellipse cx="0" cy="44" rx="12" ry="4" fill="#000" opacity=".18"/>
+    <path d="M0 44C-6 30-20 20-20 4a20 20 0 0 1 40 0C20 20 6 30 0 44z" fill="#7A2E44"/>
+    <circle cx="0" cy="4" r="8" fill="#F7E9DE"/>
+  </g>
+  <rect x="236" y="48" width="78" height="22" rx="11" fill="#fff" stroke="#E2D6D0"/>
+  <text x="275" y="63" text-anchor="middle" font-family="DM Sans, Arial, sans-serif" font-size="10" font-weight="700" fill="#5B2335">Studio Bella</text>
+</svg>

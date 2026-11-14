@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alba Studio · E-mail marketing e automação</title>
+<meta name="description" content="Cinco templates de e-mail responsivos, régua de automação e checklist de entregabilidade para uma loja de moda. Projeto demonstrativo, marca fictícia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="topbar">Projeto demonstrativo · marca fictícia · e-mails, cupons e pedidos são exemplos</div>
+<header class="header">
+  <div class="wrap header-in">
+    <a class="logo" href="#topo" aria-label="Alba Studio, início">Alba <span>Studio</span></a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#emails">E-mails</a><a href="#regua">Régua</a><a href="#assuntos">Teste A/B</a><a href="#entregabilidade">Entregabilidade</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero wrap">
+    <div class="hero-txt">
+      <p class="kicker">E-mail marketing e automação de funil</p>
+      <h1>A régua de e-mails da <em>Alba Studio</em></h1>
+      <p class="lead">Cinco templates prontos para disparar, a automação que decide quem recebe cada um e quando, e o checklist para tudo isso cair na caixa de entrada, não no spam.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#emails">Ver os e-mails</a>
+        <a class="btn btn-ghost" href="#regua">Ver a automação</a>
+      </div>
+    </div>
+    <ul class="hero-facts" aria-label="O que tem nesta demonstração">
+      <li><b>5</b><span>templates em HTML de e-mail, testados em 600 e 375 px</span></li>
+      <li><b>5</b><span>fluxos com espera, condição e ramificação</span></li>
+      <li><b>14</b><span>checagens automáticas em cada e-mail</span></li>
+      <li><b>15</b><span>itens de entregabilidade para conferir</span></li>
+    </ul>
+  </section>
+
+  <!-- E-MAILS -->
+  <section id="emails" class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">01 · Templates</p>
+        <h2>Os cinco e-mails</h2>
+        <p>Tabelas, CSS inline, botão que funciona no Outlook, pré-cabeçalho, texto alternativo em toda imagem e modo escuro. Troque o aparelho, o tema e desligue as imagens para ver como cada cliente de e-mail mostra.</p>
+      </div>
+
+      <div class="studio">
+        <ol class="mail-list" id="mailList" aria-label="Escolha o e-mail"></ol>
+
+        <div class="viewer">
+          <div class="toolbar" role="toolbar" aria-label="Opções de visualização">
+            <div class="seg" data-grupo="device">
+              <button type="button" data-v="desktop" class="on" aria-pressed="true">Computador</button>
+              <button type="button" data-v="mobile" aria-pressed="false">Celular</button>
+            </div>
+            <div class="seg" data-grupo="tema">
+              <button type="button" data-v="claro" class="on" aria-pressed="true">Claro</button>
+              <button type="button" data-v="escuro" aria-pressed="false">Escuro</button>
+            </div>
+            <label class="switch"><input type="checkbox" id="semImg"><span>Imagens bloqueadas</span></label>
+            <button type="button" class="btn btn-sm" id="verCodigo">&lt;/&gt; Ver código</button>
+          </div>
+
+          <div class="inbox" aria-label="Como aparece na caixa de entrada">
+            <span class="avatar" aria-hidden="true">A</span>
+            <div class="inbox-txt">
+              <p><b>Alba Studio</b><time>10:02</time></p>
+              <p class="inbox-sub" id="inboxSub"></p>
+              <p class="inbox-pre" id="inboxPre"></p>
+            </div>
+          </div>
+
+          <div class="stage" id="stage">
+            <div class="device" id="device">
+              <div class="device-bar" aria-hidden="true"><i></i><i></i><i></i><span id="deviceUrl">Pré-visualização · 600 px</span></div>
+              <iframe id="frame" title="Pré-visualização do e-mail" sandbox="allow-same-origin" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <aside class="mail-info" id="mailInfo" aria-live="polite"></aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- RÉGUA -->
+  <section id="regua" class="sec sec-dark">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">02 · Automação</p>
+        <h2>A régua, passo a passo</h2>
+        <p>Cada fluxo começa num gatilho da loja, espera o tempo certo e decide o próximo e-mail pelo que a pessoa fez: abriu, clicou ou comprou. Toque num e-mail do fluxo para ver o template.</p>
+      </div>
+      <div class="tabs" role="tablist" id="flowTabs"></div>
+      <div class="flow-wrap">
+        <div class="flow-scroll" id="flowScroll"><svg id="flowSvg" role="img" aria-labelledby="flowTitle"><title id="flowTitle">Fluxograma da automação</title></svg></div>
+        <div class="flow-side" id="flowSide"></div>
+      </div>
+      <ul class="legend" aria-label="Legenda">
+        <li><i class="lg trig"></i>Gatilho</li><li><i class="lg wait"></i>Espera</li><li><i class="lg cond"></i>Condição</li>
+        <li><i class="lg mail"></i>E-mail</li><li><i class="lg act"></i>Ação na lista</li><li><i class="lg end"></i>Fim</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- A/B -->
+  <section id="assuntos" class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">03 · Linhas de assunto</p>
+        <h2>Variações para teste A/B</h2>
+        <p>Cada e-mail sai com três assuntos, cada um testando uma ideia diferente. No celular, a caixa de entrada mostra só uns 35 a 40 caracteres: a prévia ao lado corta onde o aparelho corta.</p>
+      </div>
+      <div class="ab-grid" id="abGrid"></div>
+    </div>
+  </section>
+
+  <!-- ENTREGABILIDADE -->
+  <section id="entregabilidade" class="sec sec-soft">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">04 · Entregabilidade</p>
+        <h2>Para cair na caixa de entrada</h2>
+        <p>Desde 2024, Gmail e Yahoo exigem autenticação do domínio e descadastro em um clique de quem envia em volume. O checklist abaixo é o que eu configuro e confiro antes do primeiro disparo.</p>
+      </div>
+      <div class="check-top">
+        <div class="progress" aria-hidden="true"><span id="progBar"></span></div>
+        <p id="progTxt">0 de 0 itens conferidos</p>
+        <button type="button" class="link-btn" id="resetCheck">Limpar</button>
+      </div>
+      <div class="check-grid" id="checkGrid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <p class="logo">Alba <span>Studio</span></p>
+    <p>Projeto demonstrativo de e-mail marketing. Alba Studio é uma marca fictícia; peças ilustradas, sem fotos de banco. Domínio de exemplo <code>albastudio.example</code>.</p>
+    <a href="../../" class="link-btn">Voltar à vitrine</a>
+  </div>
+</footer>
+
+<dialog id="codeDlg" aria-labelledby="codeTitle">
+  <div class="dlg-head">
+    <h3 id="codeTitle">Código</h3>
+    <div class="dlg-actions">
+      <button type="button" class="btn btn-sm" id="copyCode">Copiar</button>
+      <a class="btn btn-sm btn-ghost" id="dlCode" download>Baixar .html</a>
+      <button type="button" class="x" id="closeCode" aria-label="Fechar">×</button>
+    </div>
+  </div>
+  <p class="dlg-note">HTML de e-mail com CSS inline. Nomes e pedido são dados de exemplo: na plataforma viram variáveis como <code>{{ first_name }}</code> ou <code>*|FNAME|*</code>.</p>
+  <pre><code id="codeBox"></code></pre>
+</dialog>
+
+<script src="js/emails.js"></script>
+<script src="js/validacao.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
