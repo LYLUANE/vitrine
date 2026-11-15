@@ -1,0 +1,354 @@
+{
+ "id": "demo-material-construcao",
+ "nome": "Depósito Bom Lote",
+ "ramo": "material",
+ "tema": "material",
+ "icone": "material",
+ "selo": "Atende Pacaembu Vida Nova e região",
+ "whatsapp": "5514900000105",
+ "regioes": [
+  "Pacaembu Vida Nova",
+  "Centro",
+  "Vila Jardim",
+  "Jardim Paraíso",
+  "Rubião Júnior"
+ ],
+ "plano": "atendimento",
+ "modulos": {
+  "agenda": true,
+  "painel": true
+ },
+ "qr_avaliacao": "qr-avaliacao.svg",
+ "qr_rotulo": "QR de exemplo",
+ "link_avaliacao": "",
+ "avaliacoes": [],
+ "pagamento": {
+  "pix": "(14) 90000-0105",
+  "pix_tipo": "telefone",
+  "formas": [
+   "PIX",
+   "Dinheiro",
+   "Cartão na maquininha"
+  ],
+  "obs": ""
+ },
+ "rodape": "Projeto demonstrativo · marca, telefone e preços fictícios",
+ "ramo_texto": "Material de construção",
+ "slogan": "Areia, pedra, tijolo e cimento entregues no seu lote.",
+ "destaques": [
+  "Entrega com caminhão basculante",
+  "Pedido pelo WhatsApp",
+  "Retirada no depósito"
+ ],
+ "tabela": [
+  {
+   "id": "t1",
+   "nome": "Areia média",
+   "unidade": "m³",
+   "preco": 150,
+   "mostrar": true,
+   "descricao": "entregue no lote"
+  },
+  {
+   "id": "t2",
+   "nome": "Areia fina",
+   "unidade": "m³",
+   "preco": 160,
+   "mostrar": true,
+   "descricao": ""
+  },
+  {
+   "id": "t3",
+   "nome": "Pedra brita 1",
+   "unidade": "m³",
+   "preco": 170,
+   "mostrar": true,
+   "descricao": ""
+  },
+  {
+   "id": "t4",
+   "nome": "Tijolo baiano 9 furos",
+   "unidade": "milheiro",
+   "preco": 850,
+   "mostrar": true,
+   "descricao": ""
+  },
+  {
+   "id": "t5",
+   "nome": "Bloco de concreto 14x19x39",
+   "unidade": "unidade",
+   "preco": 3.2,
+   "mostrar": true,
+   "descricao": ""
+  },
+  {
+   "id": "t6",
+   "nome": "Cimento 50 kg",
+   "unidade": "saco",
+   "preco": 38,
+   "mostrar": true,
+   "descricao": ""
+  },
+  {
+   "id": "t7",
+   "nome": "Frete no Pacaembu Vida Nova",
+   "unidade": "unidade",
+   "preco": 0,
+   "mostrar": false,
+   "descricao": "depende da quantidade"
+  }
+ ],
+ "passos": [
+  {
+   "titulo": "Monte o pedido",
+   "texto": "Escolha o material e a quantidade aqui ou mande a lista do pedreiro."
+  },
+  {
+   "titulo": "Confirmo valor e entrega",
+   "texto": "Respondo com o total e o horário da entrega."
+  },
+  {
+   "titulo": "Descarrego no lote",
+   "texto": "O caminhão descarrega onde combinamos. Pagamento na entrega."
+  }
+ ],
+ "agenda": {
+  "titulo": "Agendar entrega",
+  "rotulo_servico": "Entrega de",
+  "servicos": [
+   "Areia e pedra",
+   "Tijolo e bloco",
+   "Cimento e argamassa",
+   "Pedido misto"
+  ],
+  "horarios": [
+   "08:00",
+   "10:00",
+   "13:00",
+   "15:00"
+  ],
+  "dias_semana": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "nota": "O horário fica reservado quando o depósito confirmar pelo WhatsApp.",
+  "bloqueios": [
+   "2026-11-20",
+   "2026-12-25",
+   "2027-01-01"
+  ]
+ },
+ "titulo_servicos": "Materiais e preços",
+ "titulo_orcamento": "Monte seu pedido",
+ "titulo_galeria": "Produtos",
+ "aviso_orcamento": "Estimativa pela tabela de hoje. O total final, com frete, é confirmado pelo WhatsApp.",
+ "rotulo_data": "Entrega desejada",
+ "rotulo_fotos": "Foto do lote ou da lista",
+ "placeholder_detalhes": "Ex.: lista do pedreiro, onde descarregar",
+ "horarios": [
+  {
+   "dias": "Segunda a sexta",
+   "horas": "7h às 17h30"
+  },
+  {
+   "dias": "Sábado",
+   "horas": "7h às 12h"
+  }
+ ],
+ "telefone": "(14) 90000-0105",
+ "aviso": "Entrega agendada no lote, com descarga no local combinado.",
+ "pedidos_exemplo": [
+  {
+   "tipo": "agendamento",
+   "origem": "site",
+   "cliente": "Renata M.",
+   "telefone": "(14) 90000-0201",
+   "bairro": "Pacaembu Vida Nova",
+   "servico": "Areia e pedra",
+   "dia": 0,
+   "hora": "08:00",
+   "status": "confirmado",
+   "ha_horas": 30
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "robo",
+   "cliente": "Carlos A.",
+   "telefone": "(14) 90000-0202",
+   "bairro": "Pacaembu Vida Nova",
+   "servico": "Pedido misto",
+   "dia": 0,
+   "hora": "13:00",
+   "status": "novo",
+   "ha_horas": 2
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "site",
+   "cliente": "Juliana P.",
+   "telefone": "(14) 90000-0203",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 6,
+   "itens": [
+    {
+     "nome": "Areia média",
+     "unidade": "m³",
+     "qtd": 3,
+     "preco": 150
+    },
+    {
+     "nome": "Areia fina",
+     "unidade": "m³",
+     "qtd": 3,
+     "preco": 160
+    }
+   ],
+   "status": "novo",
+   "fotos": 3,
+   "ha_horas": 1
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "manual",
+   "cliente": "Tiago R.",
+   "telefone": "(14) 90000-0204",
+   "bairro": "Vila Jardim",
+   "dia": 9,
+   "itens": [
+    {
+     "nome": "Pedra brita 1",
+     "unidade": "m³",
+     "qtd": 3,
+     "preco": 170
+    },
+    {
+     "nome": "Tijolo baiano 9 furos",
+     "unidade": "milheiro",
+     "qtd": 2,
+     "preco": 850
+    }
+   ],
+   "status": "enviado",
+   "desconto": 5,
+   "desconto_tipo": "%",
+   "prazo": "3 dias úteis",
+   "ha_horas": 26
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "site",
+   "cliente": "Sônia F.",
+   "telefone": "(14) 90000-0205",
+   "bairro": "Centro",
+   "servico": "Areia e pedra",
+   "dia": 1,
+   "hora": "10:00",
+   "status": "confirmado",
+   "ha_horas": 20
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "robo",
+   "cliente": "Marcos L.",
+   "telefone": "(14) 90000-0206",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 3,
+   "itens": [
+    {
+     "nome": "Bloco de concreto 14x19x39",
+     "unidade": "unidade",
+     "qtd": 1,
+     "preco": 3.2
+    }
+   ],
+   "status": "aprovado",
+   "prazo": "na data combinada",
+   "ha_horas": 50
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "whatsapp",
+   "cliente": "Paula C.",
+   "telefone": "(14) 90000-0207",
+   "bairro": "Jardim Paraíso",
+   "servico": "Tijolo e bloco",
+   "dia": 3,
+   "hora": "15:00",
+   "status": "novo",
+   "ha_horas": 5
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "site",
+   "cliente": "Edson V.",
+   "telefone": "(14) 90000-0208",
+   "bairro": "Rubião Júnior",
+   "dia": -4,
+   "itens": [
+    {
+     "nome": "Areia fina",
+     "unidade": "m³",
+     "qtd": 3,
+     "preco": 160
+    }
+   ],
+   "status": "concluído",
+   "ha_horas": 140
+  }
+ ],
+ "chegando": {
+  "tipo": "orcamento",
+  "origem": "site",
+  "cliente": "Aline S.",
+  "telefone": "(14) 90000-0209",
+  "bairro": "Pacaembu Vida Nova",
+  "dia": 5,
+  "itens": [
+   {
+    "nome": "Areia média",
+    "unidade": "m³",
+    "qtd": 3,
+    "preco": 150
+   },
+   {
+    "nome": "Pedra brita 1",
+    "unidade": "m³",
+    "qtd": 3,
+    "preco": 170
+   }
+  ],
+  "status": "novo",
+  "fotos": 2,
+  "obs": "Recebo a chave nesta semana."
+ },
+ "demo": true,
+ "faixa_texto": "Projeto demonstrativo · marca fictícia",
+ "link_bot": "../bot.html",
+ "galeria": [
+  {
+   "foto": "fotos/areia.svg",
+   "legenda": "Areia média",
+   "detalhe": "por metro, entregue no lote"
+  },
+  {
+   "foto": "fotos/tijolos.svg",
+   "legenda": "Tijolo baiano",
+   "detalhe": "milheiro ou meio milheiro"
+  },
+  {
+   "foto": "fotos/brita.svg",
+   "legenda": "Pedra brita",
+   "detalhe": "por metro"
+  },
+  {
+   "foto": "fotos/cimento.svg",
+   "legenda": "Cimento e argamassa",
+   "detalhe": "saco de 50 kg e 20 kg"
+  }
+ ],
+ "nota_galeria": "Ilustrações no lugar das fotos: na página real entram as fotos dos seus trabalhos."
+}

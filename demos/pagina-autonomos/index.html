@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Página para autônomos · 6 exemplos</title>
+<meta name="description" content="Modelo de página de uma tela para prestadores de serviço de bairro: orçamento na hora, agenda, painel e robô de WhatsApp. Projeto demonstrativo.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap">
+<style>
+:root{--tinta:#1f1b17;--sub:#6b625a;--papel:#f4efe7;--papel2:#ebe3d7;--fio:#d6c9b7;--cor:#7A3517;--ouro:#E9C46A;--zap:#1F8A4C}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Archivo,system-ui,sans-serif;background:var(--papel);color:var(--tinta);line-height:1.45;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.c{max-width:1200px;margin:0 auto;padding:0 16px}
+.topo{border-bottom:1px solid var(--fio)}
+.topo .c{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px;font-size:13px;color:var(--sub)}
+.topo b{color:var(--tinta);letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+.hero{padding:44px 0 26px}
+.hero .c{display:grid;gap:18px}
+.hero-txt{display:grid;gap:18px;align-content:start}
+.zap{background:#e9e1d5;border-radius:22px;padding:18px;align-self:start;border:1px solid var(--fio)}
+.zap small{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);margin-bottom:10px}
+.bolha{background:#d8f1d9;border-radius:14px 14px 4px 14px;padding:12px 14px;font-size:14.5px;white-space:pre-line;line-height:1.4;box-shadow:0 1px 0 rgba(0,0,0,.08);margin-left:28px}
+.bolha i{display:block;text-align:right;font-style:normal;font-size:11px;color:#6d7d70;margin-top:4px}
+.resp{background:#fff;border-radius:14px 14px 14px 4px;padding:10px 14px;font-size:14.5px;margin:8px 40px 0 0;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.kicker{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cor)}
+h1{font-size:clamp(38px,7vw,78px);line-height:.95;font-weight:800;letter-spacing:-.02em;font-variation-settings:"wdth" 76;max-width:14ch}
+.hero p{font-size:clamp(16px,2vw,19px);color:#3c352f;max-width:58ch}
+.fatos{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.fatos span{font-size:13.5px;padding:7px 12px;border-radius:999px;background:#fff;border:1px solid var(--fio)}
+.fatos span b{color:var(--cor)}
+.secao{padding:34px 0}
+.sec-cab{display:flex;align-items:baseline;gap:12px;border-top:2px solid var(--tinta);padding-top:12px;margin-bottom:22px;flex-wrap:wrap}
+.sec-cab .n{font-size:13px;font-weight:700;color:var(--cor);font-variant-numeric:tabular-nums}
+.sec-cab h2{font-size:clamp(24px,3.4vw,34px);font-weight:800;font-variation-settings:"wdth" 84;letter-spacing:-.01em}
+.sec-cab p{color:var(--sub);font-size:14.5px;flex-basis:100%}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px 22px}
+.ex{display:grid;justify-items:center;gap:12px}
+.cel{width:300px;height:620px;border-radius:44px;background:#141414;padding:10px;position:relative;box-shadow:0 26px 50px -28px rgba(0,0,0,.55),inset 0 0 0 1.5px #2b2b2b}
+.cel::before{content:"";position:absolute;top:18px;left:50%;width:78px;height:20px;margin-left:-39px;border-radius:12px;background:#141414;z-index:2}
+.cel .vidro{width:280px;height:600px;border-radius:35px;overflow:hidden;background:#fff;position:relative;padding-top:34px}
+.cel .vidro::before{content:"";position:absolute;left:0;right:0;top:0;height:34px;background:#141414}
+.cel iframe{width:390px;height:789px;border:0;transform:scale(.718);transform-origin:0 0;display:block}
+.ex-txt{text-align:center}
+.ex-txt small{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);font-weight:700}
+.ex-txt b{font-size:18px}
+.ex-links{display:flex;gap:8px;justify-content:center;margin-top:8px;flex-wrap:wrap}
+.ex-links a{font-size:13.5px;font-weight:700;text-decoration:none;padding:8px 12px;border-radius:9px;border:1.5px solid var(--tinta)}
+.ex-links a.cheio{background:var(--tinta);color:var(--papel)}
+.modulos{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.mod{background:#fff;border:1px solid var(--fio);border-radius:16px;padding:18px}
+.mod .n{font-size:12px;font-weight:700;color:var(--cor)}
+.mod b{display:block;font-size:18px;margin:4px 0 6px}
+.mod p{font-size:14.5px;color:var(--sub)}
+.mod a{display:inline-block;margin-top:10px;font-weight:700;font-size:14px}
+.planos{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));align-items:stretch}
+.pl{background:#fff;border:1px solid var(--fio);border-radius:20px;padding:22px 20px;display:flex;flex-direction:column;gap:12px;position:relative}
+.pl.escuro{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+.pl .para{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cor)}
+.pl.escuro .para{color:var(--ouro)}
+.pl h3{font-size:24px;font-weight:800;font-variation-settings:"wdth" 86;line-height:1.05}
+.preco{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;border-top:1px solid var(--fio);border-bottom:1px solid var(--fio);padding:12px 0}
+.pl.escuro .preco{border-color:rgba(255,255,255,.18)}
+.preco b{font-size:34px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.preco span{font-size:14px;opacity:.75}
+.pl ul{list-style:none;display:grid;gap:8px;font-size:15px}
+.pl li{padding-left:24px;position:relative}
+.pl li::before{content:"";position:absolute;left:2px;top:6px;width:11px;height:6px;border-left:2px solid var(--zap);border-bottom:2px solid var(--zap);transform:rotate(-45deg)}
+.pl.escuro li::before{border-color:var(--ouro)}
+.mensal{margin-top:auto;font-size:13.5px;background:var(--papel);border-radius:12px;padding:11px 12px;color:#4a423b}
+.pl.escuro .mensal{background:rgba(255,255,255,.08);color:#e9e2d8}
+.mensal b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+.obs{font-size:13.5px;color:var(--sub);margin-top:14px;max-width:80ch}
+.oferta{display:grid;gap:20px;align-items:center;background:var(--papel2);border-radius:22px;padding:22px}
+.oferta img{width:100%;max-width:360px;border-radius:12px;box-shadow:0 20px 40px -24px rgba(0,0,0,.5);justify-self:center}
+.oferta h3{font-size:26px;font-weight:800;font-variation-settings:"wdth" 84;line-height:1.05}
+.oferta p{color:#4a423b;margin-top:8px}
+.oferta .ex-links{justify-content:flex-start;margin-top:14px}
+footer{border-top:1px solid var(--fio);padding:22px 0 40px;font-size:13px;color:var(--sub)}
+@media (min-width:900px){.hero .c{grid-template-columns:1.25fr 1fr;gap:48px;align-items:end}}
+@media (min-width:860px){.oferta{grid-template-columns:360px 1fr;padding:30px}.hero{padding:64px 0 30px}}
+@media (max-width:360px){.cel{transform:scale(.94);transform-origin:top center;margin-bottom:-36px}}
+</style>
+</head>
+<body>
+<div class="topo"><div class="c"><b>Página para autônomos</b><span>Projeto demonstrativo · marcas fictícias</span></div></div>
+<header class="hero"><div class="c"><div class="hero-txt">
+ <p class="kicker">Serviços de bairro · Botucatu (SP)</p>
+ <h1>Uma página que atende pelo WhatsApp</h1>
+ <p>Modelo de uma tela só para pedreiro, serralheiro, frete, eletricista, depósito e confeitaria. O cliente vê os preços, monta o orçamento na hora, escolhe um horário livre e manda tudo pronto no WhatsApp. O prestador organiza pedidos, agenda e orçamentos num painel simples.</p>
+ <div class="fatos"><span><b>~65 KB</b> por página sem fotos, sem framework</span><span>Conteúdo num arquivo <b>dados.json</b></span><span>Cor e ícone <b>por ramo</b></span></div>
+</div><div class="zap"><small>O que chega no WhatsApp do prestador</small><p class="bolha">Olá, Muro Firme Reformas! Vim pela sua página e quero um orçamento.
+
+Itens:
+• Muro de bloco: 12 metros lineares (estimativa R$ 3.360)
+• Chapisco e reboco: 30 m² (estimativa R$ 1.140)
+Estimativa da página: R$ 4.500
+
+Bairro: Pacaembu Vida Nova
+Data desejada: 23/11/2026
+Fotos: tenho 2 fotos do local, mando aqui em seguida.<i>14:32</i></p><p class="resp">Oi! Recebi. Posso passar para medir na segunda às 14h?</p></div>
+</div></header>
+
+<section class="secao"><div class="c">
+ <div class="sec-cab"><span class="n">01</span><h2>Seis exemplos, um modelo</h2><p>Role dentro de cada celular. Tudo funciona: calculadora, agenda, formulário e compartilhar. Os pedidos enviados aparecem no painel daquele exemplo (dados salvos só no seu navegador).</p></div>
+ <div class="grade"><article class="ex"><div class="cel"><div class="vidro"><iframe src="pedreiro/index.html" title="Muro Firme Reformas" loading="lazy"></iframe></div></div><div class="ex-txt"><small>Pedreiro · muro e reforma</small><b>Muro Firme Reformas</b><div class="ex-links"><a class="cheio" href="pedreiro/index.html">Abrir página</a><a href="pedreiro/painel.html">Painel</a></div></div></article><article class="ex"><div class="cel"><div class="vidro"><iframe src="serralheria/index.html" title="Ferro &amp; Forma Serralheria" loading="lazy"></iframe></div></div><div class="ex-txt"><small>Serralheria · portão e grade</small><b>Ferro &amp; Forma Serralheria</b><div class="ex-links"><a class="cheio" href="serralheria/index.html">Abrir página</a><a href="serralheria/painel.html">Painel</a></div></div></article><article class="ex"><div class="cel"><div class="vidro"><iframe src="fretes-montagem/index.html" title="Leva e Monta Fretes" loading="lazy"></iframe></div></div><div class="ex-txt"><small>Fretes, mudança e montagem</small><b>Leva e Monta Fretes</b><div class="ex-links"><a class="cheio" href="fretes-montagem/index.html">Abrir página</a><a href="fretes-montagem/painel.html">Painel</a></div></div></article><article class="ex"><div class="cel"><div class="vidro"><iframe src="eletricista/index.html" title="Ponto Certo Elétrica" loading="lazy"></iframe></div></div><div class="ex-txt"><small>Eletricista residencial</small><b>Ponto Certo Elétrica</b><div class="ex-links"><a class="cheio" href="eletricista/index.html">Abrir página</a><a href="eletricista/painel.html">Painel</a></div></div></article><article class="ex"><div class="cel"><div class="vidro"><iframe src="material-construcao/index.html" title="Depósito Bom Lote" loading="lazy"></iframe></div></div><div class="ex-txt"><small>Material de construção</small><b>Depósito Bom Lote</b><div class="ex-links"><a class="cheio" href="material-construcao/index.html">Abrir página</a><a href="material-construcao/painel.html">Painel</a></div></div></article><article class="ex"><div class="cel"><div class="vidro"><iframe src="confeitaria/index.html" title="Doce Chave Confeitaria" loading="lazy"></iframe></div></div><div class="ex-txt"><small>Doces, salgados e bolos</small><b>Doce Chave Confeitaria</b><div class="ex-links"><a class="cheio" href="confeitaria/index.html">Abrir página</a><a href="confeitaria/painel.html">Painel</a></div></div></article></div>
+</div></section>
+
+<section class="secao"><div class="c">
+ <div class="sec-cab"><span class="n">02</span><h2>O que vem por trás da página</h2></div>
+ <div class="modulos">
+  <div class="mod"><span class="n">Orçamento na hora</span><b>Tabela de preços que o prestador edita</b><p>O cliente escolhe itens e quantidades (12 m de muro, 30 m² de reboco) e vê a estimativa, com aviso de que o valor final é confirmado na visita.</p></div>
+  <div class="mod"><span class="n">Agenda</span><b>Só horários livres</b><p>O cliente escolhe serviço, dia e horário. O horário marcado some da página e aparece na agenda da semana.</p></div>
+  <div class="mod"><span class="n">Painel</span><b>Pedidos, status e PDF</b><p>Lista do dia, orçamento por item com desconto, prazo e validade, PDF e mensagem pronta para o WhatsApp. Login de demonstração: demo / demo.</p><a href="pedreiro/painel.html">Abrir um painel →</a></div>
+  <div class="mod"><span class="n">Robô de WhatsApp</span><b>Triagem e agendamento</b><p>Pergunta serviço, endereço, fotos e data, marca a visita e passa para a pessoa quando a conversa sai do roteiro.</p><a href="bot.html">Ver a simulação →</a></div>
+ </div>
+</div></section>
+
+<section class="secao" id="planos"><div class="c">
+ <div class="sec-cab"><span class="n">03</span><h2>Três planos</h2><p>Implantação paga uma vez, mensalidade enquanto a página estiver no ar. Atendimento por WhatsApp.</p></div>
+ <div class="planos"><article class="pl"><span class="para">Para começar</span><h3>Plano Página</h3><div class="preco"><b>R$ 250</b><span>implantação</span><b style="font-size:24px">+ R$ 39</b><span>por mês</span></div><ul><li>Página profissional de uma tela</li><li>Botão de WhatsApp e ligar</li><li>Tabela de preços e orçamento pelo WhatsApp</li><li>Perfil da empresa no Google</li><li>QR code para pedir avaliação</li></ul><p class="mensal"><b>A mensalidade cobre</b>Hospedagem, até 2 ajustes por mês (preço, serviço, foto, horário) e suporte por WhatsApp.</p></article><article class="pl"><span class="para">Para organizar a agenda</span><h3>Plano Agenda</h3><div class="preco"><b>R$ 450</b><span>implantação</span><b style="font-size:24px">+ R$ 69</b><span>por mês</span></div><ul><li>Tudo do Plano Página</li><li>Agendamento online com horários livres</li><li>Painel: lista do dia, agenda da semana e status</li><li>Orçamento por item com PDF e mensagem pronta</li><li>Lembrete pelo WhatsApp</li></ul><p class="mensal"><b>A mensalidade cobre</b>Hospedagem da página e do painel, dados guardados com cópia de segurança, até 2 ajustes por mês e suporte.</p></article><article class="pl escuro"><span class="para">Para não perder mensagem</span><h3>Plano Atendimento automático</h3><div class="preco"><b>R$ 790</b><span>implantação</span><b style="font-size:24px">+ R$ 129</b><span>por mês</span></div><ul><li>Tudo do Plano Agenda</li><li>Robô de WhatsApp que responde dúvidas</li><li>Triagem: serviço, endereço, fotos e data</li><li>Agenda sozinho e passa para você quando precisa</li></ul><p class="mensal"><b>A mensalidade cobre</b>Tudo do Agenda, mais o robô no ar e o custo das conversas do WhatsApp até 300 conversas por mês (acima disso, combinado antes).</p></article></div>
+ <p class="obs">Ajustes mensais: até 2 pedidos de mudança por mês (preço, serviço, foto, horário, texto). Conversas do WhatsApp no Plano Atendimento automático: até 300 por mês incluídas; acima disso o custo é repassado, combinado antes. Domínio próprio (.com.br), se o cliente quiser, é pago à parte em nome dele.</p>
+</div></section>
+
+<section class="secao"><div class="c">
+ <div class="oferta"><img src="../../img/pacote-vizinho.png" alt="Cartão de oferta com os três planos" loading="lazy">
+  <div><p class="kicker">Para a entrega das chaves</p><h3>Cartão de oferta pronto para o WhatsApp</h3>
+  <p>As casas do Pacaembu Vida Nova são entregues em 19/11/2026 e muita gente vai procurar muro, portão, mudança, montagem, elétrica e pintura ao mesmo tempo. O cartão resume os três planos para o prestador decidir rápido.</p>
+  <div class="ex-links"><a class="cheio" href="../../pdf/pacote-vizinho.pdf">Baixar PDF</a><a href="../../img/pacote-vizinho.png">Ver imagem</a></div></div></div>
+</div></section>
+<footer><div class="c">Projeto demonstrativo. Marcas, telefones, preços e pedidos são fictícios. Ilustrações próprias em SVG no lugar de fotos.</div></footer>
+</body>
+</html>

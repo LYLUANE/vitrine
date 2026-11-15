@@ -1,0 +1,344 @@
+{
+ "id": "demo-confeitaria",
+ "nome": "Doce Chave Confeitaria",
+ "ramo": "confeitaria",
+ "tema": "confeitaria",
+ "icone": "confeitaria",
+ "selo": "Atende Pacaembu Vida Nova e região",
+ "whatsapp": "5514900000106",
+ "regioes": [
+  "Pacaembu Vida Nova",
+  "Centro",
+  "Vila Jardim",
+  "Jardim Paraíso",
+  "Rubião Júnior"
+ ],
+ "plano": "atendimento",
+ "modulos": {
+  "agenda": true,
+  "painel": true
+ },
+ "qr_avaliacao": "qr-avaliacao.svg",
+ "qr_rotulo": "QR de exemplo",
+ "link_avaliacao": "",
+ "avaliacoes": [],
+ "pagamento": {
+  "pix": "(14) 90000-0106",
+  "pix_tipo": "telefone",
+  "formas": [
+   "PIX",
+   "Dinheiro",
+   "Cartão na maquininha"
+  ],
+  "obs": ""
+ },
+ "rodape": "Projeto demonstrativo · marca, telefone e preços fictícios",
+ "ramo_texto": "Doces, salgados e bolos",
+ "slogan": "Para a festa da casa nova: bolo, cento de salgado e docinho feitos na hora.",
+ "destaques": [
+  "Encomenda com 2 dias",
+  "Retirada ou entrega no bairro",
+  "Pronta entrega no sábado"
+ ],
+ "tabela": [
+  {
+   "id": "t1",
+   "nome": "Cento de salgados fritos",
+   "unidade": "cento",
+   "preco": 85,
+   "mostrar": true,
+   "descricao": "coxinha, bolinha de queijo, risole"
+  },
+  {
+   "id": "t2",
+   "nome": "Cento de docinhos",
+   "unidade": "cento",
+   "preco": 110,
+   "mostrar": true,
+   "descricao": "brigadeiro, beijinho, bicho-de-pé"
+  },
+  {
+   "id": "t3",
+   "nome": "Bolo de festa",
+   "unidade": "kg",
+   "preco": 75,
+   "mostrar": true,
+   "descricao": "massa e recheio à escolha"
+  },
+  {
+   "id": "t4",
+   "nome": "Bolo de pote",
+   "unidade": "unidade",
+   "preco": 12,
+   "mostrar": true,
+   "descricao": ""
+  },
+  {
+   "id": "t5",
+   "nome": "Torta salgada",
+   "unidade": "unidade",
+   "preco": 70,
+   "mostrar": true,
+   "descricao": "frango ou palmito"
+  },
+  {
+   "id": "t6",
+   "nome": "Kit festa",
+   "unidade": "unidade",
+   "preco": 0,
+   "mostrar": false,
+   "descricao": "monto conforme o número de pessoas"
+  }
+ ],
+ "passos": [
+  {
+   "titulo": "Escolha e calcule",
+   "texto": "Monte a encomenda aqui e veja a estimativa na hora."
+  },
+  {
+   "titulo": "Confirmo pelo WhatsApp",
+   "texto": "Combino sabor, data e forma de pagamento."
+  },
+  {
+   "titulo": "Retire ou receba",
+   "texto": "Pronto no horário marcado, embalado para a festa."
+  }
+ ],
+ "agenda": {
+  "titulo": "Agendar retirada",
+  "rotulo_servico": "Encomenda",
+  "servicos": [
+   "Retirada de encomenda",
+   "Entrega no bairro"
+  ],
+  "horarios": [
+   "10:00",
+   "14:00",
+   "16:00",
+   "18:00"
+  ],
+  "dias_semana": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "antecedencia_dias": 2,
+  "nota": "Encomendas com pelo menos 2 dias. O horário fica reservado quando eu confirmar.",
+  "bloqueios": [
+   "2026-11-20",
+   "2026-12-25",
+   "2027-01-01"
+  ]
+ },
+ "titulo_servicos": "Cardápio e preços",
+ "titulo_orcamento": "Monte sua encomenda",
+ "titulo_galeria": "Produtos",
+ "aviso_orcamento": "Estimativa pelo cardápio. O valor final é confirmado no pedido, conforme sabor e decoração.",
+ "rotulo_data": "Data da festa",
+ "rotulo_fotos": "Foto de referência",
+ "placeholder_detalhes": "Ex.: festa para 30 pessoas, bolo de morango",
+ "horarios": [
+  {
+   "dias": "Terça a sábado",
+   "horas": "9h às 19h"
+  },
+  {
+   "dias": "Domingo e segunda",
+   "horas": "fechado"
+  }
+ ],
+ "telefone": "(14) 90000-0106",
+ "aviso": "Festa da casa nova? Encomende com 2 dias de antecedência.",
+ "pedidos_exemplo": [
+  {
+   "tipo": "agendamento",
+   "origem": "site",
+   "cliente": "Renata M.",
+   "telefone": "(14) 90000-0201",
+   "bairro": "Pacaembu Vida Nova",
+   "servico": "Retirada de encomenda",
+   "dia": 0,
+   "hora": "10:00",
+   "status": "confirmado",
+   "ha_horas": 30
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "robo",
+   "cliente": "Carlos A.",
+   "telefone": "(14) 90000-0202",
+   "bairro": "Pacaembu Vida Nova",
+   "servico": "Entrega no bairro",
+   "dia": 0,
+   "hora": "16:00",
+   "status": "novo",
+   "ha_horas": 2
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "site",
+   "cliente": "Juliana P.",
+   "telefone": "(14) 90000-0203",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 6,
+   "itens": [
+    {
+     "nome": "Cento de salgados fritos",
+     "unidade": "cento",
+     "qtd": 2,
+     "preco": 85
+    },
+    {
+     "nome": "Cento de docinhos",
+     "unidade": "cento",
+     "qtd": 2,
+     "preco": 110
+    }
+   ],
+   "status": "novo",
+   "fotos": 3,
+   "ha_horas": 1
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "manual",
+   "cliente": "Tiago R.",
+   "telefone": "(14) 90000-0204",
+   "bairro": "Vila Jardim",
+   "dia": 9,
+   "itens": [
+    {
+     "nome": "Bolo de festa",
+     "unidade": "kg",
+     "qtd": 3,
+     "preco": 75
+    },
+    {
+     "nome": "Bolo de pote",
+     "unidade": "unidade",
+     "qtd": 1,
+     "preco": 12
+    }
+   ],
+   "status": "enviado",
+   "desconto": 5,
+   "desconto_tipo": "%",
+   "prazo": "3 dias úteis",
+   "ha_horas": 26
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "site",
+   "cliente": "Sônia F.",
+   "telefone": "(14) 90000-0205",
+   "bairro": "Centro",
+   "servico": "Retirada de encomenda",
+   "dia": 1,
+   "hora": "14:00",
+   "status": "confirmado",
+   "ha_horas": 20
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "robo",
+   "cliente": "Marcos L.",
+   "telefone": "(14) 90000-0206",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 3,
+   "itens": [
+    {
+     "nome": "Torta salgada",
+     "unidade": "unidade",
+     "qtd": 1,
+     "preco": 70
+    }
+   ],
+   "status": "aprovado",
+   "prazo": "na data combinada",
+   "ha_horas": 50
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "whatsapp",
+   "cliente": "Paula C.",
+   "telefone": "(14) 90000-0207",
+   "bairro": "Jardim Paraíso",
+   "servico": "Entrega no bairro",
+   "dia": 3,
+   "hora": "18:00",
+   "status": "novo",
+   "ha_horas": 5
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "site",
+   "cliente": "Edson V.",
+   "telefone": "(14) 90000-0208",
+   "bairro": "Rubião Júnior",
+   "dia": -4,
+   "itens": [
+    {
+     "nome": "Cento de docinhos",
+     "unidade": "cento",
+     "qtd": 2,
+     "preco": 110
+    }
+   ],
+   "status": "concluído",
+   "ha_horas": 140
+  }
+ ],
+ "chegando": {
+  "tipo": "orcamento",
+  "origem": "site",
+  "cliente": "Aline S.",
+  "telefone": "(14) 90000-0209",
+  "bairro": "Pacaembu Vida Nova",
+  "dia": 5,
+  "itens": [
+   {
+    "nome": "Cento de salgados fritos",
+    "unidade": "cento",
+    "qtd": 2,
+    "preco": 85
+   },
+   {
+    "nome": "Bolo de festa",
+    "unidade": "kg",
+    "qtd": 3,
+    "preco": 75
+   }
+  ],
+  "status": "novo",
+  "fotos": 2,
+  "obs": "Recebo a chave nesta semana."
+ },
+ "demo": true,
+ "faixa_texto": "Projeto demonstrativo · marca fictícia",
+ "link_bot": "../bot.html",
+ "galeria": [
+  {
+   "foto": "fotos/bolo.svg",
+   "legenda": "Bolo de festa",
+   "detalhe": "massa branca, recheio de morango"
+  },
+  {
+   "foto": "fotos/salgados.svg",
+   "legenda": "Cento de salgados",
+   "detalhe": "coxinha, bolinha de queijo, risole"
+  },
+  {
+   "foto": "fotos/brigadeiros.svg",
+   "legenda": "Caixa de doces",
+   "detalhe": "brigadeiro, beijinho e bicho-de-pé"
+  },
+  {
+   "foto": "fotos/pote.svg",
+   "legenda": "Bolo de pote",
+   "detalhe": "pronta entrega no fim de semana"
+  }
+ ],
+ "nota_galeria": "Ilustrações no lugar das fotos: na página real entram as fotos dos seus trabalhos."
+}

@@ -1,0 +1,340 @@
+{
+ "id": "demo-pedreiro",
+ "nome": "Muro Firme Reformas",
+ "ramo": "pedreiro",
+ "tema": "pedreiro",
+ "icone": "pedreiro",
+ "selo": "Atende Pacaembu Vida Nova e região",
+ "whatsapp": "5514900000101",
+ "regioes": [
+  "Pacaembu Vida Nova",
+  "Centro",
+  "Vila Jardim",
+  "Jardim Paraíso",
+  "Rubião Júnior"
+ ],
+ "plano": "atendimento",
+ "modulos": {
+  "agenda": true,
+  "painel": true
+ },
+ "qr_avaliacao": "qr-avaliacao.svg",
+ "qr_rotulo": "QR de exemplo",
+ "link_avaliacao": "",
+ "avaliacoes": [],
+ "pagamento": {
+  "pix": "(14) 90000-0101",
+  "pix_tipo": "telefone",
+  "formas": [
+   "PIX",
+   "Dinheiro",
+   "Cartão na maquininha"
+  ],
+  "obs": ""
+ },
+ "rodape": "Projeto demonstrativo · marca, telefone e preços fictícios",
+ "ramo_texto": "Pedreiro · muro e reforma",
+ "slogan": "Muro, calçada, piso e reforma para quem acabou de pegar a chave.",
+ "destaques": [
+  "Visita para medir sem custo",
+  "Material na conta do cliente ou incluso",
+  "Limpo a obra no fim"
+ ],
+ "tabela": [
+  {
+   "id": "t1",
+   "nome": "Muro de bloco (até 2 m de altura)",
+   "unidade": "metro linear",
+   "preco": 280,
+   "mostrar": true,
+   "descricao": "fundação, bloco e cinta"
+  },
+  {
+   "id": "t2",
+   "nome": "Chapisco e reboco",
+   "unidade": "m²",
+   "preco": 38,
+   "mostrar": true,
+   "descricao": "parede interna ou muro"
+  },
+  {
+   "id": "t3",
+   "nome": "Contrapiso",
+   "unidade": "m²",
+   "preco": 35,
+   "mostrar": true,
+   "descricao": "nivelado para receber piso"
+  },
+  {
+   "id": "t4",
+   "nome": "Assentamento de piso cerâmico",
+   "unidade": "m²",
+   "preco": 45,
+   "mostrar": true,
+   "descricao": "sem o material"
+  },
+  {
+   "id": "t5",
+   "nome": "Calçada de concreto",
+   "unidade": "m²",
+   "preco": 70,
+   "mostrar": true,
+   "descricao": "com junta de dilatação"
+  },
+  {
+   "id": "t6",
+   "nome": "Reforma de banheiro",
+   "unidade": "unidade",
+   "preco": 0,
+   "mostrar": false,
+   "descricao": "orçamento depois da visita"
+  },
+  {
+   "id": "t7",
+   "nome": "Diária de pedreiro",
+   "unidade": "diária",
+   "preco": 250,
+   "mostrar": true,
+   "descricao": "pequenos serviços"
+  }
+ ],
+ "passos": [
+  {
+   "titulo": "Você chama no WhatsApp",
+   "texto": "Manda o que precisa, o bairro e, se puder, fotos do lote."
+  },
+  {
+   "titulo": "Visita para medir",
+   "texto": "Vou até o local, tiro as medidas e passo o orçamento por item."
+  },
+  {
+   "titulo": "Obra com data marcada",
+   "texto": "Combinamos início e prazo. Você acompanha por foto no WhatsApp."
+  }
+ ],
+ "agenda": {
+  "titulo": "Agendar visita",
+  "subtitulo": "Escolha um horário para eu medir o local.",
+  "servicos": [
+   "Visita para medir muro",
+   "Visita para medir piso ou calçada",
+   "Visita para reforma"
+  ],
+  "horarios": [
+   "08:00",
+   "10:00",
+   "14:00",
+   "16:00"
+  ],
+  "dias_semana": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "bloqueios": [
+   "2026-11-20",
+   "2026-12-25",
+   "2027-01-01"
+  ]
+ },
+ "titulo_galeria": "Antes e depois",
+ "aviso_orcamento": "Estimativa pela tabela, sem material. O valor final é confirmado na visita, depois de medir o lote.",
+ "placeholder_detalhes": "Ex.: muro de 12 m no fundo do lote, com portão de 3 m",
+ "horarios": [
+  {
+   "dias": "Segunda a sexta",
+   "horas": "7h às 17h"
+  },
+  {
+   "dias": "Sábado",
+   "horas": "7h às 12h"
+  }
+ ],
+ "telefone": "(14) 90000-0101",
+ "aviso": "Agenda aberta para quem recebe a chave em novembro: muro, calçada e piso.",
+ "pedidos_exemplo": [
+  {
+   "tipo": "agendamento",
+   "origem": "site",
+   "cliente": "Renata M.",
+   "telefone": "(14) 90000-0201",
+   "bairro": "Pacaembu Vida Nova",
+   "servico": "Visita para medir muro",
+   "dia": 0,
+   "hora": "08:00",
+   "status": "confirmado",
+   "ha_horas": 30
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "robo",
+   "cliente": "Carlos A.",
+   "telefone": "(14) 90000-0202",
+   "bairro": "Pacaembu Vida Nova",
+   "servico": "Visita para reforma",
+   "dia": 0,
+   "hora": "14:00",
+   "status": "novo",
+   "ha_horas": 2
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "site",
+   "cliente": "Juliana P.",
+   "telefone": "(14) 90000-0203",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 6,
+   "itens": [
+    {
+     "nome": "Muro de bloco (até 2 m de altura)",
+     "unidade": "metro linear",
+     "qtd": 12,
+     "preco": 280
+    },
+    {
+     "nome": "Chapisco e reboco",
+     "unidade": "m²",
+     "qtd": 30,
+     "preco": 38
+    }
+   ],
+   "status": "novo",
+   "fotos": 3,
+   "ha_horas": 1
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "manual",
+   "cliente": "Tiago R.",
+   "telefone": "(14) 90000-0204",
+   "bairro": "Vila Jardim",
+   "dia": 9,
+   "itens": [
+    {
+     "nome": "Contrapiso",
+     "unidade": "m²",
+     "qtd": 1,
+     "preco": 35
+    },
+    {
+     "nome": "Assentamento de piso cerâmico",
+     "unidade": "m²",
+     "qtd": 2,
+     "preco": 45
+    }
+   ],
+   "status": "enviado",
+   "desconto": 5,
+   "desconto_tipo": "%",
+   "prazo": "3 dias úteis",
+   "ha_horas": 26
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "site",
+   "cliente": "Sônia F.",
+   "telefone": "(14) 90000-0205",
+   "bairro": "Centro",
+   "servico": "Visita para medir muro",
+   "dia": 1,
+   "hora": "10:00",
+   "status": "confirmado",
+   "ha_horas": 20
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "robo",
+   "cliente": "Marcos L.",
+   "telefone": "(14) 90000-0206",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 3,
+   "itens": [
+    {
+     "nome": "Calçada de concreto",
+     "unidade": "m²",
+     "qtd": 1,
+     "preco": 70
+    }
+   ],
+   "status": "aprovado",
+   "prazo": "na data combinada",
+   "ha_horas": 50
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "whatsapp",
+   "cliente": "Paula C.",
+   "telefone": "(14) 90000-0207",
+   "bairro": "Jardim Paraíso",
+   "servico": "Visita para medir piso ou calçada",
+   "dia": 3,
+   "hora": "16:00",
+   "status": "novo",
+   "ha_horas": 5
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "site",
+   "cliente": "Edson V.",
+   "telefone": "(14) 90000-0208",
+   "bairro": "Rubião Júnior",
+   "dia": -4,
+   "itens": [
+    {
+     "nome": "Chapisco e reboco",
+     "unidade": "m²",
+     "qtd": 18,
+     "preco": 38
+    }
+   ],
+   "status": "concluído",
+   "ha_horas": 140
+  }
+ ],
+ "chegando": {
+  "tipo": "orcamento",
+  "origem": "site",
+  "cliente": "Aline S.",
+  "telefone": "(14) 90000-0209",
+  "bairro": "Pacaembu Vida Nova",
+  "dia": 5,
+  "itens": [
+   {
+    "nome": "Muro de bloco (até 2 m de altura)",
+    "unidade": "metro linear",
+    "qtd": 8,
+    "preco": 280
+   },
+   {
+    "nome": "Contrapiso",
+    "unidade": "m²",
+    "qtd": 15,
+    "preco": 35
+   }
+  ],
+  "status": "novo",
+  "fotos": 2,
+  "obs": "Recebo a chave nesta semana."
+ },
+ "demo": true,
+ "faixa_texto": "Projeto demonstrativo · marca fictícia",
+ "link_bot": "../bot.html",
+ "galeria": [
+  {
+   "antes": "fotos/muro-antes.svg",
+   "depois": "fotos/muro-depois.svg",
+   "legenda": "Muro de divisa",
+   "detalhe": "bloco, reboco e pintura"
+  },
+  {
+   "antes": "fotos/piso-antes.svg",
+   "depois": "fotos/piso-depois.svg",
+   "legenda": "Piso da sala",
+   "detalhe": "contrapiso e cerâmica"
+  }
+ ],
+ "nota_galeria": "Ilustrações no lugar das fotos: na página real entram as fotos dos seus trabalhos."
+}
