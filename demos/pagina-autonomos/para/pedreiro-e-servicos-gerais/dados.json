@@ -1,0 +1,310 @@
+{
+ "id": "p07-pedreiro-e-servicos-gerais",
+ "nome": "Pedreiro e Serviços Gerais",
+ "ramo": "pedreiro",
+ "tema": "pedreiro",
+ "icone": "pedreiro",
+ "selo": "Atende Pacaembu Vida Nova e região",
+ "whatsapp": "5514900000000",
+ "regioes": [
+  "Pacaembu Vida Nova",
+  "Botucatu e região"
+ ],
+ "plano": "pagina",
+ "modulos": {
+  "agenda": false,
+  "painel": true
+ },
+ "qr_avaliacao": "qr-avaliacao.svg",
+ "qr_rotulo": "QR de exemplo",
+ "link_avaliacao": "",
+ "avaliacoes": [],
+ "pagamento": {
+  "pix": "(14) 90000-0000",
+  "pix_tipo": "telefone",
+  "formas": [
+   "PIX",
+   "Dinheiro",
+   "Cartão na maquininha"
+  ],
+  "obs": ""
+ },
+ "rodape": "",
+ "ramo_texto": "Pedreiro e serviços gerais",
+ "slogan": "Muro, calçada, piso e reforma para quem acabou de pegar a chave.",
+ "destaques": [
+  "Orçamento pelo WhatsApp",
+  "Atende Pacaembu Vida Nova e região"
+ ],
+ "tabela": [
+  {
+   "id": "t1",
+   "nome": "Serviços gerais de obra",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  },
+  {
+   "id": "t2",
+   "nome": "Muro e mureta",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  },
+  {
+   "id": "t3",
+   "nome": "Contrapiso e piso",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  },
+  {
+   "id": "t4",
+   "nome": "Pequenos reparos",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  }
+ ],
+ "passos": [
+  {
+   "titulo": "Você chama no WhatsApp",
+   "texto": "Manda o que precisa, o bairro e, se puder, fotos do lote."
+  },
+  {
+   "titulo": "Visita para medir",
+   "texto": "Vou até o local, tiro as medidas e passo o orçamento por item."
+  },
+  {
+   "titulo": "Obra com data marcada",
+   "texto": "Combinamos início e prazo. Você acompanha por foto no WhatsApp."
+  }
+ ],
+ "agenda": {
+  "titulo": "Agendar visita",
+  "subtitulo": "Escolha um horário para eu medir o local.",
+  "servicos": [
+   "Visita para medir muro",
+   "Visita para medir piso ou calçada",
+   "Visita para reforma"
+  ],
+  "horarios": [
+   "08:00",
+   "10:00",
+   "14:00",
+   "16:00"
+  ],
+  "dias_semana": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "bloqueios": [
+   "2026-11-20",
+   "2026-12-25",
+   "2027-01-01"
+  ]
+ },
+ "titulo_galeria": "Antes e depois",
+ "aviso_orcamento": "Estimativa pela tabela, sem material. O valor final é confirmado na visita, depois de medir o lote.",
+ "placeholder_detalhes": "Ex.: muro de 12 m no fundo do lote, com portão de 3 m",
+ "horarios": [
+  {
+   "dias": "Segunda a sexta",
+   "horas": "7h às 17h"
+  },
+  {
+   "dias": "Sábado",
+   "horas": "7h às 12h"
+  }
+ ],
+ "telefone": "(14) 90000-0000",
+ "pedidos_exemplo": [
+  {
+   "tipo": "agendamento",
+   "origem": "site",
+   "cliente": "Renata M.",
+   "telefone": "(14) 90000-0201",
+   "bairro": "Pacaembu Vida Nova",
+   "servico": "Visita para medir muro",
+   "dia": 0,
+   "hora": "08:00",
+   "status": "confirmado",
+   "ha_horas": 30
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "robo",
+   "cliente": "Carlos A.",
+   "telefone": "(14) 90000-0202",
+   "bairro": "Pacaembu Vida Nova",
+   "servico": "Visita para reforma",
+   "dia": 0,
+   "hora": "14:00",
+   "status": "novo",
+   "ha_horas": 2
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "site",
+   "cliente": "Juliana P.",
+   "telefone": "(14) 90000-0203",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 6,
+   "itens": [
+    {
+     "nome": "Serviços gerais de obra",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    },
+    {
+     "nome": "Muro e mureta",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    }
+   ],
+   "status": "novo",
+   "fotos": 3,
+   "ha_horas": 1
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "manual",
+   "cliente": "Tiago R.",
+   "telefone": "(14) 90000-0204",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 9,
+   "itens": [
+    {
+     "nome": "Contrapiso e piso",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    },
+    {
+     "nome": "Pequenos reparos",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    }
+   ],
+   "status": "enviado",
+   "desconto": 5,
+   "desconto_tipo": "%",
+   "prazo": "3 dias úteis",
+   "ha_horas": 26
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "site",
+   "cliente": "Sônia F.",
+   "telefone": "(14) 90000-0205",
+   "bairro": "Botucatu e região",
+   "servico": "Visita para medir muro",
+   "dia": 1,
+   "hora": "10:00",
+   "status": "confirmado",
+   "ha_horas": 20
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "robo",
+   "cliente": "Marcos L.",
+   "telefone": "(14) 90000-0206",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 3,
+   "itens": [
+    {
+     "nome": "Serviços gerais de obra",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    }
+   ],
+   "status": "aprovado",
+   "prazo": "na data combinada",
+   "ha_horas": 50
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "whatsapp",
+   "cliente": "Paula C.",
+   "telefone": "(14) 90000-0207",
+   "bairro": "Botucatu e região",
+   "servico": "Visita para medir piso ou calçada",
+   "dia": 3,
+   "hora": "16:00",
+   "status": "novo",
+   "ha_horas": 5
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "site",
+   "cliente": "Edson V.",
+   "telefone": "(14) 90000-0208",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": -4,
+   "itens": [
+    {
+     "nome": "Muro e mureta",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    }
+   ],
+   "status": "concluído",
+   "ha_horas": 140
+  }
+ ],
+ "chegando": {
+  "tipo": "orcamento",
+  "origem": "site",
+  "cliente": "Aline S.",
+  "telefone": "(14) 90000-0209",
+  "bairro": "Pacaembu Vida Nova",
+  "dia": 5,
+  "itens": [
+   {
+    "nome": "Serviços gerais de obra",
+    "unidade": "serviço",
+    "qtd": 1,
+    "preco": 0.0
+   },
+   {
+    "nome": "Contrapiso e piso",
+    "unidade": "serviço",
+    "qtd": 1,
+    "preco": 0.0
+   }
+  ],
+  "status": "novo",
+  "fotos": 2,
+  "obs": "Recebo a chave nesta semana."
+ },
+ "demo": true,
+ "faixa_texto": "Prévia feita para Pedreiro e Serviços Gerais",
+ "galeria": [
+  {
+   "antes": "fotos/muro-antes.svg",
+   "depois": "fotos/muro-depois.svg",
+   "legenda": "Muro de divisa",
+   "detalhe": "bloco, reboco e pintura"
+  },
+  {
+   "antes": "fotos/piso-antes.svg",
+   "depois": "fotos/piso-depois.svg",
+   "legenda": "Piso da sala",
+   "detalhe": "contrapiso e cerâmica"
+  }
+ ],
+ "nota_galeria": "Ilustrações no lugar das fotos: na página real entram as fotos dos seus trabalhos."
+}

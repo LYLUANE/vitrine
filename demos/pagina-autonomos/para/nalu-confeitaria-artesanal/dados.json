@@ -1,0 +1,322 @@
+{
+ "id": "p47-nalu-confeitaria-artesanal",
+ "nome": "Nalu Confeitaria Artesanal",
+ "ramo": "confeitaria",
+ "tema": "confeitaria",
+ "icone": "confeitaria",
+ "selo": "Atende Pacaembu Vida Nova e região",
+ "whatsapp": "5514997751594",
+ "regioes": [
+  "Pacaembu Vida Nova",
+  "Botucatu e região"
+ ],
+ "plano": "agenda",
+ "modulos": {
+  "agenda": true,
+  "painel": true
+ },
+ "qr_avaliacao": "qr-avaliacao.svg",
+ "qr_rotulo": "QR de exemplo",
+ "link_avaliacao": "",
+ "avaliacoes": [],
+ "pagamento": {
+  "pix": "(14) 99775-1594",
+  "pix_tipo": "telefone",
+  "formas": [
+   "PIX",
+   "Dinheiro",
+   "Cartão na maquininha"
+  ],
+  "obs": ""
+ },
+ "rodape": "",
+ "ramo_texto": "Confeitaria artesanal",
+ "slogan": "Para a festa da casa nova: bolo, cento de salgado e docinho feitos na hora.",
+ "destaques": [
+  "Orçamento pelo WhatsApp",
+  "Atende Pacaembu Vida Nova e região"
+ ],
+ "tabela": [
+  {
+   "id": "t1",
+   "nome": "Doces e bolos para aniversário",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  },
+  {
+   "id": "t2",
+   "nome": "Bombom cravejado de Ninho",
+   "unidade": "unidade",
+   "preco": 15.9,
+   "mostrar": true,
+   "descricao": ""
+  },
+  {
+   "id": "t3",
+   "nome": "Bombom cravejado de maracujá",
+   "unidade": "unidade",
+   "preco": 15.9,
+   "mostrar": true,
+   "descricao": ""
+  },
+  {
+   "id": "t4",
+   "nome": "Morango cravejado",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  }
+ ],
+ "passos": [
+  {
+   "titulo": "Escolha e calcule",
+   "texto": "Monte a encomenda aqui e veja a estimativa na hora."
+  },
+  {
+   "titulo": "Confirmo pelo WhatsApp",
+   "texto": "Combino sabor, data e forma de pagamento."
+  },
+  {
+   "titulo": "Retire ou receba",
+   "texto": "Pronto no horário marcado, embalado para a festa."
+  }
+ ],
+ "agenda": {
+  "titulo": "Agendar retirada",
+  "rotulo_servico": "Encomenda",
+  "servicos": [
+   "Retirada de encomenda",
+   "Entrega no bairro"
+  ],
+  "horarios": [
+   "10:00",
+   "14:00",
+   "16:00",
+   "18:00"
+  ],
+  "dias_semana": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "antecedencia_dias": 2,
+  "nota": "Encomendas com pelo menos 2 dias. O horário fica reservado quando eu confirmar.",
+  "bloqueios": [
+   "2026-11-20",
+   "2026-12-25",
+   "2027-01-01"
+  ]
+ },
+ "titulo_servicos": "Cardápio e preços",
+ "titulo_orcamento": "Monte sua encomenda",
+ "titulo_galeria": "Produtos",
+ "aviso_orcamento": "Estimativa pelo cardápio. O valor final é confirmado no pedido, conforme sabor e decoração.",
+ "rotulo_data": "Data da festa",
+ "rotulo_fotos": "Foto de referência",
+ "placeholder_detalhes": "Ex.: festa para 30 pessoas, bolo de morango",
+ "horarios": [
+  {
+   "dias": "Terça a sábado",
+   "horas": "9h às 19h"
+  },
+  {
+   "dias": "Domingo e segunda",
+   "horas": "fechado"
+  }
+ ],
+ "telefone": "(14) 99775-1594",
+ "pedidos_exemplo": [
+  {
+   "tipo": "agendamento",
+   "origem": "site",
+   "cliente": "Renata M.",
+   "telefone": "(14) 90000-0201",
+   "bairro": "Pacaembu Vida Nova",
+   "servico": "Retirada de encomenda",
+   "dia": 0,
+   "hora": "10:00",
+   "status": "confirmado",
+   "ha_horas": 30
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "robo",
+   "cliente": "Carlos A.",
+   "telefone": "(14) 90000-0202",
+   "bairro": "Pacaembu Vida Nova",
+   "servico": "Entrega no bairro",
+   "dia": 0,
+   "hora": "16:00",
+   "status": "novo",
+   "ha_horas": 2
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "site",
+   "cliente": "Juliana P.",
+   "telefone": "(14) 90000-0203",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 6,
+   "itens": [
+    {
+     "nome": "Doces e bolos para aniversário",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    },
+    {
+     "nome": "Bombom cravejado de Ninho",
+     "unidade": "unidade",
+     "qtd": 1,
+     "preco": 15.9
+    }
+   ],
+   "status": "novo",
+   "fotos": 3,
+   "ha_horas": 1
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "manual",
+   "cliente": "Tiago R.",
+   "telefone": "(14) 90000-0204",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 9,
+   "itens": [
+    {
+     "nome": "Bombom cravejado de maracujá",
+     "unidade": "unidade",
+     "qtd": 1,
+     "preco": 15.9
+    },
+    {
+     "nome": "Morango cravejado",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    }
+   ],
+   "status": "enviado",
+   "desconto": 5,
+   "desconto_tipo": "%",
+   "prazo": "3 dias úteis",
+   "ha_horas": 26
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "site",
+   "cliente": "Sônia F.",
+   "telefone": "(14) 90000-0205",
+   "bairro": "Botucatu e região",
+   "servico": "Retirada de encomenda",
+   "dia": 1,
+   "hora": "14:00",
+   "status": "confirmado",
+   "ha_horas": 20
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "robo",
+   "cliente": "Marcos L.",
+   "telefone": "(14) 90000-0206",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 3,
+   "itens": [
+    {
+     "nome": "Doces e bolos para aniversário",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    }
+   ],
+   "status": "aprovado",
+   "prazo": "na data combinada",
+   "ha_horas": 50
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "whatsapp",
+   "cliente": "Paula C.",
+   "telefone": "(14) 90000-0207",
+   "bairro": "Botucatu e região",
+   "servico": "Entrega no bairro",
+   "dia": 3,
+   "hora": "18:00",
+   "status": "novo",
+   "ha_horas": 5
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "site",
+   "cliente": "Edson V.",
+   "telefone": "(14) 90000-0208",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": -4,
+   "itens": [
+    {
+     "nome": "Bombom cravejado de Ninho",
+     "unidade": "unidade",
+     "qtd": 1,
+     "preco": 15.9
+    }
+   ],
+   "status": "concluído",
+   "ha_horas": 140
+  }
+ ],
+ "chegando": {
+  "tipo": "orcamento",
+  "origem": "site",
+  "cliente": "Aline S.",
+  "telefone": "(14) 90000-0209",
+  "bairro": "Pacaembu Vida Nova",
+  "dia": 5,
+  "itens": [
+   {
+    "nome": "Doces e bolos para aniversário",
+    "unidade": "serviço",
+    "qtd": 1,
+    "preco": 0.0
+   },
+   {
+    "nome": "Bombom cravejado de maracujá",
+    "unidade": "unidade",
+    "qtd": 1,
+    "preco": 15.9
+   }
+  ],
+  "status": "novo",
+  "fotos": 2,
+  "obs": "Recebo a chave nesta semana."
+ },
+ "demo": true,
+ "faixa_texto": "Prévia feita para Nalu Confeitaria Artesanal",
+ "galeria": [
+  {
+   "foto": "fotos/bolo.svg",
+   "legenda": "Bolo de festa",
+   "detalhe": "massa branca, recheio de morango"
+  },
+  {
+   "foto": "fotos/salgados.svg",
+   "legenda": "Cento de salgados",
+   "detalhe": "coxinha, bolinha de queijo, risole"
+  },
+  {
+   "foto": "fotos/brigadeiros.svg",
+   "legenda": "Caixa de doces",
+   "detalhe": "brigadeiro, beijinho e bicho-de-pé"
+  },
+  {
+   "foto": "fotos/pote.svg",
+   "legenda": "Bolo de pote",
+   "detalhe": "pronta entrega no fim de semana"
+  }
+ ],
+ "nota_galeria": "Ilustrações no lugar das fotos: na página real entram as fotos dos seus trabalhos."
+}
