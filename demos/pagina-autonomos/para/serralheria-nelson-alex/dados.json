@@ -1,0 +1,326 @@
+{
+ "id": "p26-serralheria-nelson-e-alex",
+ "nome": "Serralheria Nelson e Alex",
+ "ramo": "serralheria",
+ "tema": "serralheria",
+ "icone": "serralheria",
+ "selo": "Atende Pacaembu Vida Nova e região",
+ "whatsapp": "5514998151592",
+ "regioes": [
+  "Pacaembu Vida Nova",
+  "Botucatu e região"
+ ],
+ "plano": "agenda",
+ "modulos": {
+  "agenda": true,
+  "painel": true
+ },
+ "qr_avaliacao": "qr-avaliacao.svg",
+ "qr_rotulo": "QR de exemplo",
+ "link_avaliacao": "",
+ "avaliacoes": [],
+ "pagamento": {
+  "pix": "(14) 99815-1592",
+  "pix_tipo": "telefone",
+  "formas": [
+   "PIX",
+   "Dinheiro",
+   "Cartão na maquininha"
+  ],
+  "obs": ""
+ },
+ "rodape": "",
+ "ramo_texto": "Serralheria · portão e grade",
+ "slogan": "Portão, grade e cobertura sob medida, com instalação.",
+ "destaques": [
+  "Medição no local",
+  "Pintura inclusa",
+  "Motor de portão sob encomenda"
+ ],
+ "tabela": [
+  {
+   "id": "t1",
+   "nome": "Portões deslizantes e basculantes",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  },
+  {
+   "id": "t2",
+   "nome": "Grades",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  },
+  {
+   "id": "t3",
+   "nome": "Corrimãos",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  },
+  {
+   "id": "t4",
+   "nome": "Estruturas metálicas",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  },
+  {
+   "id": "t5",
+   "nome": "Escadas",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  },
+  {
+   "id": "t6",
+   "nome": "Coberturas",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  },
+  {
+   "id": "t7",
+   "nome": "Serviços em geral",
+   "unidade": "serviço",
+   "preco": 0.0,
+   "mostrar": false,
+   "descricao": ""
+  }
+ ],
+ "passos": [
+  {
+   "titulo": "Mande a medida ou a foto",
+   "texto": "Pelo WhatsApp, com o bairro e o tipo de portão que imagina."
+  },
+  {
+   "titulo": "Medição e desenho",
+   "texto": "Meço o vão, mostro o modelo e passo o orçamento por item."
+  },
+  {
+   "titulo": "Fabricação e instalação",
+   "texto": "Faço na oficina e instalo no dia marcado, já pintado."
+  }
+ ],
+ "agenda": {
+  "titulo": "Agendar medição",
+  "servicos": [
+   "Medição de portão",
+   "Medição de grade",
+   "Medição de cobertura"
+  ],
+  "horarios": [
+   "08:00",
+   "10:30",
+   "14:00",
+   "16:30"
+  ],
+  "dias_semana": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "bloqueios": [
+   "2026-11-20",
+   "2026-12-25",
+   "2027-01-01"
+  ]
+ },
+ "titulo_galeria": "Antes e depois",
+ "aviso_orcamento": "Estimativa pela tabela. O valor final sai depois da medição do vão no local.",
+ "placeholder_detalhes": "Ex.: vão de 3,20 m, portão basculante com motor",
+ "horarios": [
+  {
+   "dias": "Segunda a sexta",
+   "horas": "7h30 às 17h30"
+  },
+  {
+   "dias": "Sábado",
+   "horas": "8h às 12h"
+  }
+ ],
+ "telefone": "(14) 99815-1592",
+ "pedidos_exemplo": [
+  {
+   "tipo": "agendamento",
+   "origem": "site",
+   "cliente": "Renata M.",
+   "telefone": "(14) 90000-0201",
+   "bairro": "Pacaembu Vida Nova",
+   "servico": "Medição de portão",
+   "dia": 0,
+   "hora": "08:00",
+   "status": "confirmado",
+   "ha_horas": 30
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "robo",
+   "cliente": "Carlos A.",
+   "telefone": "(14) 90000-0202",
+   "bairro": "Pacaembu Vida Nova",
+   "servico": "Medição de cobertura",
+   "dia": 0,
+   "hora": "14:00",
+   "status": "novo",
+   "ha_horas": 2
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "site",
+   "cliente": "Juliana P.",
+   "telefone": "(14) 90000-0203",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 6,
+   "itens": [
+    {
+     "nome": "Portões deslizantes e basculantes",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    },
+    {
+     "nome": "Grades",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    }
+   ],
+   "status": "novo",
+   "fotos": 3,
+   "ha_horas": 1
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "manual",
+   "cliente": "Tiago R.",
+   "telefone": "(14) 90000-0204",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 9,
+   "itens": [
+    {
+     "nome": "Corrimãos",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    },
+    {
+     "nome": "Estruturas metálicas",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    }
+   ],
+   "status": "enviado",
+   "desconto": 5,
+   "desconto_tipo": "%",
+   "prazo": "3 dias úteis",
+   "ha_horas": 26
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "site",
+   "cliente": "Sônia F.",
+   "telefone": "(14) 90000-0205",
+   "bairro": "Botucatu e região",
+   "servico": "Medição de portão",
+   "dia": 1,
+   "hora": "10:30",
+   "status": "confirmado",
+   "ha_horas": 20
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "robo",
+   "cliente": "Marcos L.",
+   "telefone": "(14) 90000-0206",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": 3,
+   "itens": [
+    {
+     "nome": "Escadas",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    }
+   ],
+   "status": "aprovado",
+   "prazo": "na data combinada",
+   "ha_horas": 50
+  },
+  {
+   "tipo": "agendamento",
+   "origem": "whatsapp",
+   "cliente": "Paula C.",
+   "telefone": "(14) 90000-0207",
+   "bairro": "Botucatu e região",
+   "servico": "Medição de grade",
+   "dia": 3,
+   "hora": "16:30",
+   "status": "novo",
+   "ha_horas": 5
+  },
+  {
+   "tipo": "orcamento",
+   "origem": "site",
+   "cliente": "Edson V.",
+   "telefone": "(14) 90000-0208",
+   "bairro": "Pacaembu Vida Nova",
+   "dia": -4,
+   "itens": [
+    {
+     "nome": "Grades",
+     "unidade": "serviço",
+     "qtd": 1,
+     "preco": 0.0
+    }
+   ],
+   "status": "concluído",
+   "ha_horas": 140
+  }
+ ],
+ "chegando": {
+  "tipo": "orcamento",
+  "origem": "site",
+  "cliente": "Aline S.",
+  "telefone": "(14) 90000-0209",
+  "bairro": "Pacaembu Vida Nova",
+  "dia": 5,
+  "itens": [
+   {
+    "nome": "Portões deslizantes e basculantes",
+    "unidade": "serviço",
+    "qtd": 1,
+    "preco": 0.0
+   },
+   {
+    "nome": "Corrimãos",
+    "unidade": "serviço",
+    "qtd": 1,
+    "preco": 0.0
+   }
+  ],
+  "status": "novo",
+  "fotos": 2,
+  "obs": "Recebo a chave nesta semana."
+ },
+ "demo": true,
+ "faixa_texto": "Prévia feita para Serralheria Nelson e Alex",
+ "galeria": [
+  {
+   "foto": "fotos/img-20261011-wa0017.jpg",
+   "legenda": "Img 20261011 wa0017"
+  }
+ ],
+ "nota_galeria": ""
+}
