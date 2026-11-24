@@ -754,5 +754,143 @@ window.VIDEOS = [
   "src": "video/pv/brand-kit-nullbyte.mp4",
   "capa": "img/pv/brand-kit-nullbyte-capa.jpg",
   "capa_video": "img/pv/brand-kit-nullbyte-poster.jpg"
+ },
+ {
+  "slug": "day-in-my-life-criadora",
+  "num": "57",
+  "tipo": "Viagem e vlog",
+  "titulo": "Day in my life: rotina de criadora",
+  "nicho": "Lifestyle e criadores",
+  "estilo": "Reel de vlog com horários na tela",
+  "formato": "9:16",
+  "duracao": "42 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok",
+   "YouTube Shorts"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Stock Mixkit",
+   "Foley e ambiente CC0"
+  ],
+  "resumo": "Um dia de criadora de conteúdo das 6:00 às 18:30: horários na tela, legenda manuscrita, lista \"Today\" no estilo notas do celular (com o tropeço \"still exporting...\") e cortes na batida.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Horário na tela desde o primeiro plano",
+    "Cortes na batida, planos de 1,3-1,9 s",
+    "Texto curto estilo diário",
+    "Sons de ambiente (teclado, xícara)"
+   ],
+   "base": "Estudo de referências de Reels \"day in my life\""
+  },
+  "credito": "Vídeos: Mixkit (Mixkit Free License). Música: \"Carefree\", Kevin MacLeod (incompetech.com), CC BY 4.0. Sons: Freesound (CC0).",
+  "src": "video/pv/day-in-my-life-criadora.mp4",
+  "capa": "img/pv/day-in-my-life-criadora-capa.jpg",
+  "capa_video": "img/pv/day-in-my-life-criadora-poster.jpg"
+ },
+ {
+  "slug": "grwm-trabalho",
+  "num": "58",
+  "tipo": "Viagem e vlog",
+  "titulo": "GRWM para o trabalho",
+  "nicho": "Beleza e rotina",
+  "estilo": "Get ready with me em etapas",
+  "formato": "9:16",
+  "duracao": "35 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Stock Mixkit",
+   "Foley por gesto"
+  ],
+  "resumo": "Da pele ao look em 7 etapas numeradas, com som em cada gesto (creme, pincel, tampa do batom, salto) e a agenda do dia num cartão de notas no fim.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Gancho com o objetivo do dia",
+    "Etapas numeradas e curtas",
+    "Foley em cada gesto",
+    "Revelação do look no fim"
+   ],
+   "base": "Estudo de referências de Reels GRWM"
+  },
+  "credito": "Vídeos: Mixkit (Mixkit Free License). Música: \"Easy Lemon\", Kevin MacLeod (incompetech.com), CC BY 4.0. Sons: CC0.",
+  "src": "video/pv/grwm-trabalho.mp4",
+  "capa": "img/pv/grwm-trabalho-capa.jpg",
+  "capa_video": "img/pv/grwm-trabalho-poster.jpg"
+ },
+ {
+  "slug": "sunday-reset",
+  "num": "59",
+  "tipo": "Viagem e vlog",
+  "titulo": "Sunday reset: rotina de domingo",
+  "nicho": "Casa e organização",
+  "estilo": "Reel de rotina com lista",
+  "formato": "9:16",
+  "duracao": "42 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Stock Mixkit",
+   "Sons de ambiente"
+  ],
+  "resumo": "Abre com a limpeza já em andamento, passa por aspirador, roupa e plantas e fecha na sala arrumada com a lista de domingo toda marcada, com sons de pano, spray e almofada.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Ação em andamento no primeiro plano",
+    "Antes e depois no mesmo enquadramento",
+    "Sons satisfatórios em destaque",
+    "Lista que se completa no fim"
+   ],
+   "base": "Estudo de referências de Reels de rotina e organização"
+  },
+  "credito": "Vídeos: Mixkit (Mixkit Free License). Música: \"Wallpaper\", Kevin MacLeod (incompetech.com), CC BY 4.0. Sons: Freesound (CC0).",
+  "src": "video/pv/sunday-reset.mp4",
+  "capa": "img/pv/sunday-reset-capa.jpg",
+  "capa_video": "img/pv/sunday-reset-poster.jpg"
+ },
+ {
+  "slug": "cafe-aesthetic",
+  "num": "60",
+  "tipo": "Viagem e vlog",
+  "titulo": "Café aesthetic",
+  "nicho": "Lifestyle e cafés",
+  "estilo": "Reel estético com ambiente",
+  "formato": "9:16",
+  "duracao": "29 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok",
+   "Pinterest"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Stock Mixkit",
+   "Ambiente CC0"
+  ],
+  "resumo": "O close do espresso abre e fecha o vídeo, com câmera lenta suave, push-in, grade quente e o som do café dominando sob uma música bem baixa.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Close forte no primeiro quadro",
+    "Planos lentos de 1,4-1,7 s",
+    "Legendas mínimas",
+    "Ambiente mais alto que a música"
+   ],
+   "base": "Estudo de referências de Reels estéticos de café"
+  },
+  "credito": "Vídeos: Mixkit (Mixkit Free License). Música: \"Dreamy Flashback\", Kevin MacLeod (incompetech.com), CC BY 4.0. Ambiente: CC0.",
+  "src": "video/pv/cafe-aesthetic.mp4",
+  "capa": "img/pv/cafe-aesthetic-capa.jpg",
+  "capa_video": "img/pv/cafe-aesthetic-poster.jpg"
  }
 ];
