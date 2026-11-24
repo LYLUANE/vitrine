@@ -896,6 +896,144 @@ window.VIDEOS = [
   "capa_video": "img/pv/brand-kit-nullbyte-poster.jpg"
  },
  {
+  "slug": "grwm-soft-glam",
+  "num": "45",
+  "tipo": "Beleza e maquiagem",
+  "titulo": "GRWM: soft glam em 30 s",
+  "nicho": "Maquiagem",
+  "estilo": "Reel GRWM com cortes na batida",
+  "formato": "9:16",
+  "duracao": "30 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Stock Mixkit",
+   "Earshot (SFX)"
+  ],
+  "resumo": "Antes e depois com flash na batida, seguidos de 6 passos numerados (preparo, base, blush, olhos, lábios, finalização) com cortes no ritmo, zoom no produto e legenda curta por passo.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Antes/depois no primeiro segundo",
+    "Passos numerados com cortes na batida",
+    "Zoom no produto",
+    "Legenda curta por passo"
+   ],
+   "base": "Estudo de referências de Reels GRWM de beleza"
+  },
+  "credito": "Vídeos: Mixkit (Mixkit Free License). Música: \"Newer Wave\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/grwm-soft-glam.mp4",
+  "capa": "img/pv/grwm-soft-glam-capa.jpg",
+  "capa_video": "img/pv/grwm-soft-glam-poster.jpg"
+ },
+ {
+  "slug": "tutorial-delineado",
+  "num": "46",
+  "tipo": "Beleza e maquiagem",
+  "titulo": "Tutorial de delineado gatinho",
+  "nicho": "Maquiagem",
+  "estilo": "Tutorial com diagrama animado",
+  "formato": "9:16",
+  "duracao": "40 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok",
+   "YouTube Shorts"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Diagramas desenhados por código",
+   "Voz sintética Kokoro",
+   "Stock Mixkit"
+  ],
+  "resumo": "Três erros comuns no delineado e a correção de cada um: macro do olho em cima e diagrama animado embaixo mostrando onde marcar a ponta, por que não esticar a pálpebra e como fazer tracinhos finos.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Gancho com o erro em 0 s",
+    "Erros numerados, cada um com a correção",
+    "Demonstração visual do passo",
+    "CTA no fim"
+   ],
+   "base": "Estudo de referências de tutoriais de maquiagem em Reels"
+  },
+  "credito": "Vídeos: Mixkit (Mixkit Free License). Voz sintética (Kokoro). Música: \"Voxel Revolution\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/tutorial-delineado.mp4",
+  "capa": "img/pv/tutorial-delineado-capa.jpg",
+  "capa_video": "img/pv/tutorial-delineado-poster.jpg"
+ },
+ {
+  "slug": "skincare-3-passos",
+  "num": "47",
+  "tipo": "Beleza e maquiagem",
+  "titulo": "Rotina de skincare em 3 passos",
+  "nicho": "Skincare",
+  "estilo": "Rotina narrada com selos",
+  "formato": "9:16",
+  "duracao": "32 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Voz sintética Kokoro",
+   "Stock Mixkit vertical"
+  ],
+  "resumo": "\"I stopped doing 10-step routines\": três passos (limpar, sérum, hidratar + FPS) com selos numerados, macros de textura e ritmo calmo, fechando com recap e laço para o primeiro quadro.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Gancho contra o senso comum",
+    "Passos numerados com selo",
+    "Macro de textura do produto",
+    "Recap e CTA no fim"
+   ],
+   "base": "Estudo de referências de Reels de skincare"
+  },
+  "credito": "Vídeos: Mixkit (Mixkit Free License). Voz sintética (Kokoro). Música: \"Avec Soin\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/skincare-3-passos.mp4",
+  "capa": "img/pv/skincare-3-passos-capa.jpg",
+  "capa_video": "img/pv/skincare-3-passos-poster.jpg"
+ },
+ {
+  "slug": "transicao-antes-depois",
+  "num": "48",
+  "tipo": "Beleza e maquiagem",
+  "titulo": "Transição antes e depois",
+  "nicho": "Maquiagem",
+  "estilo": "Match cut na batida",
+  "formato": "9:16",
+  "duracao": "19 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Alinhamento por ponto do rosto",
+   "Stock Mixkit"
+  ],
+  "resumo": "Match cut na batida do antes para o depois, no mesmo enquadramento e com flash de 4 quadros, miolo de 5 passos com whip lateral e barra de progresso, e laço de volta ao começo.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Transição no primeiro segundo, na batida",
+    "Mesmo enquadramento dos dois lados do corte",
+    "Flash curto, sem tremor",
+    "Laço no fim"
+   ],
+   "base": "Estudo de referências de transições antes/depois de maquiagem"
+  },
+  "credito": "Vídeos: Mixkit (Mixkit Free License). Música: \"Newer Wave\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/transicao-antes-depois.mp4",
+  "capa": "img/pv/transicao-antes-depois-capa.jpg",
+  "capa_video": "img/pv/transicao-antes-depois-poster.jpg"
+ },
+ {
   "slug": "corte-podcast-nasa-lua",
   "num": "53",
   "tipo": "Cortes e podcast",
