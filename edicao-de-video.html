@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edição de vídeo · Evelyn Luane</title>
+<meta name="description" content="Portfólio de edição de vídeo de Evelyn Luane: Reels, Shorts, canais de YouTube, motion, 3D, cortes de podcast, trailers e explicativos, cada peça feita a partir de um estudo de referências do formato.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.pv-hero { padding: 60px 0 26px; }
+.pv-hero h1 { font-size: clamp(2.1rem, 5.5vw, 3.7rem); }
+.pv-hero .lead { font-size: 1.08rem; color: var(--tinta-2); max-width: 700px; margin: 18px 0 0; }
+.pv-metodo { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin: 30px 0 6px; padding: 0; list-style: none; counter-reset: passo; }
+.pv-metodo li { border-top: 2px solid var(--destaque); padding: 10px 0 0; font-size: .9rem; color: var(--tinta-2); counter-increment: passo; }
+.pv-metodo li::before { content: counter(passo, decimal-leading-zero); display: block; font-family: var(--serifa); font-size: 1.25rem; color: var(--tinta); }
+.pv-filtros { display: grid; gap: 10px; padding: 18px 0; border-bottom: 1px solid var(--linha); position: sticky; top: 0; background: var(--papel); z-index: 3; }
+.pv-grupo { display: flex; gap: 6px; align-items: center; overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+.pv-grupo > span { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-2); min-width: 92px; flex: none; }
+.pv-grupo button { font: 500 .84rem var(--sans); padding: 6px 12px; border-radius: 999px; border: 1px solid var(--linha); background: transparent; color: var(--tinta-2); cursor: pointer; white-space: nowrap; flex: none; }
+.pv-grupo button[aria-pressed="true"] { background: var(--tinta); color: var(--papel); border-color: var(--tinta); }
+.pv-grupo small { opacity: .6; font-weight: 400; }
+.pv-linha { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+#busca { font: .92rem var(--sans); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--linha); background: var(--papel-2); color: var(--tinta); max-width: 420px; width: 100%; }
+.pv-conta { margin: 0; font-size: .84rem; color: var(--tinta-2); }
+.pv-grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 22px; padding: 30px 0 80px; }
+.pv-card { all: unset; cursor: pointer; display: block; border-radius: 12px; overflow: hidden; background: var(--papel-2); border: 1px solid var(--linha); transition: transform .15s; }
+.pv-card:hover, .pv-card:focus-visible { transform: translateY(-3px); outline: 2px solid var(--destaque); outline-offset: 2px; }
+.pv-thumb { position: relative; aspect-ratio: 4 / 5; background: #111; overflow: hidden; }
+.pv-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.pv-thumb .fmt { position: absolute; top: 8px; left: 8px; font: 600 .7rem var(--sans); letter-spacing: .06em; background: #000a; color: #fff; padding: 3px 7px; border-radius: 5px; }
+.pv-thumb .play { position: absolute; inset: auto 10px 10px auto; width: 38px; height: 38px; border-radius: 50%; background: #fffe; display: grid; place-items: center; }
+.pv-thumb .play::before { content: ""; border-left: 12px solid #111; border-top: 8px solid transparent; border-bottom: 8px solid transparent; margin-left: 3px; }
+.pv-card .txt { padding: 12px 14px 14px; }
+.pv-card .cat { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--destaque); }
+.pv-card h2 { font-size: 1.08rem; margin: 4px 0 0; }
+.pv-card .nicho { font-size: .82rem; color: var(--tinta-2); margin-top: 4px; }
+dialog.pv-det { width: min(1040px, calc(100vw - 24px)); max-height: calc(100vh - 24px); border: 0; border-radius: 14px; padding: 0; background: var(--papel); color: var(--tinta); }
+dialog.pv-det::backdrop { background: #000b; }
+.pv-det .corpo { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: 28px; padding: 26px; }
+.pv-det .corpo.hor { grid-template-columns: 1fr; }
+.pv-det video { width: 100%; border-radius: 10px; background: #000; display: block; max-height: 72vh; }
+.pv-det .extras { display: flex; gap: 8px; margin-top: 8px; }
+.pv-det .extras button { font: 500 .8rem var(--sans); padding: 6px 10px; border-radius: 8px; border: 1px solid var(--linha); background: transparent; color: var(--tinta); cursor: pointer; }
+.pv-det .extras button[aria-pressed="true"] { background: var(--destaque); color: var(--papel); border-color: var(--destaque); }
+.pv-det h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+.pv-det .resumo { color: var(--tinta-2); margin: 10px 0 16px; }
+.pv-dados { display: grid; grid-template-columns: max-content 1fr; gap: 5px 16px; font-size: .88rem; margin: 0 0 16px; }
+.pv-dados dt { color: var(--tinta-2); }
+.pv-dados dd { margin: 0; }
+.pv-ref { background: var(--papel-2); border-radius: 10px; padding: 14px 16px; font-size: .88rem; }
+.pv-ref h3 { font-family: var(--sans); font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; margin: 0 0 8px; color: var(--destaque); }
+.pv-ref ul { margin: 0; padding-left: 18px; }
+.pv-ref p { margin: 8px 0 0; color: var(--tinta-2); font-size: .82rem; }
+.pv-credito { font-size: .78rem; color: var(--tinta-2); margin-top: 12px; }
+.pv-fechar { position: sticky; top: 0; float: right; margin: 10px 10px 0 0; font: 600 1.2rem var(--sans); width: 36px; height: 36px; border-radius: 50%; border: 0; background: var(--papel-2); color: var(--tinta); cursor: pointer; z-index: 2; }
+@media (max-width: 760px) {
+  .pv-filtros { position: static; }
+  .pv-grupo > span { min-width: 0; }
+  .pv-grade { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .pv-det .corpo { grid-template-columns: 1fr; padding: 16px; }
+}
+</style>
+</head>
+<body>
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html">Evelyn Luane</a>
+    <nav class="nav">
+      <a href="index.html">Projetos</a>
+      <a href="edicao-de-video.html" aria-current="page">Edição de vídeo</a>
+      <a href="como-trabalho.html#video">Serviços</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="pv-hero">
+    <p class="sobrelinha">Portfólio de edição de vídeo</p>
+    <h1>Um vídeo pronto para cada formato que mais se pede</h1>
+    <p class="lead">Reels, Shorts e vídeos de canal: jogos, viagem, vlog, estudo, whiteboard, animação com IA, identidade de canal, maquiagem, memes, cortes de podcast, divulgação de produto, motion e 3D. Antes de editar, estudo vídeos de referência do formato e anoto os números (tempo do gancho, ritmo de cortes, tamanho do texto, uso do som). Use os filtros para achar o estilo do seu canal.</p>
+    <ol class="pv-metodo">
+      <li>Estudo de referências do formato</li>
+      <li>Roteiro com gancho e prévia leve</li>
+      <li>Revisão crítica com nota</li>
+      <li>Correções e nova prévia</li>
+      <li>Final em 60 fps, som a −14 LUFS</li>
+    </ol>
+    <p class="aviso">Peças demonstrativas, com marcas fictícias quando indicado. Imagens e músicas vêm de bancos livres, com crédito em cada peça.</p>
+  </section>
+
+  <div class="pv-filtros" id="filtros" role="group" aria-label="Filtros"></div>
+  <section class="pv-grade" id="grade" aria-live="polite"></section>
+</main>
+
+<dialog class="pv-det" id="det" aria-label="Detalhes do vídeo"></dialog>
+
+<footer class="rodape">
+  <div class="wrap">
+    <span>Evelyn Luane · edição de vídeo, motion e 3D</span>
+    <a href="index.html">Ver todos os projetos</a>
+  </div>
+</footer>
+
+<script src="videos.js"></script>
+<script>
+(function () {
+  var V = window.VIDEOS || [];
+  var grade = document.getElementById("grade"), filtros = document.getElementById("filtros"), det = document.getElementById("det");
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  var GRUPOS = [["tipo", "Categoria"], ["formato", "Formato"], ["plataforma", "Plataforma"]];
+  var sel = { tipo: "Todos", formato: "Todos", plataforma: "Todos" }, busca = "";
+  var q = new URLSearchParams(location.search);
+  GRUPOS.forEach(function (g) { if (q.get(g[0])) sel[g[0]] = q.get(g[0]); });
+  function lista(v, k) { return [].concat(v[k] || []); }
+  function valores(k) { var o = []; V.forEach(function (v) { lista(v, k).forEach(function (x) { if (o.indexOf(x) < 0) o.push(x); }); }); return o.sort(function (a, b) { return a.localeCompare(b, "pt"); }); }
+  function passa(v, ignorar) {
+    var ok = GRUPOS.every(function (g) { return g[0] === ignorar || sel[g[0]] === "Todos" || lista(v, g[0]).indexOf(sel[g[0]]) >= 0; });
+    var b = busca.toLowerCase();
+    return ok && (!b || JSON.stringify([v.titulo, v.resumo, v.nicho, v.tipo, v.estilo, v.ferramentas]).toLowerCase().indexOf(b) >= 0);
+  }
+  function montarFiltros() {
+    filtros.innerHTML = GRUPOS.map(function (g) {
+      return '<div class="pv-grupo"><span>' + g[1] + "</span>" + ["Todos"].concat(valores(g[0])).map(function (t) {
+        var n = V.filter(function (v) { return passa(v, g[0]) && (t === "Todos" || lista(v, g[0]).indexOf(t) >= 0); }).length;
+        return '<button type="button" data-g="' + g[0] + '" data-v="' + esc(t) + '" aria-pressed="' + (sel[g[0]] === t) + '">' + esc(t) + " <small>" + n + "</small></button>";
+      }).join("") + "</div>";
+    }).join("") + '<div class="pv-linha"><input type="search" id="busca" placeholder="Buscar tema, nicho ou ferramenta" aria-label="Buscar"><p class="pv-conta" id="conta"></p></div>';
+    var bi = document.getElementById("busca"); bi.value = busca;
+    bi.oninput = function () { busca = bi.value; render(true); };
+    Array.prototype.forEach.call(filtros.querySelectorAll("button"), function (b) {
+      b.onclick = function () { sel[b.dataset.g] = b.dataset.v; montarFiltros(); render(); };
+    });
+  }
+  function cartao(v, i) {
+    return '<button class="pv-card" type="button" data-i="' + i + '"><div class="pv-thumb"><img src="' + esc(v.capa) + '" alt="" loading="lazy">' +
+      '<span class="fmt">' + esc(v.formato) + " · " + esc(v.duracao) + '</span><span class="play" aria-hidden="true"></span></div>' +
+      '<div class="txt"><div class="cat">' + esc(v.tipo) + "</div><h2>" + esc(v.titulo) + '</h2><div class="nicho">' + esc(v.nicho || v.estilo || "") + "</div></div></button>";
+  }
+  function render(soContagem) {
+    var f = V.map(function (v, i) { return [v, i]; }).filter(function (p) { return passa(p[0]); });
+    grade.innerHTML = f.length ? f.map(function (p) { return cartao(p[0], p[1]); }).join("") : '<p>Nenhuma peça com esses filtros.</p>';
+    document.getElementById("conta").textContent = f.length + (f.length === 1 ? " peça" : " peças");
+    Array.prototype.forEach.call(grade.querySelectorAll(".pv-card"), function (c) { c.onclick = function () { abrir(V[+c.dataset.i]); }; });
+  }
+  function abrir(v) {
+    var vids = [{ src: v.src, capa: v.capa_video || v.capa, nome: v.rotulo || "Principal" }].concat(v.extras || []);
+    var hor = v.formato === "16:9";
+    var dados = [["Estilo", v.estilo], ["Nicho", v.nicho], ["Formato", v.formato + " · " + v.duracao], ["Plataforma", lista(v, "plataforma").join(", ")], ["Ferramentas", lista(v, "ferramentas").join(", ")], ["Entrega", v.entrega]]
+      .filter(function (d) { return d[1]; }).map(function (d) { return "<dt>" + esc(d[0]) + "</dt><dd>" + esc(d[1]) + "</dd>"; }).join("");
+    var ref = v.referencias ? '<div class="pv-ref"><h3>O que o estudo de referências pediu</h3><ul>' + v.referencias.padrao.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ul>" + (v.referencias.base ? "<p>" + esc(v.referencias.base) + "</p>" : "") + "</div>" : "";
+    det.innerHTML = '<button class="pv-fechar" type="button" aria-label="Fechar">×</button><div class="corpo' + (hor ? " hor" : "") + '"><div><video id="pv-video" src="' + esc(vids[0].src) + '" poster="' + esc(vids[0].capa || "") + '" controls playsinline preload="metadata"></video>' +
+      (vids.length > 1 ? '<div class="extras">' + vids.map(function (x, k) { return '<button type="button" data-k="' + k + '" aria-pressed="' + (k === 0) + '">' + esc(x.nome || ("Versão " + (k + 1))) + "</button>"; }).join("") + "</div>" : "") +
+      '</div><div><p class="sobrelinha" style="margin:0 0 6px">' + esc(v.num) + " · " + esc(v.tipo) + "</p><h2>" + esc(v.titulo) + '</h2><p class="resumo">' + esc(v.resumo) + '</p><dl class="pv-dados">' + dados + "</dl>" + ref + (v.credito ? '<p class="pv-credito">' + esc(v.credito) + "</p>" : "") + "</div></div>";
+    det.querySelector(".pv-fechar").onclick = function () { det.close(); };
+    Array.prototype.forEach.call(det.querySelectorAll(".extras button"), function (b) {
+      b.onclick = function () { var x = vids[+b.dataset.k], el = document.getElementById("pv-video"); el.src = x.src; el.poster = x.capa || ""; el.play && el.play().catch(function () {});
+        Array.prototype.forEach.call(det.querySelectorAll(".extras button"), function (o) { o.setAttribute("aria-pressed", o === b); }); };
+    });
+    det.showModal();
+    history.replaceState(null, "", "#" + v.slug);
+  }
+  det.addEventListener("close", function () { var el = document.getElementById("pv-video"); if (el) el.pause(); history.replaceState(null, "", location.pathname + location.search); });
+  det.addEventListener("click", function (e) { if (e.target === det) det.close(); });
+  montarFiltros(); render();
+  if (location.hash) { var a = V.filter(function (v) { return "#" + v.slug === location.hash; })[0]; if (a) abrir(a); }
+})();
+</script>
+</body>
+</html>
