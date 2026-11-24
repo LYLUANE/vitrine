@@ -756,6 +756,152 @@ window.VIDEOS = [
   "capa_video": "img/pv/brand-kit-nullbyte-poster.jpg"
  },
  {
+  "slug": "corte-podcast-nasa-lua",
+  "num": "53",
+  "tipo": "Cortes e podcast",
+  "titulo": "Corte de podcast: o plano da Lua",
+  "nicho": "Ciência e espaço (podcast da NASA)",
+  "estilo": "Corte vertical de podcast com legenda",
+  "formato": "9:16",
+  "duracao": "45 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok",
+   "YouTube Shorts"
+  ],
+  "ferramentas": [
+   "WhisperX (legenda por palavra)",
+   "Python + FFmpeg",
+   "Fonte NASA em domínio público"
+  ],
+  "resumo": "Corte de 45 s do \"Houston, We Have a Podcast\" sobre a Artemis I: gancho em close, título fixo, legenda palavra a palavra com destaque amarelo, punch-ins a cada ~3 s, tag de nome e barra de progresso.",
+  "entrega": "MP4 60 fps, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Gancho na primeira frase",
+    "Legenda de 2-3 palavras com a ativa em destaque",
+    "Tag com nome e cargo",
+    "Título fixo e barra de progresso"
+   ],
+   "base": "Estudo de guias de cortes de podcast"
+  },
+  "credito": "Podcast e vídeo: NASA, \"Houston We Have a Podcast\" (domínio público). Fonte Anton (SIL OFL).",
+  "src": "video/pv/corte-podcast-nasa-lua.mp4",
+  "capa": "img/pv/corte-podcast-nasa-lua-capa.jpg",
+  "capa_video": "img/pv/corte-podcast-nasa-lua-poster.jpg"
+ },
+ {
+  "slug": "podcast-encenado-startups",
+  "num": "54",
+  "tipo": "Cortes e podcast",
+  "titulo": "Podcast encenado: por que startups morrem",
+  "nicho": "Negócios e empreendedorismo",
+  "estilo": "Podcast animado com 2 vozes",
+  "formato": "9:16",
+  "duracao": "46 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok",
+   "YouTube Shorts"
+  ],
+  "ferramentas": [
+   "Vozes sintéticas Kokoro (2 vozes)",
+   "WhisperX",
+   "Python + PIL + FFmpeg"
+  ],
+  "resumo": "Um podcast encenado com duas vozes sintéticas e avatares animados pela voz num estúdio ilustrado: pergunta-gancho, legenda palavra a palavra e cartões de golpe (\"40 DOWNLOADS\", \"39 = FAMILY\").",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Pergunta forte na primeira frase",
+    "Troca entre dupla e solo a cada ~3 s",
+    "Legenda palavra a palavra",
+    "Golpes visuais nos números"
+   ],
+   "base": "Estudo de guias de cortes de podcast"
+  },
+  "credito": "Vozes sintéticas (Kokoro). Música: \"Voxel Revolution\", Kevin MacLeod (incompetech.com), CC BY 4.0. Cenário e avatares próprios.",
+  "src": "video/pv/podcast-encenado-startups.mp4",
+  "capa": "img/pv/podcast-encenado-startups-capa.jpg",
+  "capa_video": "img/pv/podcast-encenado-startups-poster.jpg"
+ },
+ {
+  "slug": "episodio-podcast-cortes",
+  "num": "55",
+  "tipo": "Cortes e podcast",
+  "titulo": "Episódio de podcast + cortes",
+  "nicho": "Ciência e espaço (podcast da NASA)",
+  "estilo": "Edição de episódio com teaser, capítulos e corte vertical",
+  "formato": "16:9",
+  "duracao": "67 s",
+  "plataforma": [
+   "YouTube",
+   "Spotify Video"
+  ],
+  "ferramentas": [
+   "WhisperX",
+   "Python + FFmpeg",
+   "Fonte NASA em domínio público"
+  ],
+  "extras": [
+   {
+    "src": "video/pv/episodio-podcast-cortes-2.mp4",
+    "capa": "img/pv/episodio-podcast-cortes-poster.jpg",
+    "nome": "Corte 9:16 (33 s)"
+   }
+  ],
+  "resumo": "Trecho de um episódio editado com teaser \"coming up\", cartão de título, lower-thirds, faixa de capítulo e cartão final com os 3 cortes, mais um corte vertical de 33 s para Reels e Shorts.",
+  "entrega": "Episódio 16:9 e corte 9:16 em 60 fps",
+  "referencias": {
+   "padrao": [
+    "Teaser com a melhor frase antes do título",
+    "Lower-third com nome e cargo",
+    "Capítulos visíveis",
+    "Cortes verticais a partir do episódio"
+   ],
+   "base": "Estudo de guias de edição de podcast em vídeo"
+  },
+  "credito": "Podcast e vídeo: NASA (domínio público). Música: Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/episodio-podcast-cortes.mp4",
+  "capa": "img/pv/episodio-podcast-cortes-capa.jpg",
+  "capa_video": "img/pv/episodio-podcast-cortes-poster.jpg"
+ },
+ {
+  "slug": "audiograma-podcast",
+  "num": "56",
+  "tipo": "Cortes e podcast",
+  "titulo": "Audiograma de podcast",
+  "nicho": "Ciência e espaço (podcast da NASA)",
+  "estilo": "Audiograma quadrado com onda reativa",
+  "formato": "1:1",
+  "duracao": "30 s",
+  "plataforma": [
+   "Instagram",
+   "LinkedIn",
+   "X"
+  ],
+  "ferramentas": [
+   "Python + PIL + FFmpeg",
+   "Onda por FFT do áudio",
+   "WhisperX"
+  ],
+  "resumo": "Audiograma quadrado de 30 s com a fala de um flight director da Artemis I: onda que reage à voz em três estilos, legenda palavra a palavra e retrato com nome e cargo.",
+  "entrega": "MP4 1080x1080 60 fps, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Onda e frase já no 1º segundo",
+    "Uma frase por vez",
+    "Retrato com nome e cargo",
+    "30-45 s"
+   ],
+   "base": "Estudo de guias de audiogramas para redes"
+  },
+  "credito": "Áudio e imagem: NASA, \"Houston We Have a Podcast\" (domínio público). Fonte Anton (SIL OFL).",
+  "src": "video/pv/audiograma-podcast.mp4",
+  "capa": "img/pv/audiograma-podcast-capa.jpg",
+  "capa_video": "img/pv/audiograma-podcast-poster.jpg"
+ },
+ {
   "slug": "day-in-my-life-criadora",
   "num": "57",
   "tipo": "Viagem e vlog",
