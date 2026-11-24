@@ -1316,5 +1316,190 @@ window.VIDEOS = [
   "src": "video/pv/cafe-aesthetic.mp4",
   "capa": "img/pv/cafe-aesthetic-capa.jpg",
   "capa_video": "img/pv/cafe-aesthetic-poster.jpg"
+ },
+ {
+  "slug": "ugc-problema-solucao",
+  "num": "61",
+  "tipo": "Divulgação de produto",
+  "titulo": "Anúncio UGC problema-solução (2 ganchos)",
+  "nicho": "Skincare (marca fictícia Lumi Dew)",
+  "estilo": "UGC ad com teste de gancho",
+  "formato": "9:16",
+  "duracao": "27 s",
+  "plataforma": [
+   "Instagram Ads",
+   "TikTok Ads",
+   "Reels"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Voz sintética Kokoro",
+   "Stock Mixkit",
+   "Frasco vetorial próprio"
+  ],
+  "extras": [
+   {
+    "src": "video/pv/ugc-problema-solucao-2.mp4",
+    "capa": "img/pv/ugc-problema-solucao-poster.jpg",
+    "nome": "Gancho A"
+   }
+  ],
+  "resumo": "O mesmo anúncio com dois ganchos para teste A/B: problema, produto em tela cheia, comentário de rede social, prova (\"2 weeks later\") e CTA suave, com legenda palavra a palavra.",
+  "entrega": "2 versões em MP4 60 fps, com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Gancho falado ou visual em até 2 s",
+    "Problema em ~1/3 do tempo",
+    "Prova social e antes/depois",
+    "CTA suave no fim"
+   ],
+   "base": "Estudo de guias de anúncios UGC (2025-2026)"
+  },
+  "credito": "Marca fictícia. Vídeos: Mixkit (Mixkit Free License). Voz sintética (Kokoro). Música: \"Newer Wave\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/ugc-problema-solucao.mp4",
+  "capa": "img/pv/ugc-problema-solucao-capa.jpg",
+  "capa_video": "img/pv/ugc-problema-solucao-poster.jpg"
+ },
+ {
+  "slug": "unboxing-fones",
+  "num": "62",
+  "tipo": "Divulgação de produto",
+  "titulo": "Unboxing de fones premium",
+  "nicho": "Tecnologia (marca fictícia Nimbus)",
+  "estilo": "Unboxing ASMR com recursos animados",
+  "formato": "9:16",
+  "duracao": "29 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok",
+   "Loja virtual"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Gráficos vetoriais próprios",
+   "Stock Mixkit",
+   "Earshot (SFX ASMR)"
+  ],
+  "resumo": "A caixa cai, o selo descola e a tampa sobe nos primeiros segundos; depois 4 recursos animados intercalados com planos reais de fones e mãos, preço e chamada final, com sons de papel e clique.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Abertura da caixa no primeiro segundo",
+    "Sons ASMR em destaque",
+    "Recursos curtos com ícone",
+    "Preço e CTA no fim"
+   ],
+   "base": "Estudo de guias de vídeos de unboxing"
+  },
+  "credito": "Marca fictícia. Vídeos: Mixkit (Mixkit Free License). Música: \"Avec Soin\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/unboxing-fones.mp4",
+  "capa": "img/pv/unboxing-fones-capa.jpg",
+  "capa_video": "img/pv/unboxing-fones-poster.jpg"
+ },
+ {
+  "slug": "teaser-lancamento-produto",
+  "num": "63",
+  "tipo": "Divulgação de produto",
+  "titulo": "Teaser de lançamento 3D",
+  "nicho": "Tecnologia (marca fictícia Orbit One)",
+  "estilo": "Teaser com packshot 3D",
+  "formato": "9:16",
+  "duracao": "15 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok",
+   "Anúncios"
+  ],
+  "ferramentas": [
+   "Blender 4.4 (modelagem e render por script)",
+   "HDRI Poly Haven",
+   "FFmpeg",
+   "Earshot (SFX)"
+  ],
+  "resumo": "Alto-falante fictício modelado no Blender, girando desde o primeiro quadro, com anel luminoso, data de lançamento, impactos na batida e chamada \"Notify me\".",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Produto em movimento no primeiro quadro",
+    "Um evento a cada 1-2 s",
+    "Data e chamada curtas",
+    "Riser e impacto no logo"
+   ],
+   "base": "Estudo de guias de teasers de lançamento"
+  },
+  "credito": "Produto e marca fictícios modelados para a peça. HDRI: Poly Haven (CC0). Música: \"Kick Shock\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/teaser-lancamento-produto.mp4",
+  "capa": "img/pv/teaser-lancamento-produto-capa.jpg",
+  "capa_video": "img/pv/teaser-lancamento-produto-poster.jpg"
+ },
+ {
+  "slug": "comparativo-a-vs-b",
+  "num": "64",
+  "tipo": "Divulgação de produto",
+  "titulo": "Comparativo A vs B com placar",
+  "nicho": "Tecnologia (marcas fictícias)",
+  "estilo": "Versus com tela dividida",
+  "formato": "9:16",
+  "duracao": "33 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok",
+   "YouTube Shorts"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Voz sintética Kokoro",
+   "Stock Mixkit tingido"
+  ],
+  "resumo": "Aero Buds contra Pulse Pro com placar fixo: o Pulse abre 2 a 0, o Aero vira no preço e o desempate sai pelo perfil de quem compra, com tela dividida em âmbar e rosa.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Pergunta \"which one wins?\" no 1º segundo",
+    "Rounds curtos com placar visível",
+    "Virada antes do veredito",
+    "Veredito claro e CTA"
+   ],
+   "base": "Estudo de guias de vídeos comparativos de produto"
+  },
+  "credito": "Marcas fictícias. Vídeos: Mixkit (Mixkit Free License). Voz sintética (Kokoro). Música: \"Voxel Revolution\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/comparativo-a-vs-b.mp4",
+  "capa": "img/pv/comparativo-a-vs-b-capa.jpg",
+  "capa_video": "img/pv/comparativo-a-vs-b-poster.jpg"
+ },
+ {
+  "slug": "review-honesto-30s",
+  "num": "65",
+  "tipo": "Divulgação de produto",
+  "titulo": "Review honesto em 30 s",
+  "nicho": "Casa e escritório (marca fictícia Halo)",
+  "estilo": "Review com nota, prós e contras",
+  "formato": "9:16",
+  "duracao": "27 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok",
+   "YouTube Shorts"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Voz sintética Kokoro",
+   "Stock Mixkit"
+  ],
+  "resumo": "Nota 4,5 na tela desde o primeiro quadro, prós sobre imagens reais da luminária, um contra de verdade, \"compraria de novo?\" com flash e cartão final com nota por critério.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Nota ou veredito no 1º segundo",
+    "Prós e contras em blocos curtos",
+    "Um contra real (credibilidade)",
+    "Resposta final clara"
+   ],
+   "base": "Estudo de guias de reviews curtos"
+  },
+  "credito": "Marca fictícia. Vídeos: Mixkit (Mixkit Free License). Voz sintética (Kokoro). Música: \"Newer Wave\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/review-honesto-30s.mp4",
+  "capa": "img/pv/review-honesto-30s-capa.jpg",
+  "capa_video": "img/pv/review-honesto-30s-poster.jpg"
  }
 ];
