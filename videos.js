@@ -187,6 +187,42 @@ window.VIDEOS = [
   "capa_video": "img/pv/noob-vs-pro-cad-poster.jpg"
  },
  {
+  "slug": "packshot-3d-relogio",
+  "num": "05",
+  "tipo": "Motion e 3D",
+  "titulo": "Packshot 3D de produto: relógio",
+  "nicho": "Produto de consumo (marca fictícia VANTA)",
+  "estilo": "Packshot com turntable e macros",
+  "formato": "9:16",
+  "duracao": "12 s",
+  "plataforma": [
+   "Instagram",
+   "Lojas virtuais",
+   "Anúncios"
+  ],
+  "ferramentas": [
+   "Blender 4.4 (modelagem e render por script)",
+   "HDRI Poly Haven",
+   "Earshot (SFX)"
+  ],
+  "resumo": "Relógio fictício modelado inteiro por código: close de gancho, turntable 360°, dois macros com chamada (aço 316L, costura à mão) e hero com logo, em estúdio de fundo infinito com reflexo no piso.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "10 a 15 s com 3-5 planos",
+    "Gancho em close no 1º segundo",
+    "Turntable de 360° em ~4 s com ease",
+    "Produto com 55-65% da altura",
+    "No máximo 2 chamadas e logo parado 1,5 s no fim"
+   ],
+   "base": "Estudo de referências de packshots 3D e anúncios CGI de produto"
+  },
+  "credito": "Modelo procedural próprio. HDRI: Poly Haven (CC0). Música: \"Undaunted\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/packshot-3d-relogio.mp4",
+  "capa": "img/pv/packshot-3d-relogio-capa.jpg",
+  "capa_video": "img/pv/packshot-3d-relogio-poster.jpg"
+ },
+ {
   "slug": "logo-reveals-3-marcas",
   "num": "06",
   "tipo": "Motion e 3D",
@@ -546,5 +582,177 @@ window.VIDEOS = [
   "src": "video/pv/beat-sync-esporte.mp4",
   "capa": "img/pv/beat-sync-esporte-capa.jpg",
   "capa_video": "img/pv/beat-sync-esporte-poster.jpg"
+ },
+ {
+  "slug": "intro-pack-saltline",
+  "num": "40",
+  "tipo": "Identidade de canal",
+  "titulo": "Intro e tela final para canal de culinária",
+  "nicho": "Culinária (canal fictício Saltline Kitchen)",
+  "estilo": "Intro de marca + end screen",
+  "formato": "16:9",
+  "duracao": "10 s",
+  "plataforma": [
+   "YouTube"
+  ],
+  "ferramentas": [
+   "HTML/SVG + Chromium (render por quadro)",
+   "FFmpeg",
+   "Earshot (SFX)"
+  ],
+  "resumo": "Intro de 5 s em que o logo se forma em 1 s e um brilho percorre a marca, mais a tela final do YouTube com duas molduras de vídeo e o botão Subscribe que recebe o clique.",
+  "entrega": "MP4 Full HD 60 fps da intro e da tela final, separados e juntos",
+  "referencias": {
+   "padrao": [
+    "Intro de 2 a 5 s com um acento sonoro",
+    "Logo legível em até 1 s",
+    "Tela final com 2 espaços (vídeo + inscrever)",
+    "1 paleta, 2 fontes, 1 motivo visual repetido"
+   ],
+   "base": "Estudo de pacotes de identidade de canal (marketplaces e estúdios de branding)"
+  },
+  "credito": "Marca fictícia criada para a peça. Fontes Playfair Display e DM Sans (SIL OFL).",
+  "src": "video/pv/intro-pack-saltline.mp4",
+  "capa": "img/pv/intro-pack-saltline-capa.jpg",
+  "capa_video": "img/pv/intro-pack-saltline-poster.jpg"
+ },
+ {
+  "slug": "banner-kit-nullbyte",
+  "num": "41",
+  "tipo": "Identidade de canal",
+  "titulo": "Banner de canal com área segura",
+  "nicho": "Tecnologia e games (canal fictício Nullbyte)",
+  "estilo": "Banner 2560x1440 + apresentação animada",
+  "formato": "16:9",
+  "duracao": "8 s",
+  "plataforma": [
+   "YouTube"
+  ],
+  "ferramentas": [
+   "HTML/SVG + Chromium",
+   "PIL",
+   "Earshot (SFX)"
+  ],
+  "resumo": "Banner de 2560x1440 com nome, tagline e agenda dentro da área segura de 1546x423, e uma animação que mostra o que TV, desktop, tablet e celular realmente cortam.",
+  "entrega": "PNG 2560x1440 e vídeo de apresentação Full HD 60 fps",
+  "referencias": {
+   "padrao": [
+    "Banner 2560x1440 com texto na área segura 1546x423",
+    "Nome legível no celular",
+    "Mesma paleta e motivo do canal"
+   ],
+   "base": "Guias de banner do YouTube e pacotes de identidade de canal"
+  },
+  "credito": "Marca fictícia criada para a peça. Fontes Archivo Black e Montserrat (SIL OFL).",
+  "src": "video/pv/banner-kit-nullbyte.mp4",
+  "capa": "img/pv/banner-kit-nullbyte-capa.jpg",
+  "capa_video": "img/pv/banner-kit-nullbyte-poster.jpg"
+ },
+ {
+  "slug": "overlays-saltline",
+  "num": "42",
+  "tipo": "Identidade de canal",
+  "titulo": "Lower thirds e botão Subscribe com alfa",
+  "nicho": "Culinária (canal fictício Saltline Kitchen)",
+  "estilo": "Overlays animados com fundo transparente",
+  "formato": "16:9",
+  "duracao": "15 s",
+  "plataforma": [
+   "YouTube"
+  ],
+  "ferramentas": [
+   "HTML/SVG + Chromium",
+   "FFmpeg (ProRes 4444)",
+   "Earshot (SFX)"
+  ],
+  "resumo": "Tarja de nome, chip de ingrediente, botão Subscribe com clique, sino e confete, e faixa de redes, entregues com fundo transparente para arrastar sobre qualquer gravação.",
+  "entrega": "MOV ProRes 4444 com alfa 1080p60, som separado e MP4 de demonstração",
+  "referencias": {
+   "padrao": [
+    "Tarja de 3 a 4 s, no máximo 2 linhas",
+    "Entrada e saída de 0,25-0,35 s",
+    "Subscribe uma vez, com clique e som curto",
+    "Texto dentro do title-safe"
+   ],
+   "base": "Estudo de pacotes de overlays para YouTube"
+  },
+  "credito": "Marca fictícia criada para a peça. Fontes Playfair Display e DM Sans (SIL OFL).",
+  "src": "video/pv/overlays-saltline.mp4",
+  "capa": "img/pv/overlays-saltline-capa.jpg",
+  "capa_video": "img/pv/overlays-saltline-poster.jpg"
+ },
+ {
+  "slug": "thumbnail-ab-nullbyte",
+  "num": "43",
+  "tipo": "Identidade de canal",
+  "titulo": "Teste A/B de thumbnail",
+  "nicho": "Tecnologia e games (canal fictício Nullbyte)",
+  "estilo": "Thumbnails 1280x720 com teste de uma variável",
+  "formato": "16:9",
+  "duracao": "7 s",
+  "plataforma": [
+   "YouTube"
+  ],
+  "ferramentas": [
+   "HTML/SVG + Chromium",
+   "PIL",
+   "Earshot (SFX)"
+  ],
+  "extras": [
+   {
+    "src": "video/pv/thumbnail-ab-nullbyte-2.mp4",
+    "capa": "img/pv/thumbnail-ab-nullbyte-poster.jpg",
+    "nome": "Versão 9:16"
+   }
+  ],
+  "resumo": "Mesma arte, uma variável por vez: primeiro o texto (5 para 2 palavras), depois a cor e o contraste. Inclui as três thumbnails em 1280x720 e a versão vertical para Shorts.",
+  "entrega": "3 PNGs 1280x720, vídeo 16:9 e versão 9:16",
+  "referencias": {
+   "padrao": [
+    "Testar uma variável por vez",
+    "Contraste forte e um ponto focal",
+    "Poucas palavras (2-4)",
+    "Legível no tamanho do feed"
+   ],
+   "base": "Guias de thumbnail e de teste A/B do YouTube (2025-2026)"
+  },
+  "credito": "Marca fictícia criada para a peça. Fontes Archivo Black e Montserrat (SIL OFL).",
+  "src": "video/pv/thumbnail-ab-nullbyte.mp4",
+  "capa": "img/pv/thumbnail-ab-nullbyte-capa.jpg",
+  "capa_video": "img/pv/thumbnail-ab-nullbyte-poster.jpg"
+ },
+ {
+  "slug": "brand-kit-nullbyte",
+  "num": "44",
+  "tipo": "Identidade de canal",
+  "titulo": "Apresentação de brand kit de canal",
+  "nicho": "Tecnologia e games (canal fictício Nullbyte)",
+  "estilo": "Brand kit reveal",
+  "formato": "16:9",
+  "duracao": "17 s",
+  "plataforma": [
+   "YouTube",
+   "Behance"
+  ],
+  "ferramentas": [
+   "HTML/SVG + Chromium",
+   "FFmpeg",
+   "Earshot (SFX)"
+  ],
+  "resumo": "O kit de marca de um canal de games em 17 s: paleta, logo com área de respiro, tipografia, avatar, marca d'água, banner e modelos de thumbnail e tarja.",
+  "entrega": "MP4 Full HD 60 fps com e sem música",
+  "referencias": {
+   "padrao": [
+    "Uma ideia por cena, 2-3 s cada",
+    "Nome do kit grande no 1º quadro",
+    "Aplicações reais (avatar, banner, marca d'água)",
+    "Transição coerente com a marca"
+   ],
+   "base": "Estudo de apresentações de brand kit (Behance, estúdios de branding)"
+  },
+  "credito": "Marca fictícia criada para a peça. Música: \"Voxel Revolution\", Kevin MacLeod (incompetech.com), CC BY 4.0. Fontes Archivo Black e Montserrat (SIL OFL).",
+  "src": "video/pv/brand-kit-nullbyte.mp4",
+  "capa": "img/pv/brand-kit-nullbyte-capa.jpg",
+  "capa_video": "img/pv/brand-kit-nullbyte-poster.jpg"
  }
 ];
