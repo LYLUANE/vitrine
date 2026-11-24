@@ -584,6 +584,150 @@ window.VIDEOS = [
   "capa_video": "img/pv/beat-sync-esporte-poster.jpg"
  },
  {
+  "slug": "study-with-me-pomodoro",
+  "num": "28",
+  "tipo": "Explicativo e educação",
+  "titulo": "Study with me: pomodoro 50/10",
+  "nicho": "Estudo e foco",
+  "estilo": "Study with me em loop",
+  "formato": "16:9",
+  "duracao": "60 s (trecho de 60 min)",
+  "plataforma": [
+   "YouTube"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Stock Mixkit",
+   "Lo-fi e chuva próprios"
+  ],
+  "resumo": "Trecho de uma sessão de estudo de 1 hora em loop: timer grande, chuva e lo-fi desde o primeiro segundo, pausa com outra paisagem e cor, e a volta do ciclo indicada na linha do tempo.",
+  "entrega": "MP4 Full HD 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Timer visível desde 0 s",
+    "Ambiente calmo sem cortes bruscos",
+    "Pausa com mudança clara",
+    "Indicação de quantas sessões faltam"
+   ],
+   "base": "Estudo de referências de vídeos study with me"
+  },
+  "credito": "Vídeos: Mixkit (Mixkit Free License). Lo-fi e chuva sintetizados para a peça; chuva gravada: Freesound (CC0).",
+  "src": "video/pv/study-with-me-pomodoro.mp4",
+  "capa": "img/pv/study-with-me-pomodoro-capa.jpg",
+  "capa_video": "img/pv/study-with-me-pomodoro-poster.jpg"
+ },
+ {
+  "slug": "resumo-livro-meditations",
+  "num": "29",
+  "tipo": "Explicativo e educação",
+  "titulo": "Resumo de livro: Meditações, de Marco Aurélio",
+  "nicho": "Livros e filosofia",
+  "estilo": "Resumo animado com legenda",
+  "formato": "16:9",
+  "duracao": "73 s",
+  "plataforma": [
+   "YouTube",
+   "Cursos online"
+  ],
+  "ferramentas": [
+   "Python + PIL + FFmpeg",
+   "Voz sintética Kokoro",
+   "Ilustrações próprias"
+  ],
+  "resumo": "Resumo em palavras próprias de três ideias do livro (preparar a manhã, focar no que depende de você, o obstáculo como caminho), com visual de papel e tinta, legenda grande e capa ilustrada.",
+  "entrega": "MP4 Full HD 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Gancho em forma de pergunta",
+    "Contexto do autor em poucos segundos",
+    "Uma ideia por bloco com desenho",
+    "Recap no fim"
+   ],
+   "base": "Estudo de referências de canais de resumo de livros"
+  },
+  "credito": "Livro em domínio público. Ilustrações próprias. Voz sintética (Kokoro). Música: \"Avec Soin\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/resumo-livro-meditations.mp4",
+  "capa": "img/pv/resumo-livro-meditations-capa.jpg",
+  "capa_video": "img/pv/resumo-livro-meditations-poster.jpg"
+ },
+ {
+  "slug": "como-foguetes-funcionam",
+  "num": "30",
+  "tipo": "Explicativo e educação",
+  "titulo": "Como os foguetes funcionam em 60 s",
+  "nicho": "Ciência e espaço",
+  "estilo": "Explicativo vertical com motion 2D",
+  "formato": "9:16",
+  "duracao": "56 s",
+  "plataforma": [
+   "YouTube Shorts",
+   "Instagram",
+   "TikTok"
+  ],
+  "ferramentas": [
+   "Python + PIL + FFmpeg",
+   "Voz sintética Kokoro",
+   "Fotos NASA (domínio público)",
+   "Earshot (SFX)"
+  ],
+  "resumo": "\"Rockets shouldn't work\": a 3ª lei de Newton, por que funcionam melhor no vácuo, a velocidade orbital e os estágios, com diagramas animados sobre fotos da Apollo 11, da Artemis I e da ISS.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Gancho contraintuitivo no 1º segundo",
+    "Um conceito por cena",
+    "Números grandes na tela",
+    "Recap e laço no fim"
+   ],
+   "base": "Estudo de referências de explicativos curtos de ciência"
+  },
+  "credito": "Fotos: NASA (domínio público). Voz sintética (Kokoro). Música: \"At Launch\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/como-foguetes-funcionam.mp4",
+  "capa": "img/pv/como-foguetes-funcionam-capa.jpg",
+  "capa_video": "img/pv/como-foguetes-funcionam-poster.jpg"
+ },
+ {
+  "slug": "revisao-rapida-flashcards",
+  "num": "31",
+  "tipo": "Explicativo e educação",
+  "titulo": "Revisão rápida com flashcards",
+  "nicho": "Biologia (estudo para provas)",
+  "estilo": "Flashcards animados com contagem",
+  "formato": "9:16",
+  "duracao": "46 s",
+  "plataforma": [
+   "YouTube Shorts",
+   "Instagram",
+   "TikTok"
+  ],
+  "ferramentas": [
+   "Python + PIL + FFmpeg",
+   "Voz sintética Kokoro"
+  ],
+  "extras": [
+   {
+    "src": "video/pv/revisao-rapida-flashcards-2.mp4",
+    "capa": "img/pv/revisao-rapida-flashcards-poster.jpg",
+    "nome": "Versão com 20 termos (75 s)"
+   }
+  ],
+  "resumo": "Termos de biologia celular em flashcards: o termo aparece com contagem de 3 segundos, o card vira e a definição curta vem por voz, com marcos de progresso ao longo do vídeo.",
+  "entrega": "Versão de 12 termos e versão de 20 termos em MP4 60 fps",
+  "referencias": {
+   "padrao": [
+    "Pergunta ao espectador no 1º card",
+    "Tempo para pensar antes da resposta",
+    "Progresso visível (n/12)",
+    "Fecho com \"save this\""
+   ],
+   "base": "Estudo de guias de vídeos de revisão e flashcards"
+  },
+  "credito": "Voz sintética (Kokoro). Música: \"Kick Shock\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/revisao-rapida-flashcards.mp4",
+  "capa": "img/pv/revisao-rapida-flashcards-capa.jpg",
+  "capa_video": "img/pv/revisao-rapida-flashcards-poster.jpg"
+ },
+ {
   "slug": "whiteboard-juros-compostos",
   "num": "32",
   "tipo": "Whiteboard",
