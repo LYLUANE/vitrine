@@ -584,6 +584,146 @@ window.VIDEOS = [
   "capa_video": "img/pv/beat-sync-esporte-poster.jpg"
  },
  {
+  "slug": "whiteboard-juros-compostos",
+  "num": "32",
+  "tipo": "Whiteboard",
+  "titulo": "Whiteboard: como funcionam os juros compostos",
+  "nicho": "Finanças pessoais",
+  "estilo": "Whiteboard animation com mão desenhando",
+  "formato": "16:9",
+  "duracao": "101 s",
+  "plataforma": [
+   "YouTube",
+   "Cursos online",
+   "Sites"
+  ],
+  "ferramentas": [
+   "Motor de desenho próprio (JS + Chromium)",
+   "Voz sintética Kokoro",
+   "Earshot e SFX CC0 de marcador"
+  ],
+  "resumo": "US$ 100 viram quase US$ 1.500 em 40 anos a 7%: juros simples contra compostos, regra do 72 e o efeito de começar aos 25 em vez de 35, tudo escrito e desenhado à mão no quadro.",
+  "entrega": "MP4 Full HD 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Gancho escrito à mão no primeiro segundo",
+    "Uma ideia por cena, apagando antes da seguinte",
+    "Mão sempre na ponta do traço",
+    "Uma cor de acento e voz calma"
+   ],
+   "base": "Estudo de referências de whiteboard animation (RSA Animate e estúdios do formato)"
+  },
+  "credito": "Desenhos próprios. Voz sintética (Kokoro). Música: \"Feather Waltz\", Kevin MacLeod (incompetech.com), CC BY 4.0. SFX de marcador: CC0. Fonte Caveat (SIL OFL).",
+  "src": "video/pv/whiteboard-juros-compostos.mp4",
+  "capa": "img/pv/whiteboard-juros-compostos-capa.jpg",
+  "capa_video": "img/pv/whiteboard-juros-compostos-poster.jpg"
+ },
+ {
+  "slug": "whiteboard-processo-4-passos",
+  "num": "33",
+  "tipo": "Whiteboard",
+  "titulo": "Whiteboard: nosso processo em 4 passos",
+  "nicho": "Serviços B2B",
+  "estilo": "Whiteboard explicando um processo",
+  "formato": "16:9",
+  "duracao": "70 s",
+  "plataforma": [
+   "Site da empresa",
+   "LinkedIn",
+   "YouTube"
+  ],
+  "ferramentas": [
+   "Motor de desenho próprio (JS + Chromium)",
+   "Voz sintética Kokoro",
+   "SFX CC0 de marcador"
+  ],
+  "resumo": "Por que tantos projetos falham e um processo em 4 passos (Discover, Design, Deliver, Improve), cada um com seu desenho, fechando com a escada até a bandeira e a chamada para o primeiro passo.",
+  "entrega": "MP4 Full HD 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Pergunta escrita à mão no gancho",
+    "Uma cena-assinatura por passo",
+    "Uma cor de acento",
+    "Fecho com chamada para ação"
+   ],
+   "base": "Estudo de referências de whiteboard animation para empresas"
+  },
+  "credito": "Desenhos próprios. Voz sintética (Kokoro). Música: \"Newer Wave\", Kevin MacLeod (incompetech.com), CC BY 4.0. Fonte Caveat (SIL OFL).",
+  "src": "video/pv/whiteboard-processo-4-passos.mp4",
+  "capa": "img/pv/whiteboard-processo-4-passos-capa.jpg",
+  "capa_video": "img/pv/whiteboard-processo-4-passos-poster.jpg"
+ },
+ {
+  "slug": "whiteboard-ciclo-do-sono",
+  "num": "34",
+  "tipo": "Whiteboard",
+  "titulo": "Whiteboard: o ciclo do sono",
+  "nicho": "Saúde e bem-estar",
+  "estilo": "Whiteboard vertical para Shorts",
+  "formato": "9:16",
+  "duracao": "48 s",
+  "plataforma": [
+   "YouTube Shorts",
+   "Instagram",
+   "TikTok"
+  ],
+  "ferramentas": [
+   "Motor de desenho próprio (JS + Chromium)",
+   "Voz sintética Kokoro",
+   "SFX CC0 de marcador"
+  ],
+  "resumo": "O ciclo de sono de cerca de 90 minutos (varia por pessoa), os estágios leve, profundo e REM, a inércia ao acordar e a conta dos blocos: 5 ciclos = 7,5 h, alarme às 6:30, cama às 22:45.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Gancho desenhado em até 2 s",
+    "Troca de desenho a cada 2-3 s",
+    "Texto dentro da zona segura vertical",
+    "Fecho com ação prática"
+   ],
+   "base": "Estudo de referências de whiteboard animation"
+  },
+  "credito": "Desenhos próprios. Voz sintética (Kokoro). Música: \"Avec Soin\", Kevin MacLeod (incompetech.com), CC BY 4.0. Fonte Caveat (SIL OFL).",
+  "src": "video/pv/whiteboard-ciclo-do-sono.mp4",
+  "capa": "img/pv/whiteboard-ciclo-do-sono-capa.jpg",
+  "capa_video": "img/pv/whiteboard-ciclo-do-sono-poster.jpg"
+ },
+ {
+  "slug": "whiteboard-o-que-e-api",
+  "num": "35",
+  "tipo": "Whiteboard",
+  "titulo": "Whiteboard: o que é uma API?",
+  "nicho": "Tecnologia",
+  "estilo": "Whiteboard com analogia",
+  "formato": "16:9",
+  "duracao": "93 s",
+  "plataforma": [
+   "YouTube",
+   "Cursos online",
+   "Docs de produto"
+  ],
+  "ferramentas": [
+   "Motor de desenho próprio (JS + Chromium)",
+   "Voz sintética Kokoro",
+   "SFX CC0 de marcador"
+  ],
+  "resumo": "API explicada com a analogia do garçom: pedido e resposta entre app e servidor, cardápio como documentação, chave de API, o exemplo do app de clima com JSON e os códigos 200, 404 e 429.",
+  "entrega": "MP4 Full HD 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Pergunta escrita em 0-1 s",
+    "Uma analogia sustentando o vídeo inteiro",
+    "Uma ideia por cena",
+    "Fecho que resume em uma frase"
+   ],
+   "base": "Estudo de referências de whiteboard animation"
+  },
+  "credito": "Desenhos próprios. Voz sintética (Kokoro). Música: \"Voxel Revolution\", Kevin MacLeod (incompetech.com), CC BY 4.0. Fonte Caveat (SIL OFL).",
+  "src": "video/pv/whiteboard-o-que-e-api.mp4",
+  "capa": "img/pv/whiteboard-o-que-e-api-capa.jpg",
+  "capa_video": "img/pv/whiteboard-o-que-e-api-poster.jpg"
+ },
+ {
   "slug": "intro-pack-saltline",
   "num": "40",
   "tipo": "Identidade de canal",
