@@ -74,6 +74,84 @@ window.VIDEOS = [
   "credito": "Música: \"Industrial Cinematic\", Kevin MacLeod (incompetech.com), CC BY 4.0."
  },
  {
+  "slug": "lancamento-fenkra-cad",
+  "num": "02",
+  "tipo": "Divulgação de produto",
+  "titulo": "Filme de lançamento de software",
+  "nicho": "Software CAD (Fenkra CAD)",
+  "estilo": "Launch film em 4 atos",
+  "formato": "16:9",
+  "duracao": "39 s",
+  "plataforma": [
+   "YouTube",
+   "LinkedIn",
+   "Site do produto"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Earshot (SFX)",
+   "Gravações reais do app"
+  ],
+  "extras": [
+   {
+    "src": "video/pv/lancamento-fenkra-cad-2.mp4",
+    "capa": "img/pv/lancamento-fenkra-cad-poster.jpg",
+    "nome": "Corte 9:16 (18 s)"
+   }
+  ],
+  "resumo": "Lançamento do Fenkra CAD com gravações reais do programa: Revolve, Extrude, Rib, chapa metálica, GD&T 3D, desenho 2D e montagens, cortados a 122 BPM, com pausa antes do hit da marca e corte vertical para Reels.",
+  "entrega": "MP4 60 fps em 16:9 e 9:16, com e sem música",
+  "referencias": {
+   "padrao": [
+    "Gancho visual em até 2 s, sem logo",
+    "Problema, promessa, 3 provas e CTA",
+    "Planos de 1,5-2,5 s e textos curtos de 1,2-2 s",
+    "Pausa de 0,3-0,5 s antes do hit do logo"
+   ],
+   "base": "Estudo de referências de launch films de software (Apple, Linear, Figma)"
+  },
+  "credito": "Gravações e marca do Fenkra CAD (projeto próprio). Música: \"Voxel Revolution\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/lancamento-fenkra-cad.mp4",
+  "capa": "img/pv/lancamento-fenkra-cad-capa.jpg",
+  "capa_video": "img/pv/lancamento-fenkra-cad-poster.jpg"
+ },
+ {
+  "slug": "demo-app-mockup",
+  "num": "03",
+  "tipo": "Divulgação de produto",
+  "titulo": "Demo de app em mockup de tela",
+  "nicho": "Software CAD (Fenkra CAD)",
+  "estilo": "Product demo com zoom e cursor",
+  "formato": "9:16",
+  "duracao": "28 s",
+  "plataforma": [
+   "Instagram",
+   "YouTube Shorts",
+   "LinkedIn"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg",
+   "Rastreio do cursor real",
+   "Earshot (SFX)"
+  ],
+  "resumo": "Uma flange modelada em 3 passos (Revolve, Hole, Circular Pattern) num monitor vertical: resultado na tela no primeiro segundo, recortes com zoom no ponto da ação, cursor ampliado que segue o real e um som em cada clique.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Resultado na tela em até 2 s, sem login nem loading",
+    "3-4 passos de 5-8 s",
+    "Zoom de 140-200% no ponto da ação",
+    "Cursor 1,5-2x maior e clique com som",
+    "Final de 2-3 s com um CTA"
+   ],
+   "base": "Estudo de referências de demos de produto em mockup (SaaS, apps)"
+  },
+  "credito": "Gravação e marca do Fenkra CAD (projeto próprio). Música: \"Voxel Revolution\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/demo-app-mockup.mp4",
+  "capa": "img/pv/demo-app-mockup-capa.jpg",
+  "capa_video": "img/pv/demo-app-mockup-poster.jpg"
+ },
+ {
   "slug": "noob-vs-pro-cad",
   "num": "04",
   "tipo": "Reels e Shorts",
@@ -142,6 +220,79 @@ window.VIDEOS = [
   "src": "video/pv/logo-reveals-3-marcas.mp4",
   "capa": "img/pv/logo-reveals-3-marcas-capa.jpg",
   "capa_video": "img/pv/logo-reveals-3-marcas-poster.jpg"
+ },
+ {
+  "slug": "tipografia-cinetica-poema",
+  "num": "07",
+  "tipo": "Motion e 3D",
+  "titulo": "Tipografia cinética: poema narrado",
+  "nicho": "Poesia e literatura",
+  "estilo": "Kinetic typography com voz",
+  "formato": "9:16",
+  "duracao": "38 s",
+  "plataforma": [
+   "Instagram",
+   "YouTube Shorts",
+   "TikTok"
+  ],
+  "ferramentas": [
+   "raea (React/TypeScript)",
+   "Voz sintética Kokoro (local)",
+   "WhisperX (tempo por palavra)",
+   "Earshot (SFX)"
+  ],
+  "resumo": "\"Because I could not stop for Death\", de Emily Dickinson: cada palavra entra no instante exato da voz, em quatro cenas (estrada, campos, horizonte), com palavras de impacto sozinhas na linha e trilha bem baixa sob a narração.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "70 a 95 palavras a 2-2,5 palavras/s",
+    "Cartelas de 1 a 5 palavras, no mínimo 0,83 s cada",
+    "Palavra entra no onset da voz",
+    "Mudança visual maior a cada 6-10 s",
+    "Trilha 22-26 dB abaixo da voz"
+   ],
+   "base": "Estudo de referências de lyric/poem videos e kinetic typography"
+  },
+  "credito": "Poema: Emily Dickinson (1890), domínio público. Voz sintética (Kokoro). Música: \"Private Reflection\", Kevin MacLeod (incompetech.com), CC BY 4.0. Fontes Playfair Display e Space Grotesk (SIL OFL).",
+  "src": "video/pv/tipografia-cinetica-poema.mp4",
+  "capa": "img/pv/tipografia-cinetica-poema-capa.jpg",
+  "capa_video": "img/pv/tipografia-cinetica-poema-poster.jpg"
+ },
+ {
+  "slug": "explicativo-impressao-3d",
+  "num": "08",
+  "tipo": "Explicativo e educação",
+  "titulo": "Explicativo: como funciona a impressão 3D",
+  "nicho": "Ciência e tecnologia",
+  "estilo": "Motion 2D com narração",
+  "formato": "16:9",
+  "duracao": "48 s",
+  "plataforma": [
+   "YouTube",
+   "LinkedIn",
+   "Cursos online"
+  ],
+  "ferramentas": [
+   "raea (React/TypeScript)",
+   "Voz sintética Kokoro (local)",
+   "Earshot (SFX)"
+  ],
+  "resumo": "FDM e resina explicados camada por camada, com ilustrações vetoriais próprias: fatiamento do modelo, bico que extruda, luz UV que cura a resina e o resultado final lado a lado.",
+  "entrega": "MP4 Full HD 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "110 a 140 palavras de roteiro",
+    "Primeira mudança visual antes de 1,5 s",
+    "Mudança visual a cada 2-4 s",
+    "Só 2 tecnologias e 1 cor de acento",
+    "Música 18-20 dB abaixo da voz"
+   ],
+   "base": "Estudo de referências de explicativos em motion (Kurzgesagt, canais de ciência, guias de roteiro)"
+  },
+  "credito": "Ilustrações próprias. Voz sintética (Kokoro). Música: \"Newer Wave\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/explicativo-impressao-3d.mp4",
+  "capa": "img/pv/explicativo-impressao-3d-capa.jpg",
+  "capa_video": "img/pv/explicativo-impressao-3d-poster.jpg"
  },
  {
   "slug": "dados-energia-solar",
@@ -249,5 +400,41 @@ window.VIDEOS = [
   "src": "video/pv/trailer-wild-horizon.mp4",
   "capa": "img/pv/trailer-wild-horizon-capa.jpg",
   "capa_video": "img/pv/trailer-wild-horizon-poster.jpg"
+ },
+ {
+  "slug": "beat-sync-esporte",
+  "num": "15",
+  "tipo": "Reels e Shorts",
+  "titulo": "Beat sync de esporte e fitness",
+  "nicho": "Academia, luta e esportes",
+  "estilo": "Cortes na batida da música",
+  "formato": "9:16",
+  "duracao": "20 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok",
+   "YouTube Shorts"
+  ],
+  "ferramentas": [
+   "Python + FFmpeg (montagem por batida)",
+   "Mapa de batidas próprio",
+   "Earshot (SFX)",
+   "Stock Mixkit"
+  ],
+  "resumo": "38 planos cortados nas batidas de um phonk a 130 BPM: um corte a cada duas batidas na intro, um por batida no drop, speed ramps, punch zoom e flashes só nos drops. O último impacto cai na última batida.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "18 a 22 s, 120-140 BPM",
+    "1 corte a cada 2 batidas na intro e 1 por batida no drop",
+    "28 a 40 planos, punch zoom de 108-115%",
+    "Flash só em 2-4 drops"
+   ],
+   "base": "Estudo de referências de edits sincronizados à batida (esporte e fitness)"
+  },
+  "credito": "Vídeos: Mixkit (Mixkit Free License). Música: \"Brazilian Phonk With Heavy Bass Drop\", Alex Morgan (Free Music Archive), CC BY 4.0. Fonte Anton (SIL OFL).",
+  "src": "video/pv/beat-sync-esporte.mp4",
+  "capa": "img/pv/beat-sync-esporte-capa.jpg",
+  "capa_video": "img/pv/beat-sync-esporte-poster.jpg"
  }
 ];
