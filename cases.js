@@ -383,6 +383,38 @@ window.CASES = [
     processo: [{"titulo": "Briefing da oferta", "faz": "Levanto produto, público, objeções, preço, bônus, garantia e plataforma de venda (Hotmart, Kiwify ou Eduzz), e quais provas reais existem, sem inventar depoimento.", "recebe": "Resumo da oferta aprovado", "tempo": "1 dia"}, {"titulo": "Copy da página", "faz": "Escrevo o texto seção por seção: promessa sem garantia de ganho, para quem é e para quem não é, módulos, oferta, garantia e perguntas frequentes.", "recebe": "Texto completo para revisar", "tempo": "2 dias"}, {"titulo": "Layout e ilustração", "faz": "Crio o visual da marca com tipografia forte e ilustração própria em SVG, desenhando primeiro a versão de celular, onde chega a maior parte do tráfego pago.", "recebe": "Prévia visual para aprovar", "tempo": "2 dias"}, {"titulo": "Construção", "faz": "Monto a página leve em HTML, CSS e JavaScript, com barra fixa de compra no celular, animações discretas e botões ligados ao checkout.", "recebe": "Link de teste para navegar", "tempo": "2 dias"}, {"titulo": "Pixel e testes", "faz": "Instalo o Pixel da Meta e a tag do Google, testo os eventos de clique e de início de compra e confiro velocidade, SEO básico e todos os botões.", "recebe": "Eventos de rastreio conferidos e página revisada", "tempo": "1 dia"}, {"titulo": "Publicação", "faz": "Publico no seu domínio, faço a última conferência no celular e no computador e explico como mudar preço e link do checkout.", "recebe": "Página no ar e guia curto", "tempo": "meio dia"}]
   },
   {
+    slug: "animacao-3d-vista-explodida",
+    titulo: "Animação 3D de montagem: vista explodida de um mancal",
+    categoria: "Vídeo",
+    subtema: "Animação 3D técnica para engenharia e produto",
+    resumo: "Vídeo 9:16 de 15 s em que um mancal de 25 peças se desmonta, mostra o nome das peças principais e se monta de novo, peça por peça, com clique em cada encaixe.",
+    ferramentas: ["Blender", "Python", "EEVEE", "FFmpeg", "Earshot"],
+    capa: "img/animacao-3d-vista-explodida.png",
+    status: "pronto",
+    problema: "Indústria, loja de peças e escritório de engenharia precisam mostrar como um conjunto é feito, mas a foto parada não explica a montagem e o desenho técnico assusta quem não é da área.",
+    solucao: "Modelei o conjunto em 3D com medidas reais (eixo de 25 mm, rolamento, carcaça, base, parafusos M12) e animei a vista explodida com uma câmera em movimento contínuo: o conjunto se abre, os rótulos técnicos aparecem com linha-guia e a montagem acontece em 10 encaixes, cada um com onda de luz e clique sincronizado.",
+    fluxo: ["Roteiro com a ordem de montagem", "Modelagem 3D com medidas reais", "Prévia rápida a 30 fps", "Duas rodadas de revisão crítica", "Render final 1080x1920 a 60 fps", "Som de encaixe sincronizado e mixagem a -14 LUFS"],
+    telas: ["img/animacao-3d-vista-explodida-1.jpg", "img/animacao-3d-vista-explodida-2.jpg", "img/animacao-3d-vista-explodida-3.jpg"],
+    videos: [{"src": "video/animacao-3d-vista-explodida-9x16.mp4", "capa": "img/animacao-3d-vista-explodida-poster.jpg", "credito": "Música: “Industrial Cinematic”, Kevin MacLeod (incompetech.com), licença CC BY 4.0", "legenda": "Vista explodida 9:16 (1080x1920, 60 fps) · 15 s · 25 peças"}],
+    entrega: [["Vídeo final", "MP4 1080x1920 a 60 fps para Reels, Shorts e LinkedIn, com e sem música."], ["Sua peça", "Com o seu modelo (STEP, STL ou GLB) a animação usa a peça real, com as cores e os nomes da sua empresa."], ["Rótulos técnicos", "Nome, medida ou código de cada peça, em inglês ou português."], ["Revisão", "Prévia rápida antes do render final, com 1 rodada de ajustes incluída."]]
+  },
+  {
+    slug: "kit-videos-youtube",
+    titulo: "Kit de vídeos para canal: abertura, inscrição e tela final",
+    categoria: "Vídeo",
+    subtema: "Pacote gráfico animado para YouTube, Reels e Shorts",
+    resumo: "Kit completo de vinhetas de uma marca de software (Fenkra CAD): abertura, botão de inscrição animado, redes sociais, tarja de nome, capítulo, transição, tela final e modelo de thumbnail, em 16:9 e 9:16.",
+    ferramentas: ["raea", "React/TSX", "SVG", "CSS 3D", "Earshot", "FFmpeg"],
+    capa: "img/kit-videos-youtube.png",
+    status: "pronto",
+    problema: "Quem começa um canal grava bons vídeos, mas cada um sai com uma cara diferente, sem abertura, sem chamada para se inscrever e sem tela final, e o espectador não reconhece a marca.",
+    solucao: "Criei um kit no estilo da marca, com a fênix desenhada em camadas, brasas e névoa. As peças que vão por cima da gravação saem com fundo transparente (ProRes 4444 e versão em tela verde para o CapCut), cada uma com o seu efeito sonoro, e todos os textos ficam num bloco editável para trocar sem refazer a animação.",
+    fluxo: ["Estilo a partir da vinheta aprovada", "12 peças editáveis num só arquivo", "Prévia a 30 fps e ajustes", "Final Full HD a 60 fps", "Fundo transparente e tela verde", "Efeitos sonoros por peça"],
+    telas: ["img/kit-videos-youtube-1.jpg", "img/kit-videos-youtube-2.jpg", "img/kit-videos-youtube-3.jpg"],
+    videos: [{"src": "video/kit-videos-youtube-16x9.mp4", "capa": "img/kit-videos-youtube-16x9-poster.jpg", "legenda": "Kit 16:9 para YouTube: abertura, tarja, capítulo, inscrição, redes e tela final"}, {"src": "video/kit-videos-youtube-9x16.mp4", "capa": "img/kit-videos-youtube-9x16-poster.jpg", "legenda": "Kit 9:16 para Reels e Shorts: abertura, inscrição, redes e tarja"}],
+    entrega: [["Peças com fundo", "Abertura 16:9 e 9:16 e tela final do YouTube com espaço para 2 vídeos e o botão de inscrição."], ["Peças transparentes", "Inscrição, redes, tarja, capítulo e transição em ProRes 4444, MOV com alfa e tela verde."], ["Som", "Um WAV de efeitos para cada peça, sem risco de direitos autorais."], ["Editável", "Textos, @ e cores num só lugar, para renderizar de novo quando quiser."]]
+  },
+  {
     slug: "motion-infografico",
     titulo: "Do pedido à entrega: infográfico animado em motion graphics",
     categoria: "Vídeo",
