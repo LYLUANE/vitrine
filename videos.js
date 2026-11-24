@@ -367,6 +367,80 @@ window.VIDEOS = [
   "capa_video": "img/pv/faceless-apollo-11-poster.jpg"
  },
  {
+  "slug": "corte-viral-legenda-nasa",
+  "num": "11",
+  "tipo": "Cortes e podcast",
+  "titulo": "Corte viral com legenda palavra a palavra",
+  "nicho": "Ciência (fala pública da NASA)",
+  "estilo": "Corte de fala com legenda dinâmica",
+  "formato": "9:16",
+  "duracao": "38 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok",
+   "YouTube Shorts"
+  ],
+  "ferramentas": [
+   "WhisperX (tempo por palavra)",
+   "FFmpeg",
+   "Reenquadramento 16:9 para 9:16",
+   "Earshot (SFX)"
+  ],
+  "resumo": "Um astronauta da NASA explica por que só uma camada fina de atmosfera nos separa do vácuo: gancho com a frase mais forte, pausas cortadas, legenda palavra a palavra com destaque amarelo, punch-ins secos e imagens da Terra vistas da ISS.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Gancho forte nos 2 primeiros segundos",
+    "Pausas acima de 0,35 s cortadas",
+    "Legenda de 1-3 palavras, palavra falada em amarelo",
+    "Punch-in a cada 2-4 s, sem tremor",
+    "Legenda fora da faixa de baixo da interface"
+   ],
+   "base": "Estudo de referências de cortes virais com legenda (estilo Opus Clip e canais de cortes)"
+  },
+  "credito": "Vídeo: NASA (domínio público). Música: \"Avec Soin\", Kevin MacLeod (incompetech.com), CC BY 4.0. Fonte Anton (SIL OFL).",
+  "src": "video/pv/corte-viral-legenda-nasa.mp4",
+  "capa": "img/pv/corte-viral-legenda-nasa-capa.jpg",
+  "capa_video": "img/pv/corte-viral-legenda-nasa-poster.jpg"
+ },
+ {
+  "slug": "retencao-alta-produtividade",
+  "num": "12",
+  "tipo": "Reels e Shorts",
+  "titulo": "Short de alta retenção: 3 hábitos",
+  "nicho": "Produtividade",
+  "estilo": "Edição de alta retenção (cortes rápidos, legenda, SFX)",
+  "formato": "9:16",
+  "duracao": "38 s",
+  "plataforma": [
+   "YouTube Shorts",
+   "Instagram",
+   "TikTok"
+  ],
+  "ferramentas": [
+   "Python + OpenCV + FFmpeg",
+   "Voz sintética Kokoro (local)",
+   "WhisperX (legenda por palavra)",
+   "Earshot (SFX)",
+   "Stock Mixkit"
+  ],
+  "resumo": "\"3 habits that save you 2 hours a day\": gancho com texto no primeiro quadro, 20 cortes em 38 s, legenda palavra a palavra com destaque amarelo, punch-ins secos e um efeito sonoro em cada virada.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "Gancho com texto no quadro 1 (0-1,5 s)",
+    "Troca visual a cada 2-3 s (~0,4 corte/s)",
+    "Ideia nova a cada 5-7 s em 3 passos",
+    "Legenda de até 2 linhas e 45 caracteres"
+   ],
+   "base": "Estudo de referências de Shorts de alta retenção (contagem de cortes de canais grandes, guias de retenção)"
+  },
+  "credito": "Vídeos: Mixkit (Mixkit Free License). Voz sintética (Kokoro). Música: \"Newer Wave\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/retencao-alta-produtividade.mp4",
+  "capa": "img/pv/retencao-alta-produtividade-capa.jpg",
+  "capa_video": "img/pv/retencao-alta-produtividade-poster.jpg"
+ },
+ {
   "slug": "trailer-wild-horizon",
   "num": "13",
   "tipo": "Cinema e trailer",
@@ -400,6 +474,42 @@ window.VIDEOS = [
   "src": "video/pv/trailer-wild-horizon.mp4",
   "capa": "img/pv/trailer-wild-horizon-capa.jpg",
   "capa_video": "img/pv/trailer-wild-horizon-poster.jpg"
+ },
+ {
+  "slug": "travel-film-endless-summer",
+  "num": "14",
+  "tipo": "Viagem e vlog",
+  "titulo": "Travel film com speed ramps",
+  "nicho": "Viagem",
+  "estilo": "Montagem de viagem com transições",
+  "formato": "9:16",
+  "duracao": "26 s",
+  "plataforma": [
+   "Instagram",
+   "TikTok",
+   "YouTube Shorts"
+  ],
+  "ferramentas": [
+   "Python + OpenCV + FFmpeg",
+   "Mapa de batidas",
+   "Earshot (SFX)",
+   "Stock Mixkit"
+  ],
+  "resumo": "21 planos cortados na batida de 122 BPM, 6 speed ramps e 7 transições (whip pans com motion blur casado, match cuts e dissolves), grade quente única e cartões de lugar curtos.",
+  "entrega": "MP4 60 fps com e sem música, cópia para celular",
+  "referencias": {
+   "padrao": [
+    "18 a 24 planos de ~1,2 s",
+    "4 a 6 speed ramps de 12-24 quadros",
+    "5 a 7 transições (whip, match cut, luma)",
+    "Cortes na batida, 0,3-0,5 s de respiro antes do drop"
+   ],
+   "base": "Estudo de referências de travel films (estilo montagem com speed ramp)"
+  },
+  "credito": "Vídeos: Mixkit (Mixkit Free License). Música: \"Voxel Revolution\", Kevin MacLeod (incompetech.com), CC BY 4.0.",
+  "src": "video/pv/travel-film-endless-summer.mp4",
+  "capa": "img/pv/travel-film-endless-summer-capa.jpg",
+  "capa_video": "img/pv/travel-film-endless-summer-poster.jpg"
  },
  {
   "slug": "beat-sync-esporte",
