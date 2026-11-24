@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tolera · Identidade de marca</title>
+<meta name="description" content="Identidade de marca da Tolera, usinagem de precisão B2B (marca fictícia): estratégia, três caminhos, sistema visual, proposta comercial, relatório dimensional, etiqueta de lote, LinkedIn e logo animado.">
+<link rel="icon" href="svg/logo-simbolo-reduzido.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1D2125;--p:#F4F4F1;--l:#FF5B1A;--al:#A9AFB4;--aco:#5B636B;--fio:#d9dbd8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--p);color:var(--g);font:16px/1.6 "Archivo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+h1,h2,h3{font-family:"Archivo";font-variation-settings:"wdth" 118;font-weight:620;letter-spacing:-.01em;line-height:1.05}
+.m{font-family:"JetBrains Mono",ui-monospace,monospace;font-weight:500}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.k{font:500 12px/1 "JetBrains Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--aco);display:flex;gap:12px;align-items:center}
+.k b{color:var(--l);font-weight:500}
+.hero{background:var(--g);color:var(--p);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;bottom:0;left:calc(50% + 260px);width:3px;
+  background:repeating-linear-gradient(180deg,var(--l) 0 48px,transparent 48px 58px,var(--l) 58px 66px,transparent 66px 76px)}
+.hero .wrap{display:grid;grid-template-columns:7fr 5fr;gap:48px;min-height:620px;align-items:center;padding-top:56px;padding-bottom:56px;position:relative}
+.hero .logo{width:min(420px,90%)}
+.hero h1{font-size:clamp(34px,4.4vw,58px);margin-top:40px}
+.hero h1 span{color:var(--l)}
+.hero p{margin-top:18px;color:#c9ccc9;max-width:32em;font-size:17px}
+.hero .k{color:var(--al)}
+.hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;border-top:1px solid #ffffff22;padding-top:16px}
+.hero .meta div{font:500 11px "JetBrains Mono";letter-spacing:.16em;text-transform:uppercase;color:var(--al)}
+.hero .meta b{display:block;color:var(--p);font:600 20px "Archivo";letter-spacing:0;text-transform:none;margin-top:4px}
+.hero video{width:100%;border:1px solid #ffffff1a}
+nav.sec{position:sticky;top:0;z-index:5;background:#f4f4f1ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--fio)}
+nav.sec .wrap{display:flex;gap:26px;overflow-x:auto;padding-top:13px;padding-bottom:13px;scrollbar-width:none}
+nav.sec a{color:var(--g);text-decoration:none;font-size:13px;font-weight:600;white-space:nowrap}
+nav.sec a span{color:var(--l);margin-right:6px;font-family:"JetBrains Mono"}
+section{padding:92px 0 0}
+.head{display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:end;margin-bottom:34px;border-bottom:2px solid var(--g);padding-bottom:22px}
+.head h2{font-size:clamp(30px,3.6vw,46px);margin-top:14px}
+.head p{max-width:38em;color:#3a4046}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:#fff;border:1px solid var(--fio);padding:26px}
+.card h3{font-size:20px;margin-bottom:10px}
+.card ul{padding-left:18px} .card li+li{margin-top:6px}
+.plat{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--fio)}
+.plat th,.plat td{text-align:left;vertical-align:top;padding:18px 22px;border-top:1px solid var(--fio)}
+.plat th{width:22%;font:500 12px "JetBrains Mono";letter-spacing:.14em;text-transform:uppercase;color:var(--aco);padding-top:21px}
+.plat tr.ideia td{font:600 24px/1.3 "Archivo";font-variation-settings:"wdth" 112}
+.plat tr.ideia td span{color:var(--l)}
+.voz{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:20px}
+.voz div{padding:18px 20px;background:#fff;border:1px solid var(--fio);font-size:15px}
+.voz div small{display:block;font:500 11px "JetBrains Mono";letter-spacing:.16em;margin-bottom:8px;color:var(--aco)}
+.voz .ok small::before{content:"✓ ";color:#2f7d4f} .voz .no small::before{content:"✕ ";color:#b3261e}
+.voz .no{color:#6b7177;text-decoration:line-through;text-decoration-color:#b3261e88}
+figure.full{background:#fff;border:1px solid var(--fio)}
+figure.full img{width:100%}
+figcaption{font-size:14px;color:#4a5056;padding:14px 4px 0}
+.porque{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.porque div{border-top:3px solid var(--g);padding-top:12px;font-size:15px}
+.porque div.esc{border-color:var(--l)}
+.porque b{display:block;font:600 18px "Archivo";margin-bottom:4px}
+.logos{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.lg{display:flex;flex-direction:column;justify-content:space-between;min-height:240px;padding:22px;border:1px solid var(--fio)}
+.lg .im{flex:1;display:flex;align-items:center;justify-content:center;padding:18px 6px}
+.lg .im img{max-height:140px;width:100%;object-fit:contain}
+.w6{grid-column:span 6}.w3{grid-column:span 3}
+.lg .cap{display:flex;justify-content:space-between;align-items:center;font:500 11px "JetBrains Mono";letter-spacing:.14em;text-transform:uppercase;gap:10px}
+.lg .cap a{color:inherit;text-decoration:none;border-bottom:1.5px solid var(--l)}
+.on-p{background:var(--p)}.on-w{background:#fff}.on-g{background:var(--g);color:var(--p)}
+.pal{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.sw{background:none;border:0;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.sw .c{aspect-ratio:3/4;border:1px solid var(--fio);transition:transform .25s}
+.sw:hover .c{transform:translateY(-4px)}
+.sw b{display:block;font:600 18px "Archivo";margin-top:12px}
+.sw small{display:block;font:500 12px/1.7 "JetBrains Mono"}
+.sw i{display:block;font-style:normal;font-size:13px;color:#4a5056;margin-top:6px}
+.prop{display:flex;height:12px;margin-top:22px;border:1px solid var(--fio)}
+.contr{margin-top:16px;font-size:14px;color:#4a5056}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--g);color:var(--p);padding:10px 18px;font:500 13px "JetBrains Mono";opacity:0;transition:.25s;pointer-events:none;z-index:20}
+.toast.on{opacity:1;transform:translateX(-50%)}
+.tipo{display:grid;grid-template-columns:7fr 5fr;gap:16px;margin-top:16px}
+.tp{background:#fff;border:1px solid var(--fio);padding:30px}
+.tp .aa{font-size:clamp(80px,11vw,140px);line-height:.9;font-weight:600;font-variation-settings:"wdth" 118}
+.tp .mono{font-family:"JetBrains Mono";font-weight:500;font-size:clamp(70px,9vw,120px);line-height:.9}
+.tp h3{font-size:22px;margin:14px 0 6px}
+.tp p{font-size:14.5px;color:#3a4046}
+.apl{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.apl figure{background:#e4e5e2;border:1px solid var(--fio);display:flex;flex-direction:column}
+.apl figure .ph{flex:1;display:flex;align-items:center;justify-content:center;padding:28px;background:#e4e5e2}
+.apl figure .ph img{box-shadow:0 18px 40px -18px #1d212566,0 2px 6px #1d212522;max-height:560px;width:auto}
+.apl figcaption{background:#fff;padding:14px 18px;border-top:1px solid var(--fio)}
+.apl figcaption b{display:block;font:600 17px "Archivo";color:var(--g)}
+.a4{grid-column:span 4}.a6{grid-column:span 6}.a8{grid-column:span 8}.a12{grid-column:span 12}
+.mov{display:grid;grid-template-columns:8fr 4fr;gap:16px;align-items:start}
+.mov video{width:100%;border:1px solid var(--fio);background:var(--g)}
+.passos{list-style:none;counter-reset:p;margin-top:4px}
+.passos li{counter-increment:p;padding:12px 0;border-top:1px solid var(--fio);font-size:15px;display:flex;gap:14px}
+.passos li::before{content:"0" counter(p);font:500 13px "JetBrains Mono";color:var(--l);padding-top:2px}
+.dl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.dl a{display:block;background:#fff;border:1px solid var(--fio);padding:22px;color:var(--g);text-decoration:none;transition:border-color .2s}
+.dl a:hover{border-color:var(--l)}
+.dl b{display:block;font:600 18px "Archivo"}
+.dl small{font:500 11px "JetBrains Mono";letter-spacing:.14em;text-transform:uppercase;color:var(--aco)}
+footer{margin-top:100px;background:var(--g);color:var(--al);padding:40px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer img{height:40px}
+footer a{color:var(--p)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--l);outline-offset:3px}
+@media (max-width:860px){
+ .hero .wrap,.head,.duas,.tipo,.mov{grid-template-columns:1fr}
+ .hero::before{left:auto;right:28px}
+ .hero .wrap{min-height:0}
+ .porque,.voz,.dl{grid-template-columns:1fr}
+ .pal{grid-template-columns:repeat(2,1fr)}
+ .w6,.w3,.a4,.a6,.a8{grid-column:span 12}
+ .plat th{width:auto;display:block;padding-bottom:0} .plat td{display:block;padding-top:6px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="wrap">
+  <div>
+   <img class="logo" src="svg/logo-horizontal-negativo.svg" alt="Tolera Usinagem de Precisão">
+   <h1>A tolerância<br>como <span>promessa</span>.</h1>
+   <p>Identidade de marca para uma usinagem CNC que entrega qualidade de fornecedor grande, mas parecia oficina pequena. A linguagem vem do desenho técnico, o idioma que o engenheiro lê todos os dias.</p>
+   <div class="meta"><div>Setor<b>Usinagem B2B</b></div><div>Peças<b>7 aplicações</b></div><div>Status<b>Marca fictícia</b></div></div>
+  </div>
+  <video src="img/logo-animado.mp4" poster="img/logo-animado.jpg" autoplay muted loop playsinline aria-label="Logo animado da Tolera"></video>
+ </div>
+</header>
+<nav class="sec" aria-label="Seções"><div class="wrap">
+ <a href="#diagnostico"><span>01</span>Diagnóstico</a><a href="#estrategia"><span>02</span>Estratégia</a>
+ <a href="#caminhos"><span>03</span>Caminhos</a><a href="#sistema"><span>04</span>Sistema</a>
+ <a href="#aplicacoes"><span>05</span>Aplicações</a><a href="#movimento"><span>06</span>Movimento</a><a href="#arquivos"><span>07</span>Arquivos</a>
+</div></nav>
+<main>
+<section id="diagnostico"><div class="wrap">
+ <div class="head"><div><div class="k"><b>01</b> Diagnóstico</div><h2>Qualidade de grande, cara de pequena.</h2></div>
+ <p>Usinagem CNC sob encomenda em Botucatu (SP), com 14 pessoas, 4 tornos, 2 centros de usinagem e sala de medição. Atende aeronáutica, carrocerias, implementos agrícolas e manutenção de fábricas. Cliente e números são fictícios, criados para este estudo.</p></div>
+ <div class="duas">
+  <div class="card"><h3>O que estava errado</h3><ul>
+   <li>Logo com engrenagem de banco de imagens.</li>
+   <li>Orçamento em Word, cada um com uma formatação.</li>
+   <li>Caminhão, uniforme e etiqueta cada um com uma cor.</li>
+   <li>Na homologação, perdia para concorrentes que pareciam mais organizados.</li></ul></div>
+  <div class="card"><h3>Como os concorrentes se apresentam</h3><ul>
+   <li>Engrenagem, chave inglesa ou fagulha.</li>
+   <li>Azul e vermelho, fonte itálica "veloz".</li>
+   <li>Frases como "excelência e qualidade incomparável".</li>
+   <li>Todos se parecem. Nenhum fala de medida.</li></ul></div>
+ </div>
+</div></section>
+
+<section id="estrategia"><div class="wrap">
+ <div class="head"><div><div class="k"><b>02</b> Estratégia</div><h2>Quem decide é o engenheiro.</h2></div>
+ <p>O comprador precisa de prazo e documentação; o engenheiro precisa da peça certa na primeira vez. A marca fala com os dois na língua que eles usam no trabalho: números, cotas e relatório.</p></div>
+ <table class="plat">
+  <tr><th>Propósito</th><td>Fazer a indústria do interior confiar numa peça antes de medir.</td></tr>
+  <tr><th>Posicionamento</th><td>Para engenheiros e compradores da indústria do interior paulista, a Tolera é a usinagem de precisão que entrega a peça na cota e no prazo, porque mede cada lote e envia o relatório junto.</td></tr>
+  <tr><th>Personalidade</th><td><b>Precisa</b>, não fria. <b>Confiável</b>, não engessada. <b>Direta</b>, não seca.</td></tr>
+  <tr class="ideia"><th>Ideia central</th><td>A tolerância como <span>promessa</span>: toda peça tem uma medida e uma folga permitida, e a Tolera vende a certeza de ficar dentro dela.</td></tr>
+ </table>
+ <div class="voz">
+  <div class="ok"><small>TOM CERTO</small>Lote de 200 peças, tolerância ±0,01 mm, relatório dimensional incluso.</div>
+  <div class="ok"><small>TOM CERTO</small>Mandou o desenho até as 10 h? Orçamento sai no mesmo dia.</div>
+  <div class="no"><small>TOM ERRADO</small>Somos líderes em excelência e qualidade incomparável!</div>
+ </div>
+</div></section>
+
+<section id="caminhos"><div class="wrap">
+ <div class="head"><div><div class="k"><b>03</b> Caminhos</div><h2>Três ideias em preto e branco.</h2></div>
+ <p>Antes da cor, a forma. Cada caminho nasce de um elemento do desenho técnico e foi testado em tamanho de perfil (110 px) e de favicon (16 px).</p></div>
+ <figure class="full"><img src="img/caminhos.jpg" alt="Prancha com os três caminhos de logo da Tolera em preto e branco" loading="lazy"></figure>
+ <div class="porque">
+  <div><b>A · Mais ou menos</b>O sinal ± recortado num tarugo. Forte como ideia, mas perde a leitura em tamanho pequeno.</div>
+  <div><b>B · Quadro de tolerância</b>O nome dentro do quadro de tolerância geométrica. Muito técnico, vira um carimbo e não um símbolo.</div>
+  <div class="esc"><b>C · Eixo escalonado (escolhido)</b>A letra T é o perfil de um eixo torneado, a peça que toda usinagem faz, com a linha de centro de onde partem as medidas.</div>
+ </div>
+</div></section>
+
+<section id="sistema"><div class="wrap">
+ <div class="head"><div><div class="k"><b>04</b> Sistema</div><h2>Desenhado com régua.</h2></div>
+ <p>O símbolo foi refeito numa grade de 10 × 10 com chanfros a 45°, canal de anel e a linha de centro traço-ponto que passa além da peça, como no desenho técnico. Assim deixou de parecer só uma letra.</p></div>
+ <figure class="full"><img src="img/construcao.jpg" alt="Construção do símbolo em grade com cotas" loading="lazy"></figure>
+ <div class="logos" style="margin-top:16px"><div class="lg w6 on-p"><div class="im"><img src="svg/logo-horizontal-positivo.svg" alt="Logo Tolera, horizontal · principal" loading="lazy"></div><div class="cap"><span>Horizontal · principal</span><a href="svg/logo-horizontal-positivo.svg" download>SVG</a></div></div><div class="lg w6 on-g"><div class="im"><img src="svg/logo-horizontal-negativo.svg" alt="Logo Tolera, horizontal · negativo" loading="lazy"></div><div class="cap"><span>Horizontal · negativo</span><a href="svg/logo-horizontal-negativo.svg" download>SVG</a></div></div><div class="lg w3 on-p"><div class="im"><img src="svg/logo-vertical-positivo.svg" alt="Logo Tolera, vertical" loading="lazy"></div><div class="cap"><span>Vertical</span><a href="svg/logo-vertical-positivo.svg" download>SVG</a></div></div><div class="lg w3 on-g"><div class="im"><img src="svg/logo-vertical-negativo.svg" alt="Logo Tolera, vertical · negativo" loading="lazy"></div><div class="cap"><span>Vertical · negativo</span><a href="svg/logo-vertical-negativo.svg" download>SVG</a></div></div><div class="lg w3 on-p"><div class="im"><img src="svg/logo-simbolo-positivo.svg" alt="Logo Tolera, símbolo" loading="lazy"></div><div class="cap"><span>Símbolo</span><a href="svg/logo-simbolo-positivo.svg" download>SVG</a></div></div><div class="lg w3 on-p"><div class="im"><img src="svg/logo-simbolo-reduzido.svg" alt="Logo Tolera, reduzido · abaixo de 32 px" loading="lazy"></div><div class="cap"><span>Reduzido · abaixo de 32 px</span><a href="svg/logo-simbolo-reduzido.svg" download>SVG</a></div></div></div>
+ <h3 style="margin:56px 0 18px;font-size:26px">Paleta</h3>
+ <div class="pal"><button class="sw" data-hex="#1D2125" aria-label="Copiar #1D2125"><div class="c" style="background:#1D2125"></div><b>Grafite</b><small>#1D2125<br>RGB 29 33 37</small><i>Texto, fundo escuro e símbolo</i></button><button class="sw" data-hex="#F4F4F1" aria-label="Copiar #F4F4F1"><div class="c" style="background:#F4F4F1"></div><b>Papel</b><small>#F4F4F1<br>RGB 244 244 241</small><i>Fundo claro e respiro</i></button><button class="sw" data-hex="#FF5B1A" aria-label="Copiar #FF5B1A"><div class="c" style="background:#FF5B1A"></div><b>Laranja Cota</b><small>#FF5B1A<br>RGB 255 91 26</small><i>Só onde há medida ou ação</i></button><button class="sw" data-hex="#5B636B" aria-label="Copiar #5B636B"><div class="c" style="background:#5B636B"></div><b>Aço</b><small>#5B636B<br>RGB 91 99 107</small><i>Texto de apoio e linhas</i></button><button class="sw" data-hex="#A9AFB4" aria-label="Copiar #A9AFB4"><div class="c" style="background:#A9AFB4"></div><b>Alumínio</b><small>#A9AFB4<br>RGB 169 175 180</small><i>Fundos de apoio e divisórias</i></button></div>
+ <div class="prop" aria-hidden="true"><div style="flex:60;background:#1D2125"></div><div style="flex:30;background:#F4F4F1"></div><div style="flex:6;background:#FF5B1A"></div><div style="flex:3;background:#5B636B"></div><div style="flex:1;background:#A9AFB4"></div></div>
+ <p class="contr">Contraste medido: grafite sobre papel 14.7:1, laranja sobre grafite 5.2:1. Laranja sobre papel dá 2.8:1, por isso o laranja nunca vira texto pequeno no fundo claro: fica só em linhas, cotas e chamadas grandes. Clique numa cor para copiar o HEX.</p>
+ <h3 style="margin:56px 0 0;font-size:26px">Tipografia</h3>
+ <div class="tipo">
+  <div class="tp"><div class="aa">Aa</div><h3>Archivo Expandida</h3><p>Títulos em peso 580 a 640 e largura 118: firme e larga como letra de placa de máquina. No texto corrido, largura normal e peso 420. Gratuita (Google Fonts).</p></div>
+  <div class="tp"><div class="mono">±0,01</div><h3>JetBrains Mono</h3><p>Medidas, códigos de peça e lotes. Lembra visor de instrumento e relatório, e reforça a mensagem de que tudo é medido.</p></div>
+ </div>
+ <figure class="full" style="margin-top:16px"><img src="img/sistema.jpg" alt="Prancha completa do sistema de identidade" loading="lazy"><figcaption>Prancha completa: construção, assinaturas, versões, paleta e tipografia.</figcaption></figure>
+</div></section>
+
+<section id="aplicacoes"><div class="wrap">
+ <div class="head"><div><div class="k"><b>05</b> Aplicações</div><h2>Onde o engenheiro vê a marca.</h2></div>
+ <p>As peças que mais pesam numa homologação: a proposta, o relatório que acompanha o lote e a etiqueta na caixa. A cota laranja aparece em todas, sempre onde há medida.</p></div>
+ <div class="apl">
+  <figure class="a6"><div class="ph"><img src="img/proposta-capa.jpg" alt="Capa da proposta comercial" loading="lazy"></div><figcaption><b>Proposta comercial · capa</b>A4, fundo grafite, a linha de centro atravessando a página.</figcaption></figure>
+  <figure class="a6"><div class="ph"><img src="img/proposta-p2.jpg" alt="Página de itens da proposta comercial" loading="lazy"></div><figcaption><b>Proposta comercial · itens</b>Tabela com tolerância, prazo e o que acompanha cada lote.</figcaption></figure>
+  <figure class="a6"><div class="ph"><img src="img/relatorio.jpg" alt="Relatório dimensional" loading="lazy"></div><figcaption><b>Relatório dimensional</b>Desenho do eixo com cotas, tabela nominal, tolerância e medido.</figcaption></figure>
+  <figure class="a6"><div class="ph"><img src="img/etiqueta.jpg" alt="Etiqueta de lote 100 por 70 mm" loading="lazy"></div><figcaption><b>Etiqueta de lote · 100 × 70 mm</b>Peça, lote, quantidade e QR Code que abre o relatório do lote.</figcaption></figure>
+  <figure class="a12"><div class="ph"><img src="img/linkedin-capa.jpg" alt="Capa do LinkedIn" loading="lazy" style="width:100%"></div><figcaption><b>LinkedIn · capa</b>"Peças na cota. Relatório em cada lote."</figcaption></figure>
+  <figure class="a4"><div class="ph"><img src="img/linkedin-avatar.png" alt="Foto de perfil do LinkedIn" loading="lazy" style="max-width:220px"></div><figcaption><b>LinkedIn · perfil</b>Símbolo em 400 px.</figcaption></figure>
+  <figure class="a8"><div class="ph"><img src="img/linkedin-post.jpg" alt="Modelo de post do LinkedIn" loading="lazy" style="max-height:440px"></div><figcaption><b>LinkedIn · post</b>Modelo com o número em destaque, como fala um engenheiro.</figcaption></figure>
+ </div>
+</div></section>
+
+<section id="movimento"><div class="wrap">
+ <div class="head"><div><div class="k"><b>06</b> Movimento</div><h2>O eixo nasce no torno.</h2></div>
+ <p>Logo animado de 4 segundos para abertura de vídeo, apresentação e redes. Sai em 16:9, 1:1 e com fundo transparente (ProRes 4444) para usar sobre gravações da fábrica.</p></div>
+ <div class="mov">
+  <video src="img/logo-animado.mp4" poster="img/logo-animado.jpg" controls muted playsinline preload="metadata" aria-label="Logo animado da Tolera"></video>
+  <ol class="passos">
+   <li>A linha de centro laranja desce.</li>
+   <li>O material aparece simétrico a partir do eixo, como numa peça sendo torneada.</li>
+   <li>O nome entra da esquerda para a direita.</li>
+   <li>O traço laranja corre sob o nome.</li>
+   <li>O subtítulo aparece.</li>
+  </ol>
+ </div>
+</div></section>
+
+<section id="arquivos"><div class="wrap">
+ <div class="head"><div><div class="k"><b>07</b> Arquivos</div><h2>Pronto para a gráfica.</h2></div>
+ <p>Logos em SVG com texto em curvas, PDFs de impressão e vídeo. Na entrega real, a pasta vem organizada por uso: impressão, redes e site.</p></div>
+ <div class="dl">
+  <a href="pdf/proposta-comercial.pdf"><small>PDF · 2 páginas</small><b>Proposta comercial</b></a>
+  <a href="pdf/relatorio-dimensional.pdf"><small>PDF · A4</small><b>Relatório dimensional</b></a>
+  <a href="svg/logo-horizontal-positivo.svg" download><small>SVG</small><b>Logo principal</b></a>
+ </div>
+</div></section>
+</main>
+<footer><div class="wrap"><img src="svg/logo-horizontal-mono-papel.svg" alt="Tolera"><span>Marca fictícia criada para portfólio. Telefones, site e clientes são ilustrativos.</span><a href="../../caso.html?slug=identidade-usinagem">Voltar ao caso</a></div></footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<script>
+document.querySelectorAll('.sw').forEach(function(b){b.addEventListener('click',function(){
+ var h=b.dataset.hex,t=document.querySelector('.toast');
+ (navigator.clipboard?navigator.clipboard.writeText(h):Promise.reject()).then(function(){t.textContent=h+' copiado'},function(){t.textContent=h});
+ t.classList.add('on');setTimeout(function(){t.classList.remove('on')},1600);});});
+</script>
+</body>
+</html>

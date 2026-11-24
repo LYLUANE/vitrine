@@ -254,6 +254,25 @@ window.CASES = [
     entrega: [["Logo em SVG", "Horizontal, vertical, selo e símbolo, em positivo, negativo e uma cor, com texto em curvas"], ["Paleta", "5 cores com HEX, RGB e CMYK aproximado, e regra de proporção 60/30/10"], ["Tipografia", "Fraunces e DM Sans, gratuitas no Google Fonts, com escala de uso"], ["Direção de fotografia", "Luz, mesa, lente e enquadramento definidos para todas as fotos da marca"], ["Aplicações", "Cartão com três versos, etiqueta de pote, sacola e tampa de caixa, em vetor e simuladas sobre foto"], ["Manual de marca", "PDF de 12 páginas: construção do símbolo, proteção, usos proibidos e aplicações"]]
   },
   {
+    slug: "identidade-usinagem",
+    titulo: "Identidade de marca para usinagem de precisão",
+    categoria: "Design gráfico",
+    subtema: "Branding B2B · Tolera (marca fictícia)",
+    resumo: "Estratégia, três caminhos de logo, sistema visual, proposta comercial, relatório dimensional, etiqueta de lote, LinkedIn e logo animado de uma usinagem CNC.",
+    ferramentas: ["Python (logo em curvas e grade)", "VectorCraft", "HTML/CSS para PDF (Edge)", "NumPy + FFmpeg (logo animado)", "Archivo e JetBrains Mono"],
+    capa: "img/identidade-usinagem.png",
+    link_demo: "demos/identidade-usinagem/",
+    link_pdf: "pdf/identidade-usinagem.pdf",
+    status: "pronto",
+    problema: "A usinagem entrega qualidade de fornecedor grande, mas a marca parece de oficina pequena: logo com engrenagem de banco de imagens, orçamento em Word e cada caminhão com uma cor. Na homologação, perde para concorrentes que parecem mais organizados, e todos eles usam engrenagem, azul e vermelho.",
+    solucao: "Comecei pela estratégia: quem decide a compra é o engenheiro, então a marca fala a língua do desenho técnico. A ideia central é \"a tolerância como promessa\". O símbolo é a letra T como o perfil de um eixo torneado, com a linha de centro laranja de onde partem as medidas, desenhado em grade com chanfros e canal de anel. A cor laranja aparece só onde há medida ou ação. Apliquei a marca nas peças que pesam numa homologação (proposta, relatório que acompanha o lote, etiqueta) e animei o logo como uma peça sendo torneada. Marca, telefones e clientes são fictícios.",
+    fluxo: ["Diagnóstico do negócio e dos concorrentes", "Plataforma de marca e ideia central", "Três caminhos em preto e branco", "Símbolo em grade, paleta e tipografia", "Proposta, relatório, etiqueta e LinkedIn", "Logo animado em 16:9, 1:1 e com alfa"],
+    processo: [{"titulo": "Diagnóstico", "faz": "Entendo o negócio, quem compra e quem decide, e levanto como os concorrentes se apresentam e onde a marca aparece (proposta, relatório, etiqueta, caminhão, LinkedIn).", "recebe": "Um resumo de uma página com os problemas da marca atual e a lista de peças.", "tempo": "2 dias"}, {"titulo": "Estratégia", "faz": "Escrevo a plataforma de marca: propósito, posicionamento, personalidade, tom de voz e a ideia central que guia o visual.", "recebe": "Plataforma de marca em uma página, para aprovar antes do desenho.", "tempo": "2 dias"}, {"titulo": "Três caminhos", "faz": "Desenho 3 caminhos de logo em preto e branco, cada um com a ideia em uma frase, testados em 110 px e 16 px.", "recebe": "Prancha com os 3 caminhos lado a lado e a minha recomendação.", "tempo": "3 dias"}, {"titulo": "Sistema", "faz": "Redesenho o caminho escolhido em grade e monto as assinaturas, as versões, a paleta com contraste medido, a tipografia e o elemento gráfico.", "recebe": "Logo final em SVG em todas as versões e a prancha do sistema, com até 2 rodadas de ajuste.", "tempo": "3 dias"}, {"titulo": "Aplicações", "faz": "Aplico a marca nas peças que mais pesam para o cliente: proposta comercial, relatório, etiqueta e redes, já no tamanho de produção.", "recebe": "Modelos editáveis e PDFs de impressão de cada peça.", "tempo": "4 dias"}, {"titulo": "Movimento e entrega", "faz": "Animo o logo para vídeo e redes e organizo os arquivos por uso (impressão, redes, site).", "recebe": "Logo animado em MP4 e com fundo transparente, e a pasta final organizada.", "tempo": "2 dias"}],
+    telas: ["img/identidade-usinagem-1.jpg", "img/identidade-usinagem-2.jpg", "img/identidade-usinagem-3.jpg", "img/identidade-usinagem-4.jpg", "img/identidade-usinagem-5.jpg"],
+    videos: [{"src": "video/identidade-usinagem-16x9.mp4", "capa": "img/identidade-usinagem-16x9-poster.jpg", "legenda": "Logo animado 16:9: a linha de centro desce e o eixo nasce dela, como no torno"}, {"src": "video/identidade-usinagem-1x1.mp4", "capa": "img/identidade-usinagem-1x1-poster.jpg", "legenda": "Versão 1:1 em fundo claro, para redes"}],
+    entrega: [["Estratégia", "Plataforma de marca com propósito, posicionamento, personalidade, tom de voz e ideia central"], ["Três caminhos", "Prancha em preto e branco com os 3 caminhos testados em 110 px e 16 px"], ["Logo em SVG", "Horizontal, vertical, símbolo e reduzido, em positivo, negativo e uma cor, com texto em curvas"], ["Sistema", "Construção em grade, paleta com contraste medido e regra de proporção, Archivo e JetBrains Mono (gratuitas)"], ["Aplicações", "Proposta comercial, relatório dimensional, etiqueta de lote 100 × 70 mm, perfil, capa e post do LinkedIn"], ["Logo animado", "4 s em 16:9, 1:1 e com fundo transparente (ProRes 4444)"]]
+  },
+  {
     slug: "loja-moda",
     titulo: "Alba Studio: loja virtual de moda",
     categoria: "Sites",
@@ -704,6 +723,6 @@ window.ENTREGA_PADRAO = [
 ];
 
 /* Ordem de destaque na página inicial (o resto segue a ordem do arquivo) */
-window.ORDEM = ["reels-legendas", "cortes-podcast", "sites-negocios-locais-1", "pagina-vendas", "kit-identidade-visual", "loja-moda", "robo-pdf-excel", "planilha-financeira", "video-historia-narrado", "video-produto", "portal-imobiliario", "app-mobile",
+window.ORDEM = ["reels-legendas", "cortes-podcast", "sites-negocios-locais-1", "pagina-vendas", "kit-identidade-visual", "identidade-usinagem", "loja-moda", "robo-pdf-excel", "planilha-financeira", "video-historia-narrado", "video-produto", "portal-imobiliario", "app-mobile",
   "chatbot-whatsapp", "pagina-autonomos", "sites-nicho", "site-wordpress", "sites-negocios-locais-2", "posts-instagram", "sistema-orcamentos", "redesign-ux", "integracao-api",
   "cardapio-trifold", "jogo-html5", "base-conhecimento", "dashboard-bi", "google-meu-negocio", "agente-ia-vendas", "email-marketing", "site-clinica", "banner-outdoor", "motion-infografico", "painel-gestao", "workflows-n8n"];
